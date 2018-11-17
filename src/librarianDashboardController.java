@@ -10,7 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class librarianDashboardController {
+public class LibrarianDashboardController {
 
     @FXML // fx:id="dashboardTable"
     private TableView<?> dashboardTable; // Value injected by FXMLLoader

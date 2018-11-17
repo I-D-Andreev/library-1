@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class userDashboardController {
+public class UserDashboardController {
 
     @FXML // fx:id="browseResourcesButton"
     private Button browseResourcesButton; // Value injected by FXMLLoader
