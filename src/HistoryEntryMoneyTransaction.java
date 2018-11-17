@@ -15,7 +15,7 @@ public class HistoryEntryMoneyTransaction extends HistoryEntry {
      * @param date   The date of the money transaction.
      * @param amount The amount of the transaction.
      */
-    public HistoryEntryMoneyTransaction(Date date, Double amount) {
+    public HistoryEntryMoneyTransaction(Date date, double amount) {
         super(date);
         this.amount = amount;
     }
