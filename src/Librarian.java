@@ -1,5 +1,6 @@
 /**
  * This is used to make an account for a librarian
+ *
  * @author Christina Meggs, Ivan Andreev
  */
 public class Librarian extends User {
@@ -7,21 +8,23 @@ public class Librarian extends User {
 
     /**
      * Creates a librarian account with the inputted information.
+     *
      * @param staff The librarians staff number.
      * @param first The librarians first name.
-     * @param last The librarians last name.
-     * @param user The librarians account username.
+     * @param last  The librarians last name.
+     * @param user  The librarians account username.
      * @param phone The librarians phone number.
      * @param image The librarians profile image.
-     * @param ad The librarians home address.
+     * @param ad    The librarians home address.
      */
     public Librarian(String staff, String first, String last, String user, String phone, String image, String ad) {
-        super(first,last,user,phone,image,ad);
+        super(first, last, user, phone, image, ad);
         this.setStaffNumber(staff);
     }
 
     /**
      * Gets staff number of the librarian.
+     *
      * @return staffNumber The librarians staff number.
      */
     public String getStaffNumber() {
@@ -30,7 +33,7 @@ public class Librarian extends User {
 
     /**
      * Sets the staff number of the librarian.
-     * @return staffNumber The librarian's new staff number.
+     *
      */
     private void setStaffNumber(String staffNumber) {
         this.staffNumber = staffNumber;
@@ -38,6 +41,7 @@ public class Librarian extends User {
 
     /**
      * Checks whether librarian has admin access.
+     *
      * @return True as librarians always have admin access.
      */
     public boolean hasAdminAccess() {
@@ -46,6 +50,7 @@ public class Librarian extends User {
 
     /**
      * Gets the employment date of the librarian.
+     *
      * @return Librarian's employment date.
      */
     //needs to be completed, will be date class
