@@ -34,20 +34,18 @@ public abstract class User {
 
     /**
      * Gets the user's first name.
-     *
-     * @return firstName User's first name.
+     * @return firstName user's first name.
      */
     public String getFirstName() {
         return firstName;
     }
 
     /**
-     * Sets user first name.
-     *
-     * @param first The users new first name.
+     * Sets the user's first name.
+     * @param firstName The user's new first name.
      */
-    public void setFirstName(String first) {
-        this.firstName = first;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     /**
@@ -59,16 +57,16 @@ public abstract class User {
     }
 
     /**
-     * Sets user last name.
-     * @param last The users new last name.
+     * Sets user's last name.
+     * @param lastName The user's new last name.
      */
-    public void setLastName(String last) {
-        this.lastName = last;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     /**
      * Gets the user's account username.
-     * @return username Username of users account.
+     * @return username Username of user's account.
      */
     public String getUsername() {
         return username;
@@ -76,9 +74,8 @@ public abstract class User {
 
 
     /**
-     * Gets the users phone number.
-     *
-     * @return phoneNumber the users phone number.
+     * Gets the user's phone number.
+     * @return phoneNumber the user's phone number.
      */
     public String getPhoneNumber() {
         return phoneNumber;
@@ -86,10 +83,10 @@ public abstract class User {
 
     /**
      * Sets the user's phone number.
-     * @param phone The users new phone number.
+     * @param phoneNumber The users new phone number.
      */
-    public void setPhoneNumber(String phone) {
-        this.phoneNumber = phone;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     /**
@@ -128,8 +125,8 @@ public abstract class User {
     }
 
     /**
-     * Sets the user's profile image.
-     * @param imagePath The users new profile image.
+     * Sets the user's new profile image path.
+     * @param imagePath The user's new profile image path.
      */
     //Instead of string will be profile image type when class is created
     public void setProfileImagePath(String imagePath) {
@@ -137,8 +134,8 @@ public abstract class User {
     }
 
     /**
-     * Gets the date of when the account was created.
-     * @return The creation date of account.
+     * Gets the date when the account was created.
+     * @return The creation date of the account.
      */
     public String getAccountCreationDate() {
         //will do a date type of the current days date
