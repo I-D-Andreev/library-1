@@ -17,20 +17,20 @@ public abstract class User {
     /**
      * Creates a user profile with the basic information within all types of users.
      *
-     * @param first The user's first name.
-     * @param last  The user's last name.
-     * @param user  The user's account username.
-     * @param phone The user's phone number.
+     * @param firstName The user's first name.
+     * @param lastName  The user's last name.
+     * @param user      The user's account username.
+     * @param phone     The user's phone number.
      * @param imagePath The user's profile image.
-     * @param ad    The user's home address.
+     * @param address   The user's home address.
      */
-    public User(String first, String last, String user, String phone, String imagePath, String ad) {
-        this.firstName = first;
-        this.lastName = last;
+    public User(String firstName, String lastName, String user, String phone, String imagePath, String address) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.username = user;
         this.phoneNumber = phone;
         this.profileImagePath = imagePath;
-        this.address = ad;
+        this.address = address;
     }
 
     /**
@@ -43,16 +43,17 @@ public abstract class User {
     }
 
     /**
-     * Sets user first name.
+     * Sets the user's first name.
      *
-     * @param first The users new first name.
+     * @param firstName The user's new first name.
      */
-    public void setFirstName(String first) {
-        this.firstName = first;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     /**
      * Gets user's last name.
+     *
      * @return lastName User's last name.
      */
     public String getLastName() {
@@ -60,16 +61,18 @@ public abstract class User {
     }
 
     /**
-     * Sets user last name.
-     * @param last The users new last name.
+     * Sets user's last name.
+     *
+     * @param lastName The user's new last name.
      */
-    public void setLastName(String last) {
-        this.lastName = last;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     /**
      * Gets the user's account username.
-     * @return username Username of users account.
+     *
+     * @return username The user's account username.
      */
     public String getUsername() {
         return username;
@@ -77,9 +80,9 @@ public abstract class User {
 
 
     /**
-     * Gets the users phone number.
+     * Gets the user's phone number.
      *
-     * @return phoneNumber the users phone number.
+     * @return phoneNumber The user's phone number.
      */
     public String getPhoneNumber() {
         return phoneNumber;
@@ -87,15 +90,17 @@ public abstract class User {
 
     /**
      * Sets the user's phone number.
-     * @param phone The users new phone number.
+     *
+     * @param phoneNumber The user's new phone number.
      */
-    public void setPhoneNumber(String phone) {
-        this.phoneNumber = phone;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     /**
      * Finds out if a phone number is valid.
-     * @return valid Whether the phone number is valid or not.
+     *
+     * @return valid True if valid, false otherwise.
      */
     private boolean checkValidPhoneNumber() {
         return true;
@@ -103,6 +108,7 @@ public abstract class User {
 
     /**
      * Gets the user's address.
+     *
      * @return address The user's address.
      */
     //Instead of string will be address type when class is created
@@ -112,15 +118,17 @@ public abstract class User {
 
     /**
      * Sets the user's address.
-     * @param adddress The new address of the user.
+     *
+     * @param address The new address of the user.
      */
     //Instead of string will be address type when class is created
-    public void setAddress(String adddress) {
-        this.address = adddress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     /**
      * Gets the path to the user's profile image.
+     *
      * @return profileImage The path to the user's profile image.
      */
     //Instead of string will be profile image type when class is created
@@ -129,8 +137,9 @@ public abstract class User {
     }
 
     /**
-     * Sets the user's profile image.
-     * @param imagePath The users new profile image.
+     * Sets the user's new profile image path.
+     *
+     * @param imagePath The user's new profile image path.
      */
     //Instead of string will be profile image type when class is created
     public void setProfileImagePath(String imagePath) {
@@ -138,8 +147,9 @@ public abstract class User {
     }
 
     /**
-     * Gets the date of when the account was created.
-     * @return The creation date of account.
+     * Gets the date when the account was created.
+     *
+     * @return The creation date of the account.
      */
     public String getAccountCreationDate() {
         //will do a date type of the current days date
@@ -147,7 +157,7 @@ public abstract class User {
     }
 
     /**
-     * Retrieves if the user has admin access.
+     * Says whether the user has admin access.
      */
     abstract boolean hasAdminAccess();
 =======
