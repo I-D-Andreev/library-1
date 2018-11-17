@@ -3,6 +3,7 @@ import java.util.Date;
 /**
  * Models a single history entry.
  * The most basic type of entry.
+ * @author Ivan Andreev
  */
 public class HistoryEntry {
     /**

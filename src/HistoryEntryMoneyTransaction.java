@@ -2,6 +2,7 @@ import java.util.Date;
 
 /**
  * Models a money transaction type of history entry.
+ * @author Ivan Andreev
  */
 public class HistoryEntryMoneyTransaction extends HistoryEntry {
     /**
