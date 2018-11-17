@@ -28,11 +28,12 @@
       </Label>
       <TableView fx:id="dashboardTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
         <columns>
-          <TableColumn fx:id="borrowedColumn" prefWidth="105.0" text="Borrowed Resources" />
-          <TableColumn fx:id="requestedColumn" prefWidth="140.0" text="Requested Resources" />
-            <TableColumn fx:id="reservedColumn" prefWidth="129.0" text="Reserved Resources" />
-            <TableColumn fx:id="overdueColumn" prefWidth="119.0" text="Overdue Resources" />
-            <TableColumn fx:id="transHistoryColumn" prefWidth="105.0" text="Transaction History" />
+            <TableColumn fx:id="userColumn" prefWidth="75.0" text="User" />
+          <TableColumn fx:id="borrowedColumn" prefWidth="77.0" text="Borrowed Resources" />
+          <TableColumn fx:id="requestedColumn" prefWidth="92.0" text="Requested Resources" />
+            <TableColumn fx:id="reservedColumn" prefWidth="108.0" text="Reserved Resources" />
+            <TableColumn fx:id="overdueColumn" prefWidth="146.0" text="Overdue Resources" />
+            <TableColumn fx:id="transHistoryColumn" prefWidth="175.0" text="Transaction History" />
         </columns>
       </TableView>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">

@@ -15,6 +15,9 @@ public class librarianDashboardController {
     @FXML // fx:id="dashboardTable"
     private TableView<?> dashboardTable; // Value injected by FXMLLoader
 
+    @FXML // fx:id="userColumn"
+    private TableColumn<?, ?> userColumn; // Value injected by FXMLLoader
+
     @FXML // fx:id="borrowedColumn"
     private TableColumn<?, ?> borrowedColumn; // Value injected by FXMLLoader
 
