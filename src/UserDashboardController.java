@@ -1,13 +1,13 @@
-/**
- * @author Sian Pike
- *
- * Controller class for the User Dashboard - this is where the events are handled when the user interacts with the UI.
- */
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+
+/**
+ * Controller class for the User Dashboard.
+ * Handles what happens when the user interacts with the UI.
+ * @author Sian Pike
+ */
 
 public class UserDashboardController {
 

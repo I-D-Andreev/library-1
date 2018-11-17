@@ -1,14 +1,14 @@
-/**
- * @author Sian Pike
- *
- * Controller class for the librarian dashboard - this is where the events are handled after user interaction
- * with the UI.
- */
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+
+/**
+ * Controller class for the Librarian Dashboard.
+ * Handles what happens when the user interacts with the UI.
+ * @author Sian Pike
+ */
 
 public class LibrarianDashboardController {
 
