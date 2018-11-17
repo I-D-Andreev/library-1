@@ -16,25 +16,25 @@ public abstract class User {
     /**
      * Creates a user profile with the basic information within all types of users.
      *
-     * @param first The user's first name.
-     * @param last  The user's last name.
+     * @param firstName The user's first name.
+     * @param lastName  The user's last name.
      * @param user  The user's account username.
      * @param phone The user's phone number.
      * @param imagePath The user's profile image.
-     * @param ad    The user's home address.
+     * @param address    The user's home address.
      */
-    public User(String first, String last, String user, String phone, String imagePath, String ad) {
-        this.firstName = first;
-        this.lastName = last;
+    public User(String firstName, String lastName, String user, String phone, String imagePath, String address) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.username = user;
         this.phoneNumber = phone;
         this.profileImagePath = imagePath;
-        this.address = ad;
+        this.address = address;
     }
 
     /**
      * Gets the user's first name.
-     * @return firstName user's first name.
+     * @return firstName User's first name.
      */
     public String getFirstName() {
         return firstName;
@@ -66,7 +66,7 @@ public abstract class User {
 
     /**
      * Gets the user's account username.
-     * @return username Username of user's account.
+     * @return username The user's account username.
      */
     public String getUsername() {
         return username;
@@ -75,7 +75,7 @@ public abstract class User {
 
     /**
      * Gets the user's phone number.
-     * @return phoneNumber the user's phone number.
+     * @return phoneNumber The user's phone number.
      */
     public String getPhoneNumber() {
         return phoneNumber;
@@ -83,7 +83,7 @@ public abstract class User {
 
     /**
      * Sets the user's phone number.
-     * @param phoneNumber The users new phone number.
+     * @param phoneNumber The user's new phone number.
      */
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
@@ -91,7 +91,7 @@ public abstract class User {
 
     /**
      * Finds out if a phone number is valid.
-     * @return valid Whether the phone number is valid or not.
+     * @return valid True if valid, false otherwise.
      */
     private boolean checkValidPhoneNumber() {
         return true;
@@ -108,11 +108,11 @@ public abstract class User {
 
     /**
      * Sets the user's address.
-     * @param adddress The new address of the user.
+     * @param address The new address of the user.
      */
     //Instead of string will be address type when class is created
-    public void setAddress(String adddress) {
-        this.address = adddress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     /**
@@ -143,7 +143,7 @@ public abstract class User {
     }
 
     /**
-     * Retrieves if the user has admin access.
+     * Says whether the user has admin access.
      */
     abstract boolean hasAdminAccess();
 }
