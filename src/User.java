@@ -12,7 +12,7 @@ public abstract class User {
 	private String lastName;
 	private String phoneNumber;
 	private String profileImagePath; //set as String for now until class been created
-	private String address; //set as String for now until Address class been created
+	private Address address;
 
 	/**
 	 * Creates a user profile with the basic information within all types of users.
@@ -24,7 +24,7 @@ public abstract class User {
 	 * @param imagePath The user's profile image.
 	 * @param address   The user's home address.
 	 */
-	public User(String firstName, String lastName, String user, String phone, String imagePath, String address) {
+	public User(String firstName, String lastName, String user, String phone, String imagePath, Address address) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.username = user;
@@ -111,8 +111,7 @@ public abstract class User {
 	 *
 	 * @return address The user's address.
 	 */
-	//Instead of string will be address type when class is created
-	public String getAddress() {
+	public Address getAddress() {
 		return address;
 	}
 
@@ -121,8 +120,7 @@ public abstract class User {
 	 *
 	 * @param address The new address of the user.
 	 */
-	//Instead of string will be address type when class is created
-	public void setAddress(String address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 
