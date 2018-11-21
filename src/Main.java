@@ -1,3 +1,5 @@
+import java.util.Date;
+
 class Main {
     public static void main(String[] args) {
         //System.out.println("Hello world");
@@ -6,6 +8,9 @@ class Main {
 
         System.out.println(ad1.toString());
         System.out.println("--------");
-        System.out.println(ad2.toString());
+        System.out.println(ad2);
+
+        Date d = new Date();
+        System.out.println(d);
     }
 }
