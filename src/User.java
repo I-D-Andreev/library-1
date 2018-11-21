@@ -5,13 +5,14 @@
  * @author Christina Meggs, Ivan Andreev
  */
 public abstract class User {
+	private static int nextID=0;
 	private final String username;
 
 	private String id;
 	private String firstName;
 	private String lastName;
 	private String phoneNumber;
-	private String profileImagePath; //set as String for now until class been created
+	private String profileImagePath;
 	private Address address;
 
 	/**
@@ -31,6 +32,16 @@ public abstract class User {
 		this.phoneNumber = phone;
 		this.profileImagePath = imagePath;
 		this.address = address;
+
+		this.setID();
+	}
+
+	/**
+	 * Gets the user's id.
+	 * @return id The user's id.
+	 */
+	public String getId() {
+		return id;
 	}
 
 	/**
@@ -158,4 +169,9 @@ public abstract class User {
 	 * Says whether the user has admin access.
 	 */
 	abstract boolean hasAdminAccess();
+
+	private void setID(){
+		this.id = this.firstName + "-" + nextID;
+		nextID++;
+	}
 }

@@ -6,7 +6,7 @@ import java.util.Date;
  * @author Christina Meggs
  */
 public class Librarian extends User {
-	//private static int nextID=0;
+	private static int nextID = 0;
 	private String staffNumber;
 	private Date employmentDate;
 
@@ -40,7 +40,8 @@ public class Librarian extends User {
 	 * Sets the staff number of the librarian.
 	 */
 	private void setStaffNumber() {
-
+		this.staffNumber = this.getId() + "-" + nextID;
+		nextID++;
 	}
 
 	/**
@@ -58,4 +59,5 @@ public class Librarian extends User {
 	public Date getEmploymentDate() {
 		return this.employmentDate;
 	}
+
 }
