@@ -1,24 +1,31 @@
+import java.util.Date;
+
 /**
  * This is used to make an account for a librarian
 <<<<<<< HEAD
  * @author Christina Meggs
  */
 public class Librarian extends User {
+	//private static int nextID=0;
 	private String staffNumber;
+	private Date employmentDate;
 
 	/**
 	 * Creates a librarian account with the inputted information.
-	 * @param staff The librarians staff number.
-	 * @param first The librarians first name.
-	 * @param last The librarians last name.
-	 * @param user The librarians account username.
-	 * @param phone The librarians phone number.
-	 * @param image The librarians profile image.
-	 * @param ad The librarians home address.
+	 * @param firstName The librarians first name.
+	 * @param lastName The librarians last name.
+	 * @param username The librarians account username.
+	 * @param phoneNumber The librarians phone number.
+	 * @param imagePath The librarians profile image.
+	 * @param address The librarians home address.
 	 */
-	public Librarian(String staff, String first, String last, String user, String phone, String image, String ad) {
-		super(first,last,user,phone,image,ad);
-		this.setStaffNumber(staff);
+	public Librarian(String firstName, String lastName,
+					 String username, String phoneNumber, String imagePath, Address address) {
+		super(firstName,lastName,username,phoneNumber,imagePath,address);
+		this.setStaffNumber();
+
+		// Sets the date to the current date.
+		this.employmentDate = new Date();
 	}
 
 	/**
@@ -31,10 +38,9 @@ public class Librarian extends User {
 
 	/**
 	 * Sets the staff number of the librarian.
-	 * @return staffNumber The librarian's new staff number.
 	 */
-	private void setStaffNumber(String staffNumber) {
-		this.staffNumber = staffNumber;
+	private void setStaffNumber() {
+
 	}
 
 	/**
@@ -47,10 +53,9 @@ public class Librarian extends User {
 
 	/**
 	 * Gets the employment date of the librarian.
-	 * @return Librarian's employment date.
+	 * @return employmentDate Librarian's employment date.
 	 */
-	//needs to be completed, will be date class
-	public String getEmploymentDate() {
-		return "date";
+	public Date getEmploymentDate() {
+		return this.employmentDate;
 	}
 }
