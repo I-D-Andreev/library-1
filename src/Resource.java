@@ -17,11 +17,11 @@ public abstract class Resource {
     }
 
     public String getUniqueID() {
-        return uniqueID;
+        return this.uniqueID;
     }
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     public void setTitle(String title) {
@@ -29,7 +29,7 @@ public abstract class Resource {
     }
 
     public int getYear() {
-        return year;
+        return this.year;
     }
 
     public void setYear(int year) {
@@ -37,7 +37,7 @@ public abstract class Resource {
     }
 
     public String getThumbnailImagePath() {
-        return thumbnailImagePath;
+        return this.thumbnailImagePath;
     }
 
     public void setThumbnailImagePath(String thumbnailImagePath) {
@@ -47,6 +47,7 @@ public abstract class Resource {
     public abstract double getMaxFineAmount();
 
     public abstract double getLateReturnFinePerDay();
+
     /*
     public CopyManager getCopyManager(){
         return copyManager;
