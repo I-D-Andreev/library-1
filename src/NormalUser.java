@@ -16,7 +16,8 @@ public class NormalUser extends User {
      * @param profileImagePath The users profile image.
      * @param address          The users home address.
      */
-    public NormalUser(String firstName, String lastName, String username, String phoneNumber, String profileImagePath, String address) {
+    public NormalUser(String firstName, String lastName, String username,
+                      String phoneNumber, String profileImagePath, Address address) {
         super(firstName, lastName, username, phoneNumber, profileImagePath, address);
         this.balance = 0;
     }
