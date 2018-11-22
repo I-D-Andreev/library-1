@@ -10,16 +10,16 @@ import java.util.Date;
 public class Main extends Application {
 
     public static void main(String[] args) {
-        //System.out.println("Hello world");
-        Address ad1 = new Address("Bay Campus, Fabian Way, Crymlyn Burrows", "Swansea", "UK", "SA1 8EP");
+//        //System.out.println("Hello world");
+//        Address ad1 = new Address("Bay Campus, Fabian Way, Crymlyn Burrows", "Swansea", "UK", "SA1 8EP");
         Address ad2 = new Address("Bay Campus, Fabian Way", "Crymlyn Burrows", "Swansea", "UK", "SA1 8EP");
-
-        System.out.println(ad1.toString());
-        System.out.println("--------");
-        System.out.println(ad2);
-
-        Date d = new Date();
-        System.out.println(d);
+//
+//        System.out.println(ad1.toString());
+//        System.out.println("--------");
+//        System.out.println(ad2);
+//
+//        Date d = new Date();
+//        System.out.println(d);
 
         //Launches the application - do not remove.
         launch(args);
@@ -35,16 +35,22 @@ public class Main extends Application {
         Parent root = null;
 
         try {
-
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("Login.fxml"));
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("resources/Login.fxml"));
 
         } catch (IOException e) {
             //Changing later
             e.printStackTrace();
+        } catch(Exception e) {
+            e.printStackTrace();
+            System.exit(0);
         }
+
 
         primaryStage.setScene(new Scene(root));
         primaryStage.setTitle("TaweLib - Login");
         primaryStage.show();
+
+        // something might need to be closed here
+
     }
 }
