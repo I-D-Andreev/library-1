@@ -21,6 +21,7 @@ public class Main extends Application {
         Date d = new Date();
         System.out.println(d);
 
+        //Launches the application - do not remove.
         launch(args);
     }
 
