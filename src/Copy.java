@@ -54,16 +54,16 @@ public class Copy {
 
     public void setDueDate() {
         // get the current date and add one day, to get the date tomorrow
-        Date tomorrowDate = new Date();
-        LocalDateTime.from(tomorrowDate.toInstant()).plusDays(1);
+       // Date tomorrowDate = new Date();
+       // LocalDateTime.from(tomorrowDate.toInstant()).plusDays(1);
 
         //add the loan duration to the date the copy was borrowed
         // to get the other possible due date
-        Date dueDateLoan = new Date(borrowedOn.getTime());
-        LocalDateTime.from(dueDateLoan.toInstant()).plusDays(loanDurationInDays);
+        //Date dueDateLoan = new Date(borrowedOn.getTime());
+        //LocalDateTime.from(dueDateLoan.toInstant()).plusDays(loanDurationInDays);
 
         // The due date should be the bigger of the two
-        this.dueDate = (tomorrowDate.compareTo(dueDateLoan) == 1) ? tomorrowDate : dueDateLoan;
+        //this.dueDate = (tomorrowDate.compareTo(dueDateLoan) == 1) ? tomorrowDate : dueDateLoan;
 
     }
 
