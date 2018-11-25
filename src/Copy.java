@@ -90,20 +90,12 @@ public class Copy {
 
 
     public boolean isAvailable() {
-        if (this.borrowedBy == null && this.reservedFor == null) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.borrowedBy == null && this.reservedFor == null;
     }
 
 
     public boolean shouldBeReturned() {
-        if (this.dueDate != null) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.dueDate != null;
     }
 
     private void nullifyValues() {
