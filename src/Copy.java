@@ -113,8 +113,16 @@ public class Copy {
         return copyOf;
     }
 
+    // what happens when a copy has just been returned
+    public void returned(){
+        nullifyValues();
+        // might need to add more
+    }
+
     private void setUniqueCopyID() {
         this.uniqueCopyID = this.copyOf.getUniqueID() + nextId;
         nextId++;
     }
+
+
 }
