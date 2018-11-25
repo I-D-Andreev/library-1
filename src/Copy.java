@@ -113,16 +113,46 @@ public class Copy {
         return copyOf;
     }
 
-    // what happens when a copy has just been returned
-    public void returned(){
+    // What happens when a copy has just been returned.
+    public void returned(NormalUser byUser){
         nullifyValues();
-        // might need to add more
+        this.loanHistory.addEntry(new HistoryEntryItemTransaction(new Date(), false, byUser));
+
+        if(shouldBeFined()){
+            giveFineToUser(byUser);
+        }
+
+        // Notify the copy's copy manager that a new copy is available.
+        this.copyOf.getCopyManager().newAvailableCopyEvent();
     }
 
-    public void loanCopyTo(User toUser){
+
+    private boolean shouldBeFined(){
+        Date today = new Date();
+        // If the item is overdue, the user should be fined.
+        return (today.compareTo(this.dueDate) == 1);
+    }
+
+    private void giveFineToUser(NormalUser user) {
+        Date today = new Date();
+        // 3600 seconds in an hour, 24 hours a day, multiplied by 1000 to convert to milliseconds
+        final long oneDayInMilliseconds = 3600 * 24 * 1000;
+
+        long numberOfDaysOverdue = (today.getTime() - this.dueDate.getTime()) / oneDayInMilliseconds ;
+
+        double fineAmount = Math.min(this.copyOf.getMaxFineAmount(),
+                this.copyOf.getLateReturnFinePerDay() * numberOfDaysOverdue);
+
+        user.giveFine(fineAmount);
+        user.getTransactionHistory().addEntry(new HistoryEntryFine(today, fineAmount,
+                (int)numberOfDaysOverdue, this));
+    }
+
+    public void loanCopyTo(NormalUser toUser){
         this.borrowedOn = new Date();
         this.borrowedBy = toUser;
         this.loanHistory.addEntry(new HistoryEntryItemTransaction(borrowedOn, true, toUser));
+        toUser.getBorrowedCopies().add(this);
     }
 
     private void setUniqueCopyID() {
