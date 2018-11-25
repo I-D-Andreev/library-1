@@ -119,6 +119,12 @@ public class Copy {
         // might need to add more
     }
 
+    public void loanCopyTo(User toUser){
+        this.borrowedOn = new Date();
+        this.borrowedBy = toUser;
+        this.loanHistory.addEntry(new HistoryEntryItemTransaction(borrowedOn, true, toUser));
+    }
+
     private void setUniqueCopyID() {
         this.uniqueCopyID = this.copyOf.getUniqueID() + nextId;
         nextId++;
