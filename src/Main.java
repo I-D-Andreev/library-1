@@ -5,25 +5,20 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Date;
 
 public class Main extends Application {
 
     public static void main(String[] args) {
-//        //System.out.println("Hello world");
-//        Address ad1 = new Address("Bay Campus, Fabian Way, Crymlyn Burrows", "Swansea", "UK", "SA1 8EP");
-        Address ad2 = new Address("Bay Campus, Fabian Way", "Crymlyn Burrows", "Swansea", "UK", "SA1 8EP");
-//
-//        System.out.println(ad1.toString());
-//        System.out.println("--------");
-//        System.out.println(ad2);
-//
-//        Date d = new Date();
-//        System.out.println(d);
-
         //Launches the application - do not remove.
-       // System.out.println("asdasdas");
         launch(args);
+
+//        Date today = new Date();
+//        System.out.println(today);
+//        today.setTime(today.getTime() + (3600*24*1000));
+//        System.out.println(today);
     }
 
     /**
