@@ -1,4 +1,3 @@
-import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Copy {
@@ -114,8 +113,9 @@ public class Copy {
     }
 
     // What happens when a copy has just been returned.
-    public void returned(NormalUser byUser){
+    public void returned(){
         nullifyValues();
+        NormalUser byUser = (NormalUser)this.borrowedBy;
 
         this.loanHistory.addEntry(new HistoryEntryItemTransaction(new Date(), false, byUser));
         byUser.getBorrowedCopies().remove(this);
