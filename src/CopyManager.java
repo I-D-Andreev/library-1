@@ -79,7 +79,7 @@ public class CopyManager {
         }
     }
 
-    public boolean loanCopy(User toUser) {
+    public boolean loanCopy(NormalUser toUser) {
         if (this.getNumOfAvailailableCopies() == 0) {
             return false;
         }
@@ -97,7 +97,7 @@ public class CopyManager {
     }
 
 
-    public void reserveCopy(User forUser) {
+    public void reserveCopy(NormalUser forUser) {
         if (!loanCopy(forUser)) {
             this.requestQueue.add(forUser);
             this.setDueDateOfOldestBorrowedCopy();
