@@ -52,18 +52,22 @@ public class Copy {
         return dueDate;
     }
 
+    // TODO: test this method
     public void setDueDate() {
+        // 3600 seconds in an hour, 24 hours a day, multiplied by 1000 to convert to milliseconds
+        final long oneDayInMilliseconds = 3600 * 24 * 1000;
+
         // get the current date and add one day, to get the date tomorrow
-       // Date tomorrowDate = new Date();
-       // LocalDateTime.from(tomorrowDate.toInstant()).plusDays(1);
+        Date tomorrowDate = new Date();
+        tomorrowDate.setTime(tomorrowDate.getTime() + oneDayInMilliseconds);
 
         //add the loan duration to the date the copy was borrowed
         // to get the other possible due date
-        //Date dueDateLoan = new Date(borrowedOn.getTime());
-        //LocalDateTime.from(dueDateLoan.toInstant()).plusDays(loanDurationInDays);
+        Date dueDateLoan = new Date(borrowedOn.getTime());
+        dueDateLoan.setTime(dueDateLoan.getTime() + loanDurationInDays * oneDayInMilliseconds);
 
         // The due date should be the bigger of the two
-        //this.dueDate = (tomorrowDate.compareTo(dueDateLoan) == 1) ? tomorrowDate : dueDateLoan;
+        this.dueDate = (tomorrowDate.compareTo(dueDateLoan) == 1) ? tomorrowDate : dueDateLoan;
 
     }
 
