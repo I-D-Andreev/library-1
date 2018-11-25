@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  * This is used to make an account for a normal user
  *
@@ -5,6 +8,8 @@
  */
 public class NormalUser extends User {
     private double balance;
+    private ArrayList<Copy>  borrowedCopies;
+    private History transactionHistory;
 
     /**
      * Creates a normal users account with the inputted information.
@@ -20,6 +25,8 @@ public class NormalUser extends User {
                       String phoneNumber, String profileImagePath, Address address) {
         super(firstName, lastName, username, phoneNumber, profileImagePath, address);
         this.balance = 0;
+        this.transactionHistory = new History();
+        this.borrowedCopies = new ArrayList<>();
     }
 
 
@@ -38,8 +45,8 @@ public class NormalUser extends User {
      *
      * @param amount The amount of the fine.
      */
-    //need to be done through a librarian?
     public void giveFine(double amount) {
+        this.balance += amount;
     }
 
     /**
@@ -48,8 +55,12 @@ public class NormalUser extends User {
      *
      * @param amount The amount the user is paying off.
      */
-    //why boolean? needs to be done through a librarian?
     public boolean payFines(double amount) {
+        if(amount < 0 || amount > this.balance){
+            return false;
+        }
+
+        this.balance -= amount;
         return true;
     }
 
@@ -67,9 +78,12 @@ public class NormalUser extends User {
      *
      * @return Transaction history of the user.
      */
-    //will be history instead string, done just so compiles
-    public String getTransactionHistory() {
-        return "";
+    public History getTransactionHistory() {
+        return transactionHistory;
+    }
+
+    public ArrayList<Copy> getBorrowedCopies() {
+        return borrowedCopies;
     }
 
     /**
@@ -78,8 +92,20 @@ public class NormalUser extends User {
      * @return true if a user can borrow a copy, otherwise - false.
      */
     public boolean canBorrowCopy() {
-        return false;
+        return !(balance > 0 || hasOverdueCopies());
     }
+
+    private boolean hasOverdueCopies(){
+        boolean hasOverdueCopies = false;
+        Date today = new Date();
+        for(Copy copy : borrowedCopies){
+            if(copy.getDueDate() != null && copy.getDueDate().compareTo(today) == -1){
+                hasOverdueCopies =  true;
+            }
+        }
+        return hasOverdueCopies;
+    }
+
 
     /**
      * Gets the number of books borrowed by the users inbetween dates.
@@ -89,7 +115,7 @@ public class NormalUser extends User {
      * @return Number of books borrowed between the start and the end date.
      */
     //needs to be completed, string will be Date
-    public int getNumberOfBooksBorrowedBetween(String fromDate, String toDate) {
+    public int getNumberOfBooksBorrowedBetween(Date fromDate, Date toDate) {
         return 0;
     }
 }
