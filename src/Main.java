@@ -22,6 +22,7 @@ public class Main extends Application {
 //        System.out.println(d);
 
         //Launches the application - do not remove.
+       // System.out.println("asdasdas");
         launch(args);
     }
 
