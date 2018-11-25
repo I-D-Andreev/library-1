@@ -3,13 +3,13 @@ import java.util.ArrayList;
 /**
  * The Class ResourceManager.
  * 
- * @author Steven Lewkowicz
+ * @author Steven Lewkowicz, Christina Meggs
  */
 
 public class ResourceManager {
 
-	private ArrayList<Resource> resources = new ArrayList<Resource>();
-	
+	private ArrayList<Resource> resources = new ArrayList<>();
+
 	public ResourceManager() {
 		selfPopulate();
 	}
@@ -31,15 +31,23 @@ public class ResourceManager {
 	}
 	
 	public void removeResource(Resource resource) {
-		
+		resources.remove(resource);
 	}
 	
 	public void removeResource(String resourceId) {
-		
+		int index = -1;
+		for (int i = 0;i<resources.size();i++) {
+			if (resources.get(i).getUniqueID().equals(resourceId)) {
+				index = i;
+			}
+		}
+		if(index != -1) {
+			resources.remove(index);
+		}
 	}
 	
 	public void removeCopy(Copy copy) {
-		
+
 	}
 	
 	public void removeCopy(String copyId) {
