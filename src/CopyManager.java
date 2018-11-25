@@ -51,18 +51,27 @@ public class CopyManager {
 
     public void addCopy(Copy copy) {
         this.listOfAllCopies.add(copy);
+        this.newAvailableCopyEvent();
     }
 
     //Adds copy with its parameters, instead of copy object.
     public void addCopy(int loanDuration) {
         this.listOfAllCopies.add(new Copy(loanDuration, this.copyManagerOf));
+        this.newAvailableCopyEvent();
     }
 
     public void removeCopy(Copy copy) {
+        if(!copy.isAvailable()) {
+            return; // error?
+        }
         this.listOfAllCopies.remove(copy);
     }
 
     public void removeCopyById(Copy copy) {
+        if(!copy.isAvailable()){
+            return; // error?
+        }
+
         for (int i = 0; i <= this.listOfAllCopies.size(); i++) {
             if (this.listOfAllCopies.get(i).getUniqueCopyID().equals(copy.getUniqueCopyID())) {
                 this.listOfAllCopies.remove(i);
@@ -74,8 +83,15 @@ public class CopyManager {
         if (this.getNumOfAvailailableCopies() == 0) {
             return false;
         }
+        // We look if there is a reserved copy for the User.
+        for(Copy copy: listOfAllCopies){
+            if(copy.getReservedFor().equals(toUser)){
+                copy.loanCopyTo(toUser);
+                return true;
+            }
+        }
 
-        //We loan the first available copy.
+        // We loan the first available copy.
         this.getListOfAvailableCopies().get(0).loanCopyTo(toUser);
         return true;
     }
