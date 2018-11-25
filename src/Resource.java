@@ -56,4 +56,12 @@ public abstract class Resource {
         this.copyManager = copyManager;
     }
 
+    public boolean equals(Object obj) {
+        if (obj == null) return false;
+        if (obj == this) return true;
+        if (!(obj instanceof Resource)) return false;
+        Resource o = (Resource) obj;
+        return o.getUniqueID().equals(this.getUniqueID());
+    }
+
 }
