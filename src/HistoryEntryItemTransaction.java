@@ -14,7 +14,7 @@ public class HistoryEntryItemTransaction extends HistoryEntry {
     /**
      * The person who borrowed the item.
      */
-    private String borrowedBy; // should be User
+    private User borrowedBy; // should be User
 
     /**
      * Creates an item transaction type of history entry.
@@ -22,7 +22,7 @@ public class HistoryEntryItemTransaction extends HistoryEntry {
      * @param isBorrowed True if the item was borrowed, false if it was returned.
      * @param borrowedByUser The user who borrowed the item.
      */
-    public HistoryEntryItemTransaction(Date date, boolean isBorrowed, String borrowedByUser) {
+    public HistoryEntryItemTransaction(Date date, boolean isBorrowed, User borrowedByUser) {
         super(date);
         this.isBorrowed = isBorrowed;
         this.borrowedBy = borrowedByUser;
@@ -36,7 +36,7 @@ public class HistoryEntryItemTransaction extends HistoryEntry {
         return isBorrowed;
     }
 
-//    public User getBorrowedBy() {
-//        return borrowedBy;
-//    }
+    public User getBorrowedBy() {
+        return borrowedBy;
+    }
 }

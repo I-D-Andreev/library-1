@@ -12,8 +12,7 @@ public abstract class Resource {
         this.title = title;
         this.year = year;
         this.thumbnailImagePath = thumbnailImagePath;
-
-        // copyManager = new CopyManager(this?);
+        this.copyManager = new CopyManager(this);
     }
 
     public String getUniqueID() {
@@ -53,16 +52,8 @@ public abstract class Resource {
         return copyManager;
     }
 
-    public void setCopyManager(CopyManager copymanager){
-        this.copyManager = copymanager;
+    public void setCopyManager(CopyManager copyManager){
+        this.copyManager = copyManager;
     }
 
-
-    public boolean equals(Object obj) {
-        if (obj == null) return false;
-        if (obj == this) return true;
-        if (!(obj instanceof Resource)) return false;
-        Resource o = (Resource) obj;
-        return o.getUniqueID().equals(this.getUniqueID());
-    }
 }

@@ -9,7 +9,7 @@ public class HistoryEntryFine extends HistoryEntryMoneyTransaction {
     /**
      * The item that is overdue and caused the fine.
      */
-    private String item; // should be Copy type
+    private Copy item;
 
     /**
      * The number of days the item was overdue.
@@ -24,7 +24,7 @@ public class HistoryEntryFine extends HistoryEntryMoneyTransaction {
      * @param daysOverdue The number of days the item is overdue.
      * @param item        The item that was not returned on time.
      */
-    public HistoryEntryFine(Date date, double amount, int daysOverdue, String item) {
+    public HistoryEntryFine(Date date, double amount, int daysOverdue, Copy item) {
         super(date, amount);
         this.daysOverdue = daysOverdue;
         this.item = item;
@@ -39,7 +39,7 @@ public class HistoryEntryFine extends HistoryEntryMoneyTransaction {
         return daysOverdue;
     }
 
-//    public Copy getCopy() {
-//        return item;
-//    }
+    public Copy getItem() {
+        return item;
+    }
 }

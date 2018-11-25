@@ -2,17 +2,16 @@ import java.util.ArrayList;
 
 public class CopyManager {
 
-    private ArrayList<User> requestQueue = new ArrayList<>();
-    private ArrayList<Copy> listOfAllCopies = new ArrayList<>();
+    ArrayList<User> requestQueue = new ArrayList<>();
+    ArrayList<Copy> listOfAllCopies = new ArrayList<>();
+    Resource copyManagerOf;
 
-    //asldkaslkdaslkdaslkdalskdlkdalk
-    //todo initialiser
-    CopyManager() {
-
+    public CopyManager(Resource copyManagerOf) {
+        this.copyManagerOf = copyManagerOf;
     }
 
     public boolean isQueueEmpty() {
-        return false;
+        return requestQueue.size() == 0;
     }
 
     public User getFirstUserInQueue() {
@@ -27,57 +26,52 @@ public class CopyManager {
         this.requestQueue.add(user);
     }
 
-    /*
-    //todo need date
-    public void setDueDateOfOldestBorrowedCopy(){
-        Date x; //Used as counter
-        for (int i; i<=this.listOfAllCopies.size();i++)
-        if (this.listOfAllCopies.get(i).getBorrowedOn())
-    }
-*/
     public boolean isUserInQueue(User user) {
-        boolean x = false;
-        for (int i = 0; i <= this.requestQueue.size(); i++) {
-            if (this.requestQueue.get(i).getId() == user.getId()) {
-                x = true;
-            } else
-                x = false;
-        }
-        return x;
+        return requestQueue.indexOf(user) != -1;
     }
 
     public ArrayList<Copy> getListOfAllCopies() {
         return this.listOfAllCopies;
     }
 
-    public int getNumOfAvailailableCopies() {
-        int x = 0;
-        for (int i = 0; i <= this.listOfAllCopies.size(); i++) {
-            x = i;
+    public ArrayList<Copy> getListOfAvailableCopies() {
+        ArrayList<Copy> availableCopies = new ArrayList<>();
+
+        for (int i = 0; i < listOfAllCopies.size(); i++) {
+            if (listOfAllCopies.get(i).isAvailable()) {
+                availableCopies.add(listOfAllCopies.get(i));
+            }
         }
-        return x;
+        return availableCopies;
+    }
+
+    public int getNumOfAvailailableCopies() {
+        return this.getListOfAvailableCopies().size();
     }
 
     public void addCopy(Copy copy) {
         this.listOfAllCopies.add(copy);
+        this.newAvailableCopyEvent();
     }
 
-    // dont get what this method is supposed to do
-    /*
-    public void addCopy(int loanDuration, Resource copyOf){
-        this.listOfAllCopies.add());
+    //Adds copy with its parameters, instead of copy object.
+    public void addCopy(int loanDuration) {
+        this.listOfAllCopies.add(new Copy(loanDuration, this.copyManagerOf));
+        this.newAvailableCopyEvent();
     }
-    */
+
     public void removeCopy(Copy copy) {
-        for (int i = 0; i <= this.listOfAllCopies.size(); i++) {
-            if (this.listOfAllCopies.get(i).equals(copy)) {
-                this.listOfAllCopies.remove(i);
-            }
+        if(!copy.isAvailable()) {
+            return; // error?
         }
+        this.listOfAllCopies.remove(copy);
     }
 
-    //wrong input, check uml
     public void removeCopyById(Copy copy) {
+        if(!copy.isAvailable()){
+            return; // error?
+        }
+
         for (int i = 0; i <= this.listOfAllCopies.size(); i++) {
             if (this.listOfAllCopies.get(i).getUniqueCopyID().equals(copy.getUniqueCopyID())) {
                 this.listOfAllCopies.remove(i);
@@ -85,25 +79,65 @@ public class CopyManager {
         }
     }
 
-    public void reserveCopy(User user) {
-        for (int i = 0; i <= this.listOfAllCopies.size(); i++) {
-            if (this.listOfAllCopies.get(i).isAvailable() == true) {
-                this.listOfAllCopies.get(i).setReservedFor(user);
-                break;
-            } else
-                addUserToTheQueue(user);
+    public boolean loanCopy(User toUser) {
+        if (this.getNumOfAvailailableCopies() == 0) {
+            return false;
+        }
+        // We look if there is a reserved copy for the User.
+        for(Copy copy: listOfAllCopies){
+            if(copy.getReservedFor().equals(toUser)){
+                copy.loanCopyTo(toUser);
+                return true;
+            }
+        }
+
+        // We loan the first available copy.
+        this.getListOfAvailableCopies().get(0).loanCopyTo(toUser);
+        return true;
+    }
+
+
+    public void reserveCopy(User forUser) {
+        if (!loanCopy(forUser)) {
+            this.requestQueue.add(forUser);
+            this.setDueDateOfOldestBorrowedCopy();
         }
     }
 
-    //is this right?
-    public boolean loanCopy(User user) {
-        boolean x = false;
-        for (int i = 0; i <= this.listOfAllCopies.size(); i++) {
-            if (this.listOfAllCopies.get(i).getReservedFor() == user) {
-                x = true;
-            } else
-                x = false;
+    // Find the oldest borrowed copy with no due date set
+    // and set its due date.
+    private void setDueDateOfOldestBorrowedCopy() {
+        // ** There is the possibility that all copies' due dates are already set.
+        Copy oldestCopy = null;
+        for (Copy copy : listOfAllCopies) {
+            if (oldestCopy == null && copy.getDueDate() != null && copy.getBorrowedOn() != null) {
+                oldestCopy = copy;
+            } else if (oldestCopy != null && copy.getBorrowedOn() != null) {
+                // if copy is older than the oldest copy
+                if (copy.getBorrowedOn().compareTo(oldestCopy.getBorrowedOn()) == -1) {
+                    oldestCopy = copy;
+                }
+            }
         }
-        return x;
+
+        if (oldestCopy != null) {
+            oldestCopy.setDueDate();
+        }
+    }
+
+
+    // Called when a copy is returned.
+    // Decides what to do with said copy.
+    public void newAvailableCopyEvent() {
+        ArrayList<Copy> availableCopies = this.getListOfAvailableCopies();
+        int numberOfCopies = availableCopies.size();
+        int numberOfUsers = requestQueue.size();
+
+        // Reserve as many available copies as possible.
+        for (int i = 0; i < Math.min(numberOfUsers, numberOfCopies); i++) {
+            // Reserve a copy for the first user in the request queue.
+            availableCopies.get(i).setReservedFor(requestQueue.get(0));
+            this.removeFirstUserInQueue();
+        }
     }
 }
