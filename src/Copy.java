@@ -116,7 +116,9 @@ public class Copy {
     // What happens when a copy has just been returned.
     public void returned(NormalUser byUser){
         nullifyValues();
+
         this.loanHistory.addEntry(new HistoryEntryItemTransaction(new Date(), false, byUser));
+        byUser.getBorrowedCopies().remove(this);
 
         if(shouldBeFined()){
             giveFineToUser(byUser);
