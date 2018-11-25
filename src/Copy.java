@@ -3,6 +3,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 public class Copy {
 
+    //asdasojdashddasojdasojdoasjosaijd
     private String uniqueCopyID;
     private Resource copyOf;
     private User borrowedBy;
