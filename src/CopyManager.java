@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class CopyManager {
 
-    ArrayList<User> requestQueue = new ArrayList<>();
-    ArrayList<Copy> listOfAllCopies = new ArrayList<>();
+    private ArrayList<User> requestQueue = new ArrayList<>();
+    private ArrayList<Copy> listOfAllCopies = new ArrayList<>();
 
     //asldkaslkdaslkdaslkdalskdlkdalk
     //todo initialiser
@@ -76,6 +76,7 @@ public class CopyManager {
         }
     }
 
+    //wrong input, check uml
     public void removeCopyById(Copy copy) {
         for (int i = 0; i <= this.listOfAllCopies.size(); i++) {
             if (this.listOfAllCopies.get(i).getUniqueCopyID().equals(copy.getUniqueCopyID())) {

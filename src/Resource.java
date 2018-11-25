@@ -5,7 +5,7 @@ public abstract class Resource {
     private String title;
     private int year;
     private String thumbnailImagePath;
-    //private CopyManager copyManager;
+    private CopyManager copyManager;
 
     public Resource(String uniqueID, String title, int year, String thumbnailImagePath) {
         this.uniqueID = uniqueID;
@@ -48,15 +48,15 @@ public abstract class Resource {
 
     public abstract double getLateReturnFinePerDay();
 
-    /*
+
     public CopyManager getCopyManager(){
         return copyManager;
     }
 
-    public void setCopyManager(Copymanager copymanager){
-        this.copymanager=copymanager;
+    public void setCopyManager(CopyManager copymanager){
+        this.copyManager = copymanager;
     }
-     */
+
 
     public boolean equals(Object obj) {
         if (obj == null) return false;

@@ -124,5 +124,12 @@ public class Copy {
         nextId++;
     }
 
+    public boolean equals(Object obj) {
+        if (obj == null) return false;
+        if (obj == this) return true;
+        if (!(obj instanceof Copy)) return false;
+        Copy o = (Copy) obj;
+        return o.getUniqueCopyID().equals(this.getUniqueCopyID());
+    }
 
 }

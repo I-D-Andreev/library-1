@@ -174,4 +174,12 @@ public abstract class User {
 		this.id = this.firstName + "-" + nextID;
 		nextID++;
 	}
+
+	public boolean equals(Object obj) {
+		if (obj == null) return false;
+		if (obj == this) return true;
+		if (!(obj instanceof User)) return false;
+		User o = (User) obj;
+		return o.getId().equals(this.getId());
+	}
 }

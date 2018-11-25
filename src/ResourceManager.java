@@ -23,85 +23,107 @@ public class ResourceManager {
 	}
 	
 	public void addResource(Resource resource) {
-		resources.add(resource);
+		this.resources.add(resource);
 	}
-	
+
+	//thought resource manager manages resources not their copies
+	//dont get how this method works
 	public void addCopyOfResource(int loanDuration, Resource resource) {
 		
 	}
-	
+
 	public void removeResource(Resource resource) {
-		resources.remove(resource);
+		this.resources.remove(resource);
 	}
 	
 	public void removeResource(String resourceId) {
 		int index = -1;
-		for (int i = 0;i<resources.size();i++) {
-			if (resources.get(i).getUniqueID().equals(resourceId)) {
+		for (int i = 0;i<this.resources.size();i++) {
+			if (this.resources.get(i).getUniqueID().equals(resourceId)) {
 				index = i;
 			}
 		}
 		if(index != -1) {
-			resources.remove(index);
+			this.resources.remove(index);
 		}
 	}
-	
-	public void removeCopy(Copy copy) {
 
-	}
-	
-	public void removeCopy(String copyId) {
-		
-	}
-	
 	public void editResource(Resource resource, Resource newResource) {
-		
+		this.resources.remove(resource);
+		this.resources.add(newResource);
 	}
 	
 	public Resource getResourceById(String resourceId) {
-		return null;
+		Resource r = null;
+		for (Resource resource : resources) {
+			if (resource.getUniqueID().equals(resourceId)) {
+				r = resource;
+			}
+		}
+		return r;
 	}
-	
-	public Copy getCopyById(String copyId) {
-		return null;
-	}
-	
-	public void loanCopy(Resource reource, User toUser) {
-		
-	}
-	
-	public void reserveCopy(Resource resource, User forUser) {
-		
-	}
-	
-	public void returnCopy(Copy copy, User user) {
-		
-	}
-	
+
 	public ArrayList<Resource> getAllResources() {
-		return null;
+		return resources;
 	
 	}
-	
-	public ArrayList<Copy> getAllCopies() {
-		return null;
-	}
-	
-	public ArrayList<Copy> getBorriedCopiesBy(User user) {
-		return null;
-	}
-	
+
+	//Not sure how to implement
 	public ArrayList<Resource> getRequestedResourcesBy(User user) {
-		return null;
+		ArrayList<Resource> requested = new ArrayList<>();
+
+		for (Resource resource : resources) {
+			ArrayList<Copy> copyList = resource.getCopyManager().getListOfAllCopies();
+
+			for (Copy copy : copyList) {
+				if (copy.getReservedFor().equals(user)) {
+					requested.add(resource);
+				}
+			}
+		}
+		return requested;
 	}
-	
-	public ArrayList<Copy> getReservedCopiesFor(User user) {
-		return null;
-	}
-	
-	public ArrayList<Copy> getOverdueCopies() {
-		return null;
-	}
-	
+
+	/**
+	 * these not in copy manager instead of resource manager?
+	 public void removeCopy(Copy copy) {
+	 }
+
+	 public void removeCopy(String copyId) {
+	 }
+
+	 public Copy getCopyById(String copyId) {
+	 return null;
+	 }
+
+	 public void loanCopy(Resource reource, User toUser) {
+
+	 }
+
+	 public void reserveCopy(Resource resource, User forUser) {
+
+	 }
+
+	 public void returnCopy(Copy copy, User user) {
+
+	 }
+
+	 public ArrayList<Copy> getAllCopies() {
+	 return null;
+	 }
+
+	 public ArrayList<Copy> getReservedCopiesFor(User user) {
+	 return null;
+	 }
+
+	 public ArrayList<Copy> getOverdueCopies() {
+	 return null;
+	 }
+
+	 public ArrayList<Copy> getBorriedCopiesBy(User user) {
+	 return null;
+	 }
+
+	 **/
 	
 }
