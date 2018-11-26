@@ -45,8 +45,5 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root));
         primaryStage.setTitle("TaweLib - Login");
         primaryStage.show();
-
-        // something might need to be closed here
-
     }
 }

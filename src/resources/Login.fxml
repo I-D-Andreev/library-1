@@ -10,15 +10,14 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-
-<GridPane prefHeight="126.0" prefWidth="334.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
+<GridPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
    <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="266.0" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="129.0" minWidth="10.0" prefWidth="68.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="532.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="305.0" minWidth="0.0" prefWidth="68.0" />
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="322.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="361.0" minHeight="0.0" prefHeight="343.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
       <TextField fx:id="usernameTextField" GridPane.rowIndex="1">
@@ -26,7 +25,7 @@
             <Insets left="20.0" right="20.0" />
          </GridPane.margin>
       </TextField>
-      <Button fx:id="loginButton" mnemonicParsing="false" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Button fx:id="loginButton" mnemonicParsing="false" onAction="#loginButtonClicked" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
