@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -124,11 +125,18 @@ public class ResourceManager {
 
         return listOfAllCopies;
     }
-/**
- public ArrayList<Copy> getReservedCopiesFor(User user) {
- return null;
- }
 
+    public ArrayList<Copy> getReservedCopiesFor(User user) {
+        ArrayList<Copy> reservedCopies = new ArrayList<>();
+        for(Copy copy: this.getAllCopies()){
+            if(copy.getReservedFor().getId().equals(user.getId())){
+                reservedCopies.add(copy);
+            }
+        }
+
+        return reservedCopies;
+    }
+/**
  public ArrayList<Copy> getOverdueCopies() {
  return null;
  }
