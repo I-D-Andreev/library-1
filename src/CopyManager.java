@@ -2,12 +2,14 @@ import java.util.ArrayList;
 
 public class CopyManager {
 
-    private ArrayList<User> requestQueue = new ArrayList<>();
-    private ArrayList<Copy> listOfAllCopies = new ArrayList<>();
+    private ArrayList<User> requestQueue;
+    private ArrayList<Copy> listOfAllCopies;
     private Resource copyManagerOf;
 
     public CopyManager(Resource copyManagerOf) {
         this.copyManagerOf = copyManagerOf;
+        requestQueue = new ArrayList<User>();
+        listOfAllCopies = new ArrayList<Copy>();
     }
 
     public Resource getCopyManagerOf() {
