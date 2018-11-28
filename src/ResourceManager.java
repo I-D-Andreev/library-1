@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * The Class ResourceManager.
  *
- * @author Steven Lewkowicz, Christina Meggs
+ * @author Steven Lewkowicz, Christina Meggs, Ivan Andreev
  */
 
 public class ResourceManager {
