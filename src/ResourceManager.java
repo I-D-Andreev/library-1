@@ -67,56 +67,64 @@ public class ResourceManager {
     public ArrayList<Resource> getRequestedResourcesBy(User user) {
         ArrayList<Resource> requestedResource = new ArrayList<>();
         for (Resource resource : resources) {
-            if(resource.getCopyManager().requestQueueContains(user)){
+            if (resource.getCopyManager().requestQueueContains(user)) {
                 requestedResource.add(resource);
             }
         }
         return requestedResource;
     }
 
-     public void removeCopy(Copy copy) {
-        for(Resource resource: resources){
+    public void removeCopy(Copy copy) {
+        for (Resource resource : resources) {
             resource.getCopyManager().removeCopy(copy);
         }
-     }
+    }
 
-     public void removeCopy(String copyId) {
-        for(Resource resource: resources){
+    public void removeCopy(String copyId) {
+        for (Resource resource : resources) {
             resource.getCopyManager().removeCopyById(copyId);
         }
-     }
+    }
 
-     public Copy getCopyById(String copyId) {
-     return null;
-     }
+    public Copy getCopyById(String copyId) {
+        Copy returnCopy = null;
+
+        for (Resource resource : resources) {
+            if(resource.getCopyManager().findCopyById(copyId) != null){
+                returnCopy = resource.getCopyManager().findCopyById(copyId);
+            }
+        }
+
+        return returnCopy;
+    }
 /**
-     public void loanCopy(Resource reource, User toUser) {
+ public void loanCopy(Resource reource, User toUser) {
 
-     }
+ }
 
-     public void reserveCopy(Resource resource, User forUser) {
+ public void reserveCopy(Resource resource, User forUser) {
 
-     }
+ }
 
-     public void returnCopy(Copy copy, User user) {
+ public void returnCopy(Copy copy, User user) {
 
-     }
+ }
 
-     public ArrayList<Copy> getAllCopies() {
-     return null;
-     }
+ public ArrayList<Copy> getAllCopies() {
+ return null;
+ }
 
-     public ArrayList<Copy> getReservedCopiesFor(User user) {
-     return null;
-     }
+ public ArrayList<Copy> getReservedCopiesFor(User user) {
+ return null;
+ }
 
-     public ArrayList<Copy> getOverdueCopies() {
-     return null;
-     }
+ public ArrayList<Copy> getOverdueCopies() {
+ return null;
+ }
 
-     public ArrayList<Copy> getBorriedCopiesBy(User user) {
-     return null;
-     }
-     **/
+ public ArrayList<Copy> getBorriedCopiesBy(User user) {
+ return null;
+ }
+ **/
 
 }
