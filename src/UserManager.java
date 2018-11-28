@@ -46,5 +46,15 @@ public class UserManager {
         return  returnUser;
     }
 
+    public User getUserByUsername(String username){
+        User returnUser = null;
+        for(User user: users){
+                if(user.getUsername().equals(username)){
+                    returnUser = user;
+                }
+        }
+
+        return  returnUser;
+    }
 
 }
