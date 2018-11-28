@@ -32,4 +32,17 @@ public class UserManager {
         this.users.remove(user);
     }
 
+    public void removeUser(String userId){
+
+    }
+
+    public User getUserById(String userId){
+        User returnUser = null;
+        for(User user: users){
+            if(user.getId().equals(userId)){
+                returnUser = user;
+            }
+        }
+        return  returnUser;
+    }
 }
