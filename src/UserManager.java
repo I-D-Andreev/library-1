@@ -33,7 +33,7 @@ public class UserManager {
     }
 
     public void removeUser(String userId){
-
+        this.users.remove(this.getUserById(userId));
     }
 
     public User getUserById(String userId){
@@ -45,4 +45,6 @@ public class UserManager {
         }
         return  returnUser;
     }
+
+
 }
