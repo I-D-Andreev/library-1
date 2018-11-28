@@ -31,6 +31,12 @@ public class ResourceManager {
         resource.getCopyManager().addCopy(loanDuration);
     }
 
+    public void addCopyOfResource(Copy copy, Resource resource) {
+        resource.getCopyManager().addCopy(copy);
+    }
+
+
+
     public void removeResource(Resource resource) {
         this.resources.remove(resource);
     }

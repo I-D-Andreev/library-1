@@ -4,10 +4,9 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e3b68db-e3f9-4a5f-a067-ee60d4dfb31b" name="Default Changelist" comment="CopyManager in Resource.">
+    <list default="true" id="6e3b68db-e3f9-4a5f-a067-ee60d4dfb31b" name="Default Changelist" comment="Refactor removeResourceById.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Copy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Copy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CopyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CopyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResourceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManager.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,13 +21,13 @@
         <counts>
           <entry key="fxml" value="8" />
           <entry key="gitignore" value="1" />
-          <entry key="java" value="39" />
+          <entry key="java" value="40" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="39" />
+          <entry key="JAVA" value="40" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="9" />
         </counts>
@@ -36,26 +35,26 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="fxml" value="1" />
-          <entry key="java" value="11167" />
-          <entry key="txt" value="1134" />
+          <entry key="java" value="11516" />
+          <entry key="txt" value="1397" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="11167" />
-          <entry key="PLAIN_TEXT" value="1134" />
+          <entry key="JAVA" value="11516" />
+          <entry key="PLAIN_TEXT" value="1397" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="5" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -71,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
+            <state relative-caret-position="187">
               <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -80,40 +79,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Copy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
+            <state relative-caret-position="272">
+              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ResourceManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
               <folding>
-                <element signature="e#650#651#0" expanded="true" />
-                <element signature="e#685#686#0" expanded="true" />
-                <element signature="e#720#721#0" expanded="true" />
-                <element signature="e#753#754#0" expanded="true" />
-                <element signature="e#803#804#0" expanded="true" />
-                <element signature="e#847#848#0" expanded="true" />
-                <element signature="e#889#890#0" expanded="true" />
-                <element signature="e#930#931#0" expanded="true" />
-                <element signature="e#995#996#0" expanded="true" />
-                <element signature="e#1055#1056#0" expanded="true" />
-                <element signature="e#1088#1089#0" expanded="true" />
-                <element signature="e#1118#1119#0" expanded="true" />
-                <element signature="e#1997#1998#0" expanded="true" />
-                <element signature="e#2031#2032#0" expanded="true" />
-                <element signature="e#2067#2068#0" expanded="true" />
-                <element signature="e#2105#2106#0" expanded="true" />
-                <element signature="e#2155#2156#0" expanded="true" />
-                <element signature="e#2199#2200#0" expanded="true" />
-                <element signature="e#2235#2236#0" expanded="true" />
-                <element signature="e#2274#2275#0" expanded="true" />
-                <element signature="e#2319#2320#0" expanded="true" />
-                <element signature="e#2358#2359#0" expanded="true" />
-                <element signature="e#2395#2396#0" expanded="true" />
-                <element signature="e#2469#2470#0" expanded="true" />
-                <element signature="e#2511#2512#0" expanded="true" />
-                <element signature="e#2554#2555#0" expanded="true" />
-                <element signature="e#2757#2758#0" expanded="true" />
-                <element signature="e#2786#2787#0" expanded="true" />
+                <element signature="e#236#237#0" expanded="true" />
+                <element signature="e#257#258#0" expanded="true" />
+                <element signature="e#374#375#0" expanded="true" />
+                <element signature="e#409#410#0" expanded="true" />
+                <element signature="e#645#646#0" expanded="true" />
+                <element signature="e#668#669#0" expanded="true" />
+                <element signature="e#633#634#0" expanded="true" />
+                <element signature="e#671#672#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,25 +110,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CopyManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="102" column="38" lean-forward="true" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
+            <state relative-caret-position="272">
+              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
               <folding>
-                <element signature="e#252#253#0" expanded="true" />
-                <element signature="e#302#303#0" expanded="true" />
-                <element signature="e#292#293#0" expanded="true" />
-                <element signature="e#320#321#0" expanded="true" />
-                <element signature="e#361#362#0" expanded="true" />
-                <element signature="e#408#409#0" expanded="true" />
-                <element signature="e#452#453#0" expanded="true" />
-                <element signature="e#495#496#0" expanded="true" />
-                <element signature="e#543#544#0" expanded="true" />
-                <element signature="e#586#587#0" expanded="true" />
-                <element signature="e#832#833#0" expanded="true" />
-                <element signature="e#883#884#0" expanded="true" />
-                <element signature="e#1181#1182#0" expanded="true" />
-                <element signature="e#1224#1225#0" expanded="true" />
-                <element signature="e#1470#1471#0" expanded="true" />
-                <element signature="e#1496#1497#0" expanded="true" />
+                <element signature="e#244#245#0" expanded="true" />
+                <element signature="e#294#295#0" expanded="true" />
+                <element signature="e#331#332#0" expanded="true" />
+                <element signature="e#378#379#0" expanded="true" />
+                <element signature="e#425#426#0" expanded="true" />
+                <element signature="e#482#483#0" expanded="true" />
+                <element signature="e#419#420#0" expanded="true" />
+                <element signature="e#466#467#0" expanded="true" />
+                <element signature="e#510#511#0" expanded="true" />
+                <element signature="e#553#554#0" expanded="true" />
+                <element signature="e#601#602#0" expanded="true" />
+                <element signature="e#644#645#0" expanded="true" />
+                <element signature="e#691#692#0" expanded="true" />
+                <element signature="e#746#747#0" expanded="true" />
+                <element signature="e#797#798#0" expanded="true" />
+                <element signature="e#840#841#0" expanded="true" />
+                <element signature="e#1244#1245#0" expanded="true" />
+                <element signature="e#1305#1306#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -149,24 +139,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/NormalUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1785">
-              <caret line="105" column="32" lean-forward="true" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
+            <state relative-caret-position="1564">
+              <caret line="105" column="32" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1020#1021#0" expanded="true" />
-                <element signature="e#1050#1051#0" expanded="true" />
-                <element signature="e#1323#1324#0" expanded="true" />
-                <element signature="e#1361#1362#0" expanded="true" />
-                <element signature="e#1769#1770#0" expanded="true" />
-                <element signature="e#1797#1798#0" expanded="true" />
-                <element signature="e#2042#2043#0" expanded="true" />
-                <element signature="e#2066#2067#0" expanded="true" />
-                <element signature="e#2306#2307#0" expanded="true" />
-                <element signature="e#2343#2344#0" expanded="true" />
-                <element signature="e#2425#2426#0" expanded="true" />
-                <element signature="e#2495#2496#0" expanded="true" />
-                <element signature="e#2622#2623#0" expanded="true" />
-                <element signature="e#2646#2647#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -176,7 +152,7 @@
         <entry file="file://$PROJECT_DIR$/src/User.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -220,12 +196,13 @@
         <option value="$PROJECT_DIR$/src/HistoryEntryFine.java" />
         <option value="$PROJECT_DIR$/src/Resource.java" />
         <option value="$PROJECT_DIR$/src/NormalUser.java" />
-        <option value="$PROJECT_DIR$/src/CopyManager.java" />
         <option value="$PROJECT_DIR$/src/Copy.java" />
+        <option value="$PROJECT_DIR$/src/CopyManager.java" />
+        <option value="$PROJECT_DIR$/src/ResourceManager.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="952" />
     <option name="width" value="977" />
     <option name="height" value="1038" />
@@ -235,7 +212,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -253,10 +229,11 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543188073246" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543188167167" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
@@ -516,7 +493,56 @@
       <option name="project" value="LOCAL" />
       <updated>1543187224957</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Refactor Copy and CopyManager a bit.">
+      <created>1543188118465</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1543188118465</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Refactor removeResourceById.">
+      <created>1543431410121</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1543431410121</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Auto format code lines.">
+      <created>1543431428299</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1543431428299</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Edit resource is not done like this, leave it empty for now.">
+      <created>1543431519003</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1543431519003</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Added requestQueueContains method.">
+      <created>1543431771163</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1543431771163</updated>
+    </task>
+    <task id="LOCAL-00036" summary="getRequestedResourcesBy (User)">
+      <created>1543431882999</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1543431882999</updated>
+    </task>
+    <task id="LOCAL-00037" summary="addCopyOfResource with loan duration">
+      <created>1543431930324</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1543431930324</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TodoView">
@@ -529,11 +555,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="762" y="0" width="781" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4957806" weight="0.5731544" />
-      <window_info id="Structure" order="1" sideWeight="0.5042194" side_tool="true" visible="true" weight="0.25704697" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49367088" weight="0.44382802" />
+      <window_info id="Structure" order="1" sideWeight="0.5063291" side_tool="true" weight="0.57281554" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -541,16 +567,16 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33617023" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33617023" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32765958" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49928468" weight="0.32765958" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49928468" visible="true" weight="0.32711622" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3328551" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.32891566" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.33049646" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32998565" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32907802" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -593,13 +619,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Change Address type in the User class." />
-    <MESSAGE value="Test date class." />
-    <MESSAGE value="Add address." />
-    <MESSAGE value="Add address and Date." />
-    <MESSAGE value="StaffNumber is wrong. Removed for now." />
-    <MESSAGE value="Sorting out ID and staffID." />
-    <MESSAGE value="Sian, don't change file locations anymore!!!!!!!!" />
     <MESSAGE value="Format CopyManager." />
     <MESSAGE value="Format Copy.&#10;Set due date.&#10;Constructor.&#10;Unique Id." />
     <MESSAGE value="test" />
@@ -618,7 +637,14 @@
     <MESSAGE value="Copy returned." />
     <MESSAGE value="Can borrow, borrowed items, transaction history, payFine." />
     <MESSAGE value="Remove a copy from a user's borrowed items when it is returned." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove a copy from a user's borrowed items when it is returned." />
+    <MESSAGE value="Refactor Copy and CopyManager a bit." />
+    <MESSAGE value="Refactor removeResourceById." />
+    <MESSAGE value="Auto format code lines." />
+    <MESSAGE value="Edit resource is not done like this, leave it empty for now." />
+    <MESSAGE value="Added requestQueueContains method." />
+    <MESSAGE value="getRequestedResourcesBy (User)" />
+    <MESSAGE value="addCopyOfResource with loan duration" />
+    <option name="LAST_COMMIT_MESSAGE" value="addCopyOfResource with loan duration" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/UserDashboard.fxml" />
@@ -693,17 +719,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Login.fxml" />
     <entry file="file://$PROJECT_DIR$/src/resources/Draw.fxml">
-      <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/Draw.fxml" />
     <entry file="file://$PROJECT_DIR$/src/resources/ViewUser.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
           <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DrawController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -769,65 +795,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NormalUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="105" column="32" lean-forward="true" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1020#1021#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
-            <element signature="e#1323#1324#0" expanded="true" />
-            <element signature="e#1361#1362#0" expanded="true" />
-            <element signature="e#1769#1770#0" expanded="true" />
-            <element signature="e#1797#1798#0" expanded="true" />
-            <element signature="e#2042#2043#0" expanded="true" />
-            <element signature="e#2066#2067#0" expanded="true" />
-            <element signature="e#2306#2307#0" expanded="true" />
-            <element signature="e#2343#2344#0" expanded="true" />
-            <element signature="e#2425#2426#0" expanded="true" />
-            <element signature="e#2495#2496#0" expanded="true" />
-            <element signature="e#2622#2623#0" expanded="true" />
-            <element signature="e#2646#2647#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CopyManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="102" column="38" lean-forward="true" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
-          <folding>
-            <element signature="e#252#253#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
-            <element signature="e#320#321#0" expanded="true" />
-            <element signature="e#361#362#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-            <element signature="e#452#453#0" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#586#587#0" expanded="true" />
-            <element signature="e#832#833#0" expanded="true" />
-            <element signature="e#883#884#0" expanded="true" />
-            <element signature="e#1181#1182#0" expanded="true" />
-            <element signature="e#1224#1225#0" expanded="true" />
-            <element signature="e#1470#1471#0" expanded="true" />
-            <element signature="e#1496#1497#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
+        <state relative-caret-position="187">
           <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -837,37 +807,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Copy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
+        <state relative-caret-position="272">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NormalUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="105" column="32" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
           <folding>
-            <element signature="e#650#651#0" expanded="true" />
-            <element signature="e#685#686#0" expanded="true" />
-            <element signature="e#720#721#0" expanded="true" />
-            <element signature="e#753#754#0" expanded="true" />
-            <element signature="e#803#804#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-            <element signature="e#889#890#0" expanded="true" />
-            <element signature="e#930#931#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1088#1089#0" expanded="true" />
-            <element signature="e#1118#1119#0" expanded="true" />
-            <element signature="e#1997#1998#0" expanded="true" />
-            <element signature="e#2031#2032#0" expanded="true" />
-            <element signature="e#2067#2068#0" expanded="true" />
-            <element signature="e#2105#2106#0" expanded="true" />
-            <element signature="e#2155#2156#0" expanded="true" />
-            <element signature="e#2199#2200#0" expanded="true" />
-            <element signature="e#2235#2236#0" expanded="true" />
-            <element signature="e#2274#2275#0" expanded="true" />
-            <element signature="e#2319#2320#0" expanded="true" />
-            <element signature="e#2358#2359#0" expanded="true" />
-            <element signature="e#2395#2396#0" expanded="true" />
-            <element signature="e#2469#2470#0" expanded="true" />
-            <element signature="e#2511#2512#0" expanded="true" />
-            <element signature="e#2554#2555#0" expanded="true" />
-            <element signature="e#2757#2758#0" expanded="true" />
-            <element signature="e#2786#2787#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CopyManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding>
+            <element signature="e#244#245#0" expanded="true" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#378#379#0" expanded="true" />
+            <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#482#483#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+            <element signature="e#466#467#0" expanded="true" />
+            <element signature="e#510#511#0" expanded="true" />
+            <element signature="e#553#554#0" expanded="true" />
+            <element signature="e#601#602#0" expanded="true" />
+            <element signature="e#644#645#0" expanded="true" />
+            <element signature="e#691#692#0" expanded="true" />
+            <element signature="e#746#747#0" expanded="true" />
+            <element signature="e#797#798#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="e#1244#1245#0" expanded="true" />
+            <element signature="e#1305#1306#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ResourceManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+          <folding>
+            <element signature="e#236#237#0" expanded="true" />
+            <element signature="e#257#258#0" expanded="true" />
+            <element signature="e#374#375#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#645#646#0" expanded="true" />
+            <element signature="e#668#669#0" expanded="true" />
+            <element signature="e#633#634#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
           </folding>
         </state>
       </provider>
