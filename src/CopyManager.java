@@ -2,12 +2,16 @@ import java.util.ArrayList;
 
 public class CopyManager {
 
-    ArrayList<User> requestQueue = new ArrayList<>();
-    ArrayList<Copy> listOfAllCopies = new ArrayList<>();
-    Resource copyManagerOf;
+    private ArrayList<User> requestQueue = new ArrayList<>();
+    private ArrayList<Copy> listOfAllCopies = new ArrayList<>();
+    private Resource copyManagerOf;
 
     public CopyManager(Resource copyManagerOf) {
         this.copyManagerOf = copyManagerOf;
+    }
+
+    public Resource getCopyManagerOf() {
+        return copyManagerOf;
     }
 
     public boolean isQueueEmpty() {
@@ -60,7 +64,7 @@ public class CopyManager {
 
     //Adds copy with its parameters, instead of copy object.
     public void addCopy(int loanDuration) {
-        this.listOfAllCopies.add(new Copy(loanDuration, this.copyManagerOf));
+        this.listOfAllCopies.add(new Copy(loanDuration, this));
         this.newAvailableCopyEvent();
     }
 
