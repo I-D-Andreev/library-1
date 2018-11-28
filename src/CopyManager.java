@@ -75,16 +75,21 @@ public class CopyManager {
         this.listOfAllCopies.remove(copy);
     }
 
-    public void removeCopyById(Copy copy) {
-        if (!copy.isAvailable()) {
-            return; // error?
-        }
-
-        for (int i = 0; i <= this.listOfAllCopies.size(); i++) {
-            if (this.listOfAllCopies.get(i).getUniqueCopyID().equals(copy.getUniqueCopyID())) {
-                this.listOfAllCopies.remove(i);
+    public Copy findCopyById(String copyId){
+        Copy returnCopy=null;
+        for(Copy copy: listOfAllCopies){
+            if(copy.getUniqueCopyID().equals(copyId)){
+                returnCopy = copy;
             }
         }
+        return returnCopy;
+    }
+
+    public void removeCopyById(String copyId) {
+        if (this.findCopyById(copyId) == null) {
+            return; // error?
+        }
+        this.listOfAllCopies.remove(this.findCopyById(copyId));
     }
 
     public boolean loanCopy(NormalUser toUser) {
