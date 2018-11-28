@@ -97,11 +97,13 @@ public class ResourceManager {
 
         return returnCopy;
     }
+
+    public void loanCopy(Resource resource, User toUser) {
+        if (!toUser.hasAdminAccess()) {
+            resource.getCopyManager().loanCopy((NormalUser) toUser);
+        }
+    }
 /**
- public void loanCopy(Resource reource, User toUser) {
-
- }
-
  public void reserveCopy(Resource resource, User forUser) {
 
  }
