@@ -152,10 +152,12 @@ public class ResourceManager {
 
         return overdueCopies;
     }
-/**
- public ArrayList<Copy> getBorriedCopiesBy(User user) {
- return null;
- }
- **/
+
+     public ArrayList<Copy> getBorrowedCopiesBy(User user) {
+        if(!user.hasAdminAccess()){
+            return ((NormalUser) user).getBorrowedCopies();
+        }
+        return null;
+     }
 
 }
