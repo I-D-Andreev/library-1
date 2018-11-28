@@ -1,3 +1,8 @@
+/**
+ * Library.
+ * A class to manage the whole library system.
+ * @author Ivan Andreev
+ */
 public class Library {
     UserManager userManager;
     ResourceManager resourceManager;

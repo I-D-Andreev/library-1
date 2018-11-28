@@ -3,6 +3,7 @@ import java.util.ArrayList;
 /**
  * UserManager class.
  * This class manages all the users in the system.
+ * @author Ivan Andreev
  */
 public class UserManager {
     ArrayList<User> users;
