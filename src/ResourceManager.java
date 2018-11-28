@@ -43,8 +43,7 @@ public class ResourceManager {
     }
 
     public void editResource(Resource resource, Resource newResource) {
-        this.resources.remove(resource);
-        this.resources.add(newResource);
+
     }
 
     public Resource getResourceById(String resourceId) {
