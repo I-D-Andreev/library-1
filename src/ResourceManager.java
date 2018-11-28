@@ -98,24 +98,33 @@ public class ResourceManager {
         return returnCopy;
     }
 
-    public void loanCopy(Resource resource, User toUser) {
+    public boolean loanCopy(Resource resource, User toUser) {
         if (!toUser.hasAdminAccess()) {
-            resource.getCopyManager().loanCopy((NormalUser) toUser);
+            return resource.getCopyManager().loanCopy((NormalUser) toUser);
+        }
+        return false;
+    }
+
+     public void reserveCopy(Resource resource, User forUser) {
+        if(!loanCopy(resource, forUser)){
+            resource.getCopyManager().addUserToTheQueue(forUser);
         }
     }
+
+     public void returnCopy(Copy copy) {
+        copy.returnCopy();
+    }
+
+
+    public ArrayList<Copy> getAllCopies() {
+        ArrayList<Copy> listOfAllCopies = new ArrayList<>();
+        for(Resource resource: resources){
+            listOfAllCopies.addAll(resource.getCopyManager().getListOfAllCopies());
+        }
+
+        return listOfAllCopies;
+    }
 /**
- public void reserveCopy(Resource resource, User forUser) {
-
- }
-
- public void returnCopy(Copy copy, User user) {
-
- }
-
- public ArrayList<Copy> getAllCopies() {
- return null;
- }
-
  public ArrayList<Copy> getReservedCopiesFor(User user) {
  return null;
  }
