@@ -8,7 +8,7 @@ public class UserManager {
     ArrayList<User> users;
 
     public UserManager() {
-        users = new ArrayList<>();
+        users = new ArrayList<User>();
         this.selfPopulate();
     }
 
