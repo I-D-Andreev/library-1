@@ -61,20 +61,14 @@ public class ResourceManager {
 
     }
 
-    //Not sure how to implement
     public ArrayList<Resource> getRequestedResourcesBy(User user) {
-        ArrayList<Resource> requested = new ArrayList<>();
-
+        ArrayList<Resource> requestedResource = new ArrayList<>();
         for (Resource resource : resources) {
-            ArrayList<Copy> copyList = resource.getCopyManager().getListOfAllCopies();
-
-            for (Copy copy : copyList) {
-                if (copy.getReservedFor().equals(user)) {
-                    requested.add(resource);
-                }
+            if(resource.getCopyManager().requestQueueContains(user)){
+                requestedResource.add(resource);
             }
         }
-        return requested;
+        return requestedResource;
     }
 
     /**
