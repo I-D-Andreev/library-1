@@ -58,4 +58,8 @@ public class UserManager {
         return  returnUser;
     }
 
+    public ArrayList<User> getAllUsers() {
+        return this.users;
+    }
+
 }
