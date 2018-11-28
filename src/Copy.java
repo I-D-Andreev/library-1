@@ -5,6 +5,7 @@ public class Copy {
 
     private String uniqueCopyID;
     private Resource copyOf;
+    private CopyManager copysManager;
 
     private User borrowedBy;
     private User reservedFor;
@@ -16,9 +17,10 @@ public class Copy {
     private History loanHistory;
     private static int nextId;
 
-    public Copy(int loanDurationInDays, Resource copyOf) {
+    public Copy(int loanDurationInDays, CopyManager copysManager) {
 
-        this.copyOf = copyOf;
+        this.copysManager = copysManager;
+        this.copyOf = copysManager.getCopyManagerOf();
         this.loanDurationInDays = loanDurationInDays;
         this.loanHistory = new History();
         this.setUniqueCopyID();
@@ -113,7 +115,7 @@ public class Copy {
     }
 
     // What happens when a copy has just been returned.
-    public void returned(){
+    public void returnCopy(){
         nullifyValues();
         NormalUser byUser = (NormalUser)this.borrowedBy;
 
