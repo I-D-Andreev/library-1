@@ -1,5 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * The Class ResourceManager.
@@ -91,7 +92,7 @@ public class ResourceManager {
         Copy returnCopy = null;
 
         for (Resource resource : resources) {
-            if(resource.getCopyManager().findCopyById(copyId) != null){
+            if (resource.getCopyManager().findCopyById(copyId) != null) {
                 returnCopy = resource.getCopyManager().findCopyById(copyId);
             }
         }
@@ -106,20 +107,20 @@ public class ResourceManager {
         return false;
     }
 
-     public void reserveCopy(Resource resource, User forUser) {
-        if(!loanCopy(resource, forUser)){
+    public void reserveCopy(Resource resource, User forUser) {
+        if (!loanCopy(resource, forUser)) {
             resource.getCopyManager().addUserToTheQueue(forUser);
         }
     }
 
-     public void returnCopy(Copy copy) {
+    public void returnCopy(Copy copy) {
         copy.returnCopy();
     }
 
 
     public ArrayList<Copy> getAllCopies() {
         ArrayList<Copy> listOfAllCopies = new ArrayList<>();
-        for(Resource resource: resources){
+        for (Resource resource : resources) {
             listOfAllCopies.addAll(resource.getCopyManager().getListOfAllCopies());
         }
 
@@ -128,19 +129,30 @@ public class ResourceManager {
 
     public ArrayList<Copy> getReservedCopiesFor(User user) {
         ArrayList<Copy> reservedCopies = new ArrayList<>();
-        for(Copy copy: this.getAllCopies()){
-            if(copy.getReservedFor().getId().equals(user.getId())){
+        for (Copy copy : this.getAllCopies()) {
+            if (copy.getReservedFor().getId().equals(user.getId())) {
                 reservedCopies.add(copy);
             }
         }
 
         return reservedCopies;
     }
-/**
- public ArrayList<Copy> getOverdueCopies() {
- return null;
- }
 
+    public ArrayList<Copy> getOverdueCopies() {
+        ArrayList<Copy> overdueCopies = new ArrayList<>();
+        Date today = new Date();
+
+        for (Copy copy : this.getAllCopies()) {
+            // If a copy's due date is "smaller" than the current date. I.E. We are past
+            // the due date.
+            if (copy.getDueDate() != null && copy.getDueDate().compareTo(today) == -1) {
+                overdueCopies.add(copy);
+            }
+        }
+
+        return overdueCopies;
+    }
+/**
  public ArrayList<Copy> getBorriedCopiesBy(User user) {
  return null;
  }
