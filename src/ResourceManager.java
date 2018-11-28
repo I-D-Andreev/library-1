@@ -37,14 +37,8 @@ public class ResourceManager {
 	}
 	
 	public void removeResource(String resourceId) {
-		int index = -1;
-		for (int i = 0;i<this.resources.size();i++) {
-			if (this.resources.get(i).getUniqueID().equals(resourceId)) {
-				index = i;
-			}
-		}
-		if(index != -1) {
-			this.resources.remove(index);
+		if(this.getResourceById(resourceId)!=null){
+			this.removeResource(this.getResourceById(resourceId));
 		}
 	}
 
