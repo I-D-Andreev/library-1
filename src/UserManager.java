@@ -62,4 +62,10 @@ public class UserManager {
         return this.users;
     }
 
+    public void payFine(double amount, User user){
+        if(!user.hasAdminAccess()){
+            ((NormalUser) user).payFines(amount);
+        }
+    }
+
 }
