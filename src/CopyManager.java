@@ -14,6 +14,10 @@ public class CopyManager {
         return requestQueue.size() == 0;
     }
 
+    public boolean requestQueueContains(User user) {
+        return (requestQueue.indexOf(user) != -1);
+    }
+
     public User getFirstUserInQueue() {
         return this.requestQueue.get(0);
     }
@@ -61,14 +65,14 @@ public class CopyManager {
     }
 
     public void removeCopy(Copy copy) {
-        if(!copy.isAvailable()) {
+        if (!copy.isAvailable()) {
             return; // error?
         }
         this.listOfAllCopies.remove(copy);
     }
 
     public void removeCopyById(Copy copy) {
-        if(!copy.isAvailable()){
+        if (!copy.isAvailable()) {
             return; // error?
         }
 
@@ -84,8 +88,8 @@ public class CopyManager {
             return false;
         }
         // We look if there is a reserved copy for the User.
-        for(Copy copy: listOfAllCopies){
-            if(copy.getReservedFor().equals(toUser)){
+        for (Copy copy : listOfAllCopies) {
+            if (copy.getReservedFor().equals(toUser)) {
                 copy.loanCopyTo(toUser);
                 return true;
             }
