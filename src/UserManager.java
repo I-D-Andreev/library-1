@@ -5,9 +5,10 @@ import java.util.ArrayList;
  * This class manages all the users in the system.
  */
 public class UserManager {
-    ArrayList<User> users = new ArrayList<>();
+    ArrayList<User> users;
 
     public UserManager() {
+        users = new ArrayList<>();
         this.selfPopulate();
     }
 
