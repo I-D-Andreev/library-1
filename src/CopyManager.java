@@ -8,8 +8,8 @@ public class CopyManager {
 
     public CopyManager(Resource copyManagerOf) {
         this.copyManagerOf = copyManagerOf;
-        requestQueue = new ArrayList<User>();
-        listOfAllCopies = new ArrayList<Copy>();
+        requestQueue = new ArrayList<>();
+        listOfAllCopies = new ArrayList<>();
     }
 
     public Resource getCopyManagerOf() {

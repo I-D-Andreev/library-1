@@ -13,7 +13,7 @@ public class ResourceManager {
     private ArrayList<Resource> resources;
 
     public ResourceManager() {
-        resources = new ArrayList<Resource>();
+        resources = new ArrayList<>();
         selfPopulate();
     }
 
