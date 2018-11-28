@@ -10,9 +10,10 @@ import java.util.Date;
 
 public class ResourceManager {
 
-    private ArrayList<Resource> resources = new ArrayList<>();
+    private ArrayList<Resource> resources;
 
     public ResourceManager() {
+        resources = new ArrayList<Resource>();
         selfPopulate();
     }
 
