@@ -35,8 +35,6 @@ public class ResourceManager {
         resource.getCopyManager().addCopy(copy);
     }
 
-
-
     public void removeResource(Resource resource) {
         this.resources.remove(resource);
     }
@@ -52,13 +50,13 @@ public class ResourceManager {
     }
 
     public Resource getResourceById(String resourceId) {
-        Resource r = null;
-        for (Resource resource : resources) {
-            if (resource.getUniqueID().equals(resourceId)) {
-                r = resource;
+        Resource resource = null;
+        for (Resource resourceInList : resources) {
+            if (resourceInList.getUniqueID().equals(resourceId)) {
+                resource = resourceInList;
             }
         }
-        return r;
+        return resource;
     }
 
     public ArrayList<Resource> getAllResources() {
@@ -76,18 +74,22 @@ public class ResourceManager {
         return requestedResource;
     }
 
-    /**
-     * these not in copy manager instead of resource manager?
      public void removeCopy(Copy copy) {
+        for(Resource resource: resources){
+            resource.getCopyManager().removeCopy(copy);
+        }
      }
 
      public void removeCopy(String copyId) {
+        for(Resource resource: resources){
+            resource.getCopyManager().removeCopyById(copyId);
+        }
      }
 
      public Copy getCopyById(String copyId) {
      return null;
      }
-
+/**
      public void loanCopy(Resource reource, User toUser) {
 
      }
