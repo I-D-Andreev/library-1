@@ -26,10 +26,9 @@ public class ResourceManager {
         this.resources.add(resource);
     }
 
-    //thought resource manager manages resources not their copies
-    //dont get how this method works
-    public void addCopyOfResource(int loanDuration, Resource resource) {
 
+    public void addCopyOfResource(int loanDuration, Resource resource) {
+        resource.getCopyManager().addCopy(loanDuration);
     }
 
     public void removeResource(Resource resource) {
