@@ -49,7 +49,8 @@ public class ResourceManager {
     }
 
     public void editResource(Resource resource, Resource newResource) {
-
+        // needs to go through attributes 1 by 1
+        // and change whatever is different
     }
 
     public Resource getResourceById(String resourceId) {
