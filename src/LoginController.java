@@ -24,7 +24,7 @@ public class LoginController {
     private User user2 = new Librarian("Joe", "Bloggs", "librarian1",
             "12345678", "", new Address("Somewhere", "Cardiff", "Wales",
             "AB12CD"));
-    private ArrayList<User> userList = new ArrayList<User>();
+    private ArrayList<User> userList = new ArrayList<>();
 
     @FXML // fx:id="usernameTextField"
     private TextField usernameTextField; // Value injected by FXMLLoader
@@ -34,51 +34,82 @@ public class LoginController {
 
 
     @FXML
+    /**
+     * When the login button is clicked, this method retrieves the text from the usernameTextField and checks
+     * whether the user exists.
+     */
     private void loginButtonClicked(ActionEvent event) {
 
-        Parent root;
         userList.add(user1);
         userList.add(user2);
+        User existingUser = exists(usernameTextField.getText(), userList);
 
-        if (equals(usernameTextField.getText(), userList)) {
+        //Checks whether the user exists.
+        if (existingUser != null) {
 
-            try {
-                
-                root = FXMLLoader.load(getClass().getClassLoader().getResource("resources/UserDashboard.fxml"));
-                Stage stage = new Stage();
-                
-                stage.setTitle("Dashboard");
-                stage.setScene(new Scene(root));
-                stage.show();
-                ((Node)(event.getSource())).getScene().getWindow().hide();
+            //Checks whether the user is a librarian.
+            if (existingUser.hasAdminAccess()) {
 
-            } catch (IOException e) {
+                loadDashboard("resources/LibrarianDashboard.fxml", event);
 
-                //Changing later
-                e.printStackTrace();
+            } else {
 
-            } catch(Exception e) {
-
-                e.printStackTrace();
-                System.exit(0);
+                loadDashboard("resources/UserDashboard.fxml", event);
             }
         }
     }
 
-    private Boolean equals(String usernameText, ArrayList<User> userList) {
+    /**
+     * Checks whether a user exists in an array of users.
+     *
+     * @param usernameText The username input in the text field.
+     * @param userList The array of users.
+     * @return The user if it exists or null.
+     */
+    private User exists(String usernameText, ArrayList<User> userList) {
 
-        Boolean exists = false;
         usernameText = usernameText.toLowerCase();
 
         for (User user : userList) {
 
             if (user.getUsername().toLowerCase().equals(usernameText)) {
 
-                exists = true;
+                return user;
 
             }
         }
 
-        return exists;
+        return null;
+    }
+
+    /**
+     * Loads a new window.
+     *
+     * @param fxmlResource The fxml file used to load the window.
+     * @param event The current event.
+     */
+    private void loadDashboard(String fxmlResource, ActionEvent event) {
+
+        Parent root;
+
+        //Attempt to load the fxml file and set the scene.
+        try {
+
+            root = FXMLLoader.load(getClass().getClassLoader().getResource(fxmlResource));
+            Stage stage = new Stage();
+
+            stage.setTitle("Dashboard");
+            stage.setScene(new Scene(root));
+            stage.show();
+            ((Node) (event.getSource())).getScene().getWindow().hide();
+
+        } catch (IOException e) {
+
+            System.exit(0);
+
+        } catch (Exception e) {
+
+            System.exit(0);
+        }
     }
 }
