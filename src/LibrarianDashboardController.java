@@ -1,4 +1,5 @@
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -47,4 +48,49 @@ public class LibrarianDashboardController {
 
     @FXML // fx:id="viewUserButton"
     private Button viewUserButton; // Value injected by FXMLLoader
+
+    @FXML
+    /**
+     * Opens the browse resources window.
+     */
+    void browseButtonClicked(ActionEvent event) {
+
+        new NewWindow("resources/BrowseResources.fxml", event, "Browse Resources - TaweLib");
+    }
+
+    @FXML
+    /**
+     * Opens the create/edit resources window.
+     */
+    void createEditButtonClicked(ActionEvent event) {
+
+        new NewWindow("resources/CreateEdit.fxml", event, "Create/Edit Resources - TaweLib");
+    }
+
+    @FXML
+    /**
+     * Takes the user back to the login window.
+     */
+    void logOutButtonClicked(ActionEvent event) {
+
+        new NewWindow("resources/Login.fxml", event, "Login - TaweLib");
+    }
+
+    @FXML
+    /**
+     * Opens the manage resources window.
+     */
+    void manageResourcesButtonClicked(ActionEvent event) {
+
+        new NewWindow("resources/ManageResources.fxml", event, "Manage Resources - TaweLib");
+    }
+
+    @FXML
+    /**
+     * Opens the view user window.
+     */
+    void viewUserButtonClicked(ActionEvent event) {
+
+        new NewWindow("resources/ViewUser.fxml", event, "View User - TaweLib");
+    }
 }
