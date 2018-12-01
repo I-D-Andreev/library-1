@@ -50,11 +50,13 @@ public class LoginController {
             //Checks whether the user is a librarian.
             if (existingUser.hasAdminAccess()) {
 
-                loadDashboard("resources/LibrarianDashboard.fxml", event);
+                new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib");
+                //loadDashboard("resources/LibrarianDashboard.fxml", event);
 
             } else {
 
-                loadDashboard("resources/UserDashboard.fxml", event);
+                new NewWindow("resources/UserDashboard.fxml", event, "Dashboard - TaweLib");
+                //loadDashboard("resources/UserDashboard.fxml", event);
             }
         }
     }
@@ -80,36 +82,5 @@ public class LoginController {
         }
 
         return null;
-    }
-
-    /**
-     * Loads a new window.
-     *
-     * @param fxmlResource The fxml file used to load the window.
-     * @param event The current event.
-     */
-    private void loadDashboard(String fxmlResource, ActionEvent event) {
-
-        Parent root;
-
-        //Attempt to load the fxml file and set the scene.
-        try {
-
-            root = FXMLLoader.load(getClass().getClassLoader().getResource(fxmlResource));
-            Stage stage = new Stage();
-
-            stage.setTitle("Dashboard");
-            stage.setScene(new Scene(root));
-            stage.show();
-            ((Node) (event.getSource())).getScene().getWindow().hide();
-
-        } catch (IOException e) {
-
-            System.exit(0);
-
-        } catch (Exception e) {
-
-            System.exit(0);
-        }
     }
 }
