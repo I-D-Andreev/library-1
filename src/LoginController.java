@@ -24,7 +24,6 @@ public class LoginController {
     private User user2 = new Librarian("Joe", "Bloggs", "librarian1",
             "12345678", "", new Address("Somewhere", "Cardiff", "Wales",
             "AB12CD"));
-    private ArrayList<User> userList = new ArrayList<>();
 
     @FXML // fx:id="usernameTextField"
     private TextField usernameTextField; // Value injected by FXMLLoader
@@ -40,9 +39,10 @@ public class LoginController {
      */
     private void loginButtonClicked(ActionEvent event) {
 
-        userList.add(user1);
-        userList.add(user2);
-        User existingUser = exists(usernameTextField.getText(), userList);
+        UserManager userManager = new UserManager();
+        userManager.addUser(user1);
+        userManager.addUser(user2);
+        User existingUser = exists(usernameTextField.getText(), userManager.getAllUsers());
 
         //Checks whether the user exists.
         if (existingUser != null) {

@@ -1,3 +1,4 @@
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -46,5 +47,18 @@ public class BrowseResourcesController {
     @FXML// fx:id="typeColumn"
     private TableColumn<?, ?> typeColumn;// Value injected by FXMLLoader
 
+    @FXML
+    /**
+     * Close the application.
+     */
+    void closeButtonClicked(ActionEvent event) {
+
+        System.exit(0);
+    }
+
+    @FXML
+    void searchButtonClicked(ActionEvent event) {
+        //Search for resource in list then populate table.
+    }
 }
 

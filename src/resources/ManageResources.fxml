@@ -14,7 +14,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-
 <GridPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManageResourcesController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -66,7 +65,7 @@
                               </TextField>
                            </children>
                         </VBox>
-                        <Button fx:id="borrowButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="90.0" text="Borrow" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Button fx:id="borrowButton" mnemonicParsing="false" onAction="#borrowButtonClicked" prefHeight="31.0" prefWidth="90.0" text="Borrow" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                </content>
@@ -97,7 +96,7 @@
                               </TextField>
                            </children>
                         </VBox>
-                        <Button fx:id="returnButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="90.0" text="Return" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Button fx:id="returnButton" mnemonicParsing="false" onAction="#returnButtonClicked" prefHeight="31.0" prefWidth="90.0" text="Return" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <Label text="User ID:">
@@ -141,7 +140,7 @@
                                           <Insets left="20.0" top="20.0" />
                                        </HBox.margin>
                                     </TextField>
-                                    <Button fx:id="searchButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="90.0" text="Search">
+                                    <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButtonClicked" prefHeight="31.0" prefWidth="90.0" text="Search">
                                        <HBox.margin>
                                           <Insets left="20.0" top="20.0" />
                                        </HBox.margin>
@@ -173,7 +172,7 @@
                                           <Insets left="20.0" right="20.0" top="20.0" />
                                        </VBox.margin>
                                     </TextField>
-                                    <Button fx:id="payButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="90.0" text="Pay">
+                                    <Button fx:id="payButton" mnemonicParsing="false" onAction="#payButtonClicked" prefHeight="31.0" prefWidth="90.0" text="Pay">
                                        <VBox.margin>
                                           <Insets left="20.0" top="20.0" />
                                        </VBox.margin>
