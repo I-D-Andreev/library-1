@@ -45,9 +45,11 @@ public class UserDashboardController {
 
     @FXML
     /**
-     *
+     * Opens the browse resources window.
      */
-    void browseResourcesButtonClick(ActionEvent event) {
+    void browseResourcesButtonClicked(ActionEvent event) {
+
+        new NewWindow("resources/BrowseResources.fxml", event, "Browse Resources - TaweLib");
 
     }
 

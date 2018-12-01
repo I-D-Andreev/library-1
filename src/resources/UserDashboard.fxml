@@ -27,7 +27,7 @@
       </Label>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
          <children>
-            <Button fx:id="browseResourcesButton" mnemonicParsing="false" text="Browse Resources">
+            <Button fx:id="browseResourcesButton" mnemonicParsing="false" onAction="#browseResourcesButtonClicked" text="Browse Resources">
                <HBox.margin>
                   <Insets right="20.0" />
                </HBox.margin>
