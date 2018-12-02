@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @author Ivan Andreev
  */
 public class UserManager {
-    ArrayList<User> users;
+    private ArrayList<User> users;
 
     public UserManager() {
         users = new ArrayList<>();
@@ -14,7 +14,14 @@ public class UserManager {
     }
 
     private void selfPopulate() {
+        // test data
+        this.addUser(new NormalUser("Sian", "Pike", "sianspike",
+                "07813931066", "", new Address("14 Bryn Y Mor Crescent",
+                        "Swansea", "Wales", "SA14QT")));
 
+        this.addUser(new Librarian("Joe", "Bloggs", "librarian1",
+                "12345678", "", new Address("Somewhere", "Cardiff", "Wales",
+                "AB12CD")));
     }
 
     public void save() {

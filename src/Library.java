@@ -4,8 +4,8 @@
  * @author Ivan Andreev
  */
 public class Library {
-    UserManager userManager;
-    ResourceManager resourceManager;
+    private UserManager userManager;
+    private ResourceManager resourceManager;
 
     public Library() {
         userManager = new UserManager();
