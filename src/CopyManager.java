@@ -55,7 +55,7 @@ public class CopyManager {
         return availableCopies;
     }
 
-    public int getNumOfAvailailableCopies() {
+    public int getNumOfAvailableCopies() {
         return this.getListOfAvailableCopies().size();
     }
 
@@ -95,7 +95,7 @@ public class CopyManager {
     }
 
     public boolean loanCopy(NormalUser toUser) {
-        if (this.getNumOfAvailailableCopies() == 0) {
+        if (this.getNumOfAvailableCopies() == 0) {
             return false;
         }
         // We look if there is a reserved copy for the User.
