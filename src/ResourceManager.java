@@ -22,7 +22,10 @@ public class ResourceManager {
     }
 
     private void selfPopulate() {
-
+        // test data
+        this.addResource(new Book("123", "Harry Potter", 2010, "", "J.K.R.", "dn"));
+        this.addResource(new Laptop("123132", "Lenovo", 2015, "", "LN", "S3", "W"));
+        this.addResource(new DVD("1312", "DVD1", 2015, "", "P", 201));
     }
 
     public void addResource(Resource resource) {
