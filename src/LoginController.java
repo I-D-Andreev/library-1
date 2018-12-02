@@ -28,8 +28,6 @@ public class LoginController extends Controller {
     private Button loginButton; // Value injected by FXMLLoader
 
 
-  //  private Library library = new Library();
-
 
     @FXML
     /**

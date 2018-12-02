@@ -11,7 +11,7 @@ import javafx.scene.control.TextField;
  * @author Sian Pike
  */
 
-public class ViewUserController {
+public class ViewUserController extends Controller {
 
     @FXML // fx:id="searchUserTab"
     private Tab searchUserTab; // Value injected by FXMLLoader
@@ -57,5 +57,6 @@ public class ViewUserController {
 
     @FXML // fx:id="closeButton"
     private Button closeButton; // Value injected by FXMLLoader
+
 
 }

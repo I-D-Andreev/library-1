@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
  * @author Chris McAuley.
  */
 
-public class BrowseResourcesController {
+public class BrowseResourcesController extends Controller {
 
     @FXML// fx:id="closeButton"
     private Button closeButton;// Value injected by FXMLLoader
