@@ -1,3 +1,6 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
@@ -17,7 +20,37 @@ public class ResourceManager {
         selfPopulate();
     }
 
-    public void save() {
+    public void save() throws IOException {
+        FileWriter fileWriter = new FileWriter("Resources.txt");
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+
+        for (Resource r : resources) {
+
+            printWriter.print(r.getUniqueID() + " " + r.getTitle() + " " + r.getYear() + " " + r.getThumbnailImagePath() + " ");
+            //printWriter.print(r.getCopies())
+
+            if (r instanceof DVD) {
+                printWriter.print("DVD" + " " + ((DVD) r).getDirector() + " " + ((DVD) r).getRuntime() + " ");
+                for (String lang : ((DVD) r).getListOfSubtitleLanguages()) {
+                    printWriter.print(lang + " ");
+                }
+            }
+            else if (r instanceof Laptop) {
+                printWriter.print("Laptop" + " " + ((Laptop) r).getManufacturer() + " " + ((Laptop) r).getModel() + " " + ((Laptop) r).getInstalledOS());
+            }
+            else if (r instanceof Book) {
+                printWriter.print("Book" + " " + ((Book) r).getAuthor() + " " + ((Book) r).getPublisher() + " "
+                        + ((Book) r).getGenre() + " " + ((Book) r).getISBN() + " " + ((Book) r).getLanguage());
+            }
+            printWriter.print(r.getLateReturnFinePerDay() + " " + r.getMaxFineAmount());
+
+
+        }
+
+
+        printWriter.print("Some String \n");
+        printWriter.printf("Product name is %s and its price is %d $", "iPhone", 1000);
+        printWriter.close();
 
     }
 
