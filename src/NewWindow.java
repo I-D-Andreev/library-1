@@ -45,4 +45,33 @@ public class NewWindow {
             System.exit(1);
         }
     }
+
+
+    //for now override
+    // will change later
+    public NewWindow(String fxmlResource, ActionEvent event, String title, Library library) {
+
+        Parent root;
+
+        //Attempt to load the fxml file and set the scene.
+        try {
+
+            root = FXMLLoader.load(getClass().getClassLoader().getResource(fxmlResource));
+            Stage stage = new Stage();
+
+            stage.setTitle(title);
+            stage.setScene(new Scene(root));
+            stage.show();
+            ((Node) (event.getSource())).getScene().getWindow().hide();
+
+        } catch (IOException e) {
+
+            System.exit(0);
+
+        } catch (Exception e) {
+
+            System.exit(1);
+        }
+    }
+
 }
