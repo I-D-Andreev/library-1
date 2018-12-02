@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 /**
  * Class to model DVD resource
- * @author Kleanthis Liontis
+ * @author Kleanthis Liontis, Ivan Andreev
  */
 public class DVD extends Resource {
 
