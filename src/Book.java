@@ -43,6 +43,14 @@ public class Book extends Resource {
         return this.publisher;
     }
 
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getGenre() {
+        return this.genre;
+    }
+
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
