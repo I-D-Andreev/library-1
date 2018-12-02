@@ -48,8 +48,8 @@ public class UserDashboardController extends Controller {
      * Opens the browse resources window.
      */
     void browseResourcesButtonClicked(ActionEvent event) {
-
-        new NewWindow("resources/BrowseResources.fxml", event, "Browse Resources - TaweLib");
+        new NewWindow("resources/BrowseResources.fxml", event,
+                "Browse Resources - TaweLib", getLibrary());
 
     }
 
@@ -59,6 +59,7 @@ public class UserDashboardController extends Controller {
      */
     void logOutButtonClicked(ActionEvent event) {
 
-        new NewWindow("resources/Login.fxml", event, "Login - TaweLib");
+        new NewWindow("resources/Login.fxml", event,
+                "Login - TaweLib", getLibrary());
     }
 }
