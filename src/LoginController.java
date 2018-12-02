@@ -18,7 +18,7 @@ import java.util.ArrayList;
  * <p>
  * Controller class for the Login Window.  Handles user interaction with the UI.
  */
-public class LoginController {
+public class LoginController extends Controller {
 
 
     @FXML // fx:id="usernameTextField"
@@ -28,7 +28,7 @@ public class LoginController {
     private Button loginButton; // Value injected by FXMLLoader
 
 
-    private Library library = new Library();
+  //  private Library library = new Library();
 
 
     @FXML
@@ -38,7 +38,7 @@ public class LoginController {
      */
     private void loginButtonClicked(ActionEvent event) {
         String username = usernameTextField.getText();
-        User existingUser = library.getUserManager().getUserByUsername(username);
+        User existingUser = getLibrary().getUserManager().getUserByUsername(username);
 
         //Checks whether the user exists.
         if (existingUser == null) {
@@ -50,12 +50,14 @@ public class LoginController {
             //Checks whether the user is a librarian.
             if (existingUser.hasAdminAccess()) {
 
-                new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", library);
+                new NewWindow("resources/LibrarianDashboard.fxml", event,
+                        "Dashboard - TaweLib", getLibrary());
                 //loadDashboard("resources/LibrarianDashboard.fxml", event);
 
             } else {
 
-                new NewWindow("resources/UserDashboard.fxml", event, "Dashboard - TaweLib", library);
+                new NewWindow("resources/UserDashboard.fxml", event,
+                        "Dashboard - TaweLib", getLibrary());
                 //loadDashboard("resources/UserDashboard.fxml", event);
             }
         }

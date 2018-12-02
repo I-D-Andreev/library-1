@@ -11,7 +11,7 @@ import javafx.scene.control.TableView;
  * @author Sian Pike
  */
 
-public class LibrarianDashboardController {
+public class LibrarianDashboardController extends Controller {
 
     @FXML // fx:id="dashboardTable"
     private TableView<?> dashboardTable; // Value injected by FXMLLoader

@@ -17,7 +17,7 @@ import java.io.IOException;
  * @author Sian Pike
  */
 
-public class UserDashboardController {
+public class UserDashboardController extends Controller {
 
     @FXML // fx:id="browseResourcesButton"
     private Button browseResourcesButton; // Value injected by FXMLLoader

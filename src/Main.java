@@ -27,11 +27,15 @@ public class Main extends Application {
      * @param primaryStage The current window.
      */
     public void start(Stage primaryStage) {
-
+        // load the library info
+        Library library = new Library();
         Parent root = null;
 
         try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("resources/Login.fxml"));
+            //root = FXMLLoader.load(getClass().getClassLoader().getResource("resources/Login.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("resources/Login.fxml"));
+            root = fxmlLoader.load();
+            fxmlLoader.<Controller>getController().setLibrary(library);
 
         } catch (IOException e) {
 

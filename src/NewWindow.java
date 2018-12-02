@@ -48,7 +48,7 @@ public class NewWindow {
 
 
     //for now override
-    // will change later
+    // might change later
     public NewWindow(String fxmlResource, ActionEvent event, String title, Library library) {
 
         Parent root;
@@ -56,7 +56,11 @@ public class NewWindow {
         //Attempt to load the fxml file and set the scene.
         try {
 
-            root = FXMLLoader.load(getClass().getClassLoader().getResource(fxmlResource));
+            //root = FXMLLoader.load(getClass().getClassLoader().getResource(fxmlResource));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource(fxmlResource));
+            root = fxmlLoader.load();
+            fxmlLoader.<Controller>getController().setLibrary(library);
+
             Stage stage = new Stage();
 
             stage.setTitle(title);
