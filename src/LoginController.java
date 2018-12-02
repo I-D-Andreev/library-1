@@ -50,13 +50,11 @@ public class LoginController extends Controller {
 
                 new NewWindow("resources/LibrarianDashboard.fxml", event,
                         "Dashboard - TaweLib", getLibrary());
-                //loadDashboard("resources/LibrarianDashboard.fxml", event);
 
             } else {
 
                 new NewWindow("resources/UserDashboard.fxml", event,
                         "Dashboard - TaweLib", getLibrary());
-                //loadDashboard("resources/UserDashboard.fxml", event);
             }
         }
 
