@@ -9,6 +9,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.util.ArrayList;
+
 /**
  * Controller class for the Browse Resources Page for Lirarian/User.
  * Handles what happens when the user interacts with the UI.
@@ -54,34 +56,40 @@ public class BrowseResourcesController extends Controller {
 
 
     private ObservableList<Resource> data;
+    private ArrayList<String> acceptableTypes;
 
     public void initialize() {
         data = FXCollections.observableArrayList();
+        acceptableTypes = new ArrayList<>();
+
         uniqueIDColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("uniqueID"));
         titleColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("title"));
         yearColumn.setCellValueFactory(new PropertyValueFactory<Resource, Integer>("year"));
-        typeColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("title"));
+        typeColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("type"));
     }
 
     @FXML
     /**
      * Close the application.
      */
-    void closeButtonClicked(ActionEvent event) {
+    public void closeButtonClicked(ActionEvent event) {
 
         System.exit(0);
     }
 
     @FXML
-    void searchButtonClicked(ActionEvent event) {
+    public void searchButtonClicked(ActionEvent event) {
         // clear previous data
         data.clear();
         displayTable.getItems().clear();
 
+        // see which of the checked boxes are ticked
+        this.manageCheckedBoxTypes();
+
         //Search for resource in list then populate table.
         String searchCriteria = browseResourcesSearchTextField.getText();
 
-        // If empty show all
+        // If search criteria is empty show all/ else show only the ones that match
         if (searchCriteria.equals("")) {
             for (Resource resource : getLibrary().getResourceManager().getAllResources()) {
                 data.add(resource);
@@ -94,7 +102,38 @@ public class BrowseResourcesController extends Controller {
                 }
             }
         }
+
+        // if none of the types have been ticked accept all
+        // else remove the resources that are not permitted
+        ArrayList <Resource> shouldNotBeDisplayed = new ArrayList<>();
+        if(acceptableTypes.size() != 0) {
+            for(Resource resource : data){
+                if(!acceptableTypes.contains(resource.getType())){
+                    shouldNotBeDisplayed.add(resource);
+                }
+            }
+        }
+       data.removeAll(shouldNotBeDisplayed);
+
         displayTable.getItems().addAll(data);
     }
+
+
+    private void manageCheckedBoxTypes(){
+        acceptableTypes.clear();
+        if(dvdFilter.isSelected()){
+            acceptableTypes.add("DVD");
+        }
+
+        if(bookFilter.isSelected()){
+            acceptableTypes.add("Book");
+        }
+
+        if(laptopFilter.isSelected()){
+            acceptableTypes.add("Laptop");
+        }
+    }
+
+
 }
 
