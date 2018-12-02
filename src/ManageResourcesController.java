@@ -1,9 +1,13 @@
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+
+import java.time.Instant;
+import java.util.Date;
 
 /**
  * @author Chris McAuley, Sian Pike
@@ -61,4 +65,31 @@ public class ManageResourcesController {
     @FXML // fx:id="payButton"
     private Button payButton; // Value injected by FXMLLoader
 
+    @FXML
+    void borrowButtonClicked(ActionEvent event) {
+
+        //Add some resources to test (Resource manager)
+        //Probably needs some connection to copy manager
+
+        String userID = borrowUserIDTextField.getText();
+        String resourceID = borrowResourceIDTextField.getText();
+        UserManager userManager = new UserManager();
+        HistoryEntryItemTransaction itemTransaction = new HistoryEntryItemTransaction(Date.from(Instant.EPOCH),
+                true, userManager.getUserById(userID));
+    }
+
+    @FXML
+    void payButtonClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void returnButtonClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void searchButtonClicked(ActionEvent event) {
+
+    }
 }

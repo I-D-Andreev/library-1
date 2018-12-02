@@ -34,10 +34,11 @@ public class Main extends Application {
             root = FXMLLoader.load(getClass().getClassLoader().getResource("resources/Login.fxml"));
 
         } catch (IOException e) {
-            //Changing later
-            e.printStackTrace();
+
+            System.exit(1);
+
         } catch(Exception e) {
-            e.printStackTrace();
+
             System.exit(0);
         }
 
