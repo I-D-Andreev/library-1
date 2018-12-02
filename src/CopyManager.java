@@ -24,13 +24,12 @@ public class CopyManager {
     /**
      * The constructor of a copy manager.
      * @param copyManagerOf The resource this is a copy manager of.
-     *
+     */
     public CopyManager(Resource copyManagerOf) {
         this.copyManagerOf = copyManagerOf;
         requestQueue = new ArrayList<>();
         listOfAllCopies = new ArrayList<>();
     }
-    */
 
     /**
      * Gets the resource this is a copy manager of.
