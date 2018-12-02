@@ -42,16 +42,17 @@ public class ResourceManager {
                 printWriter.print("Book" + " " + ((Book) r).getAuthor() + " " + ((Book) r).getPublisher() + " "
                         + ((Book) r).getGenre() + " " + ((Book) r).getISBN() + " " + ((Book) r).getLanguage());
             }
-            printWriter.print(r.getLateReturnFinePerDay() + " " + r.getMaxFineAmount());
+            printWriter.print(r.getLateReturnFinePerDay() + " " + r.getMaxFineAmount() + " ");
 
-
+            for (Copy c : r.getCopyManager().getListOfAllCopies()) {
+                //each copy has a copyManager, don't understand why this is there/how to write this to file
+                printWriter.print(c.getUniqueCopyID() + " " + c.getBorrowedBy().getId() + " " + c.getReservedFor().getId() + " "
+                        + c.getLoanDurationInDays() + " " + c.getBorrowedOn() + " " + c.getDueDate());
+                //not sure how to write the history to a file
+            }
+            printWriter.print("\n");
         }
-
-
-        printWriter.print("Some String \n");
-        printWriter.printf("Product name is %s and its price is %d $", "iPhone", 1000);
         printWriter.close();
-
     }
 
     private void selfPopulate() {
