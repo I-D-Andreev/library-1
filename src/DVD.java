@@ -77,4 +77,8 @@ public class DVD extends Resource {
     public double getMaxFineAmount() {
         return this.maxFineAmount;
     }
+
+    public String getType() {
+        return "DVD";
+    }
 }

@@ -122,5 +122,8 @@ public class Laptop extends Resource {
         return this.maxFineAmount;
     }
 
+    public String getType() {
+        return "Laptop";
+    }
 
 }

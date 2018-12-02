@@ -47,6 +47,8 @@ public abstract class Resource {
 
     public abstract double getLateReturnFinePerDay();
 
+    public abstract String getType();
+
 
     public CopyManager getCopyManager(){
         return copyManager;

@@ -74,4 +74,8 @@ public class Book extends Resource {
     public double getMaxFineAmount() {
         return this.maxFineAmount;
     }
+
+    public String getType() {
+        return "Book";
+    }
 }
