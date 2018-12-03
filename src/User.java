@@ -1,10 +1,10 @@
+import java.io.*;
 /**
-<<<<<<< HEAD
  * This is an abstract class used as the base to create all types of users.
  *
  * @author Christina Meggs, Ivan Andreev
  */
-public abstract class User {
+public abstract class User implements Serializable {
 	private static int nextID=0;
 	private final String username;
 
