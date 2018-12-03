@@ -31,7 +31,7 @@ public class ResourceManager implements Serializable {
             FileOutputStream fileOut = new FileOutputStream(file, false);
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
 
-            // save the file
+            // save the object to the file
             out.writeObject(resources);
 
             // close the file writer
