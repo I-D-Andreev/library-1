@@ -20,7 +20,7 @@ public class ResourceManager implements Serializable {
         //selfPopulate1();
     }
 
-    protected void save() {
+    public void save() {
 
         // Get a file to write in or create it if it doesn't exist.
         File file = this.fileToReadWrite();
