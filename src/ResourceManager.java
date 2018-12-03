@@ -27,8 +27,8 @@ public class ResourceManager implements Serializable {
 
         try {
             // file writer
-            // every time overwrite the file
-            FileOutputStream fileOut = new FileOutputStream(file,false);
+            // every time overwrite the file instead of just appending it
+            FileOutputStream fileOut = new FileOutputStream(file, false);
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
 
             // save the file
@@ -47,12 +47,13 @@ public class ResourceManager implements Serializable {
             e.printStackTrace();
             System.exit(0);
         }
-        System.out.println("Successfully written to file.");
+        System.out.println("Successfully written resource to file.");
     }
 
     // should be private
     // public for testing purposes
-    public void selfPopulate()   {
+    public void selfPopulate() {
+        // Get a file to read from or create it if it doesn't exist.
         File file = this.fileToReadWrite();
 
         try {
@@ -61,26 +62,26 @@ public class ResourceManager implements Serializable {
             ObjectInputStream in = new ObjectInputStream(fileIn);
 
             // read the object in the file
-            ArrayList<Resource> res = (ArrayList<Resource>) in.readObject();
+            ArrayList<Resource> readResource = (ArrayList<Resource>) in.readObject();
 
             // close the reader
             in.close();
             fileIn.close();
 
             // assign the variable we just read
-            this.resources = res;
+            this.resources = readResource;
 
         } catch (IOException e) {
             System.out.println("Couldn't access file to read from.");
             e.printStackTrace();
             System.exit(0);
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Problem in writing to file.");
             e.printStackTrace();
             System.exit(0);
         }
 
-        System.out.println("Successfully read from file.");
+        System.out.println("Successfully read resource from file.");
 
     }
 
