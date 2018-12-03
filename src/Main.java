@@ -9,16 +9,23 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Date;
 
-public class Main extends Application {
+public class Main extends Application{
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         //Launches the application - do not remove.
-        launch(args);
+        //launch(args);
 
-//        Date today = new Date();
-//        System.out.println(today);
-//        today.setTime(today.getTime() + (3600*24*1000));
-//        System.out.println(today);
+
+        System.exit(0);
+
+        // TESTING SELF POPULATE AND WRITING
+//        Library library = new Library();
+//        library.getResourceManager().selfPopulate();
+//        for(Resource r : library.getResourceManager().getAllResources()){
+//            System.out.println(r.getUniqueID());
+//        }
+//        library.getResourceManager().selfPopulate1();
+//        library.getResourceManager().save();
     }
 
     /**

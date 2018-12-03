@@ -3,7 +3,8 @@
  *
  * @author Steven Lekwowicz
  */
-public class Laptop extends Resource {
+
+public class Laptop extends Resource{
 
     /**
      * The manufacturer of the laptop.

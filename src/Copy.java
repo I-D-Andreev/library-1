@@ -1,6 +1,7 @@
 import java.util.Date;
+import java.io.*;
 
-public class Copy {
+public class Copy implements Serializable {
 
 
     private String uniqueCopyID;

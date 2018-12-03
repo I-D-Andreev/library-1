@@ -1,6 +1,6 @@
 import java.util.ArrayList;
-
-public class CopyManager {
+import java.io.*;
+public class CopyManager implements Serializable {
 
     private ArrayList<User> requestQueue;
     private ArrayList<Copy> listOfAllCopies;

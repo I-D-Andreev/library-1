@@ -1,5 +1,6 @@
 //TODO: Javadoc comments
-public abstract class Resource {
+import java.io.*;
+public abstract class Resource implements Serializable {
 
     private String uniqueID;
     private String title;
