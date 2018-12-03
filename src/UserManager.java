@@ -138,4 +138,15 @@ public class UserManager implements Serializable {
         }
     }
 
+    // test data
+    // to be removed just before end
+    public void selfPopulate1() {
+        this.addUser(new NormalUser("Sian", "Pike", "sianspike",
+                "07813931066", "", new Address("14 Bryn Y Mor Crescent",
+                "Swansea", "Wales", "SA14QT")));
+
+        this.addUser(new Librarian("Joe", "Bloggs", "librarian1",
+                "12345678", "", new Address("Somewhere", "Cardiff", "Wales",
+                "AB12CD")));
+    }
 }

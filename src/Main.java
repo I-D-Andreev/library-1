@@ -15,7 +15,9 @@ public class Main extends Application{
         //Launches the application - do not remove.
         launch(args);
 
-        //System.exit(0);
+        //Library l = new Library();
+        //l.save();
+        System.exit(0);
     }
 
     /**

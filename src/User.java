@@ -1,4 +1,6 @@
 import java.io.*;
+import java.util.Date;
+
 /**
  * This is an abstract class used as the base to create all types of users.
  *
@@ -13,6 +15,7 @@ public abstract class User implements Serializable {
 	private String lastName;
 	private String phoneNumber;
 	private String profileImagePath;
+	private Date creationDate;
 	private Address address;
 
 	/**
@@ -32,6 +35,9 @@ public abstract class User implements Serializable {
 		this.phoneNumber = phone;
 		this.profileImagePath = imagePath;
 		this.address = address;
+
+		// set the creation date to the current date
+		this.creationDate = new Date();
 
 		this.setID();
 	}
@@ -160,9 +166,9 @@ public abstract class User implements Serializable {
 	 *
 	 * @return The creation date of the account.
 	 */
-	public String getAccountCreationDate() {
+	public Date getAccountCreationDate() {
 		//will do a date type of the current days date
-		return "16-11-2018";
+		return this.creationDate;
 	}
 
 	/**
