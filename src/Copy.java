@@ -161,7 +161,7 @@ public class Copy implements Serializable {
     }
 
     private void setUniqueCopyID() {
-        this.uniqueCopyID = this.copyOf.getUniqueID() + nextId;
+        this.uniqueCopyID = this.copyOf.getUniqueID() + "-" + nextId;
         nextId++;
     }
 
