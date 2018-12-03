@@ -12,7 +12,7 @@ public class UserManager implements Serializable {
 
     public UserManager() {
         users = new ArrayList<>();
-        // this.selfPopulate1();
+        this.selfPopulate();
     }
 
 
@@ -40,11 +40,10 @@ public class UserManager implements Serializable {
             e.printStackTrace();
             System.exit(0);
         }
-        System.out.println("Successfully written in file.");
+        System.out.println("Successfully written user in file.");
     }
 
-    // should be private / public only for testing purposes
-    public void selfPopulate() {
+    private void selfPopulate() {
         // Get a file to read from or create it if it doesn't exist.
         File file = fileToReadWrite();
 
@@ -76,16 +75,6 @@ public class UserManager implements Serializable {
         System.out.println("Successfully read user from file.");
     }
 
-    // test data
-    public void selfPopulate1() {
-        this.addUser(new NormalUser("Sian", "Pike", "sianspike",
-                "07813931066", "", new Address("14 Bryn Y Mor Crescent",
-                "Swansea", "Wales", "SA14QT")));
-
-        this.addUser(new Librarian("Joe", "Bloggs", "librarian1",
-                "12345678", "", new Address("Somewhere", "Cardiff", "Wales",
-                "AB12CD")));
-    }
 
     // Get a file to read/write or create it if it doesn't exist.
     private File fileToReadWrite() {

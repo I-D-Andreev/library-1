@@ -17,7 +17,7 @@ public class ResourceManager implements Serializable {
 
     public ResourceManager() {
         resources = new ArrayList<>();
-        //selfPopulate1();
+        this.selfPopulate();
     }
 
     public void save() {
@@ -50,9 +50,7 @@ public class ResourceManager implements Serializable {
         System.out.println("Successfully written resource to file.");
     }
 
-    // should be private
-    // public for testing purposes
-    public void selfPopulate() {
+    private void selfPopulate() {
         // Get a file to read from or create it if it doesn't exist.
         File file = this.fileToReadWrite();
 
@@ -99,19 +97,6 @@ public class ResourceManager implements Serializable {
         return file;
     }
 
-    // test data
-    public void selfPopulate1() {
-        Book b = new Book("123", "Harry Potter", 2010, "", "J.K.R.", "dn");
-
-        this.addResource(b);
-        this.addResource(new Laptop("123132", "Lenovo", 2015, "", "LN", "S3", "W"));
-        this.addResource(new DVD("1312", "DVD1", 2015, "", "P", 201));
-
-        this.addCopyOfResource(2, b);
-        this.addCopyOfResource(3, b);
-        this.addCopyOfResource(4, b);
-
-    }
 
     public void addResource(Resource resource) {
         this.resources.add(resource);

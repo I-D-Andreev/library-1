@@ -68,6 +68,11 @@ public class NewWindow {
             stage.show();
             ((Node) (event.getSource())).getScene().getWindow().hide();
 
+            // save data on stage close
+            stage.setOnCloseRequest(eventHandler -> {
+                library.save();
+            });
+
         } catch (IOException e) {
 
             System.exit(0);

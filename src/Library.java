@@ -21,7 +21,7 @@ public class Library {
     }
 
     public void save(){
-        //this.userManager.save();
+        this.userManager.save();
         this.resourceManager.save();
     }
 }

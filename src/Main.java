@@ -13,9 +13,9 @@ public class Main extends Application{
 
     public static void main(String[] args) throws Exception {
         //Launches the application - do not remove.
-        //launch(args);
+        launch(args);
 
-        System.exit(0);
+        //System.exit(0);
     }
 
     /**
@@ -29,11 +29,9 @@ public class Main extends Application{
         Parent root = null;
 
         try {
-            //root = FXMLLoader.load(getClass().getClassLoader().getResource("resources/Login.fxml"));
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("resources/Login.fxml"));
             root = fxmlLoader.load();
             fxmlLoader.<Controller>getController().setLibrary(library);
-
         } catch (IOException e) {
 
             System.exit(1);
