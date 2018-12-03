@@ -19,4 +19,9 @@ public class Library {
     public ResourceManager getResourceManager() {
         return resourceManager;
     }
+
+    public void save(){
+        this.userManager.save();
+        this.resourceManager.save();
+    }
 }
