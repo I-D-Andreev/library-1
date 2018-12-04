@@ -9,8 +9,8 @@ public class Book extends Resource {
     private final double lateReturnFinePerDay;
     private final double maxFineAmount;
 
-    public Book(String uniqueID, String title, int year, String thumbnail, String author, String publisher) {
-        super(uniqueID, title, year, thumbnail);
+    public Book(String title, int year, String thumbnail, String author, String publisher) {
+        super(title, year, thumbnail);
         this.author = author;
         this.publisher = publisher;
 
@@ -18,10 +18,10 @@ public class Book extends Resource {
         this.maxFineAmount = 25.00;
     }
 
-    public Book(String uniqueID, String title, int year, String thumbnail, String author, String publisher,
+    public Book(String title, int year, String thumbnail, String author, String publisher,
                 String genre, String ISBN, String language) {
         // call the "smaller" constructor
-        this(uniqueID, title, year, thumbnail, author, publisher);
+        this(title, year, thumbnail, author, publisher);
         this.genre = genre;
         this.ISBN = ISBN;
         this.language = language;

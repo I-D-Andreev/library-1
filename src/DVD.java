@@ -10,8 +10,8 @@ public class DVD extends Resource {
     private final double lateReturnFinePerDay;
     private final double maxFineAmount;
 
-    public DVD(String uniqueID, String title, int year, String thumbnail, String director, int runtime) {
-        super(uniqueID, title, year, thumbnail);
+    public DVD(String title, int year, String thumbnail, String director, int runtime) {
+        super(title, year, thumbnail);
         this.director = director;
         this.runtime = runtime;
 
@@ -20,10 +20,10 @@ public class DVD extends Resource {
         this.listOfSubtitleLanguages = new ArrayList<>();
     }
 
-    public DVD(String uniqueID, String title, int year, String thumbnail, String director, int runtime,
+    public DVD(String title, int year, String thumbnail, String director, int runtime,
                String language, ArrayList<String> listOfSubtitleLanguages) {
         // call the "smaller" DVD constructor
-        this(uniqueID, title, year, thumbnail, director, runtime);
+        this(title, year, thumbnail, director, runtime);
         this.language = language;
         this.listOfSubtitleLanguages = getListOfSubtitleLanguages();
     }
@@ -62,7 +62,7 @@ public class DVD extends Resource {
 
     public void addSubtitleLanguage(String language) {
         // add language only if it doesn't already exist
-        if(this.listOfSubtitleLanguages.indexOf(language) != -1) {
+        if (this.listOfSubtitleLanguages.indexOf(language) != -1) {
             this.listOfSubtitleLanguages.add(language);
         }
     }

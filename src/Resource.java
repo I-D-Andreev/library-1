@@ -1,6 +1,7 @@
 //TODO: Javadoc comments
 import java.io.*;
 public abstract class Resource implements Serializable {
+    private static int nextID=0;
 
     private String uniqueID;
     private String title;
@@ -8,12 +9,15 @@ public abstract class Resource implements Serializable {
     private String thumbnailImagePath;
     private CopyManager copyManager;
 
-    public Resource(String uniqueID, String title, int year, String thumbnailImagePath) {
+
+
+    public Resource(String title, int year, String thumbnailImagePath) {
         this.uniqueID = uniqueID;
         this.title = title;
         this.year = year;
         this.thumbnailImagePath = thumbnailImagePath;
         this.copyManager = new CopyManager(this);
+        this.setUniqueID();
     }
 
     public String getUniqueID() {
@@ -58,6 +62,12 @@ public abstract class Resource implements Serializable {
     public void setCopyManager(CopyManager copyManager){
         this.copyManager = copyManager;
     }
+
+    private void setUniqueID() {
+        this.uniqueID = this.title.charAt(0) + "-" + nextID;
+        nextID++;
+    }
+
 
     public boolean equals(Object obj) {
         if (obj == null) return false;
