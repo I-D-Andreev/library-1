@@ -15,7 +15,7 @@ import java.util.Date;
  * Controller class for the Manage Resources Window.  Handles interaction with the UI from the user.
  */
 
-public class ManageResourcesController {
+public class ManageResourcesController extends Controller {
 
     @FXML // fx:id="borrowTab"
     private Tab borrowTab; // Value injected by FXMLLoader
@@ -65,6 +65,9 @@ public class ManageResourcesController {
     @FXML // fx:id="payButton"
     private Button payButton; // Value injected by FXMLLoader
 
+    @FXML // fx:id="backButton"
+    private Button backButton; // Value injected by FXMLLoader
+
     @FXML
     void borrowButtonClicked(ActionEvent event) {
 
@@ -76,6 +79,17 @@ public class ManageResourcesController {
         UserManager userManager = new UserManager();
         HistoryEntryItemTransaction itemTransaction = new HistoryEntryItemTransaction(Date.from(Instant.EPOCH),
                 true, userManager.getUserById(userID));
+    }
+
+    /**
+     * Goes back to the librarian dashboard when clicked.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void backButtonClicked(ActionEvent event) {
+
+        new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
 
     @FXML

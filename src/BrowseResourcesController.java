@@ -35,7 +35,6 @@ public class BrowseResourcesController extends Controller {
     @FXML// fx:id="searchButton"
     private Button searchButton;// Value injected by FXMLLoader
 
-
     @FXML// fx:id="displayTable"
     private TableView<Resource> displayTable;
 
@@ -51,6 +50,8 @@ public class BrowseResourcesController extends Controller {
     @FXML// fx:id="typeColumn"
     private TableColumn<Resource, String> typeColumn;
 
+    @FXML // fx:id="backButton"
+    private Button backButton; // Value injected by FXMLLoader
 
     private ObservableList<Resource> data;
     private ArrayList<String> acceptableTypes;
@@ -106,6 +107,15 @@ public class BrowseResourcesController extends Controller {
         displayTable.getItems().addAll(data);
     }
 
+    /**
+     * Goes back to the previous window when the back button is clicked.
+     * @param event The current event.
+     */
+    @FXML
+    void backButtonClicked(ActionEvent event) {
+
+        //if librarian then go back to librarian dashboard else go back to user dashboard
+    }
 
     private void manageCheckedBoxTypes(){
         acceptableTypes.clear();

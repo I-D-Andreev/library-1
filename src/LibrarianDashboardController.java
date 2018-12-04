@@ -85,7 +85,8 @@ public class LibrarianDashboardController extends Controller {
      */
     void manageResourcesButtonClicked(ActionEvent event) {
 
-        new NewWindow("resources/ManageResources.fxml", event, "Manage Resources - TaweLib");
+        new NewWindow("resources/ManageResources.fxml", event, "Manage Resources - TaweLib",
+                getLibrary());
     }
 
     @FXML
@@ -94,6 +95,6 @@ public class LibrarianDashboardController extends Controller {
      */
     void viewUserButtonClicked(ActionEvent event) {
 
-        new NewWindow("resources/ViewUser.fxml", event, "View User - TaweLib");
+        new NewWindow("resources/ViewUser.fxml", event, "View User - TaweLib", getLibrary());
     }
 }

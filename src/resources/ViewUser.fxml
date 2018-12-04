@@ -169,6 +169,13 @@
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
+         <children>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButtonClicked" text="Back">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
       </HBox>
    </children>
 </GridPane>

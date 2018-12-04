@@ -1,3 +1,4 @@
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -54,5 +55,19 @@ public class ViewUserController extends Controller {
 
     @FXML // fx:id="addUserButton"
     private Button addUserButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="backButton"
+    private Button backButton; // Value injected by FXMLLoader
+
+    /**
+     * Goes back to the librarian dashboard when clicked.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void backButtonClicked(ActionEvent event) {
+
+        new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
+    }
 
 }

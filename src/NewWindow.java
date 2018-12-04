@@ -75,6 +75,7 @@ public class NewWindow {
 
         } catch (IOException e) {
 
+            e.printStackTrace();
             System.exit(0);
 
         } catch (Exception e) {
