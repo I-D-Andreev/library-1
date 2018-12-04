@@ -11,7 +11,7 @@ import java.util.Date;
 
 public class Main extends Application{
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         //Launches the application - do not remove.
         launch(args);
 
