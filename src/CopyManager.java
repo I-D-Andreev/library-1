@@ -1,49 +1,108 @@
 import java.util.ArrayList;
 import java.io.*;
+
+/**
+ * @author Kleanthis Liontis, Ivan Andreev.
+ * Class to model a copy manager.
+ */
 public class CopyManager implements Serializable {
 
+    /**
+     * An ArrayList containing all the users requesting a copy.
+     */
     private ArrayList<User> requestQueue;
+
+    /**
+     * An ArrayList containing all the copies.
+     */
     private ArrayList<Copy> listOfAllCopies;
+
+    /**
+     * The resource it is a copy manager of.
+     */
     private Resource copyManagerOf;
 
+    /**
+     * Creates ArrayLists of requestQueue and listofAllcopies
+     * for the resource it is a copymanager of.
+     * @param copyManagerOf The resource it is a copy manager of.
+     */
     public CopyManager(Resource copyManagerOf) {
         this.copyManagerOf = copyManagerOf;
         requestQueue = new ArrayList<>();
         listOfAllCopies = new ArrayList<>();
     }
 
+    /**
+     * Gets the resource it is a copymanager of.
+     * @return copyManagerOf The resource it is a copy manager of.
+     */
     public Resource getCopyManagerOf() {
         return copyManagerOf;
     }
 
+    /**
+     * Checks if the request queue is empty.
+     * @return true if empty,false otherwise.
+     */
     public boolean isQueueEmpty() {
         return requestQueue.size() == 0;
     }
 
+    /**
+     * Checks if a user is inside the request queue.
+     * @param user The user to check for in the queue.
+     * @return true if the user is in the queue,false otherwise.
+
     public boolean requestQueueContains(User user) {
         return (requestQueue.indexOf(user) != -1);
     }
+    */
 
+    /**
+     * Gets the first user in the queue.
+     * @return User the first user in the queue.
+     */
     public User getFirstUserInQueue() {
         return this.requestQueue.get(0);
     }
 
+    /**
+     * Removes the first user from the queue.
+     */
     public void removeFirstUserInQueue() {
         this.requestQueue.remove(0);
     }
 
+    /**
+     * Adds a user in the queue.
+     * @param user The user to be added to the queue.
+     */
     public void addUserToTheQueue(User user) {
         this.requestQueue.add(user);
     }
 
+    /**
+     * Checks the user in in the queue.
+     * @param user The user to check for.
+     * @return true if user is in queue,false otherwise.
+     */
     public boolean isUserInQueue(User user) {
         return requestQueue.indexOf(user) != -1;
     }
 
+    /**
+     * An ArrayList of all copies.
+     * @return listOfAllCopies The ArrayList of all copies.
+     */
     public ArrayList<Copy> getListOfAllCopies() {
         return this.listOfAllCopies;
     }
 
+    /**
+     * Gets a list of all available copies.
+     * @return availableCopies An ArrayList of all available copies.
+     */
     public ArrayList<Copy> getListOfAvailableCopies() {
         ArrayList<Copy> availableCopies = new ArrayList<>();
 
@@ -55,21 +114,36 @@ public class CopyManager implements Serializable {
         return availableCopies;
     }
 
+    /**
+     * Gets the number of available copies.
+     * @return int The number of available copies.
+     */
     public int getNumOfAvailableCopies() {
         return this.getListOfAvailableCopies().size();
     }
 
+    /**
+     * Adds a copy in the ArrayList of all copies.
+     * @param copy The copy to be added in the lst.
+     */
     public void addCopy(Copy copy) {
         this.listOfAllCopies.add(copy);
         this.newAvailableCopyEvent();
     }
 
-    //Adds copy with its parameters, instead of copy object.
+    /**
+     * Adds copy with its parameters, instead of copy object.
+     * @param loanDuration The loanDuration of the copy.
+     */
     public void addCopy(int loanDuration) {
         this.listOfAllCopies.add(new Copy(loanDuration, this));
         this.newAvailableCopyEvent();
     }
 
+    /**
+     * Removes a copy from the ArrayList of all available copies.
+     * @param copy The copy to be removed.
+     */
     public void removeCopy(Copy copy) {
         if (!copy.isAvailable()) {
             return; // error?
@@ -77,6 +151,11 @@ public class CopyManager implements Serializable {
         this.listOfAllCopies.remove(copy);
     }
 
+    /**
+     * Find a copy by its ID inside the list of all copies.
+     * @param copyId The id of the copy to be found.
+     * @return copy The copy if found by its id,null otherwise.
+     */
     public Copy findCopyById(String copyId){
         Copy returnCopy=null;
         for(Copy copy: listOfAllCopies){
@@ -87,6 +166,10 @@ public class CopyManager implements Serializable {
         return returnCopy;
     }
 
+    /**
+     * Removes a copy from the list of all copies by its ID.
+     * @param copyId The id of the copy to be removed.
+     */
     public void removeCopyById(String copyId) {
         if (this.findCopyById(copyId) == null) {
             return; // error?
@@ -94,6 +177,12 @@ public class CopyManager implements Serializable {
         this.listOfAllCopies.remove(this.findCopyById(copyId));
     }
 
+    /**
+     * Checks if a copy is available and if that copy is reserved for a user,
+     * loans the copy to him.
+     * @param toUser The user who will receive the loaned copy.
+     * @return true if the copy is loaned, false otherwise.
+     */
     public boolean loanCopy(NormalUser toUser) {
         if (this.getNumOfAvailableCopies() == 0) {
             return false;
@@ -111,7 +200,10 @@ public class CopyManager implements Serializable {
         return true;
     }
 
-
+    /**
+     * Reserves a copy for a user.
+     * @param forUser The user the copy is being reserved for.
+     */
     public void reserveCopy(NormalUser forUser) {
         if (!loanCopy(forUser)) {
             this.requestQueue.add(forUser);
@@ -119,8 +211,9 @@ public class CopyManager implements Serializable {
         }
     }
 
-    // Find the oldest borrowed copy with no due date set
-    // and set its due date.
+    /**Find the oldest borrowed copy with no due date set
+     * and set its due date.
+     */
     private void setDueDateOfOldestBorrowedCopy() {
         // ** There is the possibility that all copies' due dates are already set.
         Copy oldestCopy = null;
