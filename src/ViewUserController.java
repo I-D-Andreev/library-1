@@ -55,8 +55,4 @@ public class ViewUserController extends Controller {
     @FXML // fx:id="addUserButton"
     private Button addUserButton; // Value injected by FXMLLoader
 
-    @FXML // fx:id="closeButton"
-    private Button closeButton; // Value injected by FXMLLoader
-
-
 }

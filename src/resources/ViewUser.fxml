@@ -165,13 +165,7 @@
          </children>
       </HBox>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
-         <children>
-            <Button fx:id="closeButton" mnemonicParsing="false" text="Close">
-               <HBox.margin>
-                  <Insets right="20.0" />
-               </HBox.margin>
-            </Button>
-         </children>
+
          <opaqueInsets>
             <Insets />
          </opaqueInsets>

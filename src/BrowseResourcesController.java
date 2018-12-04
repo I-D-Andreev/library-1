@@ -20,9 +20,6 @@ import java.util.ArrayList;
 
 public class BrowseResourcesController extends Controller {
 
-    @FXML// fx:id="closeButton"
-    private Button closeButton;// Value injected by FXMLLoader
-
     @FXML// fx:id="dvdFilter"
     private CheckBox dvdFilter;// Value injected by FXMLLoader
 
@@ -66,15 +63,6 @@ public class BrowseResourcesController extends Controller {
         titleColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("title"));
         yearColumn.setCellValueFactory(new PropertyValueFactory<Resource, Integer>("year"));
         typeColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("type"));
-    }
-
-    @FXML
-    /**
-     * Close the application.
-     */
-    public void closeButtonClicked(ActionEvent event) {
-
-        System.exit(0);
     }
 
     @FXML

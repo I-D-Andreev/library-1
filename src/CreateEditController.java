@@ -9,10 +9,7 @@ import javafx.scene.control.TextField;
  * @author Chris McAuley.
  */
 
-public class CreateEditController {
-
-    @FXML// fx:id="createEditCloseButton"
-    private Button createEditCloseButton;// Value injected by FXMLLoader
+public class CreateEditController extends Controller {
 
     @FXML// fx:id="createBookTab"
     private Tab createBookTab;// Value injected by FXMLLoader
