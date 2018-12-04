@@ -240,11 +240,11 @@ public class ResourceManager implements Serializable {
 
     // test data
     public void selfPopulate1() {
-        Book b = new Book("123", "Harry Potter", 2010, "", "J.K.R.", "dn");
+        Book b = new Book("Harry Potter", 2010, "", "J.K.R.", "dn");
 
         this.addResource(b);
-        this.addResource(new Laptop("123132", "Lenovo", 2015, "", "LN", "S3", "W"));
-        this.addResource(new DVD("1312", "DVD1", 2015, "", "P", 201));
+        this.addResource(new Laptop("Lenovo", 2015, "", "LN", "S3", "W"));
+        this.addResource(new DVD("DVD1", 2015, "", "P", 201));
 
         this.addCopyOfResource(2, b);
         this.addCopyOfResource(3, b);
