@@ -1,9 +1,10 @@
+import java.io.*;
 /**
  * Class to model the address of a person.
  *
  * @author Ivan Andreev
  */
-public class Address {
+public class Address implements Serializable {
     /**
      * The first line in the address.
      */

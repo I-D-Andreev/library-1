@@ -4,8 +4,8 @@
  * @author Ivan Andreev
  */
 public class Library {
-    UserManager userManager;
-    ResourceManager resourceManager;
+    private UserManager userManager;
+    private ResourceManager resourceManager;
 
     public Library() {
         userManager = new UserManager();
@@ -18,5 +18,10 @@ public class Library {
 
     public ResourceManager getResourceManager() {
         return resourceManager;
+    }
+
+    public void save(){
+        this.userManager.save();
+        this.resourceManager.save();
     }
 }

@@ -3,6 +3,7 @@
  *
  * @author Steven Lekwowicz
  */
+
 public class Laptop extends Resource {
 
     /**
@@ -33,7 +34,6 @@ public class Laptop extends Resource {
     /**
      * Creates a new laptop.
      *
-     * @param uniqueID     The unique ID of the laptop
      * @param title        The title of the laptop
      * @param year         The year the laptop was made
      * @param thumbnail    The thumbnail of the laptop
@@ -41,8 +41,8 @@ public class Laptop extends Resource {
      * @param model        The model number of the laptop
      * @param installedOS  The OS installed on the laptop
      */
-    public Laptop(String uniqueID, String title, int year, String thumbnail, String manufacturer, String model, String installedOS) {
-        super(uniqueID, title, year, thumbnail);
+    public Laptop(String title, int year, String thumbnail, String manufacturer, String model, String installedOS) {
+        super(title, year, thumbnail);
         this.manufacturer = manufacturer;
         this.model = model;
         this.installedOS = installedOS;
@@ -122,5 +122,8 @@ public class Laptop extends Resource {
         return this.maxFineAmount;
     }
 
+    public String getType() {
+        return "Laptop";
+    }
 
 }

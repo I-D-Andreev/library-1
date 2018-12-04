@@ -11,7 +11,7 @@ import javafx.scene.control.TableView;
  * @author Sian Pike
  */
 
-public class LibrarianDashboardController {
+public class LibrarianDashboardController extends Controller {
 
     @FXML // fx:id="dashboardTable"
     private TableView<?> dashboardTable; // Value injected by FXMLLoader
@@ -55,7 +55,8 @@ public class LibrarianDashboardController {
      */
     void browseButtonClicked(ActionEvent event) {
 
-        new NewWindow("resources/BrowseResources.fxml", event, "Browse Resources - TaweLib");
+        new NewWindow("resources/BrowseResources.fxml", event,
+                "Browse Resources - TaweLib", getLibrary());
     }
 
     @FXML
@@ -64,7 +65,8 @@ public class LibrarianDashboardController {
      */
     void createEditButtonClicked(ActionEvent event) {
 
-        new NewWindow("resources/CreateEdit.fxml", event, "Create/Edit Resources - TaweLib");
+        new NewWindow("resources/CreateEdit.fxml", event,
+                "Create/Edit Resources - TaweLib", getLibrary());
     }
 
     @FXML
@@ -73,7 +75,8 @@ public class LibrarianDashboardController {
      */
     void logOutButtonClicked(ActionEvent event) {
 
-        new NewWindow("resources/Login.fxml", event, "Login - TaweLib");
+        new NewWindow("resources/Login.fxml", event,
+                "Login - TaweLib", getLibrary());
     }
 
     @FXML
