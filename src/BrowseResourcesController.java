@@ -61,12 +61,13 @@ public class BrowseResourcesController extends Controller {
     public void initialize() {
         data = FXCollections.observableArrayList();
         acceptableTypes = new ArrayList<>();
-
         uniqueIDColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("uniqueID"));
         titleColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("title"));
         yearColumn.setCellValueFactory(new PropertyValueFactory<Resource, Integer>("year"));
         typeColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("type"));
+      //  this.updateTable();
     }
+
 
     @FXML
     /**
@@ -78,7 +79,7 @@ public class BrowseResourcesController extends Controller {
     }
 
     @FXML
-    public void searchButtonClicked(ActionEvent event) {
+    public void updateTable() {
         // clear previous data
         data.clear();
         displayTable.getItems().clear();
