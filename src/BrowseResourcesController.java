@@ -12,7 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.util.ArrayList;
 
 /**
- * Controller class for the Browse Resources Page for Lirarian/User.
+ * Controller class for the Browse Resources Page for Librarian/User.
  * Handles what happens when the user interacts with the UI.
  *
  * @author Chris McAuley.
