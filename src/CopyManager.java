@@ -234,8 +234,10 @@ public class CopyManager implements Serializable {
     }
 
 
-    // Called when a copy is returned.
-    // Decides what to do with said copy.
+    /**
+     *  Called when a copy is returned.
+     * Decides what to do with said copy.
+     */
     public void newAvailableCopyEvent() {
         ArrayList<Copy> availableCopies = this.getListOfAvailableCopies();
         int numberOfCopies = availableCopies.size();
