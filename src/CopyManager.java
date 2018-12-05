@@ -53,11 +53,10 @@ public class CopyManager implements Serializable {
      * Checks if a user is inside the request queue.
      * @param user The user to check for in the queue.
      * @return true if the user is in the queue,false otherwise.
-
+     */
     public boolean requestQueueContains(User user) {
         return (requestQueue.indexOf(user) != -1);
     }
-    */
 
     /**
      * Gets the first user in the queue.
