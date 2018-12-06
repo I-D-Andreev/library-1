@@ -197,6 +197,18 @@ public class CreateEditController extends Controller {
     @FXML // fx:id="bookDeleteButton"
     private Button bookDeleteButton; // Value injected by FXMLLoader
 
+    @FXML // fx:id="copyUniqueIDtextField"
+    private TextField copyUniqueIDtextField; // Value injected by FXMLLoader
+
+    @FXML // fx:id="copySearchButton"
+    private Button copySearchButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="copyLoanDurationTextField"
+    private TextField copyLoanDurationTextField; // Value injected by FXMLLoader
+
+    @FXML // fx:id="copyCreateButton"
+    private Button copyCreateButton; // Value injected by FXMLLoader
+
     /**
      * Goes back to the librarian dashboard when clicked.
      *
@@ -606,6 +618,67 @@ public class CreateEditController extends Controller {
     void bookDeleteButtonClicked(ActionEvent event) {
 
         getLibrary().getResourceManager().removeResource(uniqueIDSearchEditBookTextField.getId());
+    }
+
+    @FXML
+    void copyCreateButtonClicked(ActionEvent event) {
+
+        // mandatory information - title, year, thumbnail, manufacturer, model, installedOS
+        if (copyLoanDurationTextField.getText().isEmpty()) {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
+                    ButtonType.OK);
+
+            alert.show();
+
+        } else if (!isStringNumber(copyLoanDurationTextField.getText())) {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR, "The text field must be a number.",
+                    ButtonType.OK);
+
+            alert.show();
+
+        } else {
+
+            // gather the information
+            int loanDuration = Integer.parseInt(copyLoanDurationTextField.toString());
+
+            // Find the laptop.
+            Resource resource = getLibrary().getResourceManager().getResourceById(copyUniqueIDtextField.getText());
+
+            // Change the laptop
+            getLibrary().getResourceManager().addCopyOfResource(loanDuration,resource);
+
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Resource copied successfully.",
+                    ButtonType.OK);
+
+            alert.show();
+
+            // enable the search bar and clear all the fields
+            copyUniqueIDtextField.setDisable(false);
+
+            //Clear fields
+            copyLoanDurationTextField.setText("");
+        }
+    }
+
+    @FXML
+    void copySearchButtonClicked(ActionEvent event) {
+
+        Resource resource = getLibrary().getResourceManager().getResourceById(copyUniqueIDtextField.toString());
+
+        if (resource == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Couldn't find a resource with such ID.",
+                    ButtonType.OK);
+
+            alert.show();
+
+        } else {
+
+            // lock the id field
+            copyUniqueIDtextField.setDisable(true);
+        }
     }
 
     /**
