@@ -12,7 +12,7 @@ import java.io.IOException;
  * @author Sian Pike
  */
 
-public class NewWindow {
+public class NewWindow extends Controller {
 
     /**
      * Creates a new window when called.
@@ -80,6 +80,7 @@ public class NewWindow {
 
         } catch (Exception e) {
 
+            e.printStackTrace();
             System.exit(1);
         }
     }

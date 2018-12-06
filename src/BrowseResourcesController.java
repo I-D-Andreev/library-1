@@ -12,13 +12,16 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.util.ArrayList;
 
 /**
- * Controller class for the Browse Resources Page for Lirarian/User.
+ * Controller class for the Browse Resources Page for Librarian/User.
  * Handles what happens when the user interacts with the UI.
  *
  * @author Chris McAuley.
  */
 
 public class BrowseResourcesController extends Controller {
+
+    @FXML// fx:id="closeButton"
+    private Button closeButton;// Value injected by FXMLLoader
 
     @FXML// fx:id="dvdFilter"
     private CheckBox dvdFilter;// Value injected by FXMLLoader
@@ -34,6 +37,7 @@ public class BrowseResourcesController extends Controller {
 
     @FXML// fx:id="searchButton"
     private Button searchButton;// Value injected by FXMLLoader
+
 
     @FXML// fx:id="displayTable"
     private TableView<Resource> displayTable;
@@ -59,15 +63,25 @@ public class BrowseResourcesController extends Controller {
     public void initialize() {
         data = FXCollections.observableArrayList();
         acceptableTypes = new ArrayList<>();
-
         uniqueIDColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("uniqueID"));
         titleColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("title"));
         yearColumn.setCellValueFactory(new PropertyValueFactory<Resource, Integer>("year"));
         typeColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("type"));
+      //  this.updateTable();
+    }
+
+
+    @FXML
+    /**
+     * Close the application.
+     */
+    public void closeButtonClicked(ActionEvent event) {
+
+        System.exit(0);
     }
 
     @FXML
-    public void searchButtonClicked(ActionEvent event) {
+    public void updateTable() {
         // clear previous data
         data.clear();
         displayTable.getItems().clear();
