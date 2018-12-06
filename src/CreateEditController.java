@@ -2,6 +2,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.util.Arrays;
+import java.util.ArrayList;
+
 /**
  * Controller class for the Create/Edit screen for the Librarian.
  * Handles what happens when the user interacts with the UI.
@@ -63,16 +66,12 @@ public class CreateEditController extends Controller {
     private TextField languageDVDTextField;// Value injected by FXMLLoader
 
     @FXML// fx:id="languageSubtitlesDVD1TextField"
-    private TextField languageSubtitlesDVD1TextField;// Value injected by FXMLLoader
+    private TextField languageSubtitlesDVDTextField;// Value injected by FXMLLoader
 
-    @FXML// fx:id="languageSubtitlesDVD2TextField"
-    private TextField languageSubtitlesDVD2TextField;// Value injected by FXMLLoader
 
     @FXML// fx:id="createDVDButton"
     private Button createDVDButton;// Value injected by FXMLLoader
 
-    @FXML// fx:id="languageSubtitlesDVD3TextField"
-    private TextField languageSubtitlesDVD3TextField;// Value injected by FXMLLoader
 
     @FXML// fx:id="createLaptopTab"
     private Tab createLaptopTab;// Value injected by FXMLLoader
@@ -217,8 +216,8 @@ public class CreateEditController extends Controller {
 
     @FXML
     public void createBookButtonClicked(ActionEvent event) {
-        // mandatory - title, year, thumbnail, author, publisher
-        // optional - genre, isbn, language
+        // mandatory information- title, year, thumbnail, author, publisher
+        // optional information- genre, isbn, language
 
         if (titleBookTextField.getText().isEmpty() || yearBookTextField.getText().isEmpty()
                 || imagePathBookTextField.getText().isEmpty() || publisherBookTextField.getText().isEmpty()) {
@@ -230,7 +229,7 @@ public class CreateEditController extends Controller {
                     ButtonType.OK);
             alert.show();
         } else {
-
+            // gather the information
             String title = titleBookTextField.getText();
             int year = Integer.parseInt(yearBookTextField.getText());
             String thumbnail = imagePathBookTextField.getText();
@@ -240,9 +239,11 @@ public class CreateEditController extends Controller {
             String isbn = isbnBookTextField.getText();
             String language = languageBookTextField.getText();
 
+            // create a Book and add it
             getLibrary().getResourceManager().addResource(new Book(title, year, thumbnail, author, publisher,
                     genre, isbn, language));
 
+            // notify the user
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "Book resource created successfully.",
                     ButtonType.OK);
             alert.show();
@@ -251,12 +252,50 @@ public class CreateEditController extends Controller {
 
     @FXML
     public void createDVDButtonClicked(ActionEvent event) {
+        // mandatory information- title, year, thumbnail, director, runtime
+        // optional information- language, listOfSubtitleLanguages
+        if(titleDVDTextField.getText().isEmpty() || yearDVDTextField.getText().isEmpty()
+        || imagePathDVDTextField.getText().isEmpty() || directorDVDTextField.getText().isEmpty()
+        || runtimeDVDTextField.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
+                    ButtonType.OK);
+            alert.show();
+        } else if(!isStringNumber(yearDVDTextField.getText()) || !isStringNumber(runtimeDVDTextField.getText())){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "The year and runtime text fields must be a number.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // gather the information
+            String title = titleDVDTextField.getText();
+            int year = Integer.parseInt(yearDVDTextField.getText());
+            String thumbnail = imagePathDVDTextField.getText();
+            String director = directorDVDTextField.getText();
+            int runtime = Integer.parseInt(runtimeDVDTextField.getText());
+            String language = languageDVDTextField.getText();
 
+            // get a string containing the languages comma separated
+            String subtitleLanguages = languageSubtitlesDVDTextField.getText();
+
+            // split the string into smaller strings on new line, comma or space
+            String[] arrayOfSubtitleLanguages = subtitleLanguages.split("\\r?\\n|,| ");
+
+            // convert that array into array list
+            ArrayList<String> listOfSubtitleLanguages = new ArrayList<>(Arrays.asList(arrayOfSubtitleLanguages));
+
+            // create a DVD and add it
+            getLibrary().getResourceManager().addResource(new DVD(title, year, thumbnail, director,
+                    runtime, language, listOfSubtitleLanguages));
+
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "DVD resource created successfully.",
+                    ButtonType.OK);
+            alert.show();
+        }
     }
 
     @FXML
     public void createLaptopButtonClicked(ActionEvent event) {
-        // mandatory - title, year, thumbnail, manufacturer, model, installedOS
+        // mandatory information - title, year, thumbnail, manufacturer, model, installedOS
         if (titleLaptopTextField.getText().isEmpty() || yearLaptopTextField.getText().isEmpty()
                 || imagePathLaptopTextField.getText().isEmpty() || manufacturerLaptopTextField.getText().isEmpty()
                 || modelLaptopTextField.getText().isEmpty() || operatingSystemLaptopTextField.getText().isEmpty()) {
@@ -268,6 +307,7 @@ public class CreateEditController extends Controller {
                     ButtonType.OK);
             alert.show();
         } else {
+            // gather the information
             String title = titleLaptopTextField.getText();
             int year = Integer.parseInt(yearLaptopTextField.getText());
             String thumbnail = imagePathLaptopTextField.getText();
@@ -275,9 +315,11 @@ public class CreateEditController extends Controller {
             String model = modelLaptopTextField.getText();
             String installedOS = operatingSystemLaptopTextField.getText();
 
+            // create a Laptop object and add it
             getLibrary().getResourceManager().addResource(new Laptop(title, year, thumbnail, manufacturer,
                     model, installedOS));
 
+            // notify the user
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "Laptop resource created successfully.",
                     ButtonType.OK);
             alert.show();
