@@ -44,7 +44,8 @@ public class LoginController extends Controller {
                     ButtonType.OK);
             alert.show();
         } else {
-
+            // set the currently logged in user
+            getLibrary().setCurrentUserLoggedIn(existingUser);
             //Checks whether the user is a librarian.
             if (existingUser.hasAdminAccess()) {
 
