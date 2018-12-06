@@ -24,6 +24,8 @@ public class Library {
     public void save(){
         this.userManager.save();
         this.resourceManager.save();
+        SaveStaticVariables saveStaticVariables = new SaveStaticVariables(User.getNextID(), Resource.getNextID());
+        saveStaticVariables.save();
     }
 
     public User getCurrentUserLoggedIn() {

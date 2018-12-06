@@ -13,6 +13,9 @@ public class UserManager implements Serializable {
     public UserManager() {
         users = new ArrayList<>();
         this.selfPopulate();
+
+        // assign next ID static variable to the user class
+        User.setNextID(new SaveStaticVariables().getUserNextID());
     }
 
 

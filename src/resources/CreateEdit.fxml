@@ -32,23 +32,23 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="388.0" prefWidth="600.0">
                      <children>
-                        <TextField fx:id="yearBookTextField" layoutX="181.0" layoutY="97.0" />
                         <TextField fx:id="titleBookTextField" layoutX="181.0" layoutY="55.0" />
+                        <TextField fx:id="yearBookTextField" layoutX="181.0" layoutY="97.0" />
+                        <TextField fx:id="imagePathBookTextField" layoutX="182.0" layoutY="146.0" />
                         <TextField fx:id="authorBookTextField" layoutX="181.0" layoutY="184.0" />
                         <TextField fx:id="publisherBookTextField" layoutX="181.0" layoutY="226.0" />
                         <TextField fx:id="genreBookTextField" layoutX="181.0" layoutY="269.0" />
-                        <Text layoutX="22.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Language (Optional)" />
-                        <Text layoutX="22.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ISBN (Optional)" />
-                        <Text layoutX="22.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
-                        <Text layoutX="22.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year" />
-                        <Text layoutX="22.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author" />
-                        <Text layoutX="22.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Publisher" />
-                        <Text layoutX="22.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre (Optional)" />
                         <TextField fx:id="isbnBookTextField" layoutX="181.0" layoutY="319.0" />
                         <TextField fx:id="languageBookTextField" layoutX="181.0" layoutY="363.0" />
                         <Button fx:id="createBookButton" layoutX="438.0" layoutY="403.0" mnemonicParsing="false" onAction="#createBookButtonClicked" text="Create" />
                         <Text layoutX="22.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thumbnail Image path" />
-                        <TextField fx:id="imagePathBookTextField" layoutX="182.0" layoutY="146.0" />
+                        <Text layoutX="22.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre (Optional)" />
+                        <Text layoutX="22.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Publisher" />
+                        <Text layoutX="22.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author" />
+                        <Text layoutX="22.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year" />
+                        <Text layoutX="22.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
+                        <Text layoutX="22.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ISBN (Optional)" />
+                        <Text layoutX="22.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Language (Optional)" />
                      </children>
                   </AnchorPane>
             </content>
@@ -84,9 +84,9 @@
                      <children>
                         <TextField fx:id="yearLaptopTextField" layoutX="181.0" layoutY="64.0" />
                         <TextField fx:id="titleLaptopTextField" layoutX="181.0" layoutY="22.0" />
-                        <TextField fx:id="manufacturerLaptopTextField" layoutX="186.0" layoutY="144.0" />
-                        <TextField fx:id="modelLaptopTextField" layoutX="186.0" layoutY="186.0" />
-                        <TextField fx:id="operatingSystemLaptopTextField" layoutX="186.0" layoutY="229.0" />
+                        <TextField fx:id="manufacturerLaptopTextField" layoutX="181.0" layoutY="147.0" />
+                        <TextField fx:id="modelLaptopTextField" layoutX="181.0" layoutY="189.0" />
+                        <TextField fx:id="operatingSystemLaptopTextField" layoutX="181.0" layoutY="232.0" />
                         <Text layoutX="22.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
                         <Text layoutX="22.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year" />
                         <Text layoutX="27.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manufacturer" />

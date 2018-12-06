@@ -5,7 +5,7 @@ import java.io.*;
  * Class to model a resource.
  */
 public abstract class Resource implements Serializable {
-    private static int nextID=0;
+    private static int nextID = 0;
 
     /**
      * The unique ID of a resource.
@@ -34,12 +34,12 @@ public abstract class Resource implements Serializable {
 
     /**
      * The constructor of a resource.
-     * @param title The title of the resource.
-     * @param year The year the resource was manufactured.
+     *
+     * @param title              The title of the resource.
+     * @param year               The year the resource was manufactured.
      * @param thumbnailImagePath The thumbnail image path of the resource.
      */
     public Resource(String title, int year, String thumbnailImagePath) {
-        this.uniqueID = uniqueID;
         this.title = title;
         this.year = year;
         this.thumbnailImagePath = thumbnailImagePath;
@@ -49,6 +49,7 @@ public abstract class Resource implements Serializable {
 
     /**
      * Gets the unique ID of the resource.
+     *
      * @return uniqueID The unique ID of the resource.
      */
     public String getUniqueID() {
@@ -57,6 +58,7 @@ public abstract class Resource implements Serializable {
 
     /**
      * Gets the title of the resource.
+     *
      * @return title The title of the resource.
      */
     public String getTitle() {
@@ -65,6 +67,7 @@ public abstract class Resource implements Serializable {
 
     /**
      * Sets the title of the resource.
+     *
      * @param title The new title of the resource.
      */
     public void setTitle(String title) {
@@ -73,6 +76,7 @@ public abstract class Resource implements Serializable {
 
     /**
      * Gets the year of the resource.
+     *
      * @return year The year of the resource was produced.
      */
     public int getYear() {
@@ -81,6 +85,7 @@ public abstract class Resource implements Serializable {
 
     /**
      * Sets the year of the resource.
+     *
      * @param year The new year of the resource.
      */
     public void setYear(int year) {
@@ -89,6 +94,7 @@ public abstract class Resource implements Serializable {
 
     /**
      * Gets the thumbnail image path.
+     *
      * @return The thumbnail image path of the resource.
      */
     public String getThumbnailImagePath() {
@@ -97,6 +103,7 @@ public abstract class Resource implements Serializable {
 
     /**
      * Sets the thumbnail image path.
+     *
      * @param thumbnailImagePath The new thumbnail image path.
      */
     public void setThumbnailImagePath(String thumbnailImagePath) {
@@ -104,36 +111,59 @@ public abstract class Resource implements Serializable {
     }
 
     /**
+     * Gets the next id variable.
+     *
+     * @return The next id variable.
+     */
+    public static int getNextID() {
+        return nextID;
+    }
+
+    /**
+     * Sets the next id variable.
+     *
+     * @param nextID The new nextId variable.
+     */
+    public static void setNextID(int nextID) {
+        Resource.nextID = nextID;
+    }
+
+    /**
      * Gets the max fine amount.
+     *
      * @return null To be overwritten by subclasses.
      */
     public abstract double getMaxFineAmount();
 
     /**
      * Gets the late return fine per day.
+     *
      * @return null To be overwritten by subclasses.
      */
     public abstract double getLateReturnFinePerDay();
 
     /**
      * Gets the type of string of the resource.
+     *
      * @return null To be overwritten by subclasses.
      */
     public abstract String getType();
 
     /**
      * Gets the copy manager of the resource.
+     *
      * @return
      */
-    public CopyManager getCopyManager(){
+    public CopyManager getCopyManager() {
         return copyManager;
     }
 
     /**
      * Sets the copy manager of the resource.
+     *
      * @param copyManager The new copy manager of the resource.
      */
-    public void setCopyManager(CopyManager copyManager){
+    public void setCopyManager(CopyManager copyManager) {
         this.copyManager = copyManager;
     }
 
@@ -147,6 +177,7 @@ public abstract class Resource implements Serializable {
 
     /**
      * Checks what the resource equals to.
+     *
      * @param obj The resource to be checked.
      * @return the objects unique ID if true,false otherwise.
      */
