@@ -38,12 +38,14 @@ public class Main extends Application{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("resources/Login.fxml"));
             root = fxmlLoader.load();
             fxmlLoader.<Controller>getController().setLibrary(library);
+
         } catch (IOException e) {
 
             System.exit(1);
 
         } catch(Exception e) {
 
+            e.printStackTrace();
             System.exit(0);
         }
 

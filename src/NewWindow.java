@@ -59,6 +59,7 @@ public class NewWindow extends Controller {
             //root = FXMLLoader.load(getClass().getClassLoader().getResource(fxmlResource));
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource(fxmlResource));
             root = fxmlLoader.load();
+            Object thing = fxmlLoader.getController();
             fxmlLoader.<Controller>getController().setLibrary(library);
 
             Stage stage = new Stage();
