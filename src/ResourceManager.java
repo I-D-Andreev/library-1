@@ -121,9 +121,37 @@ public class ResourceManager implements Serializable {
         }
     }
 
-    public void editResource(Resource resource, Resource newResource) {
-        // needs to go through attributes 1 by 1
-        // and change whatever is different
+    private void editResource(Resource resource, String title, int year, String imagePath ) {
+        resource.setTitle(title);
+        resource.setYear(year);
+        resource.setThumbnailImagePath(imagePath);
+    }
+
+    public void editLaptop(Laptop laptop, String title, int year, String imagePath,
+                           String manufacturer, String model, String installedOS){
+        editResource(laptop, title, year, imagePath);
+        laptop.setManufacturer(manufacturer);
+        laptop.setModel(model);
+        laptop.setInstalledOS(installedOS);
+    }
+
+    public void editBook(Book book, String title, int year, String imagePath,
+                         String author, String publisher, String genre, String ISBN, String language){
+        editResource(book, title, year, imagePath);
+        book.setAuthor(author);
+        book.setPublisher(publisher);
+        book.setGenre(genre);
+        book.setISBN(ISBN);
+        book.setLanguage(language);
+    }
+
+    public void editDVD(DVD dvd, String title, int year, String imagePath,
+                        String director, int runtime, String language, ArrayList<String> listOfSubtitleLanguages){
+        editResource(dvd, title, year, imagePath);
+        dvd.setDirector(director);
+        dvd.setRuntime(runtime);
+        dvd.setLanguage(language);
+        dvd.setListOfSubtitleLanguages(listOfSubtitleLanguages);
     }
 
     public Resource getResourceById(String resourceId) {
