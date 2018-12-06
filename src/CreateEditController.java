@@ -14,197 +14,179 @@ import java.util.ArrayList;
 
 public class CreateEditController extends Controller {
 
-    @FXML// fx:id="createBookTab"
-    private Tab createBookTab;// Value injected by FXMLLoader
+    // Create Book Tab
+    @FXML
+    private TextField titleBookTextField;
 
-    @FXML// fx:id="yearBookTextField"
-    private TextField yearBookTextField;// Value injected by FXMLLoader
-
-    @FXML// fx:id="titleBookTextField"
-    private TextField titleBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField yearBookTextField;
 
     @FXML
     private TextField imagePathBookTextField;
 
-    @FXML// fx:id="authorBookTextField"
-    private TextField authorBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField authorBookTextField;
 
-    @FXML// fx:id="publisherBookTextField"
-    private TextField publisherBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField publisherBookTextField;
 
-    @FXML// fx:id="genreBookTextField"
-    private TextField genreBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField genreBookTextField;
 
-    @FXML// fx:id="isbnBookTextField"
-    private TextField isbnBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField isbnBookTextField;
 
-    @FXML// fx:id="languageBookTextField"
-    private TextField languageBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField languageBookTextField;
 
-    @FXML// fx:id="createBookButton"
-    private Button createBookButton;// Value injected by FXMLLoader
+    @FXML
+    private Button createBookButton;
 
-    @FXML// fx:id="createDVDTab"
-    private Tab createDVDTab;// Value injected by FXMLLoader
 
-    @FXML// fx:id="yearDVDTextField"
-    private TextField yearDVDTextField;// Value injected by FXMLLoader
+    // Create DVD tab
+    @FXML
+    private TextField titleDVDTextField;
 
-    @FXML// fx:id="titleDVDTextField"
-    private TextField titleDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField yearDVDTextField;
 
     @FXML
     private TextField imagePathDVDTextField;
 
-    @FXML// fx:id="directorDVDTextField"
-    private TextField directorDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField directorDVDTextField;
 
-    @FXML// fx:id="runtimeDVDTextField"
-    private TextField runtimeDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField runtimeDVDTextField;
 
-    @FXML// fx:id="languageDVDTextField"
-    private TextField languageDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField languageDVDTextField;
 
-    @FXML// fx:id="languageSubtitlesDVD1TextField"
-    private TextField languageSubtitlesDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField languageSubtitlesDVDTextField;
 
+    @FXML
+    private Button createDVDButton;
 
-    @FXML// fx:id="createDVDButton"
-    private Button createDVDButton;// Value injected by FXMLLoader
+    // Create laptop tab.
+    @FXML
+    private TextField titleLaptopTextField;
 
-
-    @FXML// fx:id="createLaptopTab"
-    private Tab createLaptopTab;// Value injected by FXMLLoader
-
-    @FXML// fx:id="yearLaptopTextField"
-    private TextField yearLaptopTextField;// Value injected by FXMLLoader
-
-    @FXML// fx:id="titleLaptopTextField"
-    private TextField titleLaptopTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField yearLaptopTextField;
 
     @FXML
     private TextField imagePathLaptopTextField;
 
-    @FXML// fx:id="manufacturerLaptopTextField"
-    private TextField manufacturerLaptopTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField manufacturerLaptopTextField;
 
-    @FXML// fx:id="modelLaptopTextField"
-    private TextField modelLaptopTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField modelLaptopTextField;
 
-    @FXML// fx:id="operatingSystemLaptopTextField"
-    private TextField operatingSystemLaptopTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField operatingSystemLaptopTextField;
 
-    @FXML// fx:id="createLaptopButton"
-    private Button createLaptopButton;// Value injected by FXMLLoader
+    @FXML
+    private Button createLaptopButton;
 
-    @FXML// fx:id="editBookTab"
-    private Tab editBookTab;// Value injected by FXMLLoader
+    // Edit book tab.
+    @FXML
+    private TextField uniqueIDSearchEditBookTextField;
 
-    @FXML// fx:id="yearEditBookTextField"
-    private TextField yearEditBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField titleEditBookTextField;
 
-    @FXML// fx:id="titleEditBookTextField"
-    private TextField titleEditBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField yearEditBookTextField;
 
-    @FXML// fx:id="authorEditBookTextField"
-    private TextField authorEditBookTextField;// Value injected by FXMLLoader
-
-    @FXML// fx:id="publisherEditBookTextField"
-    private TextField publisherEditBookTextField;// Value injected by FXMLLoader
-
-    @FXML// fx:id="genreEditBookTextField"
-    private TextField genreEditBookTextField;// Value injected by FXMLLoader
-
-    @FXML// fx:id="isbnEditBookTextField"
-    private TextField isbnEditBookTextField;// Value injected by FXMLLoader
-
-    @FXML// fx:id="languageEditBookTextField"
-    private TextField languageEditBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField authorEditBookTextField;
 
     @FXML
     private TextField imagePathEditBook;
 
-    @FXML// fx:id="editBookButton"
-    private Button editBookButton;// Value injected by FXMLLoader
+    @FXML
+    private TextField publisherEditBookTextField;
 
-    @FXML// fx:id="uniqueIDSearchEditBookTextField"
-    private TextField uniqueIDSearchEditBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField genreEditBookTextField;
 
-    @FXML// fx:id="editBookSearchButton"
-    private Button editBookSearchButton;// Value injected by FXMLLoader
+    @FXML
+    private TextField isbnEditBookTextField;
 
-    @FXML// fx:id="editDVDTab"
-    private Tab editDVDTab;// Value injected by FXMLLoader
+    @FXML
+    private TextField languageEditBookTextField;
 
-    @FXML// fx:id="uniqueIDEditDVDTextField"
-    private TextField uniqueIDEditDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private Button editBookButton;
 
-    @FXML// fx:id="yearEditDVDTextField"
-    private TextField yearEditDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private Button editBookSearchButton;
 
-    @FXML// fx:id="titleEditDVDTextField"
-    private TextField titleEditDVDTextField;// Value injected by FXMLLoader
+    // Edit DVD tab.
+    @FXML
+    private TextField uniqueIDSearchEditDVDTextField;
 
-    @FXML// fx:id="directorEditDVDTextField"
-    private TextField directorEditDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField titleEditDVDTextField;
 
-    @FXML// fx:id="runtimeEditDVDTextField"
-    private TextField runtimeEditDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField yearEditDVDTextField;
 
-    @FXML// fx:id="languageEditDVDTextField"
-    private TextField languageEditDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField imagePathEditDVD;
 
-    @FXML// fx:id="languageSubtitlesEditDVD1TextField"
-    private TextField languageSubtitlesEditDVD1TextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField directorEditDVDTextField;
 
-    @FXML// fx:id="editDVDButton"
-    private Button editDVDButton;// Value injected by FXMLLoader
+    @FXML
+    private TextField runtimeEditDVDTextField;
 
-    @FXML// fx:id="uniqueIDSearchEditDVDTextField"
-    private TextField uniqueIDSearchEditDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField languageEditDVDTextField;
 
-    @FXML// fx:id="editDVDSearchButton"
-    private Button editDVDSearchButton;// Value injected by FXMLLoader
+    @FXML
+    private TextField languageSubtitlesEditDVD1TextField;
 
-    @FXML// fx:id="languageSubtitlesEditDVD2TextField"
-    private TextField languageSubtitlesEditDVD2TextField;// Value injected by FXMLLoader
+    @FXML
+    private Button editDVDButton;
 
-    @FXML// fx:id="languageSubtitlesEditDVD3TextField"
-    private TextField languageSubtitlesEditDVD3TextField;// Value injected by FXMLLoader
+    @FXML
+    private Button editDVDSearchButton;
 
-    @FXML// fx:id="editLaptopTab"
-    private Tab editLaptopTab;// Value injected by FXMLLoader
+    @FXML
+    private Tab editLaptopTab;
 
-    @FXML// fx:id="uniqueIDSearchEditLaptopTextField"
-    private TextField uniqueIDEditLaptopTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField uniqueIDSearchEditLaptopTextField;
 
-    @FXML// fx:id="yearEditLaptopTextField"
-    private TextField yearEditLaptopTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField titleEditLaptopTextField;
 
-    @FXML// fx:id="titleEditLaptopTextField"
-    private TextField titleEditLaptopTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField yearEditLaptopTextField;
 
-    @FXML// fx:id="manufacturerEditLaptopTextField"
-    private TextField manufacturerEditLaptopTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField manufacturerEditLaptopTextField;
 
-    @FXML// fx:id="modelEditLaptopTextField"
-    private TextField modelEditLaptopTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField modelEditLaptopTextField;
 
-    @FXML// fx:id="operatingSystemEditLaptopTextField"
-    private TextField operatingSystemEditLaptopTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField operatingSystemEditLaptopTextField;
 
-    @FXML// fx:id="editLaptopButton"
-    private Button editLaptopButton;// Value injected by FXMLLoader
+    @FXML
+    private Button editLaptopButton;
 
-    @FXML// fx:id="uniqueIDSearchEditLaptopTextField"
-    private TextField uniqueIDSearchEditLaptopTextField;// Value injected by FXMLLoader
+    @FXML
+    private Button editLaptopSearchButton;
 
-    @FXML// fx:id="editLaptopSearchButton"
-    private Button editLaptopSearchButton;// Value injected by FXMLLoader
+    @FXML
+    private TextField imagePathEditLaptop;
 
-    @FXML // fx:id="backButton"
-    private Button backButton; // Value injected by FXMLLoader
-
+    @FXML
+    private Button backButton;
     /**
      * Goes back to the librarian dashboard when clicked.
      *
