@@ -188,6 +188,15 @@ public class CreateEditController extends Controller {
     @FXML
     private Button backButton;
 
+    @FXML // fx:id="laptopDeleteButton"
+    private Button laptopDeleteButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="dvdDeleteButton"
+    private Button dvdDeleteButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="bookDeleteButton"
+    private Button bookDeleteButton; // Value injected by FXMLLoader
+
     /**
      * Goes back to the librarian dashboard when clicked.
      *
@@ -564,6 +573,39 @@ public class CreateEditController extends Controller {
             uniqueIDSearchEditLaptopTextField.setDisable(false);
             this.clearAllEditLaptopFields();
         }
+    }
+
+    /**
+     * Deletes a laptop resource.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void laptopDeleteButtonClicked(ActionEvent event) {
+
+        getLibrary().getResourceManager().removeResource(uniqueIDSearchEditLaptopTextField.getId());
+    }
+
+    /**
+     * Deletes a DVD resource.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void dvdDeleteButtonClicked(ActionEvent event) {
+
+        getLibrary().getResourceManager().removeResource(uniqueIDSearchEditDVDTextField.getId());
+    }
+
+    /**
+     * Deletes a book resource.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void bookDeleteButtonClicked(ActionEvent event) {
+
+        getLibrary().getResourceManager().removeResource(uniqueIDSearchEditBookTextField.getId());
     }
 
     /**
