@@ -72,15 +72,6 @@ public class BrowseResourcesController extends Controller {
 
 
     @FXML
-    /**
-     * Close the application.
-     */
-    public void closeButtonClicked(ActionEvent event) {
-
-        System.exit(0);
-    }
-
-    @FXML
     public void updateTable() {
         // clear previous data
         data.clear();
@@ -127,8 +118,15 @@ public class BrowseResourcesController extends Controller {
      */
     @FXML
     void backButtonClicked(ActionEvent event) {
-
         //if librarian then go back to librarian dashboard else go back to user dashboard
+        if(getLibrary().getCurrentUserLoggedIn().hasAdminAccess()){
+            new NewWindow("resources/LibrarianDashboard.fxml", event,
+                    "Browse Resources - TaweLib", getLibrary());
+        } else {
+            new NewWindow("resources/UserDashboard.fxml", event,
+                    "Dashboard - TaweLib", getLibrary());
+        }
+
     }
 
     private void manageCheckedBoxTypes(){
