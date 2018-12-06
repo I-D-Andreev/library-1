@@ -13,27 +13,6 @@ import javafx.scene.control.TableView;
 
 public class LibrarianDashboardController extends Controller {
 
-    @FXML // fx:id="dashboardTable"
-    private TableView<?> dashboardTable; // Value injected by FXMLLoader
-
-    @FXML // fx:id="userColumn"
-    private TableColumn<?, ?> userColumn; // Value injected by FXMLLoader
-
-    @FXML // fx:id="borrowedColumn"
-    private TableColumn<?, ?> borrowedColumn; // Value injected by FXMLLoader
-
-    @FXML // fx:id="requestedColumn"
-    private TableColumn<?, ?> requestedColumn; // Value injected by FXMLLoader
-
-    @FXML // fx:id="reservedColumn"
-    private TableColumn<?, ?> reservedColumn; // Value injected by FXMLLoader
-
-    @FXML // fx:id="overdueColumn"
-    private TableColumn<?, ?> overdueColumn; // Value injected by FXMLLoader
-
-    @FXML // fx:id="transHistoryColumn"
-    private TableColumn<?, ?> transHistoryColumn; // Value injected by FXMLLoader
-
     @FXML // fx:id="logOutButton"
     private Button logOutButton; // Value injected by FXMLLoader
 
@@ -48,6 +27,15 @@ public class LibrarianDashboardController extends Controller {
 
     @FXML // fx:id="viewUserButton"
     private Button viewUserButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="userButton"
+    private Button userButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="overdueResourcesButton"
+    private Button overdueResourcesButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="copyHistoryButton"
+    private Button copyHistoryButton; // Value injected by FXMLLoader
 
     @FXML
     /**
@@ -96,5 +84,22 @@ public class LibrarianDashboardController extends Controller {
     void viewUserButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/ViewUser.fxml", event, "View User - TaweLib", getLibrary());
+    }
+
+
+    @FXML
+    void copyHistoryButtonClicked(ActionEvent event) {
+
+    }
+
+
+    @FXML
+    void overdueResourcesButtonClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void userButtonClicked(ActionEvent event) {
+
     }
 }
