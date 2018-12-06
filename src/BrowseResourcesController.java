@@ -20,9 +20,6 @@ import java.util.ArrayList;
 
 public class BrowseResourcesController extends Controller {
 
-    @FXML// fx:id="closeButton"
-    private Button closeButton;// Value injected by FXMLLoader
-
     @FXML// fx:id="dvdFilter"
     private CheckBox dvdFilter;// Value injected by FXMLLoader
 
