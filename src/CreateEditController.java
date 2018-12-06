@@ -5,6 +5,7 @@ import javafx.scene.control.*;
 /**
  * Controller class for the Create/Edit screen for the Librarian.
  * Handles what happens when the user interacts with the UI.
+ *
  * @author Chris McAuley.
  */
 
@@ -215,13 +216,17 @@ public class CreateEditController extends Controller {
 
 
     @FXML
-    void createBookButtonClicked(ActionEvent event) {
+    public void createBookButtonClicked(ActionEvent event) {
         // mandatory - title, year, thumbnail, author, publisher
         // optional - genre, isbn, language
 
-        if(titleBookTextField.getText().isEmpty() || yearBookTextField.getText().isEmpty()
-        || imagePathBookTextField.getText().isEmpty() || publisherBookTextField.getText().isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the fields.",
+        if (titleBookTextField.getText().isEmpty() || yearBookTextField.getText().isEmpty()
+                || imagePathBookTextField.getText().isEmpty() || publisherBookTextField.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
+                    ButtonType.OK);
+            alert.show();
+        } else if (!isStringNumber(yearBookTextField.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "The year text field must be a number.",
                     ButtonType.OK);
             alert.show();
         } else {
@@ -238,35 +243,72 @@ public class CreateEditController extends Controller {
             getLibrary().getResourceManager().addResource(new Book(title, year, thumbnail, author, publisher,
                     genre, isbn, language));
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Book added successfully.",
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Book resource created successfully.",
                     ButtonType.OK);
             alert.show();
         }
     }
 
     @FXML
-    void createDVDButtonClicked(ActionEvent event) {
+    public void createDVDButtonClicked(ActionEvent event) {
 
     }
 
     @FXML
-    void createLaptopButtonClicked(ActionEvent event) {
+    public void createLaptopButtonClicked(ActionEvent event) {
+        // mandatory - title, year, thumbnail, manufacturer, model, installedOS
+        if (titleLaptopTextField.getText().isEmpty() || yearLaptopTextField.getText().isEmpty()
+                || imagePathLaptopTextField.getText().isEmpty() || manufacturerLaptopTextField.getText().isEmpty()
+                || modelLaptopTextField.getText().isEmpty() || operatingSystemLaptopTextField.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
+                    ButtonType.OK);
+            alert.show();
+        } else if(!isStringNumber(yearLaptopTextField.getText())){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "The year text field must be a number.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            String title = titleLaptopTextField.getText();
+            int year = Integer.parseInt(yearLaptopTextField.getText());
+            String thumbnail = imagePathLaptopTextField.getText();
+            String manufacturer = manufacturerLaptopTextField.getText();
+            String model = modelLaptopTextField.getText();
+            String installedOS = operatingSystemLaptopTextField.getText();
+
+            getLibrary().getResourceManager().addResource(new Laptop(title, year, thumbnail, manufacturer,
+                    model, installedOS));
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Laptop resource created successfully.",
+                    ButtonType.OK);
+            alert.show();
+        }
+    }
+
+    @FXML
+    public void editBookButtonClicked(ActionEvent event) {
 
     }
 
     @FXML
-    void editBookButtonClicked(ActionEvent event) {
+    public void editDVDButtonClicked(ActionEvent event) {
 
     }
 
     @FXML
-    void editDVDButtonClicked(ActionEvent event) {
+    public void editLaptopButtonClicked(ActionEvent event) {
 
     }
 
-    @FXML
-    void editLaptopButtonClicked(ActionEvent event) {
-
+    /**
+     * Check if a certain string contains numbers only.
+     *
+     * @param s The string.
+     * @return True if the string contains only numbers, false otherwise.
+     */
+    private boolean isStringNumber(String s) {
+        // regular expression
+        // \\d+ means 1 or more digits
+        return s.matches("\\d+");
     }
 }
 

@@ -82,19 +82,19 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="388.0" prefWidth="600.0">
                      <children>
-                        <TextField fx:id="yearLaptopTextField" layoutX="181.0" layoutY="64.0" />
                         <TextField fx:id="titleLaptopTextField" layoutX="181.0" layoutY="22.0" />
+                        <TextField fx:id="yearLaptopTextField" layoutX="181.0" layoutY="64.0" />
+                        <TextField fx:id="imagePathLaptopTextField" layoutX="181.0" layoutY="105.0" />
                         <TextField fx:id="manufacturerLaptopTextField" layoutX="181.0" layoutY="147.0" />
                         <TextField fx:id="modelLaptopTextField" layoutX="181.0" layoutY="189.0" />
                         <TextField fx:id="operatingSystemLaptopTextField" layoutX="181.0" layoutY="232.0" />
+                        <Button fx:id="createLaptopButton" layoutX="427.0" layoutY="378.0" mnemonicParsing="false" onAction="#createLaptopButtonClicked" text="Create" />
                         <Text layoutX="22.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
                         <Text layoutX="22.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year" />
                         <Text layoutX="27.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manufacturer" />
                         <Text layoutX="27.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model" />
                         <Text layoutX="27.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operating System" />
-                        <Button fx:id="createLaptopButton" layoutX="427.0" layoutY="378.0" mnemonicParsing="false" onAction="#createLaptopButtonClicked" text="Create" />
                         <Text layoutX="22.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thumbnail Image path" />
-                        <TextField fx:id="imagePathLaptopTextField" layoutX="181.0" layoutY="105.0" />
                      </children>
                   </AnchorPane>
                </content>
