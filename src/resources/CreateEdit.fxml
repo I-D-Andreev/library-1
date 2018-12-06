@@ -140,7 +140,7 @@
                         <TextField fx:id="languageEditDVDTextField" layoutX="179.0" layoutY="302.0" />
                         <TextField fx:id="languageSubtitlesEditDVD1TextField" layoutX="210.0" layoutY="357.0" prefHeight="26.0" prefWidth="300.0" />
                         <Button fx:id="editDVDButton" layoutX="446.0" layoutY="415.0" mnemonicParsing="false" onAction="#editDVDButtonClicked" text="Edit" />
-                        <Button fx:id="editDVDSearchButton" layoutX="375.0" layoutY="30.0" mnemonicParsing="false" text="Search" />
+                        <Button fx:id="editDVDSearchButton" layoutX="375.0" layoutY="30.0" mnemonicParsing="false" onAction="#editDVDSearchButtonClicked" text="Search" />
                         <Text layoutX="22.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Language Subtitles (Optional)" />
                         <Text layoutX="27.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
                         <Text layoutX="27.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year" />
@@ -172,7 +172,7 @@
                         <Text layoutX="22.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operating System" />
                         <Text layoutX="22.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unique ID Search" />
                         <Line endX="529.0" layoutX="101.0" layoutY="78.0" startX="-122.0" />
-                        <Button fx:id="editLaptopSearchButton" layoutX="375.0" layoutY="30.0" mnemonicParsing="false" text="Search" />
+                        <Button fx:id="editLaptopSearchButton" layoutX="375.0" layoutY="30.0" mnemonicParsing="false" onAction="#editLaptopSearchButtonClicked" text="Search" />
                         <Text layoutX="22.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thumbnail Image path" />
                         <TextField fx:id="imagePathEditLaptop" layoutX="181.0" layoutY="186.0" />
                      </children>

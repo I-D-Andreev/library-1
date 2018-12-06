@@ -373,10 +373,10 @@ public class CreateEditController extends Controller {
             String isbn = isbnEditBookTextField.getText();
             String language = languageEditBookTextField.getText();
 
-            // edit the book
+            // get the book
             Book book = (Book) getLibrary().getResourceManager().
                     getResourceById(uniqueIDSearchEditBookTextField.getText());
-
+            // edit the book
             getLibrary().getResourceManager().editBook(book, title, year, thumbnail, author, publisher,
                     genre, isbn, language);
 
@@ -385,13 +385,16 @@ public class CreateEditController extends Controller {
                     ButtonType.OK);
             alert.show();
 
-            // enable the search ID again and clear it
+            // enable the search ID again and clear all the fields
             uniqueIDSearchEditBookTextField.setDisable(false);
             this.clearAllEditBookFields();
         }
     }
 
+    @FXML
+    void editDVDSearchButtonClicked(ActionEvent event) {
 
+    }
 
 
     @FXML
@@ -399,9 +402,72 @@ public class CreateEditController extends Controller {
 
     }
 
+
+    @FXML
+    void editLaptopSearchButtonClicked(ActionEvent event) {
+        String laptopId = uniqueIDSearchEditLaptopTextField.getText();
+        Resource resource = getLibrary().getResourceManager().getResourceById(laptopId);
+
+        if (resource == null || !resource.getType().equals("Laptop")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Couldn't find a laptop with such ID.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // Laptop is successfully found.
+            Laptop laptop = (Laptop) resource;
+
+            // fill the fields with data
+            titleEditLaptopTextField.setText(laptop.getTitle());
+            yearEditLaptopTextField.setText(String.valueOf(laptop.getYear()));
+            imagePathEditLaptop.setText(laptop.getThumbnailImagePath());
+            manufacturerEditLaptopTextField.setText(laptop.getManufacturer());
+            modelEditLaptopTextField.setText(laptop.getModel());
+            operatingSystemEditLaptopTextField.setText(laptop.getInstalledOS());
+
+            // lock the id field
+            uniqueIDSearchEditLaptopTextField.setDisable(true);
+        }
+    }
+
     @FXML
     public void editLaptopButtonClicked(ActionEvent event) {
+        // mandatory information - title, year, thumbnail, manufacturer, model, installedOS
+        if (titleEditLaptopTextField.getText().isEmpty() || yearEditLaptopTextField.getText().isEmpty()
+                || imagePathEditLaptop.getText().isEmpty() || manufacturerEditLaptopTextField.getText().isEmpty()
+                || modelEditLaptopTextField.getText().isEmpty() || operatingSystemEditLaptopTextField.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
+                    ButtonType.OK);
+            alert.show();
+        } else if (!isStringNumber(yearEditLaptopTextField.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "The year text field must be a number.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // gather the information
+            String title = titleEditLaptopTextField.getText();
+            int year = Integer.parseInt(yearEditLaptopTextField.getText());
+            String imagePath = imagePathEditLaptop.getText();
+            String manufacturer = manufacturerEditLaptopTextField.getText();
+            String model = modelEditLaptopTextField.getText();
+            String installedOS = operatingSystemEditLaptopTextField.getText();
 
+            // Find the laptop.
+            Laptop laptop = (Laptop) getLibrary().getResourceManager().
+                    getResourceById(uniqueIDSearchEditLaptopTextField.getText());
+
+            // Change the laptop
+            getLibrary().getResourceManager().editLaptop(laptop, title, year, imagePath,
+                    manufacturer, model, installedOS);
+
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Laptop resource edited successfully.",
+                    ButtonType.OK);
+            alert.show();
+
+            // enable the search bar and clear all the fields
+            uniqueIDSearchEditLaptopTextField.setDisable(false);
+            this.clearAllEditLaptopFields();
+        }
     }
 
     /**
@@ -416,17 +482,7 @@ public class CreateEditController extends Controller {
         return s.matches("\\d+");
     }
 
-    private void clearAllEditBookFields(){
-        uniqueIDSearchEditBookTextField.setText("");
-        titleEditBookTextField.setText("");
-        yearEditBookTextField.setText("");
-        authorEditBookTextField.setText("");
-        imagePathEditBook.setText("");
-        publisherEditBookTextField.setText("");
-        genreEditBookTextField.setText("");
-        isbnEditBookTextField.setText("");
-        languageEditBookTextField.setText("");
-    }
+
 
     private void clearAllCreateBookFields(){
         titleBookTextField.setText("");
@@ -457,6 +513,28 @@ public class CreateEditController extends Controller {
         runtimeDVDTextField.setText("");
         languageDVDTextField.setText("");
         languageSubtitlesDVDTextField.setText("");
+    }
+
+    private void clearAllEditBookFields(){
+        uniqueIDSearchEditBookTextField.setText("");
+        titleEditBookTextField.setText("");
+        yearEditBookTextField.setText("");
+        authorEditBookTextField.setText("");
+        imagePathEditBook.setText("");
+        publisherEditBookTextField.setText("");
+        genreEditBookTextField.setText("");
+        isbnEditBookTextField.setText("");
+        languageEditBookTextField.setText("");
+    }
+
+    private void clearAllEditLaptopFields(){
+        uniqueIDSearchEditLaptopTextField.setText("");
+        titleEditLaptopTextField.setText("");
+        yearEditLaptopTextField.setText("");
+        imagePathEditLaptop.setText("");
+        manufacturerEditLaptopTextField.setText("");
+        modelEditLaptopTextField.setText("");
+        operatingSystemEditLaptopTextField.setText("");
     }
 }
 
