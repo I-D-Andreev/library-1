@@ -68,6 +68,8 @@ public class UserDashboardController extends Controller {
     @FXML // fx:id="refreshButton"
     private Button refreshButton; // Value injected by FXMLLoader
 
+    @FXML // fx:id="popularResourceLabel"
+    private Label popularResourceLabel; // Value injected by FXMLLoader
 
     @FXML
     void borrowedResourcesButtonClicked(ActionEvent event) {
@@ -79,6 +81,7 @@ public class UserDashboardController extends Controller {
      * Opens the browse resources window.
      */
     void browseResourcesButtonClicked(ActionEvent event) {
+
         new NewWindow("resources/BrowseResources.fxml", event,
                 "Browse Resources - TaweLib", getLibrary());
 
@@ -117,9 +120,17 @@ public class UserDashboardController extends Controller {
     @FXML
     void refreshButtonClicked(ActionEvent event) {
 
-        //Image image = new Image(getLibrary().getCurrentUserLoggedIn().getProfileImagePath());
+        try{
 
-        //userImage.setImage(image);
+            Image image = new Image(getLibrary().getCurrentUserLoggedIn().getProfileImagePath());
+
+            userImage.setImage(image);
+
+        } catch (IllegalArgumentException e) {
+
+            userImage.setImage(null);
+        }
+
         usernameLabel.setText(getLibrary().getCurrentUserLoggedIn().getUsername());
         firstNameLabel.setText(getLibrary().getCurrentUserLoggedIn().getFirstName());
         lastNameLabel.setText(getLibrary().getCurrentUserLoggedIn().getLastName());
