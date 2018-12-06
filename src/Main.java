@@ -15,8 +15,12 @@ public class Main extends Application{
         //Launches the application - do not remove.
         launch(args);
 
+
         //Library l = new Library();
         //l.save();
+
+        //SaveStaticVariables sv = new SaveStaticVariables(2,4);
+        //System.out.println(sv.getUserNextID() + " " + sv.getResourceNextID() );
         System.exit(0);
     }
 

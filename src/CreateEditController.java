@@ -1,211 +1,192 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+
+import java.util.Arrays;
+import java.util.ArrayList;
 
 /**
  * Controller class for the Create/Edit screen for the Librarian.
  * Handles what happens when the user interacts with the UI.
+ *
  * @author Chris McAuley.
  */
 
 public class CreateEditController extends Controller {
 
-    @FXML// fx:id="createBookTab"
-    private Tab createBookTab;// Value injected by FXMLLoader
+    // Create Book Tab
+    @FXML
+    private TextField titleBookTextField;
 
-    @FXML// fx:id="uniqueIDBookTextField"
-    private TextField uniqueIDBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField yearBookTextField;
 
-    @FXML// fx:id="yearBookTextField"
-    private TextField yearBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField imagePathBookTextField;
 
-    @FXML// fx:id="titleBookTextField"
-    private TextField titleBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField authorBookTextField;
 
-    @FXML// fx:id="authorBookTextField"
-    private TextField authorBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField publisherBookTextField;
 
-    @FXML// fx:id="publisherBookTextField"
-    private TextField publisherBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField genreBookTextField;
 
-    @FXML// fx:id="genreBookTextField"
-    private TextField genreBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField isbnBookTextField;
 
-    @FXML// fx:id="isbnBookTextField"
-    private TextField isbnBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField languageBookTextField;
 
-    @FXML// fx:id="languageBookTextField"
-    private TextField languageBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private Button createBookButton;
 
-    @FXML// fx:id="createBookButton"
-    private Button createBookButton;// Value injected by FXMLLoader
 
-    @FXML// fx:id="createDVDTab"
-    private Tab createDVDTab;// Value injected by FXMLLoader
+    // Create DVD tab
+    @FXML
+    private TextField titleDVDTextField;
 
-    @FXML// fx:id="uniqueIDDVDTextField"
-    private TextField uniqueIDDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField yearDVDTextField;
 
-    @FXML// fx:id="yearDVDTextField"
-    private TextField yearDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField imagePathDVDTextField;
 
-    @FXML// fx:id="titleDVDTextField"
-    private TextField titleDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField directorDVDTextField;
 
-    @FXML// fx:id="directorDVDTextField"
-    private TextField directorDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField runtimeDVDTextField;
 
-    @FXML// fx:id="runtimeDVDTextField"
-    private TextField runtimeDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField languageDVDTextField;
 
-    @FXML// fx:id="languageDVDTextField"
-    private TextField languageDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField languageSubtitlesDVDTextField;
 
-    @FXML// fx:id="languageSubtitlesDVD1TextField"
-    private TextField languageSubtitlesDVD1TextField;// Value injected by FXMLLoader
+    @FXML
+    private Button createDVDButton;
 
-    @FXML// fx:id="languageSubtitlesDVD2TextField"
-    private TextField languageSubtitlesDVD2TextField;// Value injected by FXMLLoader
+    // Create laptop tab.
+    @FXML
+    private TextField titleLaptopTextField;
 
-    @FXML// fx:id="createDVDButton"
-    private Button createDVDButton;// Value injected by FXMLLoader
+    @FXML
+    private TextField yearLaptopTextField;
 
-    @FXML// fx:id="languageSubtitlesDVD3TextField"
-    private TextField languageSubtitlesDVD3TextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField imagePathLaptopTextField;
 
-    @FXML// fx:id="createLaptopTab"
-    private Tab createLaptopTab;// Value injected by FXMLLoader
+    @FXML
+    private TextField manufacturerLaptopTextField;
 
-    @FXML// fx:id="uniqueIDLaptopTextField"
-    private TextField uniqueIDLaptopTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField modelLaptopTextField;
 
-    @FXML// fx:id="yearLaptopTextField"
-    private TextField yearLaptopTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField operatingSystemLaptopTextField;
 
-    @FXML// fx:id="titleLaptopTextField"
-    private TextField titleLaptopTextField;// Value injected by FXMLLoader
+    @FXML
+    private Button createLaptopButton;
 
-    @FXML// fx:id="manufacturerLaptopTextField"
-    private TextField manufacturerLaptopTextField;// Value injected by FXMLLoader
+    // Edit book tab.
+    @FXML
+    private TextField uniqueIDSearchEditBookTextField;
 
-    @FXML// fx:id="modelLaptopTextField"
-    private TextField modelLaptopTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField titleEditBookTextField;
 
-    @FXML// fx:id="operatingSystemLaptopTextField"
-    private TextField operatingSystemLaptopTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField yearEditBookTextField;
 
-    @FXML// fx:id="createLaptopButton"
-    private Button createLaptopButton;// Value injected by FXMLLoader
+    @FXML
+    private TextField authorEditBookTextField;
 
-    @FXML// fx:id="editBookTab"
-    private Tab editBookTab;// Value injected by FXMLLoader
+    @FXML
+    private TextField imagePathEditBook;
 
-    @FXML// fx:id="uniqueIDEditBookTextField"
-    private TextField uniqueIDEditBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField publisherEditBookTextField;
 
-    @FXML// fx:id="yearEditBookTextField"
-    private TextField yearEditBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField genreEditBookTextField;
 
-    @FXML// fx:id="titleEditBookTextField"
-    private TextField titleEditBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField isbnEditBookTextField;
 
-    @FXML// fx:id="authorEditBookTextField"
-    private TextField authorEditBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField languageEditBookTextField;
 
-    @FXML// fx:id="publisherEditBookTextField"
-    private TextField publisherEditBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private Button editBookButton;
 
-    @FXML// fx:id="genreEditBookTextField"
-    private TextField genreEditBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private Button editBookSearchButton;
 
-    @FXML// fx:id="isbnEditBookTextField"
-    private TextField isbnEditBookTextField;// Value injected by FXMLLoader
+    // Edit DVD tab.
+    @FXML
+    private TextField uniqueIDSearchEditDVDTextField;
 
-    @FXML// fx:id="languageEditBookTextField"
-    private TextField languageEditBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField titleEditDVDTextField;
 
-    @FXML// fx:id="editBookButton"
-    private Button editBookButton;// Value injected by FXMLLoader
+    @FXML
+    private TextField yearEditDVDTextField;
 
-    @FXML// fx:id="uniqueIDSearchEditBookTextField"
-    private TextField uniqueIDSearchEditBookTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField imagePathEditDVD;
 
-    @FXML// fx:id="editBookSearchButton"
-    private Button editBookSearchButton;// Value injected by FXMLLoader
+    @FXML
+    private TextField directorEditDVDTextField;
 
-    @FXML// fx:id="editDVDTab"
-    private Tab editDVDTab;// Value injected by FXMLLoader
+    @FXML
+    private TextField runtimeEditDVDTextField;
 
-    @FXML// fx:id="uniqueIDEditDVDTextField"
-    private TextField uniqueIDEditDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField languageEditDVDTextField;
 
-    @FXML// fx:id="yearEditDVDTextField"
-    private TextField yearEditDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField languageSubtitlesEditDVDTextField;
 
-    @FXML// fx:id="titleEditDVDTextField"
-    private TextField titleEditDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private Button editDVDButton;
 
-    @FXML// fx:id="directorEditDVDTextField"
-    private TextField directorEditDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private Button editDVDSearchButton;
 
-    @FXML// fx:id="runtimeEditDVDTextField"
-    private TextField runtimeEditDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private Tab editLaptopTab;
 
-    @FXML// fx:id="languageEditDVDTextField"
-    private TextField languageEditDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField uniqueIDSearchEditLaptopTextField;
 
-    @FXML// fx:id="languageSubtitlesEditDVD1TextField"
-    private TextField languageSubtitlesEditDVD1TextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField titleEditLaptopTextField;
 
-    @FXML// fx:id="editDVDButton"
-    private Button editDVDButton;// Value injected by FXMLLoader
+    @FXML
+    private TextField yearEditLaptopTextField;
 
-    @FXML// fx:id="uniqueIDSearchEditDVDTextField"
-    private TextField uniqueIDSearchEditDVDTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField manufacturerEditLaptopTextField;
 
-    @FXML// fx:id="editDVDSearchButton"
-    private Button editDVDSearchButton;// Value injected by FXMLLoader
+    @FXML
+    private TextField modelEditLaptopTextField;
 
-    @FXML// fx:id="languageSubtitlesEditDVD2TextField"
-    private TextField languageSubtitlesEditDVD2TextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField operatingSystemEditLaptopTextField;
 
-    @FXML// fx:id="languageSubtitlesEditDVD3TextField"
-    private TextField languageSubtitlesEditDVD3TextField;// Value injected by FXMLLoader
+    @FXML
+    private Button editLaptopButton;
 
-    @FXML// fx:id="editLaptopTab"
-    private Tab editLaptopTab;// Value injected by FXMLLoader
+    @FXML
+    private Button editLaptopSearchButton;
 
-    @FXML// fx:id="uniqueIDSearchEditLaptopTextField"
-    private TextField uniqueIDEditLaptopTextField;// Value injected by FXMLLoader
+    @FXML
+    private TextField imagePathEditLaptop;
 
-    @FXML// fx:id="yearEditLaptopTextField"
-    private TextField yearEditLaptopTextField;// Value injected by FXMLLoader
-
-    @FXML// fx:id="titleEditLaptopTextField"
-    private TextField titleEditLaptopTextField;// Value injected by FXMLLoader
-
-    @FXML// fx:id="manufacturerEditLaptopTextField"
-    private TextField manufacturerEditLaptopTextField;// Value injected by FXMLLoader
-
-    @FXML// fx:id="modelEditLaptopTextField"
-    private TextField modelEditLaptopTextField;// Value injected by FXMLLoader
-
-    @FXML// fx:id="operatingSystemEditLaptopTextField"
-    private TextField operatingSystemEditLaptopTextField;// Value injected by FXMLLoader
-
-    @FXML// fx:id="editLaptopButton"
-    private Button editLaptopButton;// Value injected by FXMLLoader
-
-    @FXML// fx:id="uniqueIDSearchEditLaptopTextField"
-    private TextField uniqueIDSearchEditLaptopTextField;// Value injected by FXMLLoader
-
-    @FXML// fx:id="editLaptopSearchButton"
-    private Button editLaptopSearchButton;// Value injected by FXMLLoader
-
-    @FXML // fx:id="backButton"
-    private Button backButton; // Value injected by FXMLLoader
+    @FXML
+    private Button backButton;
 
     /**
      * Goes back to the librarian dashboard when clicked.
@@ -213,9 +194,453 @@ public class CreateEditController extends Controller {
      * @param event The current event.
      */
     @FXML
-    void backButtonClicked(ActionEvent event) {
+    public void backButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
+    }
+
+
+    @FXML
+    public void createBookButtonClicked(ActionEvent event) {
+        // mandatory information- title, year, thumbnail, author, publisher
+        // optional information- genre, isbn, language
+
+        if (titleBookTextField.getText().isEmpty() || yearBookTextField.getText().isEmpty()
+                || imagePathBookTextField.getText().isEmpty() || publisherBookTextField.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
+                    ButtonType.OK);
+            alert.show();
+        } else if (!isStringNumber(yearBookTextField.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "The year text field must be a number.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // gather the information
+            String title = titleBookTextField.getText();
+            int year = Integer.parseInt(yearBookTextField.getText());
+            String thumbnail = imagePathBookTextField.getText();
+            String author = authorBookTextField.getText();
+            String publisher = publisherBookTextField.getText();
+            String genre = genreBookTextField.getText();
+            String isbn = isbnBookTextField.getText();
+            String language = languageBookTextField.getText();
+
+            // create a Book and add it
+            getLibrary().getResourceManager().addResource(new Book(title, year, thumbnail, author, publisher,
+                    genre, isbn, language));
+
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Book resource created successfully.",
+                    ButtonType.OK);
+            alert.show();
+
+            // clear all the fields
+            this.clearAllCreateBookFields();
+        }
+    }
+
+    @FXML
+    public void createDVDButtonClicked(ActionEvent event) {
+        // mandatory information- title, year, thumbnail, director, runtime
+        // optional information- language, listOfSubtitleLanguages
+        if (titleDVDTextField.getText().isEmpty() || yearDVDTextField.getText().isEmpty()
+                || imagePathDVDTextField.getText().isEmpty() || directorDVDTextField.getText().isEmpty()
+                || runtimeDVDTextField.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
+                    ButtonType.OK);
+            alert.show();
+        } else if (!isStringNumber(yearDVDTextField.getText()) || !isStringNumber(runtimeDVDTextField.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "The year and runtime text fields must be a number.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // gather the information
+            String title = titleDVDTextField.getText();
+            int year = Integer.parseInt(yearDVDTextField.getText());
+            String thumbnail = imagePathDVDTextField.getText();
+            String director = directorDVDTextField.getText();
+            int runtime = Integer.parseInt(runtimeDVDTextField.getText());
+            String language = languageDVDTextField.getText();
+
+            // get a string containing the languages comma separated
+            String subtitleLanguages = languageSubtitlesDVDTextField.getText();
+
+            // split the string into smaller strings on new comma or space
+            String[] arrayOfSubtitleLanguages = subtitleLanguages.split(",| ");
+
+            // convert that array into array list
+            ArrayList<String> listOfSubtitleLanguages = new ArrayList<>(Arrays.asList(arrayOfSubtitleLanguages));
+
+            // remove empty strings
+            for (int i = 0; i < listOfSubtitleLanguages.size(); i++) {
+                if (listOfSubtitleLanguages.get(i).equals("")) {
+                    listOfSubtitleLanguages.remove(i);
+                }
+            }
+
+            // create a DVD and add it
+            getLibrary().getResourceManager().addResource(new DVD(title, year, thumbnail, director,
+                    runtime, language, listOfSubtitleLanguages));
+
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "DVD resource created successfully.",
+                    ButtonType.OK);
+            alert.show();
+
+            // clear all the fields
+            this.clearAllCreateDVDFields();
+        }
+    }
+
+    @FXML
+    public void createLaptopButtonClicked(ActionEvent event) {
+        // mandatory information - title, year, thumbnail, manufacturer, model, installedOS
+        if (titleLaptopTextField.getText().isEmpty() || yearLaptopTextField.getText().isEmpty()
+                || imagePathLaptopTextField.getText().isEmpty() || manufacturerLaptopTextField.getText().isEmpty()
+                || modelLaptopTextField.getText().isEmpty() || operatingSystemLaptopTextField.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
+                    ButtonType.OK);
+            alert.show();
+        } else if (!isStringNumber(yearLaptopTextField.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "The year text field must be a number.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // gather the information
+            String title = titleLaptopTextField.getText();
+            int year = Integer.parseInt(yearLaptopTextField.getText());
+            String thumbnail = imagePathLaptopTextField.getText();
+            String manufacturer = manufacturerLaptopTextField.getText();
+            String model = modelLaptopTextField.getText();
+            String installedOS = operatingSystemLaptopTextField.getText();
+
+            // create a Laptop object and add it
+            getLibrary().getResourceManager().addResource(new Laptop(title, year, thumbnail, manufacturer,
+                    model, installedOS));
+
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Laptop resource created successfully.",
+                    ButtonType.OK);
+            alert.show();
+
+            // clear all the fields
+            this.clearAllCreateLaptopFields();
+        }
+    }
+
+    @FXML
+    public void editBookSearchButtonClicked(ActionEvent event) {
+        String bookID = uniqueIDSearchEditBookTextField.getText();
+        Resource resource = getLibrary().getResourceManager().getResourceById(bookID);
+
+        if (resource == null || !resource.getType().equals("Book")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Couldn't find a book with such ID.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // Book is successfully found.
+            Book book = (Book) resource;
+
+            // fill the fields with data
+            titleEditBookTextField.setText(book.getTitle());
+            yearEditBookTextField.setText(String.valueOf(book.getYear()));
+            authorEditBookTextField.setText(book.getAuthor());
+            imagePathEditBook.setText(book.getThumbnailImagePath());
+            publisherEditBookTextField.setText(book.getPublisher());
+            genreEditBookTextField.setText(book.getGenre());
+            isbnEditBookTextField.setText(book.getISBN());
+            languageEditBookTextField.setText(book.getLanguage());
+
+            // lock the id field
+            uniqueIDSearchEditBookTextField.setDisable(true);
+        }
+    }
+
+    @FXML
+    public void editBookButtonClicked(ActionEvent event) {
+        // mandatory information- title, year, thumbnail, author, publisher
+        // optional information- genre, isbn, language
+
+        if (titleEditBookTextField.getText().isEmpty() || yearEditBookTextField.getText().isEmpty()
+                || imagePathEditBook.getText().isEmpty() || publisherEditBookTextField.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
+                    ButtonType.OK);
+            alert.show();
+        } else if (!isStringNumber(yearEditBookTextField.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "The year text field must be a number.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // gather the information
+            String title = titleEditBookTextField.getText();
+            int year = Integer.parseInt(yearEditBookTextField.getText());
+            String thumbnail = imagePathEditBook.getText();
+            String author = authorEditBookTextField.getText();
+            String publisher = publisherEditBookTextField.getText();
+            String genre = genreEditBookTextField.getText();
+            String isbn = isbnEditBookTextField.getText();
+            String language = languageEditBookTextField.getText();
+
+            // get the book
+            Book book = (Book) getLibrary().getResourceManager().
+                    getResourceById(uniqueIDSearchEditBookTextField.getText());
+            // edit the book
+            getLibrary().getResourceManager().editBook(book, title, year, thumbnail, author, publisher,
+                    genre, isbn, language);
+
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Book resource edited successfully.",
+                    ButtonType.OK);
+            alert.show();
+
+            // enable the search ID again and clear all the fields
+            uniqueIDSearchEditBookTextField.setDisable(false);
+            this.clearAllEditBookFields();
+        }
+    }
+
+    @FXML
+    void editDVDSearchButtonClicked(ActionEvent event) {
+        String dvdId = uniqueIDSearchEditDVDTextField.getText();
+        Resource resource = getLibrary().getResourceManager().getResourceById(dvdId);
+
+        if (resource == null || !resource.getType().equals("DVD")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Couldn't find a DVD with such ID.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // DVD is successfully found.
+            DVD dvd = (DVD) resource;
+
+            // fill the fields with data
+            titleEditDVDTextField.setText(dvd.getTitle());
+            yearEditDVDTextField.setText(String.valueOf(dvd.getYear()));
+            imagePathEditDVD.setText(dvd.getThumbnailImagePath());
+            directorEditDVDTextField.setText(dvd.getDirector());
+            runtimeEditDVDTextField.setText(String.valueOf(dvd.getRuntime()));
+            languageEditDVDTextField.setText(dvd.getLanguage());
+
+
+            // prepare the data to show in subtitle languages
+            String subtitleLanguages = "";
+            for (String language : dvd.getListOfSubtitleLanguages()) {
+                subtitleLanguages = subtitleLanguages + language + ',';
+            }
+
+            // remove the last comma, if the subtitle language is not empty
+            if (!subtitleLanguages.isEmpty()) {
+                subtitleLanguages = subtitleLanguages.substring(0, subtitleLanguages.length() - 1);
+            }
+            languageSubtitlesEditDVDTextField.setText(subtitleLanguages);
+
+            // lock the id field
+            uniqueIDSearchEditDVDTextField.setDisable(true);
+        }
+    }
+
+
+    @FXML
+    public void editDVDButtonClicked(ActionEvent event) {
+        // mandatory information- title, year, thumbnail, director, runtime
+        // optional information- language, listOfSubtitleLanguages
+        if (titleEditDVDTextField.getText().isEmpty() || yearEditDVDTextField.getText().isEmpty()
+                || imagePathEditDVD.getText().isEmpty() || directorEditDVDTextField.getText().isEmpty()
+                || runtimeEditDVDTextField.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
+                    ButtonType.OK);
+            alert.show();
+        } else if (!isStringNumber(yearEditDVDTextField.getText()) ||
+                !isStringNumber(runtimeEditDVDTextField.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "The year and runtime text fields must be a number.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // gather the information
+            String title = titleEditDVDTextField.getText();
+            int year = Integer.parseInt(yearEditDVDTextField.getText());
+            String imagePath = imagePathEditDVD.getText();
+            String director = directorEditDVDTextField.getText();
+            int runtime = Integer.parseInt(runtimeEditDVDTextField.getText());
+            String language = languageEditDVDTextField.getText();
+
+            // get a string containing the languages comma separated
+            String subtitleLanguages = languageSubtitlesEditDVDTextField.getText();
+
+            // split the string into smaller strings on new comma or space
+            String[] arrayOfSubtitleLanguages = subtitleLanguages.split(",| ");
+
+            // convert that array into array list
+            ArrayList<String> listOfSubtitleLanguages = new ArrayList<>(Arrays.asList(arrayOfSubtitleLanguages));
+
+            // remove empty strings
+            for (int i = 0; i < listOfSubtitleLanguages.size(); i++) {
+                if (listOfSubtitleLanguages.get(i).equals("")) {
+                    listOfSubtitleLanguages.remove(i);
+                }
+            }
+
+            // find the DVD
+            DVD dvd = (DVD) getLibrary().getResourceManager().
+                    getResourceById(uniqueIDSearchEditDVDTextField.getText());
+
+            getLibrary().getResourceManager().editDVD(dvd, title, year, imagePath,
+                    director, runtime, language, listOfSubtitleLanguages);
+
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "DVD resource edited successfully.",
+                    ButtonType.OK);
+            alert.show();
+
+            // enable the ID text field
+            uniqueIDSearchEditDVDTextField.setDisable(false);
+            // clear all the fields
+            this.clearAllEditDVDFields();
+        }
+    }
+
+
+    @FXML
+    void editLaptopSearchButtonClicked(ActionEvent event) {
+        String laptopId = uniqueIDSearchEditLaptopTextField.getText();
+        Resource resource = getLibrary().getResourceManager().getResourceById(laptopId);
+
+        if (resource == null || !resource.getType().equals("Laptop")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Couldn't find a laptop with such ID.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // Laptop is successfully found.
+            Laptop laptop = (Laptop) resource;
+
+            // fill the fields with data
+            titleEditLaptopTextField.setText(laptop.getTitle());
+            yearEditLaptopTextField.setText(String.valueOf(laptop.getYear()));
+            imagePathEditLaptop.setText(laptop.getThumbnailImagePath());
+            manufacturerEditLaptopTextField.setText(laptop.getManufacturer());
+            modelEditLaptopTextField.setText(laptop.getModel());
+            operatingSystemEditLaptopTextField.setText(laptop.getInstalledOS());
+
+            // lock the id field
+            uniqueIDSearchEditLaptopTextField.setDisable(true);
+        }
+    }
+
+    @FXML
+    public void editLaptopButtonClicked(ActionEvent event) {
+        // mandatory information - title, year, thumbnail, manufacturer, model, installedOS
+        if (titleEditLaptopTextField.getText().isEmpty() || yearEditLaptopTextField.getText().isEmpty()
+                || imagePathEditLaptop.getText().isEmpty() || manufacturerEditLaptopTextField.getText().isEmpty()
+                || modelEditLaptopTextField.getText().isEmpty() || operatingSystemEditLaptopTextField.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
+                    ButtonType.OK);
+            alert.show();
+        } else if (!isStringNumber(yearEditLaptopTextField.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "The year text field must be a number.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // gather the information
+            String title = titleEditLaptopTextField.getText();
+            int year = Integer.parseInt(yearEditLaptopTextField.getText());
+            String imagePath = imagePathEditLaptop.getText();
+            String manufacturer = manufacturerEditLaptopTextField.getText();
+            String model = modelEditLaptopTextField.getText();
+            String installedOS = operatingSystemEditLaptopTextField.getText();
+
+            // Find the laptop.
+            Laptop laptop = (Laptop) getLibrary().getResourceManager().
+                    getResourceById(uniqueIDSearchEditLaptopTextField.getText());
+
+            // Change the laptop
+            getLibrary().getResourceManager().editLaptop(laptop, title, year, imagePath,
+                    manufacturer, model, installedOS);
+
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Laptop resource edited successfully.",
+                    ButtonType.OK);
+            alert.show();
+
+            // enable the search bar and clear all the fields
+            uniqueIDSearchEditLaptopTextField.setDisable(false);
+            this.clearAllEditLaptopFields();
+        }
+    }
+
+    /**
+     * Check if a certain string contains numbers only.
+     *
+     * @param s The string.
+     * @return True if the string contains only numbers, false otherwise.
+     */
+    private boolean isStringNumber(String s) {
+        // regular expression
+        // \\d+ means 1 or more digits
+        return s.matches("\\d+");
+    }
+
+
+    private void clearAllCreateBookFields() {
+        titleBookTextField.setText("");
+        authorBookTextField.setText("");
+        imagePathBookTextField.setText("");
+        authorBookTextField.setText("");
+        publisherBookTextField.setText("");
+        genreBookTextField.setText("");
+        isbnBookTextField.setText("");
+        languageBookTextField.setText("");
+        yearBookTextField.setText("");
+    }
+
+    private void clearAllCreateLaptopFields() {
+        titleLaptopTextField.setText("");
+        yearLaptopTextField.setText("");
+        imagePathLaptopTextField.setText("");
+        manufacturerLaptopTextField.setText("");
+        modelLaptopTextField.setText("");
+        operatingSystemLaptopTextField.setText("");
+    }
+
+    private void clearAllCreateDVDFields() {
+        titleDVDTextField.setText("");
+        yearDVDTextField.setText("");
+        imagePathDVDTextField.setText("");
+        directorDVDTextField.setText("");
+        runtimeDVDTextField.setText("");
+        languageDVDTextField.setText("");
+        languageSubtitlesDVDTextField.setText("");
+    }
+
+    private void clearAllEditBookFields() {
+        uniqueIDSearchEditBookTextField.setText("");
+        titleEditBookTextField.setText("");
+        yearEditBookTextField.setText("");
+        authorEditBookTextField.setText("");
+        imagePathEditBook.setText("");
+        publisherEditBookTextField.setText("");
+        genreEditBookTextField.setText("");
+        isbnEditBookTextField.setText("");
+        languageEditBookTextField.setText("");
+    }
+
+    private void clearAllEditLaptopFields() {
+        uniqueIDSearchEditLaptopTextField.setText("");
+        titleEditLaptopTextField.setText("");
+        yearEditLaptopTextField.setText("");
+        imagePathEditLaptop.setText("");
+        manufacturerEditLaptopTextField.setText("");
+        modelEditLaptopTextField.setText("");
+        operatingSystemEditLaptopTextField.setText("");
+    }
+
+    private void clearAllEditDVDFields() {
+        uniqueIDSearchEditDVDTextField.setText("");
+        titleEditDVDTextField.setText("");
+        yearEditDVDTextField.setText("");
+        imagePathEditDVD.setText("");
+        directorEditDVDTextField.setText("");
+        runtimeEditDVDTextField.setText("");
+        languageEditDVDTextField.setText("");
+        languageSubtitlesEditDVDTextField.setText("");
     }
 }
 

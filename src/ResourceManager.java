@@ -18,6 +18,10 @@ public class ResourceManager implements Serializable {
     public ResourceManager() {
         resources = new ArrayList<>();
         this.selfPopulate();
+
+        // assign next ID static variable to the user class
+        Resource.setNextID(new SaveStaticVariables().getResourceNextID());
+
     }
 
     public void save() {
@@ -121,9 +125,37 @@ public class ResourceManager implements Serializable {
         }
     }
 
-    public void editResource(Resource resource, Resource newResource) {
-        // needs to go through attributes 1 by 1
-        // and change whatever is different
+    private void editResource(Resource resource, String title, int year, String imagePath ) {
+        resource.setTitle(title);
+        resource.setYear(year);
+        resource.setThumbnailImagePath(imagePath);
+    }
+
+    public void editLaptop(Laptop laptop, String title, int year, String imagePath,
+                           String manufacturer, String model, String installedOS){
+        editResource(laptop, title, year, imagePath);
+        laptop.setManufacturer(manufacturer);
+        laptop.setModel(model);
+        laptop.setInstalledOS(installedOS);
+    }
+
+    public void editBook(Book book, String title, int year, String imagePath,
+                         String author, String publisher, String genre, String ISBN, String language){
+        editResource(book, title, year, imagePath);
+        book.setAuthor(author);
+        book.setPublisher(publisher);
+        book.setGenre(genre);
+        book.setISBN(ISBN);
+        book.setLanguage(language);
+    }
+
+    public void editDVD(DVD dvd, String title, int year, String imagePath,
+                        String director, int runtime, String language, ArrayList<String> listOfSubtitleLanguages){
+        editResource(dvd, title, year, imagePath);
+        dvd.setDirector(director);
+        dvd.setRuntime(runtime);
+        dvd.setLanguage(language);
+        dvd.setListOfSubtitleLanguages(listOfSubtitleLanguages);
     }
 
     public Resource getResourceById(String resourceId) {
@@ -241,8 +273,10 @@ public class ResourceManager implements Serializable {
     // test data
     public void selfPopulate1() {
         Book b = new Book("Harry Potter", 2010, "", "J.K.R.", "dn");
+        Book b2 = new Book("Harry Potter2", 2010, "", "J.K.R.", "dn");
 
         this.addResource(b);
+        this.addResource(b2);
         this.addResource(new Laptop("Lenovo", 2015, "", "LN", "S3", "W"));
         this.addResource(new DVD("DVD1", 2015, "", "P", 201));
 
