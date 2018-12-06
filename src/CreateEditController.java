@@ -1,8 +1,6 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 /**
  * Controller class for the Create/Edit screen for the Librarian.
@@ -15,14 +13,14 @@ public class CreateEditController extends Controller {
     @FXML// fx:id="createBookTab"
     private Tab createBookTab;// Value injected by FXMLLoader
 
-    @FXML// fx:id="uniqueIDBookTextField"
-    private TextField uniqueIDBookTextField;// Value injected by FXMLLoader
-
     @FXML// fx:id="yearBookTextField"
     private TextField yearBookTextField;// Value injected by FXMLLoader
 
     @FXML// fx:id="titleBookTextField"
     private TextField titleBookTextField;// Value injected by FXMLLoader
+
+    @FXML
+    private TextField imagePathBookTextField;
 
     @FXML// fx:id="authorBookTextField"
     private TextField authorBookTextField;// Value injected by FXMLLoader
@@ -45,14 +43,14 @@ public class CreateEditController extends Controller {
     @FXML// fx:id="createDVDTab"
     private Tab createDVDTab;// Value injected by FXMLLoader
 
-    @FXML// fx:id="uniqueIDDVDTextField"
-    private TextField uniqueIDDVDTextField;// Value injected by FXMLLoader
-
     @FXML// fx:id="yearDVDTextField"
     private TextField yearDVDTextField;// Value injected by FXMLLoader
 
     @FXML// fx:id="titleDVDTextField"
     private TextField titleDVDTextField;// Value injected by FXMLLoader
+
+    @FXML
+    private TextField imagePathDVDTextField;
 
     @FXML// fx:id="directorDVDTextField"
     private TextField directorDVDTextField;// Value injected by FXMLLoader
@@ -78,14 +76,14 @@ public class CreateEditController extends Controller {
     @FXML// fx:id="createLaptopTab"
     private Tab createLaptopTab;// Value injected by FXMLLoader
 
-    @FXML// fx:id="uniqueIDLaptopTextField"
-    private TextField uniqueIDLaptopTextField;// Value injected by FXMLLoader
-
     @FXML// fx:id="yearLaptopTextField"
     private TextField yearLaptopTextField;// Value injected by FXMLLoader
 
     @FXML// fx:id="titleLaptopTextField"
     private TextField titleLaptopTextField;// Value injected by FXMLLoader
+
+    @FXML
+    private TextField imagePathLaptopTextField;
 
     @FXML// fx:id="manufacturerLaptopTextField"
     private TextField manufacturerLaptopTextField;// Value injected by FXMLLoader
@@ -101,9 +99,6 @@ public class CreateEditController extends Controller {
 
     @FXML// fx:id="editBookTab"
     private Tab editBookTab;// Value injected by FXMLLoader
-
-    @FXML// fx:id="uniqueIDEditBookTextField"
-    private TextField uniqueIDEditBookTextField;// Value injected by FXMLLoader
 
     @FXML// fx:id="yearEditBookTextField"
     private TextField yearEditBookTextField;// Value injected by FXMLLoader
@@ -213,9 +208,65 @@ public class CreateEditController extends Controller {
      * @param event The current event.
      */
     @FXML
-    void backButtonClicked(ActionEvent event) {
+    public void backButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
+    }
+
+
+    @FXML
+    void createBookButtonClicked(ActionEvent event) {
+        // mandatory - title, year, thumbnail, author, publisher
+        // optional - genre, isbn, language
+
+        if(titleBookTextField.getText().isEmpty() || yearBookTextField.getText().isEmpty()
+        || imagePathBookTextField.getText().isEmpty() || publisherBookTextField.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the fields.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+
+            String title = titleBookTextField.getText();
+            int year = Integer.parseInt(yearBookTextField.getText());
+            String thumbnail = imagePathBookTextField.getText();
+            String author = authorBookTextField.getText();
+            String publisher = publisherBookTextField.getText();
+            String genre = genreBookTextField.getText();
+            String isbn = isbnBookTextField.getText();
+            String language = languageBookTextField.getText();
+
+            getLibrary().getResourceManager().addResource(new Book(title, year, thumbnail, author, publisher,
+                    genre, isbn, language));
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Book added successfully.",
+                    ButtonType.OK);
+            alert.show();
+        }
+    }
+
+    @FXML
+    void createDVDButtonClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void createLaptopButtonClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editBookButtonClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editDVDButtonClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editLaptopButtonClicked(ActionEvent event) {
+
     }
 }
 
