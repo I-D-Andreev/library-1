@@ -70,7 +70,7 @@ public class DVD extends Resource {
         // call the "smaller" DVD constructor
         this(title, year, thumbnail, director, runtime);
         this.language = language;
-        this.listOfSubtitleLanguages = getListOfSubtitleLanguages();
+        this.listOfSubtitleLanguages = listOfSubtitleLanguages;
     }
 
     /**

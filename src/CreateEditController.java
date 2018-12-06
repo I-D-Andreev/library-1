@@ -147,7 +147,7 @@ public class CreateEditController extends Controller {
     private TextField languageEditDVDTextField;
 
     @FXML
-    private TextField languageSubtitlesEditDVD1TextField;
+    private TextField languageSubtitlesEditDVDTextField;
 
     @FXML
     private Button editDVDButton;
@@ -187,6 +187,7 @@ public class CreateEditController extends Controller {
 
     @FXML
     private Button backButton;
+
     /**
      * Goes back to the librarian dashboard when clicked.
      *
@@ -264,11 +265,18 @@ public class CreateEditController extends Controller {
             // get a string containing the languages comma separated
             String subtitleLanguages = languageSubtitlesDVDTextField.getText();
 
-            // split the string into smaller strings on new line, comma or space
-            String[] arrayOfSubtitleLanguages = subtitleLanguages.split("\\r?\\n|,| ");
+            // split the string into smaller strings on new comma or space
+            String[] arrayOfSubtitleLanguages = subtitleLanguages.split(",| ");
 
             // convert that array into array list
             ArrayList<String> listOfSubtitleLanguages = new ArrayList<>(Arrays.asList(arrayOfSubtitleLanguages));
+
+            // remove empty strings
+            for (int i = 0; i < listOfSubtitleLanguages.size(); i++) {
+                if (listOfSubtitleLanguages.get(i).equals("")) {
+                    listOfSubtitleLanguages.remove(i);
+                }
+            }
 
             // create a DVD and add it
             getLibrary().getResourceManager().addResource(new DVD(title, year, thumbnail, director,
@@ -393,13 +401,101 @@ public class CreateEditController extends Controller {
 
     @FXML
     void editDVDSearchButtonClicked(ActionEvent event) {
+        String dvdId = uniqueIDSearchEditDVDTextField.getText();
+        Resource resource = getLibrary().getResourceManager().getResourceById(dvdId);
 
+        if (resource == null || !resource.getType().equals("DVD")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Couldn't find a DVD with such ID.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // DVD is successfully found.
+            DVD dvd = (DVD) resource;
+
+            // fill the fields with data
+            titleEditDVDTextField.setText(dvd.getTitle());
+            yearEditDVDTextField.setText(String.valueOf(dvd.getYear()));
+            imagePathEditDVD.setText(dvd.getThumbnailImagePath());
+            directorEditDVDTextField.setText(dvd.getDirector());
+            runtimeEditDVDTextField.setText(String.valueOf(dvd.getRuntime()));
+            languageEditDVDTextField.setText(dvd.getLanguage());
+
+
+            // prepare the data to show in subtitle languages
+            String subtitleLanguages = "";
+            for (String language : dvd.getListOfSubtitleLanguages()) {
+                subtitleLanguages = subtitleLanguages + language + ',';
+            }
+
+            // remove the last comma, if the subtitle language is not empty
+            if (!subtitleLanguages.isEmpty()) {
+                subtitleLanguages = subtitleLanguages.substring(0, subtitleLanguages.length() - 1);
+            }
+            languageSubtitlesEditDVDTextField.setText(subtitleLanguages);
+
+            // lock the id field
+            uniqueIDSearchEditDVDTextField.setDisable(true);
+        }
     }
 
 
     @FXML
     public void editDVDButtonClicked(ActionEvent event) {
+        // mandatory information- title, year, thumbnail, director, runtime
+        // optional information- language, listOfSubtitleLanguages
+        if (titleEditDVDTextField.getText().isEmpty() || yearEditDVDTextField.getText().isEmpty()
+                || imagePathEditDVD.getText().isEmpty() || directorEditDVDTextField.getText().isEmpty()
+                || runtimeEditDVDTextField.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
+                    ButtonType.OK);
+            alert.show();
+        } else if (!isStringNumber(yearEditDVDTextField.getText()) ||
+                !isStringNumber(runtimeEditDVDTextField.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "The year and runtime text fields must be a number.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // gather the information
+            String title = titleEditDVDTextField.getText();
+            int year = Integer.parseInt(yearEditDVDTextField.getText());
+            String imagePath = imagePathEditDVD.getText();
+            String director = directorEditDVDTextField.getText();
+            int runtime = Integer.parseInt(runtimeEditDVDTextField.getText());
+            String language = languageEditDVDTextField.getText();
 
+            // get a string containing the languages comma separated
+            String subtitleLanguages = languageSubtitlesEditDVDTextField.getText();
+
+            // split the string into smaller strings on new comma or space
+            String[] arrayOfSubtitleLanguages = subtitleLanguages.split(",| ");
+
+            // convert that array into array list
+            ArrayList<String> listOfSubtitleLanguages = new ArrayList<>(Arrays.asList(arrayOfSubtitleLanguages));
+
+            // remove empty strings
+            for (int i = 0; i < listOfSubtitleLanguages.size(); i++) {
+                if (listOfSubtitleLanguages.get(i).equals("")) {
+                    listOfSubtitleLanguages.remove(i);
+                }
+            }
+
+            // find the DVD
+            DVD dvd = (DVD) getLibrary().getResourceManager().
+                    getResourceById(uniqueIDSearchEditDVDTextField.getText());
+
+            getLibrary().getResourceManager().editDVD(dvd, title, year, imagePath,
+                    director, runtime, language, listOfSubtitleLanguages);
+
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "DVD resource edited successfully.",
+                    ButtonType.OK);
+            alert.show();
+
+            // enable the ID text field
+            uniqueIDSearchEditDVDTextField.setDisable(false);
+            // clear all the fields
+            this.clearAllEditDVDFields();
+        }
     }
 
 
@@ -483,8 +579,7 @@ public class CreateEditController extends Controller {
     }
 
 
-
-    private void clearAllCreateBookFields(){
+    private void clearAllCreateBookFields() {
         titleBookTextField.setText("");
         authorBookTextField.setText("");
         imagePathBookTextField.setText("");
@@ -496,7 +591,7 @@ public class CreateEditController extends Controller {
         yearBookTextField.setText("");
     }
 
-    private void clearAllCreateLaptopFields(){
+    private void clearAllCreateLaptopFields() {
         titleLaptopTextField.setText("");
         yearLaptopTextField.setText("");
         imagePathLaptopTextField.setText("");
@@ -505,7 +600,7 @@ public class CreateEditController extends Controller {
         operatingSystemLaptopTextField.setText("");
     }
 
-    private void clearAllCreateDVDFields(){
+    private void clearAllCreateDVDFields() {
         titleDVDTextField.setText("");
         yearDVDTextField.setText("");
         imagePathDVDTextField.setText("");
@@ -515,7 +610,7 @@ public class CreateEditController extends Controller {
         languageSubtitlesDVDTextField.setText("");
     }
 
-    private void clearAllEditBookFields(){
+    private void clearAllEditBookFields() {
         uniqueIDSearchEditBookTextField.setText("");
         titleEditBookTextField.setText("");
         yearEditBookTextField.setText("");
@@ -527,7 +622,7 @@ public class CreateEditController extends Controller {
         languageEditBookTextField.setText("");
     }
 
-    private void clearAllEditLaptopFields(){
+    private void clearAllEditLaptopFields() {
         uniqueIDSearchEditLaptopTextField.setText("");
         titleEditLaptopTextField.setText("");
         yearEditLaptopTextField.setText("");
@@ -535,6 +630,17 @@ public class CreateEditController extends Controller {
         manufacturerEditLaptopTextField.setText("");
         modelEditLaptopTextField.setText("");
         operatingSystemEditLaptopTextField.setText("");
+    }
+
+    private void clearAllEditDVDFields() {
+        uniqueIDSearchEditDVDTextField.setText("");
+        titleEditDVDTextField.setText("");
+        yearEditDVDTextField.setText("");
+        imagePathEditDVD.setText("");
+        directorEditDVDTextField.setText("");
+        runtimeEditDVDTextField.setText("");
+        languageEditDVDTextField.setText("");
+        languageSubtitlesEditDVDTextField.setText("");
     }
 }
 
