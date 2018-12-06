@@ -94,9 +94,14 @@ public class UserManager implements Serializable {
         this.users.add(user);
     }
 
-    public void editUser(User user, User newUser) {
-        // needs to go through attributes 1 by 1
-        // and change whatever is different
+    public void editUser(User user, String firstName, String lastName, String phoneNumber,
+                              String imagePath, Address address ) {
+
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setPhoneNumber(phoneNumber);
+        user.setProfileImagePath(imagePath);
+        user.setAddress(address);
     }
 
     public void removeUser(User user) {
