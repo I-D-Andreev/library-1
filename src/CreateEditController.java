@@ -121,6 +121,9 @@ public class CreateEditController extends Controller {
     @FXML// fx:id="languageEditBookTextField"
     private TextField languageEditBookTextField;// Value injected by FXMLLoader
 
+    @FXML
+    private TextField imagePathEditBook;
+
     @FXML// fx:id="editBookButton"
     private Button editBookButton;// Value injected by FXMLLoader
 
@@ -247,6 +250,9 @@ public class CreateEditController extends Controller {
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "Book resource created successfully.",
                     ButtonType.OK);
             alert.show();
+
+            // clear all the fields
+            this.clearAllCreateBookFields();
         }
     }
 
@@ -254,13 +260,13 @@ public class CreateEditController extends Controller {
     public void createDVDButtonClicked(ActionEvent event) {
         // mandatory information- title, year, thumbnail, director, runtime
         // optional information- language, listOfSubtitleLanguages
-        if(titleDVDTextField.getText().isEmpty() || yearDVDTextField.getText().isEmpty()
-        || imagePathDVDTextField.getText().isEmpty() || directorDVDTextField.getText().isEmpty()
-        || runtimeDVDTextField.getText().isEmpty()){
+        if (titleDVDTextField.getText().isEmpty() || yearDVDTextField.getText().isEmpty()
+                || imagePathDVDTextField.getText().isEmpty() || directorDVDTextField.getText().isEmpty()
+                || runtimeDVDTextField.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
                     ButtonType.OK);
             alert.show();
-        } else if(!isStringNumber(yearDVDTextField.getText()) || !isStringNumber(runtimeDVDTextField.getText())){
+        } else if (!isStringNumber(yearDVDTextField.getText()) || !isStringNumber(runtimeDVDTextField.getText())) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "The year and runtime text fields must be a number.",
                     ButtonType.OK);
             alert.show();
@@ -290,6 +296,9 @@ public class CreateEditController extends Controller {
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "DVD resource created successfully.",
                     ButtonType.OK);
             alert.show();
+
+            // clear all the fields
+            this.clearAllCreateDVDFields();
         }
     }
 
@@ -302,7 +311,7 @@ public class CreateEditController extends Controller {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
                     ButtonType.OK);
             alert.show();
-        } else if(!isStringNumber(yearLaptopTextField.getText())){
+        } else if (!isStringNumber(yearLaptopTextField.getText())) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "The year text field must be a number.",
                     ButtonType.OK);
             alert.show();
@@ -323,13 +332,85 @@ public class CreateEditController extends Controller {
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "Laptop resource created successfully.",
                     ButtonType.OK);
             alert.show();
+
+            // clear all the fields
+            this.clearAllCreateLaptopFields();
+        }
+    }
+
+    @FXML
+    public void editBookSearchButtonClicked(ActionEvent event) {
+        String bookID = uniqueIDSearchEditBookTextField.getText();
+        Resource resource = getLibrary().getResourceManager().getResourceById(bookID);
+
+        if (resource == null || !resource.getType().equals("Book")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Couldn't find a book with such ID.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // Book is successfully found.
+            Book book = (Book) resource;
+
+            // fill the fields with data
+            titleEditBookTextField.setText(book.getTitle());
+            yearEditBookTextField.setText(String.valueOf(book.getYear()));
+            authorEditBookTextField.setText(book.getAuthor());
+            imagePathEditBook.setText(book.getThumbnailImagePath());
+            publisherEditBookTextField.setText(book.getPublisher());
+            genreEditBookTextField.setText(book.getGenre());
+            isbnEditBookTextField.setText(book.getISBN());
+            languageEditBookTextField.setText(book.getLanguage());
+
+            // lock the id field
+            uniqueIDSearchEditBookTextField.setDisable(true);
         }
     }
 
     @FXML
     public void editBookButtonClicked(ActionEvent event) {
+        // mandatory information- title, year, thumbnail, author, publisher
+        // optional information- genre, isbn, language
 
+        if (titleEditBookTextField.getText().isEmpty() || yearEditBookTextField.getText().isEmpty()
+                || imagePathEditBook.getText().isEmpty() || publisherEditBookTextField.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
+                    ButtonType.OK);
+            alert.show();
+        } else if (!isStringNumber(yearEditBookTextField.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "The year text field must be a number.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // gather the information
+            String title = titleEditBookTextField.getText();
+            int year = Integer.parseInt(yearEditBookTextField.getText());
+            String thumbnail = imagePathEditBook.getText();
+            String author = authorEditBookTextField.getText();
+            String publisher = publisherEditBookTextField.getText();
+            String genre = genreEditBookTextField.getText();
+            String isbn = isbnEditBookTextField.getText();
+            String language = languageEditBookTextField.getText();
+
+            // edit the book
+            Book book = (Book) getLibrary().getResourceManager().
+                    getResourceById(uniqueIDSearchEditBookTextField.getText());
+
+            getLibrary().getResourceManager().editBook(book, title, year, thumbnail, author, publisher,
+                    genre, isbn, language);
+
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Book resource edited successfully.",
+                    ButtonType.OK);
+            alert.show();
+
+            // enable the search ID again and clear it
+            uniqueIDSearchEditBookTextField.setDisable(false);
+            this.clearAllEditBookFields();
+        }
     }
+
+
+
 
     @FXML
     public void editDVDButtonClicked(ActionEvent event) {
@@ -351,6 +432,48 @@ public class CreateEditController extends Controller {
         // regular expression
         // \\d+ means 1 or more digits
         return s.matches("\\d+");
+    }
+
+    private void clearAllEditBookFields(){
+        uniqueIDSearchEditBookTextField.setText("");
+        titleEditBookTextField.setText("");
+        yearEditBookTextField.setText("");
+        authorEditBookTextField.setText("");
+        imagePathEditBook.setText("");
+        publisherEditBookTextField.setText("");
+        genreEditBookTextField.setText("");
+        isbnEditBookTextField.setText("");
+        languageEditBookTextField.setText("");
+    }
+
+    private void clearAllCreateBookFields(){
+        titleBookTextField.setText("");
+        authorBookTextField.setText("");
+        imagePathBookTextField.setText("");
+        authorBookTextField.setText("");
+        publisherBookTextField.setText("");
+        genreBookTextField.setText("");
+        isbnBookTextField.setText("");
+        languageBookTextField.setText("");
+    }
+
+    private void clearAllCreateLaptopFields(){
+        titleLaptopTextField.setText("");
+        yearLaptopTextField.setText("");
+        imagePathLaptopTextField.setText("");
+        manufacturerLaptopTextField.setText("");
+        modelLaptopTextField.setText("");
+        operatingSystemLaptopTextField.setText("");
+    }
+
+    private void clearAllCreateDVDFields(){
+        titleDVDTextField.setText("");
+        yearDVDTextField.setText("");
+        imagePathDVDTextField.setText("");
+        directorDVDTextField.setText("");
+        runtimeDVDTextField.setText("");
+        languageDVDTextField.setText("");
+        languageSubtitlesDVDTextField.setText("");
     }
 }
 
