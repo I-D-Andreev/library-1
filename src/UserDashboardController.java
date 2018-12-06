@@ -65,18 +65,9 @@ public class UserDashboardController extends Controller {
     @FXML // fx:id="addressLabel"
     private Label addressLabel; // Value injected by FXMLLoader
 
-    @FXML
-    public void initialize() {
+    @FXML // fx:id="refreshButton"
+    private Button refreshButton; // Value injected by FXMLLoader
 
-        //Image image = new Image(getLibrary().getCurrentUserLoggedIn().getProfileImagePath());
-
-        //userImage.setImage(image);
-        usernameLabel.setText(getLibrary().getCurrentUserLoggedIn().getUsername());
-        firstNameLabel.setText(getLibrary().getCurrentUserLoggedIn().getFirstName());
-        lastNameLabel.setText(getLibrary().getCurrentUserLoggedIn().getLastName());
-        phoneNumberLabel.setText(getLibrary().getCurrentUserLoggedIn().getPhoneNumber());
-        addressLabel.setText(getLibrary().getCurrentUserLoggedIn().getAddress().toString());
-    }
 
     @FXML
     void borrowedResourcesButtonClicked(ActionEvent event) {
@@ -123,10 +114,16 @@ public class UserDashboardController extends Controller {
 
     }
 
-    /*
-    public UserDashboardController() {
+    @FXML
+    void refreshButtonClicked(ActionEvent event) {
 
-        currentUser = getLibrary().getCurrentUserLoggedIn();
+        //Image image = new Image(getLibrary().getCurrentUserLoggedIn().getProfileImagePath());
+
+        //userImage.setImage(image);
+        usernameLabel.setText(getLibrary().getCurrentUserLoggedIn().getUsername());
+        firstNameLabel.setText(getLibrary().getCurrentUserLoggedIn().getFirstName());
+        lastNameLabel.setText(getLibrary().getCurrentUserLoggedIn().getLastName());
+        phoneNumberLabel.setText(getLibrary().getCurrentUserLoggedIn().getPhoneNumber());
+        addressLabel.setText(getLibrary().getCurrentUserLoggedIn().getAddress().toString());
     }
-    */
 }

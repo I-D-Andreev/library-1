@@ -12,8 +12,8 @@
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserDashboardController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.0" minWidth="10.0" prefWidth="298.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="302.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.0" minWidth="10.0" prefWidth="278.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="322.0" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints maxHeight="130.0" minHeight="0.0" prefHeight="64.0" vgrow="SOMETIMES" />
@@ -28,12 +28,17 @@
       </Label>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
          <children>
-            <Button fx:id="browseResourcesButton" mnemonicParsing="false" onAction="#browseResourcesButtonClicked" text="Browse Resources">
+            <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#refreshButtonClicked" prefHeight="44.0" prefWidth="68.0" text="Refresh" textAlignment="CENTER" wrapText="true">
                <HBox.margin>
                   <Insets right="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#logOutButtonClicked" text="Log Out">
+            <Button fx:id="browseResourcesButton" mnemonicParsing="false" onAction="#browseResourcesButtonClicked" text="Browse Resources" textAlignment="CENTER" wrapText="true">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#logOutButtonClicked" text="Log Out" textAlignment="CENTER" wrapText="true">
                <HBox.margin>
                   <Insets right="20.0" />
                </HBox.margin>
