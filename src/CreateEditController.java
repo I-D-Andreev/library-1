@@ -1,7 +1,10 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.ArrayList;
 
@@ -42,8 +45,6 @@ public class CreateEditController extends Controller {
     @FXML
     private Button createBookButton;
 
-
-    // Create DVD tab
     @FXML
     private TextField titleDVDTextField;
 
@@ -208,6 +209,24 @@ public class CreateEditController extends Controller {
 
     @FXML // fx:id="copyCreateButton"
     private Button copyCreateButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="createBookFindImageButton"
+    private Button createBookFindImageButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="createDvdFindImageButton"
+    private Button createDvdFindImageButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="createLaptopFindImageButton"
+    private Button createLaptopFindImageButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="editBookFindImageButton"
+    private Button editBookFindImageButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="editDvdFindImageButton"
+    private Button editDvdFindImageButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="editLaptopFindImageButton"
+    private Button editLaptopFindImageButton; // Value injected by FXMLLoader
 
     /**
      * Goes back to the librarian dashboard when clicked.
@@ -620,6 +639,11 @@ public class CreateEditController extends Controller {
         getLibrary().getResourceManager().removeResource(uniqueIDSearchEditBookTextField.getId());
     }
 
+    /**
+     * Creates a copy of the chosen resource.
+     *
+     * @param event The current event.
+     */
     @FXML
     void copyCreateButtonClicked(ActionEvent event) {
 
@@ -664,6 +688,9 @@ public class CreateEditController extends Controller {
     }
 
     @FXML
+    /**
+     * Searches for the resource ID.
+     */
     void copySearchButtonClicked(ActionEvent event) {
 
         Resource resource = getLibrary().getResourceManager().getResourceById(copyUniqueIDtextField.toString());
@@ -682,6 +709,72 @@ public class CreateEditController extends Controller {
     }
 
     /**
+     * Opens file explorer so that an image can be chosen.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void createBookFindImageButtonClicked(ActionEvent event) {
+
+        selectFile(imagePathBookTextField);
+    }
+
+    /**
+     * Opens file explorer so that an image can be chosen.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void createDvdFindImageButtonClicked(ActionEvent event) {
+
+        selectFile(imagePathDVDTextField);
+    }
+
+    /**
+     * Opens file explorer so that an image can be chosen.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void createLaptopFindImageButtonClicked(ActionEvent event) {
+
+        selectFile(imagePathLaptopTextField);
+    }
+
+    /**
+     * Opens file explorer so that an image can be chosen.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void editBookFindImageButtonClicked(ActionEvent event) {
+
+        selectFile(imagePathEditBook);
+    }
+
+    /**
+     * Opens file explorer so that an image can be chosen.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void editDvdFindImageButtonClicked(ActionEvent event) {
+
+        selectFile(imagePathEditDVD);
+    }
+
+    /**
+     * Opens file explorer so that an image can be chosen.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void editLaptopFindImageButtonClicked(ActionEvent event) {
+
+        selectFile(imagePathEditLaptop);
+    }
+
+    /**
      * Check if a certain string contains numbers only.
      *
      * @param s The string.
@@ -693,6 +786,24 @@ public class CreateEditController extends Controller {
         return s.matches("\\d+");
     }
 
+    /**
+     * Opens file explorer and adds the file path to the specified text field when an image is chosen.
+     *
+     * @param imageTextField The specified text field that contains the file path.
+     */
+    private void selectFile(TextField imageTextField) {
+
+        Stage currentStage = (Stage) languageBookTextField.getScene().getWindow();
+        FileChooser fileChooser = new FileChooser();
+
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("JPEG Files", "*.jpg"),
+                new FileChooser.ExtensionFilter("PNG Files", "*.png"));
+
+        File selectedFile = fileChooser.showOpenDialog(currentStage);
+
+        imageTextField.setText(selectedFile.toString());
+    }
 
     private void clearAllCreateBookFields() {
         titleBookTextField.setText("");
