@@ -455,6 +455,7 @@ public class CreateEditController extends Controller {
         genreBookTextField.setText("");
         isbnBookTextField.setText("");
         languageBookTextField.setText("");
+        yearBookTextField.setText("");
     }
 
     private void clearAllCreateLaptopFields(){

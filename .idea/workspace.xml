@@ -7,8 +7,8 @@
     <list default="true" id="6e3b68db-e3f9-4a5f-a067-ee60d4dfb31b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CreateEditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CreateEditController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/CreateEdit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/CreateEdit.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/resources.ser" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/resources.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/values.ser" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/values.ser" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,14 +38,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="7938" />
-          <entry key="txt" value="387" />
+          <entry key="java" value="7956" />
+          <entry key="txt" value="405" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="7938" />
-          <entry key="PLAIN_TEXT" value="387" />
+          <entry key="JAVA" value="7956" />
+          <entry key="PLAIN_TEXT" value="405" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -75,8 +75,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CreateEditController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="475" column="48" selection-start-line="475" selection-start-column="48" selection-end-line="475" selection-end-column="48" />
+            <state relative-caret-position="251">
+              <caret line="457" column="36" selection-start-line="457" selection-start-column="36" selection-end-line="457" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#17519#17969#0" />
@@ -183,7 +183,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544075005206" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544075169531" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
@@ -238,13 +238,6 @@
       <option name="presentableId" value="Default" />
       <updated>1542452788367</updated>
       <workItem from="1542452792911" duration="4471000" />
-    </task>
-    <task id="LOCAL-00041" summary="Remove copy.&#10;Remove copy by id.">
-      <created>1543432968544</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1543432968544</updated>
     </task>
     <task id="LOCAL-00042" summary="Get copy by id method.">
       <created>1543433055046</created>
@@ -582,7 +575,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544072568354</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Can now edit book.">
+      <created>1544075113098</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1544075113098</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -665,7 +665,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Type abstract method in resource + implementation in book, laptop, dvd." />
     <MESSAGE value="CheckBoxes working for browse resources." />
     <MESSAGE value="Reading and writing to file for Resource manager." />
     <MESSAGE value="The file that we write in." />
@@ -690,7 +689,8 @@
     <MESSAGE value="Stop tracking production." />
     <MESSAGE value="Can create DVD object. The gui doesn't want to start for some reason." />
     <MESSAGE value="Added a DVD successfully." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a DVD successfully." />
+    <MESSAGE value="Can now edit book." />
+    <option name="LAST_COMMIT_MESSAGE" value="Can now edit book." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/UserDashboard.fxml" />
@@ -947,8 +947,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CreateEditController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="475" column="48" selection-start-line="475" selection-start-column="48" selection-end-line="475" selection-end-column="48" />
+        <state relative-caret-position="251">
+          <caret line="457" column="36" selection-start-line="457" selection-start-column="36" selection-end-line="457" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#17519#17969#0" />
