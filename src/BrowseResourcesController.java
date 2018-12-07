@@ -58,11 +58,18 @@ public class BrowseResourcesController extends Controller {
     private Button backButton; // Value injected by FXMLLoader
 
     /**
-     * The
+     * The resources that will be shown on the UI.
      */
     private ObservableList<Resource> data;
+
+    /**
+     * An ArrayList containing which resources should be shown.
+     */
     private ArrayList<String> acceptableTypes;
 
+    /**
+     * Initializes the UI with the data from the acceptableType ArrayList.
+     */
     public void initialize() {
         data = FXCollections.observableArrayList();
         acceptableTypes = new ArrayList<>();
@@ -72,12 +79,17 @@ public class BrowseResourcesController extends Controller {
         typeColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("type"));
     }
 
+    /**
+     * Refreshes the table on startup.
+     */
     @Override
     public void onStart() {
         this.updateTable();
     }
 
-
+    /**
+     * Refreshes the values on the table to display correct data.
+     */
     @FXML
     public void updateTable() {
         // clear previous data
@@ -122,7 +134,7 @@ public class BrowseResourcesController extends Controller {
     /**
      * Goes back to the previous window when the back button is clicked.
      *
-     * @param event The current event.
+     * @param event Clicking on the back button.
      */
     @FXML
     void backButtonClicked(ActionEvent event) {
@@ -137,6 +149,9 @@ public class BrowseResourcesController extends Controller {
 
     }
 
+    /**
+     * Checks which boxes are ticked and shows data accordingly.
+     */
     private void manageCheckedBoxTypes() {
         acceptableTypes.clear();
         if (dvdFilter.isSelected()) {
