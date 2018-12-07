@@ -129,5 +129,4 @@ public class Laptop extends Resource {
     public String getType() {
         return "Laptop";
     }
-
 }
