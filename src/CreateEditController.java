@@ -754,16 +754,70 @@ public class CreateEditController extends Controller {
 
     @FXML
     public void copySearchButtonClicked(ActionEvent event){
+        Copy copy = getLibrary().getResourceManager().getCopyById(editCopyIdSearchTextField.getText());
 
+        if(copy == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Couldn't find a copy with such ID.",
+                    ButtonType.OK);
+
+            alert.show();
+
+        } else {
+            // lock the id field
+            editCopyIdSearchTextField.setDisable(true);
+
+            // fill in the data
+            editCopyLoanDurationTextField.setText(String.valueOf(copy.getLoanDurationInDays()));
+        }
     }
 
     @FXML
     public void editCopyButtonClicked(ActionEvent event){
+        // mandatory - loan duration
+        if(editCopyLoanDurationTextField.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in the required text fields.",
+                    ButtonType.OK);
 
+            alert.show();
+        } else if(!isStringNumber(editCopyLoanDurationTextField.getText())){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "The loan duration must be a number.",
+                    ButtonType.OK);
+
+            alert.show();
+        } else {
+            // get information
+            String copyId = editCopyIdSearchTextField.getText();
+            int loanDuration = Integer.parseInt(editCopyLoanDurationTextField.getText());
+
+            // edit the copy
+            getLibrary().getResourceManager().getCopyById(copyId).setLoanDurationInDays(loanDuration);
+
+
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Copy successfully changed.",
+                    ButtonType.OK);
+
+            alert.show();
+
+            // unlock the search id
+            editCopyIdSearchTextField.setDisable(false);
+
+            // clear the text fields
+            editCopyIdSearchTextField.setText("");
+            editCopyLoanDurationTextField.setText("");
+        }
     }
 
     @FXML
     public void deleteCopyButtonClicked(ActionEvent event) {
+        // delete copy
+        getLibrary().getResourceManager().removeCopy(editCopyIdSearchTextField.getText());
+
+        // notify the user
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Copy successfully deleted.",
+                ButtonType.OK);
+
+        alert.show();
 
     }
 
