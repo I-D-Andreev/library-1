@@ -37,6 +37,7 @@ public class Main extends Application{
             root = fxmlLoader.load();
             fxmlLoader.<Controller>getController().setLibrary(library);
 
+
         } catch (IOException e) {
 
             System.exit(1);

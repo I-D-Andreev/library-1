@@ -49,67 +49,100 @@
          <children>
             <Button fx:id="borrowedResourcesButton" mnemonicParsing="false" onAction="#borrowedResourcesButtonClicked" text="Borrowed Resources" textAlignment="CENTER" wrapText="true">
                <HBox.margin>
-                  <Insets left="20.0" />
+                  <Insets left="20.0" top="10.0" />
                </HBox.margin>
             </Button>
             <Button fx:id="requestedResourcesButton" mnemonicParsing="false" onAction="#requestedResourcesButtonClicked" text="Requested Resources" textAlignment="CENTER" wrapText="true">
                <HBox.margin>
-                  <Insets left="20.0" />
+                  <Insets left="20.0" top="10.0" />
                </HBox.margin>
             </Button>
             <Button fx:id="reservedResourcesButton" mnemonicParsing="false" onAction="#reservedResourcesButtonClicked" text="Reserved Resources" textAlignment="CENTER" wrapText="true">
                <HBox.margin>
-                  <Insets left="20.0" />
+                  <Insets left="20.0" top="10.0" />
                </HBox.margin>
             </Button>
             <Button fx:id="overdueResourcesButton" mnemonicParsing="false" onAction="#overdueResourcesButtonClicked" text="Overdue Resources" textAlignment="CENTER" wrapText="true">
                <HBox.margin>
-                  <Insets left="20.0" />
+                  <Insets left="20.0" top="10.0" />
                </HBox.margin>
             </Button>
             <Button fx:id="transHistoryButton" mnemonicParsing="false" onAction="#transHistoryButtonClicked" text="Transaction History" textAlignment="CENTER" wrapText="true">
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="20.0" right="20.0" top="10.0" />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
-      <ImageView fx:id="userImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+      <ImageView fx:id="userImage" fitHeight="179.0" fitWidth="225.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin>
       </ImageView>
       <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
-            <Label fx:id="usernameLabel" prefHeight="17.0" prefWidth="315.0" text="Username" textAlignment="CENTER" />
-            <Label fx:id="firstNameLabel" prefHeight="17.0" prefWidth="312.0" text="First Name">
+            <Label layoutX="10.0" layoutY="20.0" prefHeight="17.0" prefWidth="315.0" text="Username :" textAlignment="CENTER">
                <VBox.margin>
-                  <Insets top="20.0" />
+                  <Insets top="-29.0" />
                </VBox.margin>
             </Label>
-            <Label fx:id="lastNameLabel" prefHeight="17.0" prefWidth="342.0" text="Last Name">
+            <Label fx:id="usernameLabel" prefHeight="17.0" prefWidth="315.0" text="Refresh to load" textAlignment="CENTER">
                <VBox.margin>
-                  <Insets top="20.0" />
+                  <Insets top="1.0" />
+               </VBox.margin></Label>
+            <Label layoutX="10.0" layoutY="64.0" prefHeight="17.0" prefWidth="312.0" text="First Name :">
+               <VBox.margin>
+                  <Insets top="5.0" />
                </VBox.margin>
             </Label>
-            <Label fx:id="phoneNumberLabel" prefHeight="17.0" prefWidth="338.0" text="Phone Number">
+            <Label fx:id="firstNameLabel" prefHeight="17.0" prefWidth="312.0" text="Refresh to load">
                <VBox.margin>
-                  <Insets top="20.0" />
+                  <Insets top="1.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="10.0" layoutY="107.0" prefHeight="17.0" prefWidth="342.0" text="Last Name :">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="lastNameLabel" prefHeight="17.0" prefWidth="342.0" text="Refresh to load">
+               <VBox.margin>
+                  <Insets top="1.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="10.0" layoutY="147.0" prefHeight="17.0" prefWidth="338.0" text="Phone Number :">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="phoneNumberLabel" prefHeight="17.0" prefWidth="338.0" text="Refresh to load">
+               <VBox.margin>
+                  <Insets top="1.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="10.0" layoutY="187.0" prefHeight="17.0" prefWidth="338.0" text="Balance :">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="balanceLabel" layoutX="10.0" layoutY="158.0" prefHeight="17.0" prefWidth="338.0" text="Refresh to load">
+               <VBox.margin>
+                  <Insets top="1.0" />
                </VBox.margin>
             </Label>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <VBox.margin>
-                  <Insets top="20.0" />
+                  <Insets top="7.0" />
                </VBox.margin>
                <children>
                   <Button fx:id="editProfileButton" mnemonicParsing="false" onAction="#editProfileButtonClicked" prefHeight="46.0" prefWidth="85.0" text="Edit Profile">
                      <HBox.margin>
-                        <Insets right="20.0" top="15.0" />
+                        <Insets right="20.0" top="4.0" />
                      </HBox.margin>
                   </Button>
                   <Button fx:id="mostPopularResourceButton" mnemonicParsing="false" onAction="#mostPopularResourceButtonClicked" prefHeight="46.0" prefWidth="150.0" text="Most popular resource">
                      <HBox.margin>
-                        <Insets left="20.0" right="20.0" top="15.0" />
+                        <Insets left="20.0" right="20.0" top="5.0" />
                      </HBox.margin>
                   </Button>
                </children>

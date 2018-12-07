@@ -21,6 +21,7 @@ import java.util.ResourceBundle;
 /**
  * Controller class for the User Dashboard.
  * Handles what happens when the user interacts with the UI.
+ *
  * @author Sian Pike
  */
 
@@ -75,6 +76,9 @@ public class UserDashboardController extends Controller {
     @FXML
     private Button mostPopularResourceButton;
 
+    @FXML
+    private Label balanceLabel;
+
 
 
     @FXML
@@ -93,7 +97,10 @@ public class UserDashboardController extends Controller {
     }
 
 
-
+    @Override
+    public void onStart(){
+        this.loadUserInformation();
+    }
 
     @FXML
     /**
@@ -138,15 +145,16 @@ public class UserDashboardController extends Controller {
 
     @FXML
     void refreshButtonClicked(ActionEvent event) {
+        this.loadUserInformation();
+    }
 
-        try{
 
+    private void loadUserInformation(){
+
+        try {
             Image image = new Image(getLibrary().getCurrentUserLoggedIn().getProfileImagePath());
-
             userImage.setImage(image);
-
         } catch (IllegalArgumentException e) {
-
             userImage.setImage(null);
         }
 
@@ -154,5 +162,7 @@ public class UserDashboardController extends Controller {
         firstNameLabel.setText(getLibrary().getCurrentUserLoggedIn().getFirstName());
         lastNameLabel.setText(getLibrary().getCurrentUserLoggedIn().getLastName());
         phoneNumberLabel.setText(getLibrary().getCurrentUserLoggedIn().getPhoneNumber());
+        balanceLabel.setText(String.valueOf(((NormalUser) getLibrary().getCurrentUserLoggedIn()).getBalance()));
+
     }
 }
