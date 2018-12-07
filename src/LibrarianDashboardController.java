@@ -2,12 +2,16 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * Controller class for the Librarian Dashboard.
  * Handles what happens when the user interacts with the UI.
+ *
  * @author Sian Pike
  */
 
@@ -40,6 +44,44 @@ public class LibrarianDashboardController extends Controller {
     @FXML
     private Button editAccountButton;
 
+    @FXML
+    private Label usernameLabel;
+
+    @FXML
+    private Label firstNameLabel;
+
+    @FXML
+    private Label lastNameLabel;
+
+    @FXML
+    private Label phoneNumberLabel;
+
+    @FXML
+    private Label staffIDLabel;
+
+    @FXML
+    private ImageView librarianImage;
+
+    @Override
+    public void onStart() {
+        this.loadLibrarianInformation();
+    }
+
+    private void loadLibrarianInformation() {
+
+        try {
+            Image image = new Image(getLibrary().getCurrentUserLoggedIn().getProfileImagePath());
+            librarianImage.setImage(image);
+        } catch (IllegalArgumentException e) {
+            librarianImage.setImage(null);
+        }
+
+        usernameLabel.setText(getLibrary().getCurrentUserLoggedIn().getUsername());
+        firstNameLabel.setText(getLibrary().getCurrentUserLoggedIn().getFirstName());
+        lastNameLabel.setText(getLibrary().getCurrentUserLoggedIn().getLastName());
+        phoneNumberLabel.setText(getLibrary().getCurrentUserLoggedIn().getPhoneNumber());
+        staffIDLabel.setText(((Librarian) (getLibrary().getCurrentUserLoggedIn())).getStaffNumber());
+    }
 
     @FXML
     /**
