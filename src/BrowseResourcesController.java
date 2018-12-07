@@ -57,6 +57,9 @@ public class BrowseResourcesController extends Controller {
     @FXML // fx:id="backButton"
     private Button backButton; // Value injected by FXMLLoader
 
+    /**
+     * The
+     */
     private ObservableList<Resource> data;
     private ArrayList<String> acceptableTypes;
 
@@ -70,7 +73,7 @@ public class BrowseResourcesController extends Controller {
     }
 
     @Override
-    public void onStart(){
+    public void onStart() {
         this.updateTable();
     }
 
@@ -103,27 +106,28 @@ public class BrowseResourcesController extends Controller {
 
         // if none of the types have been ticked accept all
         // else remove the resources that are not permitted
-        ArrayList <Resource> shouldNotBeDisplayed = new ArrayList<>();
-        if(acceptableTypes.size() != 0) {
-            for(Resource resource : data){
-                if(!acceptableTypes.contains(resource.getType())){
+        ArrayList<Resource> shouldNotBeDisplayed = new ArrayList<>();
+        if (acceptableTypes.size() != 0) {
+            for (Resource resource : data) {
+                if (!acceptableTypes.contains(resource.getType())) {
                     shouldNotBeDisplayed.add(resource);
                 }
             }
         }
-       data.removeAll(shouldNotBeDisplayed);
+        data.removeAll(shouldNotBeDisplayed);
 
         displayTable.getItems().addAll(data);
     }
 
     /**
      * Goes back to the previous window when the back button is clicked.
+     *
      * @param event The current event.
      */
     @FXML
     void backButtonClicked(ActionEvent event) {
         //if librarian then go back to librarian dashboard else go back to user dashboard
-        if(getLibrary().getCurrentUserLoggedIn().hasAdminAccess()){
+        if (getLibrary().getCurrentUserLoggedIn().hasAdminAccess()) {
             new NewWindow("resources/LibrarianDashboard.fxml", event,
                     "Browse Resources - TaweLib", getLibrary());
         } else {
@@ -133,17 +137,17 @@ public class BrowseResourcesController extends Controller {
 
     }
 
-    private void manageCheckedBoxTypes(){
+    private void manageCheckedBoxTypes() {
         acceptableTypes.clear();
-        if(dvdFilter.isSelected()){
+        if (dvdFilter.isSelected()) {
             acceptableTypes.add("DVD");
         }
 
-        if(bookFilter.isSelected()){
+        if (bookFilter.isSelected()) {
             acceptableTypes.add("Book");
         }
 
-        if(laptopFilter.isSelected()){
+        if (laptopFilter.isSelected()) {
             acceptableTypes.add("Laptop");
         }
     }
