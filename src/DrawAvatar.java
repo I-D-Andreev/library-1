@@ -20,6 +20,9 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 
+/**
+ * Class to model the drawing of an avatar for a profile.
+ */
 public class DrawAvatar extends Application {
 
     private static final int WINDOW_WIDTH = 600;
@@ -33,6 +36,10 @@ public class DrawAvatar extends Application {
     private Canvas layer;
     private Canvas trace;
 
+    /**
+     * Method to make a profile image.
+     * @param primaryStage  The image to be made.
+     */
     @Override
     public void start(Stage primaryStage) {
         StackPane root = new StackPane();
@@ -120,7 +127,10 @@ public class DrawAvatar extends Application {
 
     }
 
-
+    /**
+     * The size of the border where the image is inserted in.
+     * @param gc The border of the image.
+     */
     public void borderRect(GraphicsContext gc) {
         gc.setLineWidth(8);
         gc.setStroke(Color.BLACK);
@@ -130,8 +140,6 @@ public class DrawAvatar extends Application {
                 CANVAS_WIDTH,    //width of the rectangle
                 CANVAS_HEIGHT);  //height of the rectangle
     }
-
-
 
 
     private void makeTrace(Canvas c,StackPane r, ColorPicker cp, Slider s) {
@@ -176,7 +184,12 @@ public class DrawAvatar extends Application {
 
     }
 
-
+    /**
+     * Allows you to choose a picture for your profile.
+     * @param g
+     * @param r
+     * @param s
+     */
     public void captureAndSaveDisplay(FlowPane g,StackPane r, Stage s){
         FileChooser fileChooser = new FileChooser();
 
