@@ -1,11 +1,13 @@
 import java.util.Date;
 import java.io.*;
+
 /**
  * Models a single history entry.
  * The most basic type of entry.
+ *
  * @author Ivan Andreev
  */
-public class HistoryEntry implements Serializable{
+public class HistoryEntry implements Serializable {
     /**
      * The entry's date.
      */
@@ -23,7 +25,7 @@ public class HistoryEntry implements Serializable{
     /**
      * Gets the date of the entry.
      *
-     * @return date The date of the entry.
+     * @return The date of the entry.
      */
     public Date getDate() {
         return date;
