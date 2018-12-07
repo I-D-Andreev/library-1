@@ -3,6 +3,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
 public class EditAccountController extends Controller{
 
@@ -87,7 +88,9 @@ public class EditAccountController extends Controller{
 
     @FXML
     void drawProfileImageButtonClicked(ActionEvent event) {
-
+        DrawAvatar bapple = new DrawAvatar();
+        Stage newerStage = new Stage();
+        bapple.start(newerStage);
     }
 
     @FXML
