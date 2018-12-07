@@ -221,19 +221,23 @@ public class Copy implements Serializable {
     /**
      * What happens when a copy has just been returned.
      */
-    public void returnCopy(){
-        nullifyValues();
+    public double returnCopy(){
         NormalUser byUser = (NormalUser)this.borrowedBy;
 
         this.loanHistory.addEntry(new HistoryEntryItemTransaction(new Date(), false, byUser));
         byUser.getBorrowedCopies().remove(this);
 
+        double fineAmount = 0;
         if(shouldBeFined()){
-            giveFineToUser(byUser);
+            fineAmount = giveFineToUser(byUser);
         }
 
         // Notify the copy's copy manager that a new copy is available.
         this.copysManager.newAvailableCopyEvent();
+
+        nullifyValues();
+
+        return fineAmount;
     }
 
     /**
@@ -243,14 +247,15 @@ public class Copy implements Serializable {
     private boolean shouldBeFined(){
         Date today = new Date();
         // If the item is overdue, the user should be fined.
-        return (today.compareTo(this.dueDate) == 1);
+        return  ((this.dueDate != null) && (today.compareTo(this.dueDate) == 1));
     }
 
     /**
      * Sets a fine to a user.
      * @param user The user to be fined.
+     * @return fineAmount How much a user was fined.
      */
-    private void giveFineToUser(NormalUser user) {
+    private double giveFineToUser(NormalUser user) {
         Date today = new Date();
         // 3600 seconds in an hour, 24 hours a day, multiplied by 1000 to convert to milliseconds
         final long oneDayInMilliseconds = 3600 * 24 * 1000;
@@ -263,17 +268,21 @@ public class Copy implements Serializable {
         user.giveFine(fineAmount);
         user.getTransactionHistory().addEntry(new HistoryEntryFine(today, fineAmount,
                 (int)numberOfDaysOverdue, this));
+
+        return fineAmount;
     }
 
     /**
      * When the copy is loaned sets the date is was borrowed and by who.
      * @param toUser The user that has borrowed the copy.
+     * @return this The loaned copy.
      */
-    public void loanCopyTo(NormalUser toUser){
+    public Copy loanCopyTo(NormalUser toUser){
         this.borrowedOn = new Date();
         this.borrowedBy = toUser;
         this.loanHistory.addEntry(new HistoryEntryItemTransaction(borrowedOn, true, toUser));
         toUser.getBorrowedCopies().add(this);
+        return this;
     }
 
     /**

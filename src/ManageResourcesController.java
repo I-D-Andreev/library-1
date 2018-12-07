@@ -4,6 +4,7 @@ import javafx.scene.control.*;
 
 import java.time.Instant;
 import java.util.Date;
+import java.util.Optional;
 
 /**
  * @author Chris McAuley, Sian Pike
@@ -28,14 +29,12 @@ public class ManageResourcesController extends Controller {
     @FXML // fx:id="returnTab"
     private Tab returnTab; // Value injected by FXMLLoader
 
-    @FXML // fx:id="returnResourceIDTextField"
-    private TextField returnResourceIDTextField; // Value injected by FXMLLoader
+    @FXML
+    private TextField returnCopyIDTextField;
 
     @FXML // fx:id="returnButton"
     private Button returnButton; // Value injected by FXMLLoader
 
-    @FXML // fx:id="returnUserIDTextField"
-    private TextField returnUserIDTextField; // Value injected by FXMLLoader
 
     @FXML // fx:id="fineTab"
     private Tab fineTab; // Value injected by FXMLLoader
@@ -84,6 +83,7 @@ public class ManageResourcesController extends Controller {
                     ButtonType.OK);
             alert.show();
         } else {
+            // Successfully lend a copy.
             Copy copy = getLibrary().getResourceManager().loanCopy(resource, user);
 
             if(copy == null){
@@ -100,6 +100,10 @@ public class ManageResourcesController extends Controller {
                         ButtonType.OK);
                 alert.show();
             }
+
+            // clear fields
+            borrowUserUsernameTextField.clear();
+            borrowResourceIDTextField.clear();
         }
     }
 
@@ -121,7 +125,49 @@ public class ManageResourcesController extends Controller {
 
     @FXML
     public void returnButtonClicked(ActionEvent event) {
+        Copy copy = getLibrary().getResourceManager().getCopyById(returnCopyIDTextField.getText());
 
+         if(copy == null || copy.getBorrowedBy() == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid copy ID.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+
+             // All the data is correct so now we are returning the copy.
+             User user = copy.getBorrowedBy();
+
+             // set up a confirmation dialog
+             // to prevent return by  mistake
+             Alert confirmationDialog = new Alert(Alert.AlertType.CONFIRMATION);
+             confirmationDialog.setTitle("Confirm choice");
+             confirmationDialog.setHeaderText("Copy return confirmation");
+             confirmationDialog.setContentText("Return copy with ID: " + copy.getUniqueCopyID()
+             + " , which is returned by user " + user.getUsername() + "?");
+
+             Optional<ButtonType> result = confirmationDialog.showAndWait();
+
+             // proceed only if the librarian is sure of their choice
+             if(result.get() == ButtonType.OK) {
+                 double fineAmount = getLibrary().getResourceManager().returnCopy(copy);
+
+                 if (fineAmount == 0) {
+                     Alert alert = new Alert(Alert.AlertType.INFORMATION, "Successfully returned copy." +
+                             " No fine incurred for user " + user.getUsername() + ".",
+                             ButtonType.OK);
+                     alert.show();
+                 } else {
+                     String content = "This copy is overdue. User " + user.getUsername() + " has been fined " +
+                             fineAmount + ".";
+
+                     Alert alert = new Alert(Alert.AlertType.ERROR, content,
+                             ButtonType.OK);
+                     alert.show();
+                 }
+
+                 // nullify fields
+                 returnCopyIDTextField.clear();
+             }
+         }
     }
 
     @FXML

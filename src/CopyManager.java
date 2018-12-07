@@ -180,7 +180,7 @@ public class CopyManager implements Serializable {
      * Checks if a copy is available and if that copy is reserved for a user,
      * loans the copy to him.
      * @param toUser The user who will receive the loaned copy.
-     * @return copy Return reference to the loaned copy or null if there are no available copies to loan.
+     * @return Return reference to the loaned copy or null if there are no available copies to loan.
      */
     public Copy loanCopy(NormalUser toUser) {
         if (this.getNumOfAvailableCopies() == 0) {
@@ -195,8 +195,7 @@ public class CopyManager implements Serializable {
         }
 
         // We loan the first available copy.
-        this.getListOfAvailableCopies().get(0).loanCopyTo(toUser);
-        return this.getListOfAvailableCopies().get(0);
+        return this.getListOfAvailableCopies().get(0).loanCopyTo(toUser);
     }
 
     /**

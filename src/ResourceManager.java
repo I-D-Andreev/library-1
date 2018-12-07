@@ -223,8 +223,8 @@ public class ResourceManager implements Serializable {
         }
     }
 
-    public void returnCopy(Copy copy) {
-        copy.returnCopy();
+    public double returnCopy(Copy copy) {
+        return copy.returnCopy();
     }
 
 

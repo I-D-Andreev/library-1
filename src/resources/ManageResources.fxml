@@ -77,19 +77,19 @@
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                      </columnConstraints>
                      <rowConstraints>
-                        <RowConstraints maxHeight="202.0" minHeight="10.0" prefHeight="101.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="173.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="202.0" minHeight="10.0" prefHeight="48.000024414062494" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="173.0" minHeight="10.0" prefHeight="156.5999755859375" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="83.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                        <VBox prefHeight="224.0" prefWidth="600.0" GridPane.rowIndex="1" GridPane.rowSpan="2">
                            <children>
-                              <Label text="Resource ID:">
+                              <Label text="Copy ID:">
                                  <VBox.margin>
                                     <Insets left="20.0" top="20.0" />
                                  </VBox.margin>
                               </Label>
-                              <TextField fx:id="returnResourceIDTextField" prefHeight="31.0" prefWidth="333.0">
+                              <TextField fx:id="returnCopyIDTextField" prefHeight="31.0" prefWidth="333.0">
                                  <VBox.margin>
                                     <Insets left="20.0" right="20.0" top="20.0" />
                                  </VBox.margin>
@@ -97,20 +97,6 @@
                            </children>
                         </VBox>
                         <Button fx:id="returnButton" mnemonicParsing="false" onAction="#returnButtonClicked" prefHeight="31.0" prefWidth="90.0" text="Return" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                        <VBox prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="User ID:">
-                                 <VBox.margin>
-                                    <Insets left="20.0" top="20.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <TextField fx:id="returnUserIDTextField" prefHeight="31.0" prefWidth="333.0">
-                                 <VBox.margin>
-                                    <Insets left="20.0" right="20.0" top="20.0" />
-                                 </VBox.margin>
-                              </TextField>
-                           </children>
-                        </VBox>
                      </children>
                   </GridPane>
                </content>
