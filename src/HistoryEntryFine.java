@@ -2,6 +2,7 @@ import java.util.Date;
 
 /**
  * Models a fine type of history entry.
+ *
  * @author Ivan Andreev
  */
 public class HistoryEntryFine extends HistoryEntryMoneyTransaction {
@@ -33,12 +34,17 @@ public class HistoryEntryFine extends HistoryEntryMoneyTransaction {
     /**
      * Get the number of days an item is overdue.
      *
-     * @return daysOverdue The number of days.
+     * @return The number of days.
      */
     public int getDaysOverdue() {
         return daysOverdue;
     }
 
+    /**
+     * Gets the item not returned on time.
+     *
+     * @return The item that was not return on time.
+     */
     public Copy getItem() {
         return item;
     }
