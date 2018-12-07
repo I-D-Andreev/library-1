@@ -32,7 +32,7 @@ public class Laptop extends Resource {
     private final double maxFineAmount;
 
     /**
-     * Creates a new laptop.
+     * Creates a new laptop resource.
      *
      * @param title        The title of the laptop
      * @param year         The year the laptop was made
