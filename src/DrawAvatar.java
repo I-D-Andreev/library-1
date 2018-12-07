@@ -21,24 +21,57 @@ import javafx.stage.Stage;
 import javafx.util.Pair;
 
 /**
- * Class to model the drawing of an avatar for a profile.
+ * A drawing class that allows the user to make their own avatar
+ * Uses straight line and free drawing
+ *
+ * @author Christina Meggs, Steven Lewkowicz,
  */
+
 public class DrawAvatar extends Application {
 
+    /**
+     * The set window width for the window that appears
+     */
     private static final int WINDOW_WIDTH = 600;
+
+    /**
+     * The set window height for the window that appears
+     */
     private static final int WINDOW_HEIGHT = 500;
 
+    /**
+     * The set canvas height for the area the user can draw in
+     */
     private static final int CANVAS_WIDTH = 400;
+
+    /**
+     * The set canvas weight for the area the user can draw in
+     */
     private static final int CANVAS_HEIGHT = 400;
+
+    /**
+     * Counter used to track what layer nextg canvas should be made on
+     */
     private int counter = 0;
 
+    /**
+     * Used to detect users inital click
+     */
     private Pair<Double, Double> initialTouch;
+
+    /**
+     * Current canvas to use for drawing a line
+     */
     private Canvas layer;
+
+    /**
+     * Current canvas to use to trace a line
+     */
     private Canvas trace;
 
     /**
-     * Method to make a profile image.
-     * @param primaryStage  The image to be made.
+     * Starts the whole drawing system.
+     * @param primaryStage the window the application will appear in
      */
     @Override
     public void start(Stage primaryStage) {
@@ -111,6 +144,12 @@ public class DrawAvatar extends Application {
         primaryStage.show();
     }
 
+    /**
+     * Clears the whole canvas for the user to start fresh
+     * @param root the Stackpane which contains all nodes on screen
+     * @param g the FlowPane which the all the buttons etc appear on
+     * @param c the canvas we want to remain after it is cleared
+     */
     private void clear(StackPane root, FlowPane g, Canvas c) {
         counter = 0;
         layer = new Canvas();
@@ -123,13 +162,11 @@ public class DrawAvatar extends Application {
         list.remove(c);
 
         root.getChildren().removeAll(list);
-
-
     }
 
     /**
-     * The size of the border where the image is inserted in.
-     * @param gc The border of the image.
+     * Add a border to the canvas
+     * @param gc the current GraphicContents the canvas is working on
      */
     public void borderRect(GraphicsContext gc) {
         gc.setLineWidth(8);
@@ -141,7 +178,13 @@ public class DrawAvatar extends Application {
                 CANVAS_HEIGHT);  //height of the rectangle
     }
 
-
+    /**
+     * Allows the user to trace a line (free draw)
+     * @param c  the current canvas the user is drawing on
+     * @param r the StackPane the contains all the nodes, used to add new canvas to
+     * @param cp the ColorPicker to allow the line to change colour
+     * @param s the Slider to allow the line to change width
+     */
     private void makeTrace(Canvas c,StackPane r, ColorPicker cp, Slider s) {
         c.setOnMousePressed(e->{
             Canvas newTrace = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -165,6 +208,13 @@ public class DrawAvatar extends Application {
         c.toFront();
     }
 
+    /**
+     * Allows the user to draw a line
+     * @param c the current canvas the user is drawing on
+     * @param r the StackPane the contains all the nodes, used to add new canvas to
+     * @param cp the ColorPicker to allow the line to change colour
+     * @param s the Slider to allow the line to change width
+     */
     private void makeLine(Canvas c, StackPane r, ColorPicker cp, Slider s) {
         c.setOnMousePressed(e->{
             Canvas newLayer = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -185,10 +235,10 @@ public class DrawAvatar extends Application {
     }
 
     /**
-     * Allows you to choose a picture for your profile.
-     * @param g
-     * @param r
-     * @param s
+     * Used to save the avatars (canvas's) that user has just drawn
+     * @param g the FlowPane that contains all buttons etc at the top
+     * @param r the StackPane the contains all of the nodes
+     * @param s the Stage the class is working in
      */
     public void captureAndSaveDisplay(FlowPane g,StackPane r, Stage s){
         FileChooser fileChooser = new FileChooser();
@@ -224,8 +274,5 @@ public class DrawAvatar extends Application {
         }
     }
 
-    /*public static void main(String[] args) {
-        launch(args);
-    }*/
 
 }
