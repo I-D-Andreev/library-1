@@ -45,15 +45,6 @@ public class ManageResourcesController extends Controller {
     @FXML // fx:id="searchButton"
     private Button searchButton; // Value injected by FXMLLoader
 
-    @FXML // fx:id="fineTable"
-    private TableView<?> fineTable; // Value injected by FXMLLoader
-
-    @FXML // fx:id="amountPaidColumn"
-    private TableColumn<?, ?> amountPaidColumn; // Value injected by FXMLLoader
-
-    @FXML // fx:id="outstandingAmountColumn"
-    private TableColumn<?, ?> outstandingAmountColumn; // Value injected by FXMLLoader
-
     @FXML // fx:id="payTextField"
     private TextField payTextField; // Value injected by FXMLLoader
 
@@ -71,6 +62,9 @@ public class ManageResourcesController extends Controller {
 
     @FXML
     private Button reserveButton;
+
+    @FXML // fx:id="outstandingAmountLabel"
+    private Label outstandingAmountLabel; // Value injected by FXMLLoader
 
     @FXML
     public void borrowButtonClicked(ActionEvent event) {

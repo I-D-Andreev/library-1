@@ -62,6 +62,9 @@ public class LibrarianDashboardController extends Controller {
     @FXML
     private ImageView librarianImage;
 
+    @FXML // fx:id="viewAllUsersButton"
+    private Button viewAllUsersButton; // Value injected by FXMLLoader
+
     @Override
     public void onStart() {
         this.loadLibrarianInformation();
@@ -152,6 +155,13 @@ public class LibrarianDashboardController extends Controller {
 
     @FXML
     public void userButtonClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void viewAllUsersButtonClicked(ActionEvent event) {
+
+        new NewWindow("resources/ViewAllUsers.fxml", event, "View All Users", getLibrary());
 
     }
 }

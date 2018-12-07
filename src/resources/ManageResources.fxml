@@ -5,8 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -182,15 +180,16 @@
                         </VBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                            <children>
-                              <TableView fx:id="fineTable" prefHeight="158.0" prefWidth="307.0">
-                                <columns>
-                                  <TableColumn fx:id="amountPaidColumn" prefWidth="131.0" text="Amount Paid" />
-                                  <TableColumn fx:id="outstandingAmountColumn" prefWidth="149.5" text="Outstanding Amount" />
-                                </columns>
+                              <Label text="Outstanding Amount:">
                                  <HBox.margin>
-                                    <Insets bottom="20.0" left="20.0" />
+                                    <Insets left="20.0" />
                                  </HBox.margin>
-                              </TableView>
+                              </Label>
+                              <Label fx:id="outstandingAmountLabel" text="Loading...">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Label>
                               <VBox prefHeight="178.0" prefWidth="278.0">
                                  <children>
                                     <Label text="Pay:">

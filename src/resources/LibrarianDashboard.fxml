@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="414.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LibrarianDashboardController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="414.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LibrarianDashboardController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="354.20001220703125" minWidth="10.0" prefWidth="251.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="373.00001525878906" minWidth="10.0" prefWidth="344.6" />
@@ -63,19 +63,24 @@
             </HBox>
             <HBox prefHeight="45.0" prefWidth="597.0">
                <children>
-                  <Button fx:id="createEditResourcesButton" mnemonicParsing="false" onAction="#createEditButtonClicked" text="Create/Edit Resources">
+                  <Button fx:id="createEditResourcesButton" mnemonicParsing="false" onAction="#createEditButtonClicked" text="Create/Edit Resources" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
-                        <Insets left="45.0" right="30.0" />
+                        <Insets left="20.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="manageResourcesButton" mnemonicParsing="false" onAction="#manageResourcesButtonClicked" prefHeight="26.0" prefWidth="140.0" text="Manage Resources" wrapText="true">
+                  <Button fx:id="manageResourcesButton" mnemonicParsing="false" onAction="#manageResourcesButtonClicked" prefHeight="45.0" prefWidth="131.0" text="Manage Resources" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
-                        <Insets right="30.0" />
+                        <Insets left="20.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="browseResourcesButton" mnemonicParsing="false" onAction="#browseButtonClicked" text="Browse Resources">
+                  <Button fx:id="browseResourcesButton" mnemonicParsing="false" onAction="#browseButtonClicked" text="Browse Resources" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
-                        <Insets />
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="viewAllUsersButton" mnemonicParsing="false" onAction="#viewAllUsersButtonClicked" text="View All Users" textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
                      </HBox.margin>
                   </Button>
                </children>
