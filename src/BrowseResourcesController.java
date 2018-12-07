@@ -67,7 +67,11 @@ public class BrowseResourcesController extends Controller {
         titleColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("title"));
         yearColumn.setCellValueFactory(new PropertyValueFactory<Resource, Integer>("year"));
         typeColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("type"));
-      //  this.updateTable();
+    }
+
+    @Override
+    public void onStart(){
+        this.updateTable();
     }
 
 
