@@ -35,7 +35,6 @@ public class Librarian extends User {
 	public String getStaffNumber() {
 		return this.staffNumber;
 	}
-
 	/**
 	 * Sets the staff number of the librarian.
 	 */
