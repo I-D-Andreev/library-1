@@ -22,6 +22,9 @@ public class ResourceManager implements Serializable {
         // assign next ID static variable to the user class
         Resource.setNextID(new SaveStaticVariables().getResourceNextID());
 
+        // assign the next ID static variable to the copy class
+        Copy.setNextId(new SaveStaticVariables().getCopyNextID());
+
     }
 
     public void save() {

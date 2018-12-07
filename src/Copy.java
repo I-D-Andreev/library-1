@@ -285,6 +285,22 @@ public class Copy implements Serializable {
     }
 
     /**
+     * Get the Copy's next id.
+     * @return The copy's next id.
+     */
+    public static int getNextId() {
+        return nextId;
+    }
+
+    /**
+     * Set the copy's next id.
+     * @param nextId The copy's next id.
+     */
+    public static void setNextId(int nextId) {
+        Copy.nextId = nextId;
+    }
+
+    /**
      * Checks if the copy is equal to the object passed.
      * @param obj The object we are checking for.
      * @return true if the object passed is equal to the copies,

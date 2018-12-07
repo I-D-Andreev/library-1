@@ -7,10 +7,12 @@ import java.io.*;
 public class SaveStaticVariables implements Serializable {
     private int userNextID;
     private int resourceNextID;
+    private int copyNextID;
 
-    public SaveStaticVariables(int userNextID, int resourceNextID){
+    public SaveStaticVariables(int userNextID, int resourceNextID, int copyNextID){
         this.userNextID = userNextID;
         this.resourceNextID = resourceNextID;
+        this.copyNextID = copyNextID;
     }
 
     public SaveStaticVariables(){
@@ -32,6 +34,14 @@ public class SaveStaticVariables implements Serializable {
 
     public void setResourceNextID(int resourceNextID) {
         this.resourceNextID = resourceNextID;
+    }
+
+    public int getCopyNextID() {
+        return copyNextID;
+    }
+
+    public void setCopyNextID(int copyNextID) {
+        this.copyNextID = copyNextID;
     }
 
     public void save() {
@@ -83,6 +93,7 @@ public class SaveStaticVariables implements Serializable {
             // assign the variable we just read
             this.resourceNextID = saveStaticVariables.getResourceNextID();
             this.userNextID = saveStaticVariables.getUserNextID();
+            this.copyNextID = saveStaticVariables.getCopyNextID();
 
         } catch (IOException e) {
             System.out.println("Couldn't access file to read from.");
@@ -116,5 +127,6 @@ public class SaveStaticVariables implements Serializable {
     public void selfPopulate1(){
         this.resourceNextID = 4;
         this.userNextID  = 2;
+        this.copyNextID = 0;
     }
 }
