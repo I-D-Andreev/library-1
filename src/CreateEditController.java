@@ -247,62 +247,111 @@ public class CreateEditController extends Controller {
     private TextField yearEditDVDTextField;
 
     /**
-     * The DVD's field where we edit the thumbnai image path.
+     * The DVD's field where we edit the thumbnail image path.
      */
     @FXML
     private TextField imagePathEditDVD;
 
     /**
-     * The
+     * The DVD's field where we edit the director.
      */
     @FXML
     private TextField directorEditDVDTextField;
 
+    /**
+     * The DVD's field where we edit the runtime.
+     */
     @FXML
     private TextField runtimeEditDVDTextField;
 
+    /**
+     * The DVD's field where we edit the language.
+     */
     @FXML
     private TextField languageEditDVDTextField;
 
+    /**
+     * The DVD's field where we edit the subtitle languages of the dvd.
+     */
     @FXML
     private TextField languageSubtitlesEditDVDTextField;
 
+    /**
+     * The edit button of the DVDs.
+     */
     @FXML
     private Button editDVDButton;
 
+    /**
+     * The DVD's button that allows us to search for a dvd to edit.
+     */
     @FXML
     private Button editDVDSearchButton;
 
+    /**
+     * The tab where we edit a laptop.
+     */
     @FXML
     private Tab editLaptopTab;
 
+    /**
+     * The laptop's field where we search for a laptop to edit by unique ID.
+     */
     @FXML
+
     private TextField uniqueIDSearchEditLaptopTextField;
 
+    /**
+     * The laptop's field where we edit the title.
+     */
     @FXML
     private TextField titleEditLaptopTextField;
 
+    /**
+     * The laptop's field where we edit the year.
+     */
     @FXML
     private TextField yearEditLaptopTextField;
 
+    /**
+     * The laptop's field where we edit the manufacturer.
+     */
     @FXML
     private TextField manufacturerEditLaptopTextField;
 
+    /**
+     * The laptop's field where we edit the model.
+     */
     @FXML
     private TextField modelEditLaptopTextField;
 
+    /**
+     * The laptop's field where we edit the OS.
+     */
     @FXML
     private TextField operatingSystemEditLaptopTextField;
 
+    /**
+     * The button that allows us to edit a laptop.
+     */
     @FXML
     private Button editLaptopButton;
 
+    /**
+     * The button that allows us to search for laptop to edit.
+     */
     @FXML
     private Button editLaptopSearchButton;
 
+    /**
+     * The laptop's field where we edit the thumbnail image path.
+     */
     @FXML
     private TextField imagePathEditLaptop;
 
+    /**
+     * The back button.
+     */
     @FXML
     private Button backButton;
 
