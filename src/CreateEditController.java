@@ -202,7 +202,7 @@ public class CreateEditController extends Controller {
     private TextField resourceUniqueIDtextField; // Value injected by FXMLLoader
 
     @FXML // fx:id="copySearchButton"
-    private Button copySearchButton; // Value injected by FXMLLoader
+    private Button resourceSearchButton; // Value injected by FXMLLoader
 
     @FXML // fx:id="copyLoanDurationTextField"
     private TextField copyLoanDurationTextField; // Value injected by FXMLLoader
@@ -711,7 +711,7 @@ public class CreateEditController extends Controller {
     /**
      * Searches for the resource ID.
      */
-    void copySearchButtonClicked(ActionEvent event) {
+    void resourceSearchButtonClicked(ActionEvent event) {
 
         Resource resource = getLibrary().getResourceManager().getResourceById(resourceUniqueIDtextField.getText());
 
