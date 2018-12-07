@@ -193,7 +193,7 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Label layoutX="45.0" layoutY="53.0" text="Unique ID Search" />
-                        <TextField fx:id="copyUniqueIDtextField" layoutX="183.0" layoutY="48.0" />
+                        <TextField fx:id="resourceUniqueIDtextField" layoutX="183.0" layoutY="48.0" />
                         <Button fx:id="copySearchButton" layoutX="387.0" layoutY="48.0" mnemonicParsing="false" onAction="#copySearchButtonClicked" text="Search" />
                         <Label layoutX="45.0" layoutY="124.0" prefHeight="17.0" prefWidth="109.0" text="Loan Duration" />
                         <TextField fx:id="copyLoanDurationTextField" layoutX="183.0" layoutY="119.0" />

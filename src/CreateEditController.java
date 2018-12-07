@@ -198,8 +198,8 @@ public class CreateEditController extends Controller {
     @FXML // fx:id="bookDeleteButton"
     private Button bookDeleteButton; // Value injected by FXMLLoader
 
-    @FXML // fx:id="copyUniqueIDtextField"
-    private TextField copyUniqueIDtextField; // Value injected by FXMLLoader
+    @FXML // fx:id="resourceUniqueIDtextField"
+    private TextField resourceUniqueIDtextField; // Value injected by FXMLLoader
 
     @FXML // fx:id="copySearchButton"
     private Button copySearchButton; // Value injected by FXMLLoader
@@ -687,7 +687,7 @@ public class CreateEditController extends Controller {
             int loanDuration = Integer.parseInt(copyLoanDurationTextField.getText());
 
             // Find the resource.
-            Resource resource = getLibrary().getResourceManager().getResourceById(copyUniqueIDtextField.getText());
+            Resource resource = getLibrary().getResourceManager().getResourceById(resourceUniqueIDtextField.getText());
 
             // Change the resource.
             getLibrary().getResourceManager().addCopyOfResource(loanDuration,resource);
@@ -699,11 +699,11 @@ public class CreateEditController extends Controller {
             alert.show();
 
             // enable the search bar and clear all the fields
-            copyUniqueIDtextField.setDisable(false);
+            resourceUniqueIDtextField.setDisable(false);
 
             //Clear fields
             copyLoanDurationTextField.setText("");
-            copyUniqueIDtextField.setText("");
+            resourceUniqueIDtextField.setText("");
         }
     }
 
@@ -713,7 +713,7 @@ public class CreateEditController extends Controller {
      */
     void copySearchButtonClicked(ActionEvent event) {
 
-        Resource resource = getLibrary().getResourceManager().getResourceById(copyUniqueIDtextField.getText());
+        Resource resource = getLibrary().getResourceManager().getResourceById(resourceUniqueIDtextField.getText());
 
         if (resource == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Couldn't find a resource with such ID.",
@@ -724,7 +724,7 @@ public class CreateEditController extends Controller {
         } else {
 
             // lock the id field
-            copyUniqueIDtextField.setDisable(true);
+            resourceUniqueIDtextField.setDisable(true);
 
             // notify the user
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "Resource found.",
