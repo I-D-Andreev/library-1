@@ -64,6 +64,15 @@ public class ManageResourcesController extends Controller {
     private Button backButton; // Value injected by FXMLLoader
 
     @FXML
+    private TextField reserveUserUsernameTextField;
+
+    @FXML
+    private TextField reserveResourceIDTextField;
+
+    @FXML
+    private Button reserveButton;
+
+    @FXML
     public void borrowButtonClicked(ActionEvent event) {
 
         User user = getLibrary().getUserManager().getUserByUsername(borrowUserUsernameTextField.getText());
@@ -94,7 +103,7 @@ public class ManageResourcesController extends Controller {
             } else {
                 String content = "The user has successfully been given a copy - ID: "
                         + copy.getUniqueCopyID() + ". It should be returned in " + copy.getLoanDurationInDays() +
-                        " days!";
+                        " day(s)!";
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION, content,
                         ButtonType.OK);
@@ -116,6 +125,36 @@ public class ManageResourcesController extends Controller {
     public void backButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
+    }
+
+    @FXML
+    public void reserveButtonClicked(ActionEvent event){
+        User user = getLibrary().getUserManager().getUserByUsername(reserveUserUsernameTextField.getText());
+        Resource resource = getLibrary().getResourceManager().getResourceById(reserveResourceIDTextField.getText());
+
+        if(user == null || (user instanceof Librarian)){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid user ID.",
+                    ButtonType.OK);
+            alert.show();
+        } else if(resource == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid resource ID.",
+                    ButtonType.OK);
+            alert.show();
+        } else if(resource.getCopyManager().getNumOfAvailableCopies() > 0){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "There are available copies. Please borrow one.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            getLibrary().getResourceManager().reserveCopy(resource, user);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "User " + user.getUsername()
+                    + " has been put on the waiting list.",
+                    ButtonType.OK);
+            alert.show();
+
+            // clear fields
+            reserveUserUsernameTextField.clear();
+            reserveResourceIDTextField.clear();
+        }
     }
 
     @FXML
