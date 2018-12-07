@@ -36,7 +36,8 @@
       </HBox>
       <TableView fx:id="overdueCopiesTable" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
         <columns>
-          <TableColumn fx:id="overdueCopiesColumn" prefWidth="559.0" text="Overdue Copies" />
+          <TableColumn fx:id="overdueCopiesColumn" prefWidth="293.0" text="Overdue Copies" />
+            <TableColumn fx:id="daysOverdueColumn" prefWidth="266.0" text="Number of Days Overdue" />
         </columns>
          <GridPane.margin>
             <Insets left="20.0" right="20.0" />

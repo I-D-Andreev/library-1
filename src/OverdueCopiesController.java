@@ -18,6 +18,9 @@ public class OverdueCopiesController {
     @FXML // fx:id="overdueCopiesColumn"
     private TableColumn<?, ?> overdueCopiesColumn; // Value injected by FXMLLoader
 
+    @FXML // fx:id="daysOverdueColumn"
+    private TableColumn<?, ?> daysOverdueColumn; // Value injected by FXMLLoader
+
     @FXML // fx:id="okButton"
     private Button okButton; // Value injected by FXMLLoader
 
