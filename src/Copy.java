@@ -127,7 +127,10 @@ public class Copy implements Serializable {
      */
     public void setDueDate() {
         // 3600 seconds in an hour, 24 hours a day, multiplied by 1000 to convert to milliseconds
-        final long oneDayInMilliseconds = 3600 * 24 * 1000;
+        //final long oneDayInMilliseconds = 3600 * 24 * 1000;
+
+        // one day changed to 15 seconds for testing and showcase purposes
+        final long oneDayInMilliseconds = 15 * 1000;
 
         // get the current date and add one day, to get the date tomorrow
         Date tomorrowDate = new Date();
@@ -258,7 +261,10 @@ public class Copy implements Serializable {
     private double giveFineToUser(NormalUser user) {
         Date today = new Date();
         // 3600 seconds in an hour, 24 hours a day, multiplied by 1000 to convert to milliseconds
-        final long oneDayInMilliseconds = 3600 * 24 * 1000;
+        //final long oneDayInMilliseconds = 3600 * 24 * 1000;
+
+        // one day changed to 15 seconds for testing and showcase purposes
+        final long oneDayInMilliseconds = 15 * 1000;
 
         long numberOfDaysOverdue = (today.getTime() - this.dueDate.getTime()) / oneDayInMilliseconds ;
 
