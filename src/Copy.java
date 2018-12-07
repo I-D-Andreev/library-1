@@ -233,7 +233,7 @@ public class Copy implements Serializable {
         }
 
         // Notify the copy's copy manager that a new copy is available.
-        this.copyOf.getCopyManager().newAvailableCopyEvent();
+        this.copysManager.newAvailableCopyEvent();
     }
 
     /**
