@@ -194,10 +194,18 @@
                      <children>
                         <TextField fx:id="resourceUniqueIDtextField" layoutX="183.0" layoutY="48.0" />
                         <TextField fx:id="copyLoanDurationTextField" layoutX="183.0" layoutY="119.0" />
-                        <Label layoutX="45.0" layoutY="53.0" text="Unique ID Search" />
+                        <Label layoutX="45.0" layoutY="53.0" text="Resource ID Search" />
                         <Button fx:id="resourceSearchButton" layoutX="387.0" layoutY="48.0" mnemonicParsing="false" onAction="#resourceSearchButtonClicked" text="Search" />
+                        <TextField fx:id="editCopyIdSearchTextField" layoutX="183.0" layoutY="308.0" />
+                        <TextField fx:id="editCopyLoanDurationTextField" layoutX="183.0" layoutY="356.0" />
                         <Label layoutX="45.0" layoutY="124.0" prefHeight="17.0" prefWidth="109.0" text="Loan Duration" />
                         <Button fx:id="copyCreateButton" layoutX="388.0" layoutY="186.0" mnemonicParsing="false" onAction="#copyCreateButtonClicked" text="Create" />
+                        <Line endX="529.0" layoutX="89.0" layoutY="257.0" startX="-122.0" />
+                        <Button fx:id="copySearchButton" layoutX="387.0" layoutY="308.0" mnemonicParsing="false" onAction="#copySearchButtonClicked" text="Search" />
+                        <Button fx:id="editCopyButton" layoutX="387.0" layoutY="405.0" mnemonicParsing="false" onAction="#editCopyButtonClicked" text="Edit" />
+                        <Button fx:id="deleteCopyButton" layoutX="48.0" layoutY="418.0" mnemonicParsing="false" onAction="#deleteCopyButtonClicked" text="Delete" />
+                        <Label layoutX="34.0" layoutY="312.0" text="Search Copy ID" />
+                        <Label layoutX="34.0" layoutY="360.0" text="Loan Duration" />
                      </children>
                   </AnchorPane>
               </content>

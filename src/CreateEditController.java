@@ -4,6 +4,7 @@ import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.File;
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -227,6 +228,23 @@ public class CreateEditController extends Controller {
 
     @FXML // fx:id="editLaptopFindImageButton"
     private Button editLaptopFindImageButton; // Value injected by FXMLLoader
+
+    @FXML
+    private TextField editCopyIdSearchTextField;
+
+    @FXML
+    private TextField editCopyLoanDurationTextField;
+
+    @FXML
+    private Button copySearchButton;
+
+    @FXML
+    private Button editCopyButton;
+
+    @FXML
+    private Button deleteCopyButton;
+
+
 
     /**
      * Goes back to the librarian dashboard when clicked.
@@ -732,6 +750,21 @@ public class CreateEditController extends Controller {
 
             alert.show();
         }
+    }
+
+    @FXML
+    public void copySearchButtonClicked(ActionEvent event){
+
+    }
+
+    @FXML
+    public void editCopyButtonClicked(ActionEvent event){
+
+    }
+
+    @FXML
+    public void deleteCopyButtonClicked(ActionEvent event) {
+
     }
 
     /**
