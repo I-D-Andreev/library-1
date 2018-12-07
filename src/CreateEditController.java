@@ -477,6 +477,7 @@ public class CreateEditController extends Controller {
 
     /**
      * Creates a book when the button is clicked.
+     *
      * @param event When the button is clicked.
      */
     @FXML
@@ -518,6 +519,11 @@ public class CreateEditController extends Controller {
         }
     }
 
+    /**
+     * Creates dvd when the button is clicked
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void createDVDButtonClicked(ActionEvent event) {
         // mandatory information- title, year, thumbnail, director, runtime
@@ -559,6 +565,12 @@ public class CreateEditController extends Controller {
         }
     }
 
+    /**
+     * Converts a string with the subtitle languages into a ArrayList.
+     *
+     * @param subtitleLanguages The subtitle languages read from a string.
+     * @return The list of subtitle languages.
+     */
     private ArrayList<String> stringToArrayListOfStrings(String subtitleLanguages) {
         // split the string into smaller strings on new comma or space
         String[] arrayOfSubtitleLanguages = subtitleLanguages.split(",| ");
@@ -575,6 +587,11 @@ public class CreateEditController extends Controller {
         return listOfSubtitleLanguages;
     }
 
+    /**
+     * Creates a laptop when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void createLaptopButtonClicked(ActionEvent event) {
         // mandatory information - title, year, thumbnail, manufacturer, model, installedOS
@@ -611,6 +628,11 @@ public class CreateEditController extends Controller {
         }
     }
 
+    /**
+     * Searches for a book with a specific ID after you click the button.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void editBookSearchButtonClicked(ActionEvent event) {
         String bookID = uniqueIDSearchEditBookTextField.getText();
@@ -639,6 +661,11 @@ public class CreateEditController extends Controller {
         }
     }
 
+    /**
+     * After clicking the button you can edit a book.
+     *
+     * @param event The button is clicked..
+     */
     @FXML
     public void editBookButtonClicked(ActionEvent event) {
         // mandatory information- title, year, thumbnail, author, publisher
@@ -682,6 +709,11 @@ public class CreateEditController extends Controller {
         }
     }
 
+    /**
+     * After you click the button you can edit the dvd.
+     *
+     * @param event The button is clicked..
+     */
     @FXML
     void editDVDSearchButtonClicked(ActionEvent event) {
         String dvdId = uniqueIDSearchEditDVDTextField.getText();
@@ -714,6 +746,12 @@ public class CreateEditController extends Controller {
         }
     }
 
+    /**
+     * Returns a string with the subtitle languages split up.
+     *
+     * @param listOfSubtitleLanguages The ArrayList to be turned into a string.
+     * @return A string with the subtitle languages.
+     */
     private String toCommaSeparatedString(ArrayList<String> listOfSubtitleLanguages) {
         String subtitleLanguages = "";
         for (String language : listOfSubtitleLanguages) {
@@ -727,7 +765,10 @@ public class CreateEditController extends Controller {
         return subtitleLanguages;
     }
 
-
+    /**
+     * After the button is clicked we can edit the DVD .
+     * @param event The button is clicked.
+     */
     @FXML
     public void editDVDButtonClicked(ActionEvent event) {
         // mandatory information- title, year, thumbnail, director, runtime
@@ -946,10 +987,11 @@ public class CreateEditController extends Controller {
         }
     }
 
-    @FXML
     /**
-     * Searches for the resource ID.
+     * Searches for a resource after the button is clicked.
+     * @param event The button is clicked.
      */
+    @FXML
     void resourceSearchButtonClicked(ActionEvent event) {
 
         Resource resource = getLibrary().getResourceManager().getResourceById(resourceUniqueIDtextField.getText());
@@ -973,6 +1015,10 @@ public class CreateEditController extends Controller {
         }
     }
 
+    /**
+     * Searches for a copy after the button is clicked.
+     * @param event The button is clicked.
+     */
     @FXML
     public void copySearchButtonClicked(ActionEvent event) {
         Copy copy = getLibrary().getResourceManager().getCopyById(editCopyIdSearchTextField.getText());
@@ -992,6 +1038,10 @@ public class CreateEditController extends Controller {
         }
     }
 
+    /**
+     * The copy is edited after the button is clicked.
+     * @param event The button is clicked.
+     */
     @FXML
     public void editCopyButtonClicked(ActionEvent event) {
         // mandatory - loan duration
@@ -1029,6 +1079,10 @@ public class CreateEditController extends Controller {
         }
     }
 
+    /**
+     * The copy is deleted after the button is clicked.
+     * @param event The button is clicked.
+     */
     @FXML
     public void deleteCopyButtonClicked(ActionEvent event) {
         // delete copy
@@ -1139,6 +1193,9 @@ public class CreateEditController extends Controller {
         imageTextField.setText(selectedFile.toString());
     }
 
+    /**
+     * Makes all the fields null for a book resource.
+     */
     private void clearAllCreateBookFields() {
         titleBookTextField.setText("");
         authorBookTextField.setText("");
@@ -1151,6 +1208,9 @@ public class CreateEditController extends Controller {
         yearBookTextField.setText("");
     }
 
+    /**
+     * Makes all the fields null for a laptop.
+     */
     private void clearAllCreateLaptopFields() {
         titleLaptopTextField.setText("");
         yearLaptopTextField.setText("");
@@ -1160,6 +1220,9 @@ public class CreateEditController extends Controller {
         operatingSystemLaptopTextField.setText("");
     }
 
+    /**
+     * Makes all the fields null for a DVD.
+     */
     private void clearAllCreateDVDFields() {
         titleDVDTextField.setText("");
         yearDVDTextField.setText("");
@@ -1170,6 +1233,9 @@ public class CreateEditController extends Controller {
         languageSubtitlesDVDTextField.setText("");
     }
 
+    /**
+     * Makes all the fields null for a book edit.
+     */
     private void clearAllEditBookFields() {
         uniqueIDSearchEditBookTextField.setText("");
         titleEditBookTextField.setText("");
@@ -1182,6 +1248,9 @@ public class CreateEditController extends Controller {
         languageEditBookTextField.setText("");
     }
 
+    /**
+     * Makes all the fields null for a book edit.
+     */
     private void clearAllEditLaptopFields() {
         uniqueIDSearchEditLaptopTextField.setText("");
         titleEditLaptopTextField.setText("");
@@ -1192,6 +1261,9 @@ public class CreateEditController extends Controller {
         operatingSystemEditLaptopTextField.setText("");
     }
 
+    /**
+     * Makes all the fields null for a DVD edit.
+     */
     private void clearAllEditDVDFields() {
         uniqueIDSearchEditDVDTextField.setText("");
         titleEditDVDTextField.setText("");
