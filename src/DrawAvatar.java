@@ -71,6 +71,7 @@ public class DrawAvatar extends Application {
 
     /**
      * Starts the whole drawing system.
+     *
      * @param primaryStage the window the application will appear in
      */
     @Override
@@ -90,7 +91,7 @@ public class DrawAvatar extends Application {
         slider.setMax(100);
         slider.setShowTickLabels(true);
         slider.setShowTickMarks(true);
-        slider.valueProperty().addListener(e->{
+        slider.valueProperty().addListener(e -> {
             double value = slider.getValue();
             String str = String.format("%.0f", value);
             label.setText(str);
@@ -109,7 +110,7 @@ public class DrawAvatar extends Application {
         toggleGroup.selectToggle(lineButton);
         makeLine(canvas, root, cp, slider);
         toggleGroup.selectedToggleProperty().addListener((observable, oldVal, newVal) -> {
-            if(newVal == lineButton) {
+            if (newVal == lineButton) {
                 makeLine(canvas, root, cp, slider);
             } else if (newVal == traceButton) {
                 makeTrace(canvas, root, cp, slider);
@@ -119,12 +120,14 @@ public class DrawAvatar extends Application {
 
         Button clearButton = new Button();
         clearButton.setText("Clear");
-        clearButton.setOnAction(e->{clear(root,grid, canvas);});
+        clearButton.setOnAction(e -> {
+            clear(root, grid, canvas);
+        });
 
         Button saveButton = new Button();
         saveButton.setText("Save");
-        saveButton.setOnAction(e->	 {
-            captureAndSaveDisplay(grid,root,primaryStage);
+        saveButton.setOnAction(e -> {
+            captureAndSaveDisplay(grid, root, primaryStage);
 //
 //            // here we make image from vbox and add it to scene, can be repeated :)
 //            WritableImage snapshot = grid.snapshot(new SnapshotParameters(), null);
@@ -133,7 +136,6 @@ public class DrawAvatar extends Application {
 //            System.out.println(grid.getChildren().size());
 //
         });
-
 
 
         grid.getChildren().addAll(cp, lineButton, traceButton, slider, saveButton, clearButton);
@@ -146,9 +148,10 @@ public class DrawAvatar extends Application {
 
     /**
      * Clears the whole canvas for the user to start fresh
+     *
      * @param root the Stackpane which contains all nodes on screen
-     * @param g the FlowPane which the all the buttons etc appear on
-     * @param c the canvas we want to remain after it is cleared
+     * @param g    the FlowPane which the all the buttons etc appear on
+     * @param c    the canvas we want to remain after it is cleared
      */
     private void clear(StackPane root, FlowPane g, Canvas c) {
         counter = 0;
@@ -166,6 +169,7 @@ public class DrawAvatar extends Application {
 
     /**
      * Add a border to the canvas
+     *
      * @param gc the current GraphicContents the canvas is working on
      */
     public void borderRect(GraphicsContext gc) {
@@ -180,16 +184,17 @@ public class DrawAvatar extends Application {
 
     /**
      * Allows the user to trace a line (free draw)
+     *
      * @param c  the current canvas the user is drawing on
-     * @param r the StackPane the contains all the nodes, used to add new canvas to
+     * @param r  the StackPane the contains all the nodes, used to add new canvas to
      * @param cp the ColorPicker to allow the line to change colour
-     * @param s the Slider to allow the line to change width
+     * @param s  the Slider to allow the line to change width
      */
-    private void makeTrace(Canvas c,StackPane r, ColorPicker cp, Slider s) {
-        c.setOnMousePressed(e->{
+    private void makeTrace(Canvas c, StackPane r, ColorPicker cp, Slider s) {
+        c.setOnMousePressed(e -> {
             Canvas newTrace = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
             trace = newTrace;
-            r.getChildren().add(counter,newTrace);
+            r.getChildren().add(counter, newTrace);
             counter++;
             GraphicsContext gc = trace.getGraphicsContext2D();
             gc.beginPath();
@@ -197,7 +202,7 @@ public class DrawAvatar extends Application {
             gc.stroke();
             borderRect(gc);
         });
-        c.setOnMouseDragged(e->{
+        c.setOnMouseDragged(e -> {
             GraphicsContext gc = trace.getGraphicsContext2D();
             gc.setStroke(cp.getValue());
             gc.setLineWidth(s.getValue());
@@ -210,21 +215,22 @@ public class DrawAvatar extends Application {
 
     /**
      * Allows the user to draw a line
-     * @param c the current canvas the user is drawing on
-     * @param r the StackPane the contains all the nodes, used to add new canvas to
+     *
+     * @param c  the current canvas the user is drawing on
+     * @param r  the StackPane the contains all the nodes, used to add new canvas to
      * @param cp the ColorPicker to allow the line to change colour
-     * @param s the Slider to allow the line to change width
+     * @param s  the Slider to allow the line to change width
      */
     private void makeLine(Canvas c, StackPane r, ColorPicker cp, Slider s) {
-        c.setOnMousePressed(e->{
+        c.setOnMousePressed(e -> {
             Canvas newLayer = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
             layer = newLayer;
-            r.getChildren().add(counter,newLayer);
+            r.getChildren().add(counter, newLayer);
             counter++;
             initialTouch = new Pair<>(e.getX(), e.getY());
         });
 
-        c.setOnMouseDragged(e->{
+        c.setOnMouseDragged(e -> {
             GraphicsContext context = layer.getGraphicsContext2D();
             context.clearRect(0, 0, layer.getWidth(), layer.getHeight());
             context.setStroke(cp.getValue());
@@ -236,11 +242,12 @@ public class DrawAvatar extends Application {
 
     /**
      * Used to save the avatars (canvas's) that user has just drawn
+     *
      * @param g the FlowPane that contains all buttons etc at the top
      * @param r the StackPane the contains all of the nodes
      * @param s the Stage the class is working in
      */
-    public void captureAndSaveDisplay(FlowPane g,StackPane r, Stage s){
+    public void captureAndSaveDisplay(FlowPane g, StackPane r, Stage s) {
         FileChooser fileChooser = new FileChooser();
 
         //Set extension filter
@@ -249,7 +256,7 @@ public class DrawAvatar extends Application {
         //Prompt user to select a file
         File file = fileChooser.showSaveDialog(null);
 
-        if(file != null){
+        if (file != null) {
             try {
                 //Pad the capture area
                 ArrayList<Node> list = new ArrayList<>();
@@ -270,7 +277,9 @@ public class DrawAvatar extends Application {
 
                 r.getChildren().addAll(list);
 
-            } catch (IOException ex) { ex.printStackTrace(); }
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         }
     }
 
