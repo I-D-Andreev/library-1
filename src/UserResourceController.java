@@ -27,7 +27,7 @@ public class UserResourceController {
     @FXML
     void okButtonClicked(ActionEvent event) {
 
-        new NewWindow("resources/UserDashboard.fxml", event, "Dashboard - TaweLib");
+        new NewWindow("resources/BrowseResources.fxml", event, "Browse Resources - TaweLib");
     }
 
 }
