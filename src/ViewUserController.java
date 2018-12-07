@@ -201,14 +201,3 @@ public class ViewUserController extends Controller {
 
 }
 
-/*
-
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
-                    ButtonType.OK);
-            alert.show();
-
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Book resource created successfully.",
-                    ButtonType.OK);
-            alert.show();
-
- */

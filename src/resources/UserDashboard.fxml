@@ -28,11 +28,6 @@
       </Label>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
          <children>
-            <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#refreshButtonClicked" prefHeight="44.0" prefWidth="68.0" text="Refresh" textAlignment="CENTER" wrapText="true">
-               <HBox.margin>
-                  <Insets right="20.0" />
-               </HBox.margin>
-            </Button>
             <Button fx:id="browseResourcesButton" mnemonicParsing="false" onAction="#browseResourcesButtonClicked" text="Browse Resources" textAlignment="CENTER" wrapText="true">
                <HBox.margin>
                   <Insets right="20.0" />

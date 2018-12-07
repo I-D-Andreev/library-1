@@ -1,9 +1,7 @@
 import com.sun.org.glassfish.gmbal.ManagedObject;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 
 public class EditAccountController extends Controller{
@@ -94,7 +92,60 @@ public class EditAccountController extends Controller{
 
     @FXML
     void editAccountButtonClicked(ActionEvent event) {
+        // mandatory - first name, last name, phone number, address line 1
+        // city, country, postcode, profile image
+        // optional - addressLine2
 
+        // gather data
+        String username = usernameTextField.getText();
+        String firstName = firstNameTextField.getText();
+        String lastName = lastNameTextField.getText();
+        String phoneNumber = phoneNumberTextField.getText();
+        String addressLine1 = addressLine1TextField.getText();
+        String addressLine2 = addressLine2TextField.getText();
+        String city = cityTextField.getText();
+        String country = countryTextField.getText();
+        String postcode = postcodeTextField.getText();
+        String imagePath = imagePathLabel.getText();
+
+        // TODO: REMOVE THIS
+        imagePath = "No File Chosen";
+
+        if(firstName.isEmpty() || lastName.isEmpty() || phoneNumber.isEmpty()
+        || addressLine1.isEmpty() || city.isEmpty() || country.isEmpty()
+        || postcode.isEmpty() || username.isEmpty() || imagePath.isEmpty()){
+
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // create the Address
+            Address address = new Address(addressLine1, addressLine2, city, country, postcode);
+
+            // find user
+            User user = getLibrary().getUserManager().getUserByUsername(username);
+
+            // change details
+            getLibrary().getUserManager().editUser(user, firstName, lastName, phoneNumber, imagePath, address);
+
+            // notify user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Details changed successfully.",
+                    ButtonType.OK);
+            alert.show();
+
+        }
     }
 
 }
+
+/*
+
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
+                    ButtonType.OK);
+            alert.show();
+
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Book resource created successfully.",
+                    ButtonType.OK);
+            alert.show();
+
+ */

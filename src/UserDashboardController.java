@@ -64,9 +64,6 @@ public class UserDashboardController extends Controller {
     private Label phoneNumberLabel; // Value injected by FXMLLoader
 
 
-    @FXML // fx:id="refreshButton"
-    private Button refreshButton; // Value injected by FXMLLoader
-
     @FXML // fx:id="popularResourceLabel"
     private Label popularResourceLabel; // Value injected by FXMLLoader
 
@@ -142,11 +139,6 @@ public class UserDashboardController extends Controller {
     @FXML
     void transHistoryButtonClicked(ActionEvent event) {
 
-    }
-
-    @FXML
-    void refreshButtonClicked(ActionEvent event) {
-        this.loadUserInformation();
     }
 
 
