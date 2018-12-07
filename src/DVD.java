@@ -83,7 +83,7 @@ public class DVD extends Resource {
 
     /**
      * Gets the director of the dvd.
-     * @return director The director of the dvd.
+     * @return The director of the dvd.
      */
     public String getDirector() {
         return this.director;
@@ -99,7 +99,7 @@ public class DVD extends Resource {
 
     /**
      * Gets the runtime of the dvd.
-     * @return runtime The runtime of the dvd.
+     * @return The runtime of the dvd.
      */
     public int getRuntime() {
         return this.runtime;
@@ -115,7 +115,7 @@ public class DVD extends Resource {
 
     /**
      * Gets the language of the dvd.
-     * @return language The language of the dvd.
+     * @return The language of the dvd.
      */
     public String getLanguage() {
         return this.language;
@@ -131,7 +131,7 @@ public class DVD extends Resource {
 
     /**
      * Gets the subtitle language ArrayList.
-     * @return listOfSubtitleLanguages The subtitle language ArrayList.
+     * @return The subtitle language ArrayList.
      */
     public ArrayList<String> getListOfSubtitleLanguages() {
         return this.listOfSubtitleLanguages;
@@ -158,7 +158,7 @@ public class DVD extends Resource {
 
     /**
      * Gets the late return fine per day of the dvd.
-     * @return lateReturnFinePerDay The late return fine per day.
+     * @return The late return fine per day.
      */
     public double getLateReturnFinePerDay() {
         return this.lateReturnFinePerDay;
@@ -166,7 +166,7 @@ public class DVD extends Resource {
 
     /**
      * Gets the maximum fine amount for a dvd.
-     * @return maxFineAmount The maximum fine amount for a dvd.
+     * @return The maximum fine amount for a dvd.
      */
     public double getMaxFineAmount() {
         return this.maxFineAmount;
@@ -174,7 +174,7 @@ public class DVD extends Resource {
 
     /**
      * Gets the string of what kind of object this object is.
-     * @return String "DVD" the object this object is.
+     * @return A string "DVD" that is the object this object is.
      */
     public String getType() {
         return "DVD";
