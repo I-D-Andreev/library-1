@@ -79,57 +79,57 @@
             <Insets left="20.0" />
          </GridPane.margin>
       </ImageView>
-      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <VBox prefHeight="200.0" prefWidth="109.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
-            <Label layoutX="10.0" layoutY="20.0" prefHeight="17.0" prefWidth="315.0" text="Username :" textAlignment="CENTER">
+            <HBox prefHeight="30.0" prefWidth="322.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="315.0" text="Username :" textAlignment="CENTER" />
+                  <Label fx:id="usernameLabel" prefHeight="17.0" prefWidth="315.0" text="Refresh to load" textAlignment="CENTER" />
+               </children>
                <VBox.margin>
-                  <Insets top="-29.0" />
+                  <Insets top="-27.0" />
                </VBox.margin>
-            </Label>
-            <Label fx:id="usernameLabel" prefHeight="17.0" prefWidth="315.0" text="Refresh to load" textAlignment="CENTER">
+            </HBox>
+            <HBox prefHeight="33.0" prefWidth="322.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="312.0" text="First Name :">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="firstNameLabel" prefHeight="17.0" prefWidth="312.0" text="Refresh to load" />
+               </children>
                <VBox.margin>
-                  <Insets top="1.0" />
-               </VBox.margin></Label>
-            <Label layoutX="10.0" layoutY="64.0" prefHeight="17.0" prefWidth="312.0" text="First Name :">
-               <VBox.margin>
-                  <Insets top="5.0" />
+                  <Insets top="6.0" />
                </VBox.margin>
-            </Label>
-            <Label fx:id="firstNameLabel" prefHeight="17.0" prefWidth="312.0" text="Refresh to load">
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="322.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="342.0" text="Last Name :" />
+                  <Label fx:id="lastNameLabel" prefHeight="17.0" prefWidth="342.0" text="Refresh to load" />
+               </children>
                <VBox.margin>
-                  <Insets top="1.0" />
+                  <Insets top="3.0" />
                </VBox.margin>
-            </Label>
-            <Label layoutX="10.0" layoutY="107.0" prefHeight="17.0" prefWidth="342.0" text="Last Name :">
+            </HBox>
+            <HBox prefHeight="34.0" prefWidth="322.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="338.0" text="Phone Number :" />
+                  <Label fx:id="phoneNumberLabel" prefHeight="17.0" prefWidth="338.0" text="Refresh to load" />
+               </children>
                <VBox.margin>
-                  <Insets top="5.0" />
+                  <Insets top="-10.0" />
                </VBox.margin>
-            </Label>
-            <Label fx:id="lastNameLabel" prefHeight="17.0" prefWidth="342.0" text="Refresh to load">
+            </HBox>
+            <HBox prefHeight="34.0" prefWidth="322.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="338.0" text="Balance :" />
+                  <Label fx:id="balanceLabel" prefHeight="17.0" prefWidth="338.0" text="Refresh to load" />
+               </children>
                <VBox.margin>
-                  <Insets top="1.0" />
+                  <Insets top="-2.0" />
                </VBox.margin>
-            </Label>
-            <Label layoutX="10.0" layoutY="147.0" prefHeight="17.0" prefWidth="338.0" text="Phone Number :">
-               <VBox.margin>
-                  <Insets top="5.0" />
-               </VBox.margin>
-            </Label>
-            <Label fx:id="phoneNumberLabel" prefHeight="17.0" prefWidth="338.0" text="Refresh to load">
-               <VBox.margin>
-                  <Insets top="1.0" />
-               </VBox.margin>
-            </Label>
-            <Label layoutX="10.0" layoutY="187.0" prefHeight="17.0" prefWidth="338.0" text="Balance :">
-               <VBox.margin>
-                  <Insets top="5.0" />
-               </VBox.margin>
-            </Label>
-            <Label fx:id="balanceLabel" layoutX="10.0" layoutY="158.0" prefHeight="17.0" prefWidth="338.0" text="Refresh to load">
-               <VBox.margin>
-                  <Insets top="1.0" />
-               </VBox.margin>
-            </Label>
+            </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets top="7.0" />
@@ -137,12 +137,12 @@
                <children>
                   <Button fx:id="editProfileButton" mnemonicParsing="false" onAction="#editProfileButtonClicked" prefHeight="46.0" prefWidth="85.0" text="Edit Profile">
                      <HBox.margin>
-                        <Insets right="20.0" top="4.0" />
+                        <Insets left="12.0" right="20.0" top="20.0" />
                      </HBox.margin>
                   </Button>
                   <Button fx:id="mostPopularResourceButton" mnemonicParsing="false" onAction="#mostPopularResourceButtonClicked" prefHeight="46.0" prefWidth="150.0" text="Most popular resource">
                      <HBox.margin>
-                        <Insets left="20.0" right="20.0" top="5.0" />
+                        <Insets left="20.0" right="20.0" top="20.0" />
                      </HBox.margin>
                   </Button>
                </children>
