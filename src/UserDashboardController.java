@@ -70,9 +70,30 @@ public class UserDashboardController extends Controller {
     private Label popularResourceLabel; // Value injected by FXMLLoader
 
     @FXML
-    void borrowedResourcesButtonClicked(ActionEvent event) {
+    private Button editProfileButton;
+
+    @FXML
+    private Button mostPopularResourceButton;
+
+
+
+    @FXML
+    public void borrowedResourcesButtonClicked(ActionEvent event) {
 
     }
+
+    @FXML
+    public void editProfileButtonClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    public void mostPopularResourceButtonClicked(ActionEvent event) {
+
+    }
+
+
+
 
     @FXML
     /**
