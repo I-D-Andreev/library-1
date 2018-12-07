@@ -355,57 +355,111 @@ public class CreateEditController extends Controller {
     @FXML
     private Button backButton;
 
+    /**
+     * Button for laptop deletion.
+     */
     @FXML // fx:id="laptopDeleteButton"
     private Button laptopDeleteButton; // Value injected by FXMLLoader
 
+    /**
+     * Button for DVD deletion.
+     */
     @FXML // fx:id="dvdDeleteButton"
     private Button dvdDeleteButton; // Value injected by FXMLLoader
 
+    /**
+     * Button for book deletion.
+     */
     @FXML // fx:id="bookDeleteButton"
     private Button bookDeleteButton; // Value injected by FXMLLoader
 
+    /**
+     * The resources field for unique ID.
+     */
     @FXML // fx:id="resourceUniqueIDtextField"
     private TextField resourceUniqueIDtextField; // Value injected by FXMLLoader
 
+    /**
+     * The resources search button.
+     */
     @FXML // fx:id="copySearchButton"
     private Button resourceSearchButton; // Value injected by FXMLLoader
 
+    /**
+     * The copy's loan duration field.
+     */
     @FXML // fx:id="copyLoanDurationTextField"
     private TextField copyLoanDurationTextField; // Value injected by FXMLLoader
 
+    /**
+     * The button that creates a copy.
+     */
     @FXML // fx:id="copyCreateButton"
     private Button copyCreateButton; // Value injected by FXMLLoader
 
+    /**
+     * The button that creates a book image.
+     */
     @FXML // fx:id="createBookFindImageButton"
     private Button createBookFindImageButton; // Value injected by FXMLLoader
 
+    /**
+     * The button that creates a dvd image.
+     */
     @FXML // fx:id="createDvdFindImageButton"
     private Button createDvdFindImageButton; // Value injected by FXMLLoader
 
+    /**
+     * The button that creates a laptop image.
+     */
     @FXML // fx:id="createLaptopFindImageButton"
     private Button createLaptopFindImageButton; // Value injected by FXMLLoader
 
+    /**
+     * The button that creates a book image.
+     */
     @FXML // fx:id="editBookFindImageButton"
     private Button editBookFindImageButton; // Value injected by FXMLLoader
 
+    /**
+     * The edit dvd image button.
+     */
     @FXML // fx:id="editDvdFindImageButton"
     private Button editDvdFindImageButton; // Value injected by FXMLLoader
 
+    /**
+     * The edit laptop image button.
+     */
     @FXML // fx:id="editLaptopFindImageButton"
     private Button editLaptopFindImageButton; // Value injected by FXMLLoader
 
+    /**
+     * Field for the edit of the search ID of the copy.
+     */
     @FXML
     private TextField editCopyIdSearchTextField;
 
+    /**
+     * Field for the edit of the loan duration of the copy.
+     */
     @FXML
     private TextField editCopyLoanDurationTextField;
 
+    /**
+     * The button to search for a copy.
+     */
     @FXML
     private Button copySearchButton;
 
+    /**
+     * The button to edit a copy.
+     */
     @FXML
     private Button editCopyButton;
 
+    /**
+     * The button to delete a copy.
+     */
     @FXML
     private Button deleteCopyButton;
 
@@ -413,7 +467,7 @@ public class CreateEditController extends Controller {
     /**
      * Goes back to the librarian dashboard when clicked.
      *
-     * @param event The current event.
+     * @param event When the back button is clicked.
      */
     @FXML
     public void backButtonClicked(ActionEvent event) {
@@ -421,7 +475,10 @@ public class CreateEditController extends Controller {
         new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
 
-
+    /**
+     * Creates a book when the button is clicked.
+     * @param event When the button is clicked.
+     */
     @FXML
     public void createBookButtonClicked(ActionEvent event) {
         // mandatory information- title, year, thumbnail, author, publisher
