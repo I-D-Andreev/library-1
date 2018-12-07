@@ -302,21 +302,9 @@ public class CreateEditController extends Controller {
             int runtime = Integer.parseInt(runtimeDVDTextField.getText());
             String language = languageDVDTextField.getText();
 
-            // get a string containing the languages comma separated
-            String subtitleLanguages = languageSubtitlesDVDTextField.getText();
-
-            // split the string into smaller strings on new comma or space
-            String[] arrayOfSubtitleLanguages = subtitleLanguages.split(",| ");
-
-            // convert that array into array list
-            ArrayList<String> listOfSubtitleLanguages = new ArrayList<>(Arrays.asList(arrayOfSubtitleLanguages));
-
-            // remove empty strings
-            for (int i = 0; i < listOfSubtitleLanguages.size(); i++) {
-                if (listOfSubtitleLanguages.get(i).equals("")) {
-                    listOfSubtitleLanguages.remove(i);
-                }
-            }
+            // convert a comma separated string into an array list
+            ArrayList<String> listOfSubtitleLanguages =
+                    stringToArrayListOfStrings(languageSubtitlesDVDTextField.getText());
 
             // create a DVD and add it
             getLibrary().getResourceManager().addResource(new DVD(title, year, thumbnail, director,
@@ -330,6 +318,22 @@ public class CreateEditController extends Controller {
             // clear all the fields
             this.clearAllCreateDVDFields();
         }
+    }
+
+    private ArrayList<String> stringToArrayListOfStrings(String subtitleLanguages){
+        // split the string into smaller strings on new comma or space
+        String[] arrayOfSubtitleLanguages = subtitleLanguages.split(",| ");
+
+        // convert that array into array list
+        ArrayList<String> listOfSubtitleLanguages = new ArrayList<>(Arrays.asList(arrayOfSubtitleLanguages));
+
+        // remove empty strings
+        for (int i = 0; i < listOfSubtitleLanguages.size(); i++) {
+            if (listOfSubtitleLanguages.get(i).equals("")) {
+                listOfSubtitleLanguages.remove(i);
+            }
+        }
+        return listOfSubtitleLanguages;
     }
 
     @FXML
@@ -461,21 +465,27 @@ public class CreateEditController extends Controller {
             languageEditDVDTextField.setText(dvd.getLanguage());
 
 
-            // prepare the data to show in subtitle languages
-            String subtitleLanguages = "";
-            for (String language : dvd.getListOfSubtitleLanguages()) {
-                subtitleLanguages = subtitleLanguages + language + ',';
-            }
+            // convert the array list into comma separated string
+            String subtitleLanguages = toCommaSeparatedString(dvd.getListOfSubtitleLanguages());
 
-            // remove the last comma, if the subtitle language is not empty
-            if (!subtitleLanguages.isEmpty()) {
-                subtitleLanguages = subtitleLanguages.substring(0, subtitleLanguages.length() - 1);
-            }
             languageSubtitlesEditDVDTextField.setText(subtitleLanguages);
 
             // lock the id field
             uniqueIDSearchEditDVDTextField.setDisable(true);
         }
+    }
+
+    private String toCommaSeparatedString(ArrayList<String> listOfSubtitleLanguages){
+        String subtitleLanguages = "";
+        for (String language : listOfSubtitleLanguages) {
+            subtitleLanguages = subtitleLanguages + language + ',';
+        }
+
+        // remove the last comma, if the subtitle language is not empty
+        if (!subtitleLanguages.isEmpty()) {
+            subtitleLanguages = subtitleLanguages.substring(0, subtitleLanguages.length() - 1);
+        }
+        return subtitleLanguages;
     }
 
 
@@ -503,21 +513,9 @@ public class CreateEditController extends Controller {
             int runtime = Integer.parseInt(runtimeEditDVDTextField.getText());
             String language = languageEditDVDTextField.getText();
 
-            // get a string containing the languages comma separated
-            String subtitleLanguages = languageSubtitlesEditDVDTextField.getText();
-
-            // split the string into smaller strings on new comma or space
-            String[] arrayOfSubtitleLanguages = subtitleLanguages.split(",| ");
-
-            // convert that array into array list
-            ArrayList<String> listOfSubtitleLanguages = new ArrayList<>(Arrays.asList(arrayOfSubtitleLanguages));
-
-            // remove empty strings
-            for (int i = 0; i < listOfSubtitleLanguages.size(); i++) {
-                if (listOfSubtitleLanguages.get(i).equals("")) {
-                    listOfSubtitleLanguages.remove(i);
-                }
-            }
+            // convert a comma separated string into an array list
+            ArrayList<String> listOfSubtitleLanguages =
+                    stringToArrayListOfStrings(languageSubtitlesEditDVDTextField.getText());
 
             // find the DVD
             DVD dvd = (DVD) getLibrary().getResourceManager().
