@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -15,17 +14,18 @@
 
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.control.TextArea?>
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="355.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewUserController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewUserController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
-      <RowConstraints maxHeight="195.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="405.0" minHeight="10.0" prefHeight="397.0" vgrow="SOMETIMES" />
+      <RowConstraints />
+    <RowConstraints maxHeight="195.0" minHeight="10.0" prefHeight="77.60001678466796" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="540.7999893188476" minHeight="10.0" prefHeight="523.1999832153319" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="2" GridPane.rowIndex="1">
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="2" GridPane.rowIndex="2">
         <tabs>
           <Tab fx:id="searchUserTab" text="Search User">
             <content>
@@ -59,7 +59,7 @@
                         </VBox>
                         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
                            <children>
-                              <Button fx:id="searchButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="351.0" text="Search">
+                              <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButtonClicked" prefHeight="27.0" prefWidth="351.0" text="Search">
                                  <VBox.margin>
                                     <Insets left="20.0" right="20.0" />
                                  </VBox.margin>
@@ -85,7 +85,7 @@
                   </GridPane>
                </content>
                <content>
-                  <VBox prefHeight="200.0" prefWidth="100.0">
+                  <VBox prefHeight="448.0" prefWidth="477.0">
                      <children>
                         <TextField fx:id="usernameTextField" alignment="CENTER" promptText="Username">
                            <VBox.margin>
@@ -107,17 +107,22 @@
                               <Insets left="20.0" right="20.0" top="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField fx:id="addressTextField" alignment="CENTER" promptText="UK Address">
+                        <TextField fx:id="addressTextField1" alignment="CENTER" promptText="Address Line 1">
                            <VBox.margin>
                               <Insets left="20.0" right="20.0" top="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <DatePicker fx:id="employmentDatePicker" prefHeight="27.0" prefWidth="369.0" promptText="Employment Date">
+                        <TextField fx:id="addressTextField2" alignment="CENTER" promptText="Address Line 2">
                            <VBox.margin>
                               <Insets left="20.0" right="20.0" top="10.0" />
                            </VBox.margin>
-                        </DatePicker>
-                        <TextField fx:id="staffNumberTextField" alignment="CENTER" promptText="Staff Number">
+                        </TextField>
+                        <TextField fx:id="addressCountry" alignment="CENTER" layoutX="30.0" layoutY="210.0" promptText="Country">
+                           <VBox.margin>
+                              <Insets left="20.0" right="20.0" top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="addressPostcode" alignment="CENTER" layoutX="10.0" layoutY="236.0" promptText="Postcode">
                            <VBox.margin>
                               <Insets left="20.0" right="20.0" top="10.0" />
                            </VBox.margin>
@@ -150,7 +155,7 @@
           </Tab>
         </tabs>
       </TabPane>
-      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="218.0" GridPane.rowIndex="1">
          <children>
             <Label text="TaweLib">
                <HBox.margin>
@@ -164,7 +169,7 @@
             </Label>
          </children>
       </HBox>
-      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+      <HBox alignment="CENTER_RIGHT" prefHeight="51.0" prefWidth="216.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
 
          <opaqueInsets>
             <Insets />
