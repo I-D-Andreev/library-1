@@ -666,7 +666,7 @@ public class CreateEditController extends Controller {
     @FXML
     void copyCreateButtonClicked(ActionEvent event) {
 
-        // mandatory information - title, year, thumbnail, manufacturer, model, installedOS
+        // mandatory information - loan duration
         if (copyLoanDurationTextField.getText().isEmpty()) {
 
             Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
@@ -684,16 +684,16 @@ public class CreateEditController extends Controller {
         } else {
 
             // gather the information
-            int loanDuration = Integer.parseInt(copyLoanDurationTextField.toString());
+            int loanDuration = Integer.parseInt(copyLoanDurationTextField.getText());
 
-            // Find the laptop.
+            // Find the resource.
             Resource resource = getLibrary().getResourceManager().getResourceById(copyUniqueIDtextField.getText());
 
-            // Change the laptop
+            // Change the resource.
             getLibrary().getResourceManager().addCopyOfResource(loanDuration,resource);
 
             // notify the user
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Resource copied successfully.",
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Resource copy added successfully.",
                     ButtonType.OK);
 
             alert.show();
@@ -703,6 +703,7 @@ public class CreateEditController extends Controller {
 
             //Clear fields
             copyLoanDurationTextField.setText("");
+            copyUniqueIDtextField.setText("");
         }
     }
 
@@ -712,7 +713,7 @@ public class CreateEditController extends Controller {
      */
     void copySearchButtonClicked(ActionEvent event) {
 
-        Resource resource = getLibrary().getResourceManager().getResourceById(copyUniqueIDtextField.toString());
+        Resource resource = getLibrary().getResourceManager().getResourceById(copyUniqueIDtextField.getText());
 
         if (resource == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Couldn't find a resource with such ID.",
@@ -724,6 +725,12 @@ public class CreateEditController extends Controller {
 
             // lock the id field
             copyUniqueIDtextField.setDisable(true);
+
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Resource found.",
+                    ButtonType.OK);
+
+            alert.show();
         }
     }
 
