@@ -62,8 +62,6 @@ public class UserDashboardController extends Controller {
     @FXML // fx:id="phoneNumberLabel"
     private Label phoneNumberLabel; // Value injected by FXMLLoader
 
-    @FXML // fx:id="addressLabel"
-    private Label addressLabel; // Value injected by FXMLLoader
 
     @FXML // fx:id="refreshButton"
     private Button refreshButton; // Value injected by FXMLLoader
@@ -135,6 +133,5 @@ public class UserDashboardController extends Controller {
         firstNameLabel.setText(getLibrary().getCurrentUserLoggedIn().getFirstName());
         lastNameLabel.setText(getLibrary().getCurrentUserLoggedIn().getLastName());
         phoneNumberLabel.setText(getLibrary().getCurrentUserLoggedIn().getPhoneNumber());
-        addressLabel.setText(getLibrary().getCurrentUserLoggedIn().getAddress().toString());
     }
 }

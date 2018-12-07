@@ -97,20 +97,7 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </Label>
-            <Label fx:id="addressLabel" prefHeight="17.0" prefWidth="349.0" text="Address">
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin>
-            </Label>
             <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Most Popular Resource:" />
-                  <Label fx:id="popularResourceLabel" text="Resource">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Label>
-               </children>
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
