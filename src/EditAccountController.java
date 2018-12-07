@@ -83,6 +83,7 @@ public class EditAccountController extends Controller{
     @FXML
     void chooseProfileImageButtonClicked(ActionEvent event) {
 
+        new NewWindow("resources/ProfileImage.fxml", event, "Choose Image - TaweLib", getLibrary());
     }
 
     @FXML

@@ -1,3 +1,4 @@
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
@@ -6,7 +7,7 @@ import javafx.scene.control.Button;
  *
  * @author Sian Pike
  */
-public class ProfileImageController {
+public class ProfileImageController extends Controller {
 
     @FXML // fx:id="imageOneButton"
     private Button imageOneButton; // Value injected by FXMLLoader
@@ -32,10 +33,24 @@ public class ProfileImageController {
     @FXML // fx:id="imageEightButton"
     private Button imageEightButton; // Value injected by FXMLLoader
 
-    @FXML // fx:id="createAvatarButton"
-    private Button createAvatarButton; // Value injected by FXMLLoader
+    @FXML // fx:id="imageNineButton"
+    private Button imageNineButton; // Value injected by FXMLLoader
 
-    @FXML // fx:id="selectButton"
-    private Button selectButton; // Value injected by FXMLLoader
+    @FXML // fx:id="cancelButton"
+    private Button cancelButton; // Value injected by FXMLLoader
+
+    @FXML
+    void cancelButtonClicked(ActionEvent event) {
+
+        if(getLibrary().getCurrentUserLoggedIn().hasAdminAccess()) {
+
+            new NewWindow("resources/ViewUser.fxml", event, "View User - TaweLib", getLibrary());
+
+        } else {
+
+            new NewWindow("resources/UserDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
+        }
+
+    }
 
 }

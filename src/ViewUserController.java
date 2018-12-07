@@ -199,5 +199,16 @@ public class ViewUserController extends Controller {
         userRadioButton.setSelected(false);
     }
 
+    @FXML
+    void chooseProfileImageButtonClicked(ActionEvent event) {
+
+        new NewWindow("resources/ProfileImage.fxml", event, "Choose Image - TaweLib", getLibrary());
+
+    }
+
+    @FXML
+    void drawProfileImageButtonClicked(ActionEvent event) {
+
+    }
 }
 

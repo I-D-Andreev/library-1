@@ -149,7 +149,7 @@
                         </HBox>
                         <HBox prefHeight="48.0" prefWidth="570.0">
                            <children>
-                              <Button fx:id="chooseProfileImageButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="167.0" text="Choose Profile Image">
+                              <Button fx:id="chooseProfileImageButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#chooseProfileImageButtonClicked" prefHeight="27.0" prefWidth="167.0" text="Choose Profile Image">
                                  <HBox.margin>
                                     <Insets left="20.0" right="10.0" />
                                  </HBox.margin>
@@ -159,7 +159,7 @@
                                     <Insets right="20.0" />
                                  </HBox.margin>
                               </Label>
-                              <Button fx:id="drawProfileImageButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="167.0" text="Draw Profile Image">
+                              <Button fx:id="drawProfileImageButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#drawProfileImageButtonClicked" prefHeight="27.0" prefWidth="167.0" text="Draw Profile Image">
                                  <HBox.margin>
                                     <Insets left="20.0" right="10.0" />
                                  </HBox.margin>
