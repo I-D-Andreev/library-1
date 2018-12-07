@@ -88,7 +88,8 @@ public class UserDashboardController extends Controller {
 
     @FXML
     public void editProfileButtonClicked(ActionEvent event) {
-
+        new NewWindow("resources/EditAccount.fxml", event,
+                "Edit Account - TaweLib", getLibrary());
     }
 
     @FXML
