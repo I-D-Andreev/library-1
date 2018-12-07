@@ -1,7 +1,10 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.ArrayList;
 
@@ -42,8 +45,6 @@ public class CreateEditController extends Controller {
     @FXML
     private Button createBookButton;
 
-
-    // Create DVD tab
     @FXML
     private TextField titleDVDTextField;
 
@@ -187,6 +188,45 @@ public class CreateEditController extends Controller {
 
     @FXML
     private Button backButton;
+
+    @FXML // fx:id="laptopDeleteButton"
+    private Button laptopDeleteButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="dvdDeleteButton"
+    private Button dvdDeleteButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="bookDeleteButton"
+    private Button bookDeleteButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="copyUniqueIDtextField"
+    private TextField copyUniqueIDtextField; // Value injected by FXMLLoader
+
+    @FXML // fx:id="copySearchButton"
+    private Button copySearchButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="copyLoanDurationTextField"
+    private TextField copyLoanDurationTextField; // Value injected by FXMLLoader
+
+    @FXML // fx:id="copyCreateButton"
+    private Button copyCreateButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="createBookFindImageButton"
+    private Button createBookFindImageButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="createDvdFindImageButton"
+    private Button createDvdFindImageButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="createLaptopFindImageButton"
+    private Button createLaptopFindImageButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="editBookFindImageButton"
+    private Button editBookFindImageButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="editDvdFindImageButton"
+    private Button editDvdFindImageButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="editLaptopFindImageButton"
+    private Button editLaptopFindImageButton; // Value injected by FXMLLoader
 
     /**
      * Goes back to the librarian dashboard when clicked.
@@ -567,6 +607,174 @@ public class CreateEditController extends Controller {
     }
 
     /**
+     * Deletes a laptop resource.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void laptopDeleteButtonClicked(ActionEvent event) {
+
+        getLibrary().getResourceManager().removeResource(uniqueIDSearchEditLaptopTextField.getId());
+    }
+
+    /**
+     * Deletes a DVD resource.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void dvdDeleteButtonClicked(ActionEvent event) {
+
+        getLibrary().getResourceManager().removeResource(uniqueIDSearchEditDVDTextField.getId());
+    }
+
+    /**
+     * Deletes a book resource.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void bookDeleteButtonClicked(ActionEvent event) {
+
+        getLibrary().getResourceManager().removeResource(uniqueIDSearchEditBookTextField.getId());
+    }
+
+    /**
+     * Creates a copy of the chosen resource.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void copyCreateButtonClicked(ActionEvent event) {
+
+        // mandatory information - title, year, thumbnail, manufacturer, model, installedOS
+        if (copyLoanDurationTextField.getText().isEmpty()) {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
+                    ButtonType.OK);
+
+            alert.show();
+
+        } else if (!isStringNumber(copyLoanDurationTextField.getText())) {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR, "The text field must be a number.",
+                    ButtonType.OK);
+
+            alert.show();
+
+        } else {
+
+            // gather the information
+            int loanDuration = Integer.parseInt(copyLoanDurationTextField.toString());
+
+            // Find the laptop.
+            Resource resource = getLibrary().getResourceManager().getResourceById(copyUniqueIDtextField.getText());
+
+            // Change the laptop
+            getLibrary().getResourceManager().addCopyOfResource(loanDuration,resource);
+
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Resource copied successfully.",
+                    ButtonType.OK);
+
+            alert.show();
+
+            // enable the search bar and clear all the fields
+            copyUniqueIDtextField.setDisable(false);
+
+            //Clear fields
+            copyLoanDurationTextField.setText("");
+        }
+    }
+
+    @FXML
+    /**
+     * Searches for the resource ID.
+     */
+    void copySearchButtonClicked(ActionEvent event) {
+
+        Resource resource = getLibrary().getResourceManager().getResourceById(copyUniqueIDtextField.toString());
+
+        if (resource == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Couldn't find a resource with such ID.",
+                    ButtonType.OK);
+
+            alert.show();
+
+        } else {
+
+            // lock the id field
+            copyUniqueIDtextField.setDisable(true);
+        }
+    }
+
+    /**
+     * Opens file explorer so that an image can be chosen.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void createBookFindImageButtonClicked(ActionEvent event) {
+
+        selectFile(imagePathBookTextField);
+    }
+
+    /**
+     * Opens file explorer so that an image can be chosen.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void createDvdFindImageButtonClicked(ActionEvent event) {
+
+        selectFile(imagePathDVDTextField);
+    }
+
+    /**
+     * Opens file explorer so that an image can be chosen.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void createLaptopFindImageButtonClicked(ActionEvent event) {
+
+        selectFile(imagePathLaptopTextField);
+    }
+
+    /**
+     * Opens file explorer so that an image can be chosen.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void editBookFindImageButtonClicked(ActionEvent event) {
+
+        selectFile(imagePathEditBook);
+    }
+
+    /**
+     * Opens file explorer so that an image can be chosen.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void editDvdFindImageButtonClicked(ActionEvent event) {
+
+        selectFile(imagePathEditDVD);
+    }
+
+    /**
+     * Opens file explorer so that an image can be chosen.
+     *
+     * @param event The current event.
+     */
+    @FXML
+    void editLaptopFindImageButtonClicked(ActionEvent event) {
+
+        selectFile(imagePathEditLaptop);
+    }
+
+    /**
      * Check if a certain string contains numbers only.
      *
      * @param s The string.
@@ -578,6 +786,24 @@ public class CreateEditController extends Controller {
         return s.matches("\\d+");
     }
 
+    /**
+     * Opens file explorer and adds the file path to the specified text field when an image is chosen.
+     *
+     * @param imageTextField The specified text field that contains the file path.
+     */
+    private void selectFile(TextField imageTextField) {
+
+        Stage currentStage = (Stage) languageBookTextField.getScene().getWindow();
+        FileChooser fileChooser = new FileChooser();
+
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("JPEG Files", "*.jpg"),
+                new FileChooser.ExtensionFilter("PNG Files", "*.png"));
+
+        File selectedFile = fileChooser.showOpenDialog(currentStage);
+
+        imageTextField.setText(selectedFile.toString());
+    }
 
     private void clearAllCreateBookFields() {
         titleBookTextField.setText("");
