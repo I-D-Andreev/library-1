@@ -1,10 +1,6 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.time.Instant;
 import java.util.Date;
@@ -20,8 +16,8 @@ public class ManageResourcesController extends Controller {
     @FXML // fx:id="borrowTab"
     private Tab borrowTab; // Value injected by FXMLLoader
 
-    @FXML // fx:id="borrowUserIDTextField"
-    private TextField borrowUserIDTextField; // Value injected by FXMLLoader
+    @FXML
+    private TextField borrowUserUsernameTextField;
 
     @FXML // fx:id="borrowResourceIDTextField"
     private TextField borrowResourceIDTextField; // Value injected by FXMLLoader
@@ -69,16 +65,42 @@ public class ManageResourcesController extends Controller {
     private Button backButton; // Value injected by FXMLLoader
 
     @FXML
-    void borrowButtonClicked(ActionEvent event) {
+    public void borrowButtonClicked(ActionEvent event) {
 
-        //Add some resources to test (Resource manager)
-        //Probably needs some connection to copy manager
+        User user = getLibrary().getUserManager().getUserByUsername(borrowUserUsernameTextField.getText());
+        Resource resource = getLibrary().getResourceManager().getResourceById(borrowResourceIDTextField.getText());
 
-        String userID = borrowUserIDTextField.getText();
-        String resourceID = borrowResourceIDTextField.getText();
-        UserManager userManager = new UserManager();
-        HistoryEntryItemTransaction itemTransaction = new HistoryEntryItemTransaction(Date.from(Instant.EPOCH),
-                true, userManager.getUserById(userID));
+        if(user == null || (user instanceof Librarian )){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid username.",
+                    ButtonType.OK);
+            alert.show();
+        } else if(!((NormalUser)user).canBorrowCopy()){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "This user can not borrow a copy" +
+                    " because they have outstanding fines or overdue items to return.",
+                    ButtonType.OK);
+            alert.show();
+        } else if(resource == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid resource ID.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            Copy copy = getLibrary().getResourceManager().loanCopy(resource, user);
+
+            if(copy == null){
+                Alert alert = new Alert(Alert.AlertType.ERROR, "No available copies.\n"
+                        + "Try reserving one.",
+                        ButtonType.OK);
+                alert.show();
+            } else {
+                String content = "The user has successfully been given a copy - ID: "
+                        + copy.getUniqueCopyID() + ". It should be returned in " + copy.getLoanDurationInDays() +
+                        " days!";
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, content,
+                        ButtonType.OK);
+                alert.show();
+            }
+        }
     }
 
     /**
@@ -87,18 +109,18 @@ public class ManageResourcesController extends Controller {
      * @param event The current event.
      */
     @FXML
-    void backButtonClicked(ActionEvent event) {
+    public void backButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
 
     @FXML
-    void payButtonClicked(ActionEvent event) {
+    public void payButtonClicked(ActionEvent event) {
 
     }
 
     @FXML
-    void returnButtonClicked(ActionEvent event) {
+    public void returnButtonClicked(ActionEvent event) {
 
     }
 
@@ -107,3 +129,15 @@ public class ManageResourcesController extends Controller {
 
     }
 }
+
+/*
+
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
+                    ButtonType.OK);
+            alert.show();
+
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Book resource created successfully.",
+                    ButtonType.OK);
+            alert.show();
+
+ */

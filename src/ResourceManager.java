@@ -210,15 +210,15 @@ public class ResourceManager implements Serializable {
         return returnCopy;
     }
 
-    public boolean loanCopy(Resource resource, User toUser) {
+    public Copy loanCopy(Resource resource, User toUser) {
         if (!toUser.hasAdminAccess()) {
             return resource.getCopyManager().loanCopy((NormalUser) toUser);
         }
-        return false;
+        return null;
     }
 
     public void reserveCopy(Resource resource, User forUser) {
-        if (!loanCopy(resource, forUser)) {
+        if (loanCopy(resource, forUser) == null) {
             resource.getCopyManager().addUserToTheQueue(forUser);
         }
     }
@@ -277,15 +277,17 @@ public class ResourceManager implements Serializable {
     public void selfPopulate1() {
         Book b = new Book("Harry Potter", 2010, "", "J.K.R.", "dn");
         Book b2 = new Book("Harry Potter2", 2010, "", "J.K.R.", "dn");
+        Laptop l1 = new Laptop("Lenovo", 2015, "", "LN", "S3", "W");
 
         this.addResource(b);
         this.addResource(b2);
-        this.addResource(new Laptop("Lenovo", 2015, "", "LN", "S3", "W"));
+
+        this.addResource(l1);
         this.addResource(new DVD("DVD1", 2015, "", "P", 201));
 
-        this.addCopyOfResource(2, b);
-        this.addCopyOfResource(3, b);
-        this.addCopyOfResource(4, b);
+        this.addCopyOfResource(2, l1);
+        this.addCopyOfResource(3, l1);
+        this.addCopyOfResource(4, l1);
 
     }
 }

@@ -180,23 +180,23 @@ public class CopyManager implements Serializable {
      * Checks if a copy is available and if that copy is reserved for a user,
      * loans the copy to him.
      * @param toUser The user who will receive the loaned copy.
-     * @return true if the copy is loaned, false otherwise.
+     * @return copy Return reference to the loaned copy or null if there are no available copies to loan.
      */
-    public boolean loanCopy(NormalUser toUser) {
+    public Copy loanCopy(NormalUser toUser) {
         if (this.getNumOfAvailableCopies() == 0) {
-            return false;
+            return null;
         }
         // We look if there is a reserved copy for the User.
         for (Copy copy : listOfAllCopies) {
-            if (copy.getReservedFor().equals(toUser)) {
+            if (copy.getReservedFor()!= null && copy.getReservedFor().equals(toUser)) {
                 copy.loanCopyTo(toUser);
-                return true;
+                return copy;
             }
         }
 
         // We loan the first available copy.
         this.getListOfAvailableCopies().get(0).loanCopyTo(toUser);
-        return true;
+        return this.getListOfAvailableCopies().get(0);
     }
 
     /**
@@ -204,7 +204,7 @@ public class CopyManager implements Serializable {
      * @param forUser The user the copy is being reserved for.
      */
     public void reserveCopy(NormalUser forUser) {
-        if (!loanCopy(forUser)) {
+        if (loanCopy(forUser) == null) {
             this.requestQueue.add(forUser);
             this.setDueDateOfOldestBorrowedCopy();
         }
