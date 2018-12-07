@@ -163,54 +163,98 @@ public class CreateEditController extends Controller {
     private Button createLaptopButton;
 
     /**
-     *
+     * The book's field where we edit the unique ID.
      */
     @FXML
     private TextField uniqueIDSearchEditBookTextField;
 
+    /**
+     * The book's field where we edit the title.
+     */
     @FXML
     private TextField titleEditBookTextField;
 
+    /**
+     * The book's field where we edit the year.
+     */
     @FXML
     private TextField yearEditBookTextField;
 
+    /**
+     * The book's field where we edit the author.
+     */
     @FXML
     private TextField authorEditBookTextField;
 
+    /**
+     * The book's field where we edit the thumbnail image path.
+     */
     @FXML
     private TextField imagePathEditBook;
 
+    /**
+     * The book's field where we edit the publisher.
+     */
     @FXML
     private TextField publisherEditBookTextField;
 
+    /**
+     * The book's field where we edit the genre.
+     */
     @FXML
     private TextField genreEditBookTextField;
 
+    /**
+     * The book's field where we edit the ISBN.
+     */
     @FXML
     private TextField isbnEditBookTextField;
 
+    /**
+     * The book's field where we edit the language.
+     */
     @FXML
     private TextField languageEditBookTextField;
 
+    /**
+     * The button that allows us to edit a book.
+     */
     @FXML
     private Button editBookButton;
 
+    /**
+     * The book's edit search button.
+     */
     @FXML
     private Button editBookSearchButton;
 
-    // Edit DVD tab.
+    /**
+     * The DVD's edit search field by unique ID.
+     */
     @FXML
     private TextField uniqueIDSearchEditDVDTextField;
 
+    /**
+     * The DVD's field where we edit the title.
+     */
     @FXML
     private TextField titleEditDVDTextField;
 
+    /**
+     * The DVD's field where we edit the year.
+     */
     @FXML
     private TextField yearEditDVDTextField;
 
+    /**
+     * The DVD's field where we edit the thumbnai image path.
+     */
     @FXML
     private TextField imagePathEditDVD;
 
+    /**
+     * The
+     */
     @FXML
     private TextField directorEditDVDTextField;
 
