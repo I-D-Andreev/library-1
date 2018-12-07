@@ -18,81 +18,153 @@ import java.util.ArrayList;
 
 public class CreateEditController extends Controller {
 
-    // Create Book Tab
+    /**
+     * The book's title field.
+     */
     @FXML
     private TextField titleBookTextField;
 
+    /**
+     * The book's year field.
+     */
     @FXML
     private TextField yearBookTextField;
 
+    /**
+     * The book's thumbnail image path field.
+     */
     @FXML
     private TextField imagePathBookTextField;
 
+    /**
+     * The book's author field.
+     */
     @FXML
     private TextField authorBookTextField;
 
+    /**
+     * The book's publisher field.
+     */
     @FXML
     private TextField publisherBookTextField;
 
+    /**
+     * The book's genre field.
+     */
     @FXML
     private TextField genreBookTextField;
 
+    /**
+     * The book's ISBN field.
+     */
     @FXML
     private TextField isbnBookTextField;
 
+    /**
+     * The book's language field.
+     */
     @FXML
     private TextField languageBookTextField;
 
+    /**
+     * The button that creates book resources.
+     */
     @FXML
     private Button createBookButton;
 
+    /**
+     * The DVD's title field.
+     */
     @FXML
     private TextField titleDVDTextField;
 
+    /**
+     * The DVD's year field.
+     */
     @FXML
     private TextField yearDVDTextField;
 
+    /**
+     * The DVD's thumbnail image path field.
+     */
     @FXML
     private TextField imagePathDVDTextField;
 
+    /**
+     * The DVD's director field.
+     */
     @FXML
     private TextField directorDVDTextField;
 
+    /**
+     * The DVD's runtime field.
+     */
     @FXML
     private TextField runtimeDVDTextField;
 
+    /**
+     * The DVD's language field.
+     */
     @FXML
     private TextField languageDVDTextField;
 
+    /**
+     * The DVD's language of subtitles field.
+     */
     @FXML
     private TextField languageSubtitlesDVDTextField;
 
+    /**
+     * The button that creates a DVD resource.
+     */
     @FXML
     private Button createDVDButton;
 
-    // Create laptop tab.
+    /**
+     * The laptop's title field.
+     */
     @FXML
     private TextField titleLaptopTextField;
 
+    /**
+     * The laptop's year field.
+     */
     @FXML
     private TextField yearLaptopTextField;
 
+    /**
+     * The laptop's thumbnail image path field.
+     */
     @FXML
     private TextField imagePathLaptopTextField;
 
+    /**
+     * The laptop's manufacturer field.
+     */
     @FXML
     private TextField manufacturerLaptopTextField;
 
+    /**
+     * The laptop's model field.
+     */
     @FXML
     private TextField modelLaptopTextField;
 
+    /**
+     * The laptops operating system field.
+     */
     @FXML
     private TextField operatingSystemLaptopTextField;
 
+    /**
+     * The button that creates laptop resources.
+     */
     @FXML
     private Button createLaptopButton;
 
-    // Edit book tab.
+    /**
+     *
+     */
     @FXML
     private TextField uniqueIDSearchEditBookTextField;
 
@@ -245,7 +317,6 @@ public class CreateEditController extends Controller {
     private Button deleteCopyButton;
 
 
-
     /**
      * Goes back to the librarian dashboard when clicked.
      *
@@ -338,7 +409,7 @@ public class CreateEditController extends Controller {
         }
     }
 
-    private ArrayList<String> stringToArrayListOfStrings(String subtitleLanguages){
+    private ArrayList<String> stringToArrayListOfStrings(String subtitleLanguages) {
         // split the string into smaller strings on new comma or space
         String[] arrayOfSubtitleLanguages = subtitleLanguages.split(",| ");
 
@@ -493,7 +564,7 @@ public class CreateEditController extends Controller {
         }
     }
 
-    private String toCommaSeparatedString(ArrayList<String> listOfSubtitleLanguages){
+    private String toCommaSeparatedString(ArrayList<String> listOfSubtitleLanguages) {
         String subtitleLanguages = "";
         for (String language : listOfSubtitleLanguages) {
             subtitleLanguages = subtitleLanguages + language + ',';
@@ -708,7 +779,7 @@ public class CreateEditController extends Controller {
             Resource resource = getLibrary().getResourceManager().getResourceById(resourceUniqueIDtextField.getText());
 
             // Change the resource.
-            getLibrary().getResourceManager().addCopyOfResource(loanDuration,resource);
+            getLibrary().getResourceManager().addCopyOfResource(loanDuration, resource);
 
             // notify the user
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "Resource copy added successfully.",
@@ -753,10 +824,10 @@ public class CreateEditController extends Controller {
     }
 
     @FXML
-    public void copySearchButtonClicked(ActionEvent event){
+    public void copySearchButtonClicked(ActionEvent event) {
         Copy copy = getLibrary().getResourceManager().getCopyById(editCopyIdSearchTextField.getText());
 
-        if(copy == null){
+        if (copy == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Couldn't find a copy with such ID.",
                     ButtonType.OK);
 
@@ -772,14 +843,14 @@ public class CreateEditController extends Controller {
     }
 
     @FXML
-    public void editCopyButtonClicked(ActionEvent event){
+    public void editCopyButtonClicked(ActionEvent event) {
         // mandatory - loan duration
-        if(editCopyLoanDurationTextField.getText().isEmpty()){
+        if (editCopyLoanDurationTextField.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in the required text fields.",
                     ButtonType.OK);
 
             alert.show();
-        } else if(!isStringNumber(editCopyLoanDurationTextField.getText())){
+        } else if (!isStringNumber(editCopyLoanDurationTextField.getText())) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "The loan duration must be a number.",
                     ButtonType.OK);
 
