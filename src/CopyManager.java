@@ -25,6 +25,7 @@ public class CopyManager implements Serializable {
     /**
      * Creates ArrayLists of requestQueue and listofAllcopies
      * for the resource it is a copymanager of.
+     *
      * @param copyManagerOf The resource it is a copy manager of.
      */
     public CopyManager(Resource copyManagerOf) {
@@ -35,6 +36,7 @@ public class CopyManager implements Serializable {
 
     /**
      * Gets the resource it is a copymanager of.
+     *
      * @return copyManagerOf The resource it is a copy manager of.
      */
     public Resource getCopyManagerOf() {
@@ -43,6 +45,7 @@ public class CopyManager implements Serializable {
 
     /**
      * Checks if the request queue is empty.
+     *
      * @return true if empty,false otherwise.
      */
     public boolean isQueueEmpty() {
@@ -51,6 +54,7 @@ public class CopyManager implements Serializable {
 
     /**
      * Checks if a user is inside the request queue.
+     *
      * @param user The user to check for in the queue.
      * @return true if the user is in the queue,false otherwise.
      */
@@ -60,6 +64,7 @@ public class CopyManager implements Serializable {
 
     /**
      * Gets the first user in the queue.
+     *
      * @return User the first user in the queue.
      */
     public User getFirstUserInQueue() {
@@ -75,6 +80,7 @@ public class CopyManager implements Serializable {
 
     /**
      * Adds a user in the queue.
+     *
      * @param user The user to be added to the queue.
      */
     public void addUserToTheQueue(User user) {
@@ -83,6 +89,7 @@ public class CopyManager implements Serializable {
 
     /**
      * Checks the user in in the queue.
+     *
      * @param user The user to check for.
      * @return true if user is in queue,false otherwise.
      */
@@ -92,6 +99,7 @@ public class CopyManager implements Serializable {
 
     /**
      * An ArrayList of all copies.
+     *
      * @return listOfAllCopies The ArrayList of all copies.
      */
     public ArrayList<Copy> getListOfAllCopies() {
@@ -100,6 +108,7 @@ public class CopyManager implements Serializable {
 
     /**
      * Gets a list of all available copies.
+     *
      * @return availableCopies An ArrayList of all available copies.
      */
     public ArrayList<Copy> getListOfAvailableCopies() {
@@ -115,6 +124,7 @@ public class CopyManager implements Serializable {
 
     /**
      * Gets the number of available copies.
+     *
      * @return int The number of available copies.
      */
     public int getNumOfAvailableCopies() {
@@ -123,6 +133,7 @@ public class CopyManager implements Serializable {
 
     /**
      * Adds a copy in the ArrayList of all copies.
+     *
      * @param copy The copy to be added in the lst.
      */
     public void addCopy(Copy copy) {
@@ -132,6 +143,7 @@ public class CopyManager implements Serializable {
 
     /**
      * Adds copy with its parameters, instead of copy object.
+     *
      * @param loanDuration The loanDuration of the copy.
      */
     public void addCopy(int loanDuration) {
@@ -141,6 +153,7 @@ public class CopyManager implements Serializable {
 
     /**
      * Removes a copy from the ArrayList of all available copies.
+     *
      * @param copy The copy to be removed.
      */
     public void removeCopy(Copy copy) {
@@ -152,13 +165,14 @@ public class CopyManager implements Serializable {
 
     /**
      * Find a copy by its ID inside the list of all copies.
+     *
      * @param copyId The id of the copy to be found.
      * @return copy The copy if found by its id,null otherwise.
      */
-    public Copy findCopyById(String copyId){
-        Copy returnCopy=null;
-        for(Copy copy: listOfAllCopies){
-            if(copy.getUniqueCopyID().equals(copyId)){
+    public Copy findCopyById(String copyId) {
+        Copy returnCopy = null;
+        for (Copy copy : listOfAllCopies) {
+            if (copy.getUniqueCopyID().equals(copyId)) {
                 returnCopy = copy;
             }
         }
@@ -167,6 +181,7 @@ public class CopyManager implements Serializable {
 
     /**
      * Removes a copy from the list of all copies by its ID.
+     *
      * @param copyId The id of the copy to be removed.
      */
     public void removeCopyById(String copyId) {
@@ -179,6 +194,7 @@ public class CopyManager implements Serializable {
     /**
      * Checks if a copy is available and if that copy is reserved for a user,
      * loans the copy to him.
+     *
      * @param toUser The user who will receive the loaned copy.
      * @return Return reference to the loaned copy or null if there are no available copies to loan.
      */
@@ -188,7 +204,7 @@ public class CopyManager implements Serializable {
         }
         // We look if there is a reserved copy for the User.
         for (Copy copy : listOfAllCopies) {
-            if (copy.getReservedFor()!= null && copy.getReservedFor().equals(toUser)) {
+            if (copy.getReservedFor() != null && copy.getReservedFor().equals(toUser)) {
                 copy.loanCopyTo(toUser);
                 return copy;
             }
@@ -200,32 +216,41 @@ public class CopyManager implements Serializable {
 
     /**
      * Reserves a copy for a user.
+     *
      * @param forUser The user the copy is being reserved for.
      */
     public void reserveCopy(NormalUser forUser) {
-        if (loanCopy(forUser) == null) {
-            this.requestQueue.add(forUser);
-            this.setDueDateOfOldestBorrowedCopy();
-        }
+        this.requestQueue.add(forUser);
+        this.setDueDateOfOldestBorrowedCopy();
     }
 
-    /**Find the oldest borrowed copy with no due date set
+    /**
+     * Find the oldest borrowed copy with no due date set
      * and set its due date.
      */
     private void setDueDateOfOldestBorrowedCopy() {
         // ** There is the possibility that all copies' due dates are already set.
         Copy oldestCopy = null;
         for (Copy copy : listOfAllCopies) {
-            if (oldestCopy == null && copy.getDueDate() != null && copy.getBorrowedOn() != null) {
-                oldestCopy = copy;
-            } else if (oldestCopy != null && copy.getBorrowedOn() != null) {
-                // if copy is older than the oldest copy
-                if (copy.getBorrowedOn().compareTo(oldestCopy.getBorrowedOn()) == -1) {
+            // we are only interested in copies with unset due dates
+            if (copy.getDueDate() == null) {
+
+                // if our oldest copy is not yet assigned, assign it to the first copy
+                // which is borrowed
+                if (oldestCopy == null && copy.getBorrowedBy() != null) {
                     oldestCopy = copy;
+                } else if (oldestCopy != null && copy.getBorrowedBy() != null){
+                    // now we have our "oldest" copy and another borrowed copy with no due date set
+                    // assign it to oldest, only if the other copy is older
+                    if(copy.getBorrowedOn().compareTo(oldestCopy.getBorrowedOn()) == -1){
+                        oldestCopy = copy;
+                    }
                 }
             }
-        }
 
+        }
+//        System.out.println("Oldest copy is - " + oldestCopy.getUniqueCopyID());
+        // oldest copy remains null?
         if (oldestCopy != null) {
             oldestCopy.setDueDate();
         }
@@ -233,7 +258,7 @@ public class CopyManager implements Serializable {
 
 
     /**
-     *  Called when a copy is returned.
+     * Called when a copy is returned.
      * Decides what to do with said copy.
      */
     public void newAvailableCopyEvent() {

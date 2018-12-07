@@ -218,9 +218,7 @@ public class ResourceManager implements Serializable {
     }
 
     public void reserveCopy(Resource resource, User forUser) {
-        if (loanCopy(resource, forUser) == null) {
-            resource.getCopyManager().addUserToTheQueue(forUser);
-        }
+        resource.getCopyManager().reserveCopy((NormalUser) forUser);
     }
 
     public double returnCopy(Copy copy) {

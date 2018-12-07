@@ -133,7 +133,7 @@ public class ManageResourcesController extends Controller {
         Resource resource = getLibrary().getResourceManager().getResourceById(reserveResourceIDTextField.getText());
 
         if(user == null || (user instanceof Librarian)){
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid user ID.",
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid username.",
                     ButtonType.OK);
             alert.show();
         } else if(resource == null){
@@ -154,6 +154,10 @@ public class ManageResourcesController extends Controller {
             // clear fields
             reserveUserUsernameTextField.clear();
             reserveResourceIDTextField.clear();
+        }
+
+        for(Copy copy: resource.getCopyManager().getListOfAllCopies()){
+            System.out.println(copy.getUniqueCopyID() + " - " + copy.getDueDate());
         }
     }
 
