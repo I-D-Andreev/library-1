@@ -87,16 +87,30 @@ public class BrowseResourcesController extends Controller {
             if(event.getClickCount() == 2) {
 
                 Parent root;
+                FXMLLoader fxmlLoader;
+                Stage stage;
 
-                //Attempt to load the fxml file and set the scene.
                 try {
 
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("resources/UserResource.fxml"));
-                    root = fxmlLoader.load();
-                    setLibrary(getLibrary());
-                    //fxmlLoader.<Controller>getController().setLibrary(getLibrary());
+                    if(getLibrary().getCurrentUserLoggedIn().hasAdminAccess()) {
 
-                    Stage stage = new Stage();
+                        fxmlLoader = new FXMLLoader(getClass().getClassLoader()
+                                .getResource("resources/LibrarianResource.fxml"));
+
+                    } else {
+
+                        //Attempt to load the fxml file and set the scene.
+
+
+                        fxmlLoader = new FXMLLoader(getClass().getClassLoader()
+                                .getResource("resources/UserResource.fxml"));
+
+                    }
+
+                    root = fxmlLoader.load();
+                    fxmlLoader.<Controller>getController().setLibrary(getLibrary());
+
+                    stage = new Stage();
 
                     stage.setTitle("Resource Information");
                     stage.setScene(new Scene(root));

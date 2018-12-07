@@ -10,7 +10,7 @@ import javafx.scene.image.ImageView;
  *
  * @author Sian Pike
  */
-public class UserResourceController {
+public class UserResourceController extends Controller {
 
     @FXML // fx:id="resourceImage"
     private ImageView resourceImage; // Value injected by FXMLLoader
@@ -27,7 +27,7 @@ public class UserResourceController {
     @FXML
     void okButtonClicked(ActionEvent event) {
 
-        new NewWindow("resources/BrowseResources.fxml", event, "Browse Resources - TaweLib");
+        new NewWindow("resources/BrowseResources.fxml", event, "Browse Resources - TaweLib", getLibrary());
     }
 
 }
