@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e3b68db-e3f9-4a5f-a067-ee60d4dfb31b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CreateEditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CreateEditController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/CreateEdit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/CreateEdit.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,12 +20,14 @@
     <session id="-1710960564">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="350" />
+          <entry key="java" value="557" />
+          <entry key="txt" value="66" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="350" />
+          <entry key="JAVA" value="557" />
+          <entry key="PLAIN_TEXT" value="66" />
         </counts>
       </usages-collector>
     </session>
@@ -45,55 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CreateEditController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="517" column="92" selection-start-line="517" selection-start-column="92" selection-end-line="517" selection-end-column="92" />
-              <folding>
-                <element signature="docComment;class#CreateEditController#0" />
-                <element signature="e#5205#5320#0" />
-                <element signature="e#5205#5496#0" />
-                <element signature="e#5503#7335#0" />
-                <element signature="e#5578#5645#0" />
-                <element signature="e#7415#7482#0" />
-                <element signature="e#9941#11783#0" />
-                <element signature="e#11789#13022#0" />
-                <element signature="e#13028#15139#0" />
-                <element signature="e#13101#13168#0" />
-                <element signature="e#16900#16967#0" />
-                <element signature="e#19704#20870#0" />
-                <element signature="e#20876#23004#0" />
-                <element signature="e#23010#23101#0" />
-                <element signature="e#23010#23275#0" />
-                <element signature="e#23281#23369#0" />
-                <element signature="e#23281#23537#0" />
-                <element signature="e#23543#23632#0" />
-                <element signature="e#23543#23802#0" />
-                <element signature="e#23808#23911#0" />
-                <element signature="e#23808#25349#0" />
-                <element signature="e#25355#25898#0" />
-                <element signature="e#25904#26020#0" />
-                <element signature="e#25904#26144#0" />
-                <element signature="e#26150#26266#0" />
-                <element signature="e#26150#26388#0" />
-                <element signature="e#26394#26510#0" />
-                <element signature="e#26394#26638#0" />
-                <element signature="e#26644#26760#0" />
-                <element signature="e#26644#26877#0" />
-                <element signature="e#26883#26999#0" />
-                <element signature="e#26883#27114#0" />
-                <element signature="e#27120#27236#0" />
-                <element signature="e#27120#27357#0" />
-                <element signature="e#27363#27539#0" />
-                <element signature="e#27363#27695#0" />
-                <element signature="e#27595#27616#0" />
-                <element signature="e#27701#27905#0" />
-                <element signature="e#27701#28428#0" />
-                <element signature="e#21751#22169#0" />
-                <element signature="e#22175#22496#0" />
-                <element signature="e#22502#22844#0" />
-                <element signature="e#22850#23301#0" />
-                <element signature="e#23307#23696#0" />
-                <element signature="e#23702#24113#0" />
-              </folding>
+            <state relative-caret-position="201">
+              <caret line="616" column="42" selection-start-line="616" selection-start-column="42" selection-end-line="616" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -124,6 +81,8 @@
       <find>date</find>
       <find>languagesub</find>
       <find>split</find>
+      <find>deletebutton</find>
+      <find>delete</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -179,6 +138,30 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="tawelib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tawelib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tawelib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tawelib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tawelib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tawelib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
@@ -208,7 +191,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544124045448" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544144403631" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
@@ -264,13 +247,6 @@
       <updated>1542452788367</updated>
       <workItem from="1542452792911" duration="4471000" />
       <workItem from="1544087590965" duration="6407000" />
-    </task>
-    <task id="LOCAL-00044" summary="Rename copy.returned() to copy.returnCopy.">
-      <created>1543433600185</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1543433600185</updated>
     </task>
     <task id="LOCAL-00045" summary="Reserve copy, return copy, get list of all copies.">
       <created>1543434019033</created>
@@ -608,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544075810971</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Refactor some code in create/edit.&#10;Added 1 more dvd while testing.">
+      <created>1544143764109</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1544143764109</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -627,7 +610,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.19527897" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.19463088" />
       <window_info id="Structure" order="1" sideWeight="0.5064516" side_tool="true" weight="0.24093817" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -636,12 +619,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33375797" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33333334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32765958" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49928468" weight="0.32998565" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49928468" weight="0.32907802" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49928468" weight="0.32765958" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.32866243" />
@@ -689,7 +672,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="The file that we write in." />
     <MESSAGE value="Library save method." />
     <MESSAGE value="User, UserManager, Address implement serializable." />
     <MESSAGE value="Save should be protected. Only used by the library." />
@@ -714,7 +696,8 @@
     <MESSAGE value="Can now edit book." />
     <MESSAGE value="Now all fields are cleared after creating/editing resource." />
     <MESSAGE value="Refactor the FXML tags in create edit controller." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor the FXML tags in create edit controller." />
+    <MESSAGE value="Refactor some code in create/edit.&#10;Added 1 more dvd while testing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor some code in create/edit.&#10;Added 1 more dvd while testing." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/UserDashboard.fxml" />
@@ -975,55 +958,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CreateEditController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="517" column="92" selection-start-line="517" selection-start-column="92" selection-end-line="517" selection-end-column="92" />
-          <folding>
-            <element signature="docComment;class#CreateEditController#0" />
-            <element signature="e#5205#5320#0" />
-            <element signature="e#5205#5496#0" />
-            <element signature="e#5503#7335#0" />
-            <element signature="e#5578#5645#0" />
-            <element signature="e#7415#7482#0" />
-            <element signature="e#9941#11783#0" />
-            <element signature="e#11789#13022#0" />
-            <element signature="e#13028#15139#0" />
-            <element signature="e#13101#13168#0" />
-            <element signature="e#16900#16967#0" />
-            <element signature="e#19704#20870#0" />
-            <element signature="e#20876#23004#0" />
-            <element signature="e#23010#23101#0" />
-            <element signature="e#23010#23275#0" />
-            <element signature="e#23281#23369#0" />
-            <element signature="e#23281#23537#0" />
-            <element signature="e#23543#23632#0" />
-            <element signature="e#23543#23802#0" />
-            <element signature="e#23808#23911#0" />
-            <element signature="e#23808#25349#0" />
-            <element signature="e#25355#25898#0" />
-            <element signature="e#25904#26020#0" />
-            <element signature="e#25904#26144#0" />
-            <element signature="e#26150#26266#0" />
-            <element signature="e#26150#26388#0" />
-            <element signature="e#26394#26510#0" />
-            <element signature="e#26394#26638#0" />
-            <element signature="e#26644#26760#0" />
-            <element signature="e#26644#26877#0" />
-            <element signature="e#26883#26999#0" />
-            <element signature="e#26883#27114#0" />
-            <element signature="e#27120#27236#0" />
-            <element signature="e#27120#27357#0" />
-            <element signature="e#27363#27539#0" />
-            <element signature="e#27363#27695#0" />
-            <element signature="e#27595#27616#0" />
-            <element signature="e#27701#27905#0" />
-            <element signature="e#27701#28428#0" />
-            <element signature="e#21751#22169#0" />
-            <element signature="e#22175#22496#0" />
-            <element signature="e#22502#22844#0" />
-            <element signature="e#22850#23301#0" />
-            <element signature="e#23307#23696#0" />
-            <element signature="e#23702#24113#0" />
-          </folding>
+        <state relative-caret-position="201">
+          <caret line="616" column="42" selection-start-line="616" selection-start-column="42" selection-end-line="616" selection-end-column="42" />
         </state>
       </provider>
     </entry>

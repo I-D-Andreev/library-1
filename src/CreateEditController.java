@@ -612,7 +612,14 @@ public class CreateEditController extends Controller {
     @FXML
     void laptopDeleteButtonClicked(ActionEvent event) {
 
-        getLibrary().getResourceManager().removeResource(uniqueIDSearchEditLaptopTextField.getId());
+        getLibrary().getResourceManager().removeResource(uniqueIDSearchEditLaptopTextField.getText());
+        this.clearAllEditLaptopFields();
+        uniqueIDSearchEditLaptopTextField.setDisable(false);
+
+        // notify the user
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Laptop deleted successfully.",
+                ButtonType.OK);
+        alert.show();
     }
 
     /**
@@ -623,7 +630,14 @@ public class CreateEditController extends Controller {
     @FXML
     void dvdDeleteButtonClicked(ActionEvent event) {
 
-        getLibrary().getResourceManager().removeResource(uniqueIDSearchEditDVDTextField.getId());
+        getLibrary().getResourceManager().removeResource(uniqueIDSearchEditDVDTextField.getText());
+        this.clearAllEditDVDFields();
+        uniqueIDSearchEditDVDTextField.setDisable(false);
+
+        // notify the user
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "DVD deleted successfully.",
+                ButtonType.OK);
+        alert.show();
     }
 
     /**
@@ -634,7 +648,14 @@ public class CreateEditController extends Controller {
     @FXML
     void bookDeleteButtonClicked(ActionEvent event) {
 
-        getLibrary().getResourceManager().removeResource(uniqueIDSearchEditBookTextField.getId());
+        getLibrary().getResourceManager().removeResource(uniqueIDSearchEditBookTextField.getText());
+        this.clearAllEditBookFields();
+        uniqueIDSearchEditBookTextField.setDisable(false);
+
+        // notify the user
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Book deleted successfully.",
+                ButtonType.OK);
+        alert.show();
     }
 
     /**
