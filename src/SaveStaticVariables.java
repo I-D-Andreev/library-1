@@ -16,7 +16,7 @@ public class SaveStaticVariables implements Serializable {
     }
 
     public SaveStaticVariables(){
-        this.selfPopulate();
+        this.selfPopulate1();
     }
 
 
@@ -126,7 +126,7 @@ public class SaveStaticVariables implements Serializable {
     // for testing purposes
     public void selfPopulate1(){
         this.resourceNextID = 4;
-        this.userNextID  = 2;
-        this.copyNextID = 3;
+        this.userNextID  = 3;
+        this.copyNextID = 4;
     }
 }

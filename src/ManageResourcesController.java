@@ -96,7 +96,7 @@ public class ManageResourcesController extends Controller {
                 alert.show();
             } else {
                 String content = "The user has successfully been given a copy - ID: "
-                        + copy.getUniqueCopyID() + ". It should be returned in " + copy.getLoanDurationInDays() +
+                        + copy.getUniqueCopyID() + ". It loan duration is " + copy.getLoanDurationInDays() +
                         " day(s)!";
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION, content,

@@ -265,10 +265,11 @@ public class CopyManager implements Serializable {
         int numberOfCopies = availableCopies.size();
         int numberOfUsers = requestQueue.size();
 
+
         // Reserve as many available copies as possible.
         for (int i = 0; i < Math.min(numberOfUsers, numberOfCopies); i++) {
             // Reserve a copy for the first user in the request queue.
-            availableCopies.get(i).setReservedFor(requestQueue.get(0));
+            availableCopies.get(i).setReservedFor(this.getFirstUserInQueue());
             this.removeFirstUserInQueue();
         }
     }

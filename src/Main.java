@@ -14,8 +14,6 @@ public class Main extends Application{
     public static void main(String[] args) {
         //Launches the application - do not remove.
         launch(args);
-//        ManageResourcesController mrc = new ManageResourcesController();
-//        System.out.println(mrc.isStringNumber(".01"));
 //        Library l = new Library();
 //        l.save();
 
