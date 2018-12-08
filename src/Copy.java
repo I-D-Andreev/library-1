@@ -255,7 +255,6 @@ public class Copy implements Serializable {
         this.copysManager.newAvailableCopyEvent();
 
 
-
         return fineAmount;
     }
 
