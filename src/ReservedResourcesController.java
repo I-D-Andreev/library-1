@@ -21,6 +21,11 @@ public class ReservedResourcesController extends Controller {
     @FXML // fx:id="reservedResourcesColumn"
     private TableColumn<?, ?> reservedResourcesColumn; // Value injected by FXMLLoader
 
+    /**
+     * When the user clicks the button he is returned to the dashboard.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void okButtonClicked(ActionEvent event) {
 
