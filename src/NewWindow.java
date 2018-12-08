@@ -5,10 +5,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 
 /**
- * Creates a new window.
+ * Class to create a new window.
  *
  * @author Sian Pike
  */
@@ -19,9 +20,9 @@ public class NewWindow extends Controller {
      * Creates a new window when called.
      *
      * @param fxmlResource The location of the fxml document for the new window.
-     * @param event The current event being executed.
-     * @param title The title of the window.
-     * @param library The library.
+     * @param event        The current event being executed.
+     * @param title        The title of the window.
+     * @param library      The library.
      */
     public NewWindow(String fxmlResource, Event event, String title, Library library) {
 

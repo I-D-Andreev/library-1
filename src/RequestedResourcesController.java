@@ -21,6 +21,11 @@ public class RequestedResourcesController extends Controller {
     @FXML // fx:id="requestedResourcesColumn"
     private TableColumn<?, ?> requestedResourcesColumn; // Value injected by FXMLLoader
 
+    /**
+     * When the button is clicked returns user back to the dashboard.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void okButtonClicked(ActionEvent event) {
 

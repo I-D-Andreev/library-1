@@ -45,6 +45,12 @@ public class ProfileImageController extends Controller {
     @FXML // fx:id="cancelButton"
     private Button cancelButton; // Value injected by FXMLLoader
 
+    /**
+     * When the button is clicked takes the user either back to the user tab if he is an admin, or the dashboard
+     * if he is not.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     private void initialize() {
 
@@ -79,7 +85,7 @@ public class ProfileImageController extends Controller {
     @FXML
     void cancelButtonClicked(ActionEvent event) {
 
-        if(getLibrary().getCurrentUserLoggedIn().hasAdminAccess()) {
+        if (getLibrary().getCurrentUserLoggedIn().hasAdminAccess()) {
 
             new NewWindow("resources/ViewUser.fxml", event, "View User - TaweLib", getLibrary());
 

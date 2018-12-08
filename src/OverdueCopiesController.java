@@ -10,7 +10,7 @@ import javafx.scene.control.TableView;
  *
  * @author Sian Pike
  */
-public class OverdueCopiesController extends Controller{
+public class OverdueCopiesController extends Controller {
 
     @FXML // fx:id="overdueCopiesTable"
     private TableView<?> overdueCopiesTable; // Value injected by FXMLLoader
@@ -24,6 +24,11 @@ public class OverdueCopiesController extends Controller{
     @FXML // fx:id="okButton"
     private Button okButton; // Value injected by FXMLLoader
 
+    /**
+     * When the button is clicked the user is returned to the main dashboard.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void okButtonClicked(ActionEvent event) {
 

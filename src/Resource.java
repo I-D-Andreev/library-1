@@ -50,7 +50,7 @@ public abstract class Resource implements Serializable {
     /**
      * Gets the unique ID of the resource.
      *
-     * @return uniqueID The unique ID of the resource.
+     * @return The unique ID of the resource.
      */
     public String getUniqueID() {
         return this.uniqueID;
@@ -59,7 +59,7 @@ public abstract class Resource implements Serializable {
     /**
      * Gets the title of the resource.
      *
-     * @return title The title of the resource.
+     * @return The title of the resource.
      */
     public String getTitle() {
         return this.title;
@@ -77,7 +77,7 @@ public abstract class Resource implements Serializable {
     /**
      * Gets the year of the resource.
      *
-     * @return year The year of the resource was produced.
+     * @return The year of the resource was produced.
      */
     public int getYear() {
         return this.year;
@@ -152,7 +152,7 @@ public abstract class Resource implements Serializable {
     /**
      * Gets the copy manager of the resource.
      *
-     * @return
+     * @return The copy manager of the resources.
      */
     public CopyManager getCopyManager() {
         return copyManager;
@@ -179,7 +179,7 @@ public abstract class Resource implements Serializable {
      * Checks what the resource equals to.
      *
      * @param obj The resource to be checked.
-     * @return the objects unique ID if true,false otherwise.
+     * @return The objects unique ID if true,false otherwise.
      */
     public boolean equals(Object obj) {
         if (obj == null) return false;
