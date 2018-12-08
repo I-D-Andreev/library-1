@@ -1,9 +1,13 @@
 import com.sun.org.glassfish.gmbal.ManagedObject;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+
+import java.util.Optional;
+
 
 /**
  * TODO comment this
@@ -53,6 +57,9 @@ public class EditAccountController extends Controller {
     @FXML
     private Button editAccountButton;
 
+    @FXML
+    private Button deleteAccountButton;
+
     /**
      * Calls method to fill fields with data.
      */
@@ -84,7 +91,7 @@ public class EditAccountController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void backButtonClicked(ActionEvent event) {
+    public void backButtonClicked(ActionEvent event) {
         //if librarian then go back to librarian dashboard else go back to user dashboard
         if (getLibrary().getCurrentUserLoggedIn().hasAdminAccess()) {
             new NewWindow("resources/LibrarianDashboard.fxml", event,
@@ -96,20 +103,20 @@ public class EditAccountController extends Controller {
     }
 
     @FXML
-    void chooseProfileImageButtonClicked(ActionEvent event) {
+    public void chooseProfileImageButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/ProfileImage.fxml", event, "Choose Image - TaweLib", getLibrary());
     }
 
     @FXML
-    void drawProfileImageButtonClicked(ActionEvent event) {
+    public void drawProfileImageButtonClicked(ActionEvent event) {
         DrawAvatar bapple = new DrawAvatar();
         Stage newerStage = new Stage();
         bapple.start(newerStage);
     }
 
     @FXML
-    void editAccountButtonClicked(ActionEvent event) {
+    public void editAccountButtonClicked(ActionEvent event) {
         // mandatory - first name, last name, phone number, address line 1
         // city, country, postcode, profile image
         // optional - addressLine2
@@ -152,6 +159,42 @@ public class EditAccountController extends Controller {
             alert.show();
 
         }
+    }
+
+    @FXML
+    public void deleteAccountButtonClicked(ActionEvent event){
+        // create an alert to make sure the user
+        // didn't click this button accidentally
+
+        Alert confirmChoiceDialog = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmChoiceDialog.setTitle("Confirm choice");
+        confirmChoiceDialog.setHeaderText("Delete account");
+        confirmChoiceDialog.setContentText("Are you sure you want to delete your account?");
+        confirmChoiceDialog.getButtonTypes().clear();
+        confirmChoiceDialog.getButtonTypes().addAll(ButtonType.YES, ButtonType.NO);
+
+        Optional <ButtonType> result = confirmChoiceDialog.showAndWait();
+
+        if(result.get() == ButtonType.YES){
+            User user = getLibrary().getUserManager().getUserByUsername(usernameTextField.getText());
+            if((user instanceof NormalUser) && ((NormalUser)user).getBalance() > 0){
+                Alert alert = new Alert(Alert.AlertType.ERROR,
+                        "Can not delete account because there are outstanding fines",
+                        ButtonType.OK);
+                alert.show();
+            } else {
+                getLibrary().getUserManager().removeUser(user);
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
+                        "Account deleted successfully.",
+                        ButtonType.OK);
+                alert.showAndWait();
+
+                getLibrary().save();
+                Platform.exit();
+            }
+        }
+
+
     }
 
 }

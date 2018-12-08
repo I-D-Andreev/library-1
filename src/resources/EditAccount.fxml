@@ -193,9 +193,14 @@
          <bottom>
             <HBox prefHeight="70.0" prefWidth="642.0" BorderPane.alignment="CENTER">
                <children>
+                  <Button fx:id="deleteAccountButton" mnemonicParsing="false" onAction="#deleteAccountButtonClicked" text="Delete Account">
+                     <HBox.margin>
+                        <Insets left="25.0" top="15.0" />
+                     </HBox.margin>
+                  </Button>
                   <Button fx:id="editAccountButton" alignment="CENTER" mnemonicParsing="false" onAction="#editAccountButtonClicked" prefHeight="38.0" prefWidth="350.0" text="Edit account">
                      <HBox.margin>
-                        <Insets left="140.0" right="20.0" top="6.0" />
+                        <Insets left="60.0" top="15.0" />
                      </HBox.margin>
                   </Button>
                </children>
