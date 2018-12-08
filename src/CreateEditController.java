@@ -892,15 +892,24 @@ public class CreateEditController extends Controller {
      */
     @FXML
     void laptopDeleteButtonClicked(ActionEvent event) {
+        Resource resource = getLibrary().getResourceManager().
+                getResourceById(uniqueIDSearchEditLaptopTextField.getText());
 
-        getLibrary().getResourceManager().removeResource(uniqueIDSearchEditLaptopTextField.getText());
-        this.clearAllEditLaptopFields();
-        uniqueIDSearchEditLaptopTextField.setDisable(false);
+        if(!canDeleteResource(resource)){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Can't delete resource, because some of its" +
+                    " copies are still in use!",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            getLibrary().getResourceManager().removeResource(uniqueIDSearchEditLaptopTextField.getText());
+            this.clearAllEditLaptopFields();
+            uniqueIDSearchEditLaptopTextField.setDisable(false);
 
-        // notify the user
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Laptop deleted successfully.",
-                ButtonType.OK);
-        alert.show();
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Laptop deleted successfully.",
+                    ButtonType.OK);
+            alert.show();
+        }
     }
 
     /**
@@ -911,14 +920,24 @@ public class CreateEditController extends Controller {
     @FXML
     void dvdDeleteButtonClicked(ActionEvent event) {
 
-        getLibrary().getResourceManager().removeResource(uniqueIDSearchEditDVDTextField.getText());
-        this.clearAllEditDVDFields();
-        uniqueIDSearchEditDVDTextField.setDisable(false);
+        Resource resource = getLibrary().getResourceManager().
+                getResourceById(uniqueIDSearchEditDVDTextField.getText());
 
-        // notify the user
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, "DVD deleted successfully.",
-                ButtonType.OK);
-        alert.show();
+        if(!canDeleteResource(resource)){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Can't delete resource, because some of its" +
+                    " copies are still in use!",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            getLibrary().getResourceManager().removeResource(uniqueIDSearchEditDVDTextField.getText());
+            this.clearAllEditDVDFields();
+            uniqueIDSearchEditDVDTextField.setDisable(false);
+
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "DVD deleted successfully.",
+                    ButtonType.OK);
+            alert.show();
+        }
     }
 
     /**
@@ -928,15 +947,34 @@ public class CreateEditController extends Controller {
      */
     @FXML
     void bookDeleteButtonClicked(ActionEvent event) {
+        Resource resource = getLibrary().getResourceManager().
+                getResourceById(uniqueIDSearchEditBookTextField.getText());
 
-        getLibrary().getResourceManager().removeResource(uniqueIDSearchEditBookTextField.getText());
-        this.clearAllEditBookFields();
-        uniqueIDSearchEditBookTextField.setDisable(false);
+        if(!canDeleteResource(resource)){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Can't delete resource, because some of its" +
+                    " copies are still in use!",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            getLibrary().getResourceManager().removeResource(uniqueIDSearchEditBookTextField.getText());
+            this.clearAllEditBookFields();
+            uniqueIDSearchEditBookTextField.setDisable(false);
 
-        // notify the user
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Book deleted successfully.",
-                ButtonType.OK);
-        alert.show();
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Book deleted successfully.",
+                    ButtonType.OK);
+            alert.show();
+        }
+    }
+
+    /**
+     * Says if a resource can be delete.
+     *
+     * @return True if all of the resource's copies are available (in the library), false otherwise.
+     */
+    private boolean canDeleteResource(Resource resource) {
+        return resource != null && resource.getCopyManager().getNumOfAvailableCopies()
+                == resource.getCopyManager().getListOfAllCopies().size();
     }
 
     /**
@@ -1095,22 +1133,31 @@ public class CreateEditController extends Controller {
      */
     @FXML
     public void deleteCopyButtonClicked(ActionEvent event) {
-        // delete copy
-        getLibrary().getResourceManager().removeCopy(editCopyIdSearchTextField.getText());
+        Copy copy = getLibrary().getResourceManager().getCopyById(editCopyIdSearchTextField.getText());
 
-        // notify the user
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Copy successfully deleted.",
-                ButtonType.OK);
+        if (copy.getBorrowedBy() != null || copy.getReservedFor() != null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Can not delete copy, " +
+                    "because it is currently in use.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
 
-        alert.show();
+            // delete copy
+            getLibrary().getResourceManager().removeCopy(copy);
 
-        // unlock the search id
-        editCopyIdSearchTextField.setDisable(false);
+            // notify the user
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Copy successfully deleted.",
+                    ButtonType.OK);
 
-        //clear the text fields
-        editCopyIdSearchTextField.clear();
-        editCopyLoanDurationTextField.clear();
+            alert.show();
 
+            // unlock the search id
+            editCopyIdSearchTextField.setDisable(false);
+
+            //clear the text fields
+            editCopyIdSearchTextField.clear();
+            editCopyLoanDurationTextField.clear();
+        }
     }
 
     /**
