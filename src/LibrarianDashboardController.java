@@ -140,7 +140,7 @@ public class LibrarianDashboardController extends Controller {
     @FXML
     public void viewUserButtonClicked(ActionEvent event) {
 
-        new NewWindow("resources/ViewUser.fxml", event, "Manage Resources - TaweLib",
+        new NewWindow("resources/ViewUser.fxml", event, "View User - TaweLib",
                 getLibrary());
     }
 
