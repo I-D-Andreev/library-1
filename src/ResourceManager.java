@@ -15,6 +15,9 @@ public class ResourceManager implements Serializable {
 
     private ArrayList<Resource> resources;
 
+    /**
+     * Initializes the resource manager.
+     */
     public ResourceManager() {
         resources = new ArrayList<>();
         this.selfPopulate();
@@ -27,6 +30,9 @@ public class ResourceManager implements Serializable {
 
     }
 
+    /**
+     * Saves the changes that happened in the resource manager.
+     */
     public void save() {
 
         // Get a file to write in or create it if it doesn't exist.
@@ -104,24 +110,49 @@ public class ResourceManager implements Serializable {
         return file;
     }
 
-
+    /**
+     * Adds a resource to the resource manager.
+     *
+     * @param resource The resource to be added.
+     */
     public void addResource(Resource resource) {
         this.resources.add(resource);
     }
 
-
+    /**
+     * Adds a copy of a resource in the copy manager of the resource using the loan duration and type of resource.
+     *
+     * @param loanDuration The loan duration of the copy.
+     * @param resource     The resource the copy is a copy of.
+     */
     public void addCopyOfResource(int loanDuration, Resource resource) {
         resource.getCopyManager().addCopy(loanDuration);
     }
 
+    /**
+     * Adds a copy of a resource in the copy manager of the resource using the copy and type of resource..
+     *
+     * @param copy     The copy to be added.
+     * @param resource The resource this copy is a copy of.
+     */
     public void addCopyOfResource(Copy copy, Resource resource) {
         resource.getCopyManager().addCopy(copy);
     }
 
+    /**
+     * Removes a resource from the resource manager.
+     *
+     * @param resource The resource to be removed.
+     */
     public void removeResource(Resource resource) {
         this.resources.remove(resource);
     }
 
+    /**
+     * Removes a resource from the resource manager using its ID.
+     *
+     * @param resourceId The ID of the resource to be removed.
+     */
     public void removeResource(String resourceId) {
         if (this.getResourceById(resourceId) != null) {
             this.removeResource(this.getResourceById(resourceId));
@@ -134,6 +165,17 @@ public class ResourceManager implements Serializable {
         resource.setThumbnailImagePath(imagePath);
     }
 
+    /**
+     * Method to edit a laptop resource.
+     *
+     * @param laptop       The laptop resource to be edited.
+     * @param title        The title of the resource.
+     * @param year         The year the laptop was manufactured.
+     * @param imagePath    The thumbnail image path of the resource.
+     * @param manufacturer The manufacturer of the laptop.
+     * @param model        The model of the laptop.
+     * @param installedOS  The OS on the laptop.
+     */
     public void editLaptop(Laptop laptop, String title, int year, String imagePath,
                            String manufacturer, String model, String installedOS) {
         editResource(laptop, title, year, imagePath);
@@ -142,6 +184,19 @@ public class ResourceManager implements Serializable {
         laptop.setInstalledOS(installedOS);
     }
 
+    /**
+     * Method to edit a book resource.
+     *
+     * @param book      The book resource to be edited.
+     * @param title     The title of the book.
+     * @param year      The year the book was published.
+     * @param imagePath The thumbnail image path of the book.
+     * @param author    The author of the book.
+     * @param publisher The publisher of the book.
+     * @param genre     The genre of the book.
+     * @param ISBN      The ISBN of the book.
+     * @param language  The language of the book.
+     */
     public void editBook(Book book, String title, int year, String imagePath,
                          String author, String publisher, String genre, String ISBN, String language) {
         editResource(book, title, year, imagePath);
@@ -152,6 +207,16 @@ public class ResourceManager implements Serializable {
         book.setLanguage(language);
     }
 
+    /**
+     * @param dvd                     The dvd resource to be edited.
+     * @param title                   The title of the dvd.
+     * @param year                    The year the dvd came out.
+     * @param imagePath               The thumbnail image path of the dvd.
+     * @param director                The director of the dvd.
+     * @param runtime                 The runtime of the dvd.
+     * @param language                The language of the dvd.
+     * @param listOfSubtitleLanguages The list of subtitles of the dvd.
+     */
     public void editDVD(DVD dvd, String title, int year, String imagePath,
                         String director, int runtime, String language, ArrayList<String> listOfSubtitleLanguages) {
         editResource(dvd, title, year, imagePath);
@@ -161,6 +226,12 @@ public class ResourceManager implements Serializable {
         dvd.setListOfSubtitleLanguages(listOfSubtitleLanguages);
     }
 
+    /**
+     * Gets a resource by that resource's ID.
+     *
+     * @param resourceId The ID of the resource.
+     * @return The resource if found, null otherwise.
+     */
     public Resource getResourceById(String resourceId) {
         Resource resource = null;
         for (Resource resourceInList : resources) {
@@ -171,11 +242,22 @@ public class ResourceManager implements Serializable {
         return resource;
     }
 
+    /**
+     * Gets all the resources.
+     *
+     * @return All the resources.
+     */
     public ArrayList<Resource> getAllResources() {
         return resources;
 
     }
 
+    /**
+     * Returns the resources requested by a user.
+     *
+     * @param user The user requesting resources.
+     * @return The resources he is requesting.
+     */
     public ArrayList<Resource> getRequestedResourcesBy(User user) {
         ArrayList<Resource> requestedResource = new ArrayList<>();
         for (Resource resource : resources) {
@@ -186,18 +268,34 @@ public class ResourceManager implements Serializable {
         return requestedResource;
     }
 
+    /**
+     * Removes a copy from the resources.
+     *
+     * @param copy The copy to be removed.
+     */
     public void removeCopy(Copy copy) {
         for (Resource resource : resources) {
             resource.getCopyManager().removeCopy(copy);
         }
     }
 
+    /**
+     * Removes a copy by using its copy ID.
+     *
+     * @param copyId The copy's ID to be removed.
+     */
     public void removeCopy(String copyId) {
         for (Resource resource : resources) {
             resource.getCopyManager().removeCopyById(copyId);
         }
     }
 
+    /**
+     * Gets a copy by its ID.
+     *
+     * @param copyId The copy's to be returned ID.
+     * @return The copy.
+     */
     public Copy getCopyById(String copyId) {
         Copy returnCopy = null;
 
@@ -210,6 +308,13 @@ public class ResourceManager implements Serializable {
         return returnCopy;
     }
 
+    /**
+     * Loans a copy to a user using the resource he is requesting and the user we are loaning it to.
+     *
+     * @param resource The resource requested.
+     * @param toUser   The user that the copy is loaned to.
+     * @return The user that has loaned the copy if he isnt an admin, null otherwise.
+     */
     public Copy loanCopy(Resource resource, User toUser) {
         if (!toUser.hasAdminAccess()) {
             return resource.getCopyManager().loanCopy((NormalUser) toUser);
@@ -217,15 +322,31 @@ public class ResourceManager implements Serializable {
         return null;
     }
 
+    /**
+     * Reserves a copy for a user.
+     *
+     * @param resource The resource the copy should be.
+     * @param forUser  The user requesting it.
+     */
     public void reserveCopy(Resource resource, User forUser) {
         resource.getCopyManager().reserveCopy((NormalUser) forUser);
     }
 
+    /**
+     * Called when a copy is to be returned.
+     *
+     * @param copy The copy to be returned.
+     * @return The copy asked to be returned.
+     */
     public double returnCopy(Copy copy) {
         return copy.returnCopy();
     }
 
-
+    /**
+     * Gets all the copies
+     *
+     * @return All the copies.
+     */
     public ArrayList<Copy> getAllCopies() {
         ArrayList<Copy> listOfAllCopies = new ArrayList<>();
         for (Resource resource : resources) {
@@ -235,6 +356,12 @@ public class ResourceManager implements Serializable {
         return listOfAllCopies;
     }
 
+    /**
+     * Gets all the reserved copies for a particular user.
+     *
+     * @param user The user that has reserved sine copies.
+     * @return An ArrayList of the copies reserved for the user.
+     */
     public ArrayList<Copy> getReservedCopiesFor(User user) {
         ArrayList<Copy> reservedCopies = new ArrayList<>();
         for (Copy copy : this.getAllCopies()) {
@@ -246,17 +373,28 @@ public class ResourceManager implements Serializable {
         return reservedCopies;
     }
 
+    /**
+     * Gets all the overdue copies.
+     *
+     * @return An ArrayList of the overdue copies.
+     */
     public ArrayList<Copy> getOverdueCopies() {
         ArrayList<Copy> overdueCopies = new ArrayList<>();
 
         for (Copy copy : this.getAllCopies()) {
-            if(copy.isOverdue()){
+            if (copy.isOverdue()) {
                 overdueCopies.add(copy);
             }
         }
         return overdueCopies;
     }
 
+    /**
+     * Gets all the borrowed copies for a specific user.
+     *
+     * @param user The user that we are finding the copies for.
+     * @return An ArrayList with all the copies the user has borrowed.
+     */
     public ArrayList<Copy> getBorrowedCopiesBy(User user) {
         if (!user.hasAdminAccess()) {
             return ((NormalUser) user).getBorrowedCopies();
