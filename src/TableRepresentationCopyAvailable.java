@@ -1,5 +1,5 @@
 /**
- * Class that models the representation of a copy in a table.
+ * Class that models the representation of an available copy in a table.
  *
  * @author Ivaan Andreev.
  */
