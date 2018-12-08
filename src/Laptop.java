@@ -32,7 +32,7 @@ public class Laptop extends Resource {
     private final double maxFineAmount;
 
     /**
-     * Creates a new laptop resource.
+     * Creates a new laptop.
      *
      * @param title        The title of the laptop
      * @param year         The year the laptop was made
@@ -62,7 +62,7 @@ public class Laptop extends Resource {
     /**
      * Gets the laptop's manufacturer.
      *
-     * @return The laptop's manufacturer.
+     * @return manufacturer The laptop's manufacturer.
      */
     public String getManufacturer() {
         return this.manufacturer;
@@ -80,7 +80,7 @@ public class Laptop extends Resource {
     /**
      * Gets the laptop's model.
      *
-     * @return The laptop's model.
+     * @return model The laptop's model.
      */
     public String getModel() {
         return this.model;
@@ -98,7 +98,7 @@ public class Laptop extends Resource {
     /**
      * Gets the laptop's installed OS.
      *
-     * @return The OS installed on the laptop.
+     * @return installedOS The OS installed on the laptop.
      */
     public String getInstalledOS() {
         return this.installedOS;
@@ -107,7 +107,7 @@ public class Laptop extends Resource {
     /**
      * Gets the fine per day for a late return.
      *
-     * @return The fine per day for a late return.
+     * @return lateReturnFinePerDay The fine per day for a late return.
      */
     public double getLateReturnFinePerDay() {
         return this.lateReturnFinePerDay;
@@ -116,7 +116,7 @@ public class Laptop extends Resource {
     /**
      * Gets the maximum fine amount.
      *
-     * @return The maximum amount someone can be fined.
+     * @return maxFineAmount The maximum amount someone can be fined.
      */
     public double getMaxFineAmount() {
         return this.maxFineAmount;

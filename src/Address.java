@@ -63,7 +63,7 @@ public class Address implements Serializable {
     /**
      * Gets the first address line.
      *
-     * @return The first line of the address.
+     * @return addressLine1 The first line of the address.
      */
     public String getAddressLine1() {
         return addressLine1;
@@ -81,7 +81,7 @@ public class Address implements Serializable {
     /**
      * Gets the second address line.
      *
-     * @return The second line of the address.
+     * @return addressLine2 The second line of the address.
      */
     public String getAddressLine2() {
         return addressLine2;
@@ -99,7 +99,7 @@ public class Address implements Serializable {
     /**
      * Gets the city.
      *
-     * @return The city of the address.
+     * @return city The city of the address.
      */
     public String getCity() {
         return city;
@@ -135,7 +135,7 @@ public class Address implements Serializable {
     /**
      * Gets the postcode.
      *
-     * @return The address' postcode.
+     * @return postcode The address' postcode.
      */
     public String getPostcode() {
         return postcode;
@@ -152,7 +152,7 @@ public class Address implements Serializable {
 
     /**
      * Convert the address to a string.
-     * @return The address converted to a string.
+     * @return answer The address converted to a string.
      */
     @Override
     public String toString() {

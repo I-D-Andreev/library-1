@@ -22,7 +22,7 @@ public class Copy implements Serializable {
     private CopyManager copysManager;
 
     /**
-     * The user has borrowed this copy.
+     * The user who has borrowed this copy.
      */
     private User borrowedBy;
 
@@ -58,9 +58,8 @@ public class Copy implements Serializable {
 
     /**
      * The constructor of a Copy.
-     *
      * @param loanDurationInDays The duration in days the copy was loaned.
-     * @param copysManager       The copy manager of the copy.
+     * @param copysManager The copy manager of the copy.
      */
     public Copy(int loanDurationInDays, CopyManager copysManager) {
 
@@ -74,8 +73,7 @@ public class Copy implements Serializable {
 
     /**
      * Gets the unique ID of a copy.
-     *
-     * @return The unique copy ID ofa copy.
+     * @return uniqueCopyID The unique copy ID of a copy.
      */
     public String getUniqueCopyID() {
         return uniqueCopyID;
@@ -83,8 +81,7 @@ public class Copy implements Serializable {
 
     /**
      * Gets the user the copy is borrowed by.
-     *
-     * @return The user that borrowed this copy.
+     * @return borrowedBy The user that borrowed this copy.
      */
     public User getBorrowedBy() {
         return borrowedBy;
@@ -92,7 +89,6 @@ public class Copy implements Serializable {
 
     /**
      * Sets the user that has borrowed a copy.
-     *
      * @param borrowedBy The new user that borrowed a copy.
      */
     public void setBorrowedBy(User borrowedBy) {
@@ -110,7 +106,6 @@ public class Copy implements Serializable {
 
     /**
      * Sets the loan duration in days that a copy is loaned for.
-     *
      * @param loanDurationInDays The duration in days of the loan.
      */
     public void setLoanDurationInDays(int loanDurationInDays) {
@@ -120,8 +115,7 @@ public class Copy implements Serializable {
 
     /**
      * Gets the due date of the copy.
-     *
-     * @return The due date of the copy.
+     * @return dueDate The due date of the copy.
      */
     public Date getDueDate() {
         return dueDate;
@@ -132,7 +126,10 @@ public class Copy implements Serializable {
      */
     public void setDueDate() {
         // 3600 seconds in an hour, 24 hours a day, multiplied by 1000 to convert to milliseconds
-        final long oneDayInMilliseconds = 3600 * 24 * 1000;
+        //final long oneDayInMilliseconds = 3600 * 24 * 1000;
+
+        // one day changed to 15 seconds for testing and showcase purposes
+        final long oneDayInMilliseconds = 15 * 1000;
 
         // get the current date and add one day, to get the date tomorrow
         Date tomorrowDate = new Date();
@@ -150,8 +147,7 @@ public class Copy implements Serializable {
 
     /**
      * Gets the loan history of the copy.
-     *
-     * @return The loan history of the copy.
+     * @return loanHistory The loan history of the copy.
      */
     public History getLoanHistory() {
         return loanHistory;
@@ -159,8 +155,7 @@ public class Copy implements Serializable {
 
     /**
      * Gets the date the copy was borrowed on.
-     *
-     * @return The date the copy was borrowed on.
+     * @return borrowedOn The date the copy was borrowed on.
      */
     public Date getBorrowedOn() {
         return this.borrowedOn;
@@ -168,7 +163,6 @@ public class Copy implements Serializable {
 
     /**
      * Sets the date a copy was borrowed on.
-     *
      * @param borrowedOn The new date the copy was borrowed on.
      */
     public void setBorrowedOn(Date borrowedOn) {
@@ -177,8 +171,7 @@ public class Copy implements Serializable {
 
     /**
      * Gets the user a copy is reserved for.
-     *
-     * @return The user the copy is reserved for.
+     * @return reservedFor The user the copy is reserved for.
      */
     public User getReservedFor() {
         return this.reservedFor;
@@ -186,8 +179,7 @@ public class Copy implements Serializable {
 
     /**
      * Sets the user this copy is reserved for.
-     *
-     * @param user The new user a copy is reserved for.
+     * @param user The new user a copy is due for.
      */
     public void setReservedFor(User user) {
         this.reservedFor = user;
@@ -195,7 +187,6 @@ public class Copy implements Serializable {
 
     /**
      * Checks if the copy is available.
-     *
      * @return true if the copy is not borrowed or reserved,false otherwise.
      */
     public boolean isAvailable() {
@@ -204,15 +195,15 @@ public class Copy implements Serializable {
 
     /**
      * Checks when the copy should be returned.
-     *
-     * @return The date the object is due,null otherwise.
+     * @return Date the object is due,null otherwise..
      */
     public boolean shouldBeReturned() {
         return this.dueDate != null;
     }
 
     /**
-     * Resets the attributes of the copy relating to being borrowed and by who.
+     * Resets the attributes of the copy relating to being borrowed
+     * and by who.
      */
     private void nullifyValues() {
         this.borrowedBy = null;
@@ -222,9 +213,8 @@ public class Copy implements Serializable {
     }
 
     /**
-     * Gets what resource copy this copy is a copy of.
-     *
-     * @return The resource this copy is a copy of.
+     * Gets what resource copy this is.
+     * @return copyOf The resource this copy is a copy of.
      */
     public Resource getCopyOf() {
         return copyOf;
@@ -233,62 +223,71 @@ public class Copy implements Serializable {
     /**
      * What happens when a copy has just been returned.
      */
-    public void returnCopy() {
-        nullifyValues();
-        NormalUser byUser = (NormalUser) this.borrowedBy;
+    public double returnCopy(){
+        NormalUser byUser = (NormalUser)this.borrowedBy;
 
         this.loanHistory.addEntry(new HistoryEntryItemTransaction(new Date(), false, byUser));
         byUser.getBorrowedCopies().remove(this);
 
-        if (shouldBeFined()) {
-            giveFineToUser(byUser);
+        double fineAmount = 0;
+        if(shouldBeFined()){
+            fineAmount = giveFineToUser(byUser);
         }
 
         // Notify the copy's copy manager that a new copy is available.
         this.copysManager.newAvailableCopyEvent();
+
+        nullifyValues();
+
+        return fineAmount;
     }
 
     /**
      * Checks if the user should be fined.
-     *
      * @return true if the due date is not past,false otherwise.
      */
-    private boolean shouldBeFined() {
+    private boolean shouldBeFined(){
         Date today = new Date();
         // If the item is overdue, the user should be fined.
-        return (today.compareTo(this.dueDate) == 1);
+        return  ((this.dueDate != null) && (today.compareTo(this.dueDate) == 1));
     }
 
     /**
      * Sets a fine to a user.
-     *
      * @param user The user to be fined.
+     * @return fineAmount How much a user was fined.
      */
-    private void giveFineToUser(NormalUser user) {
+    private double giveFineToUser(NormalUser user) {
         Date today = new Date();
         // 3600 seconds in an hour, 24 hours a day, multiplied by 1000 to convert to milliseconds
-        final long oneDayInMilliseconds = 3600 * 24 * 1000;
+        //final long oneDayInMilliseconds = 3600 * 24 * 1000;
 
-        long numberOfDaysOverdue = (today.getTime() - this.dueDate.getTime()) / oneDayInMilliseconds;
+        // one day changed to 15 seconds for testing and showcase purposes
+        final long oneDayInMilliseconds = 15 * 1000;
+
+        long numberOfDaysOverdue = (today.getTime() - this.dueDate.getTime()) / oneDayInMilliseconds ;
 
         double fineAmount = Math.min(this.copyOf.getMaxFineAmount(),
                 this.copyOf.getLateReturnFinePerDay() * numberOfDaysOverdue);
 
         user.giveFine(fineAmount);
         user.getTransactionHistory().addEntry(new HistoryEntryFine(today, fineAmount,
-                (int) numberOfDaysOverdue, this));
+                (int)numberOfDaysOverdue, this));
+
+        return fineAmount;
     }
 
     /**
      * When the copy is loaned sets the date is was borrowed and by who.
-     *
      * @param toUser The user that has borrowed the copy.
+     * @return this The loaned copy.
      */
-    public void loanCopyTo(NormalUser toUser) {
+    public Copy loanCopyTo(NormalUser toUser){
         this.borrowedOn = new Date();
         this.borrowedBy = toUser;
         this.loanHistory.addEntry(new HistoryEntryItemTransaction(borrowedOn, true, toUser));
         toUser.getBorrowedCopies().add(this);
+        return this;
     }
 
     /**
@@ -301,7 +300,6 @@ public class Copy implements Serializable {
 
     /**
      * Get the Copy's next id.
-     *
      * @return The copy's next id.
      */
     public static int getNextId() {
@@ -310,7 +308,6 @@ public class Copy implements Serializable {
 
     /**
      * Set the copy's next id.
-     *
      * @param nextId The copy's next id.
      */
     public static void setNextId(int nextId) {
@@ -319,9 +316,9 @@ public class Copy implements Serializable {
 
     /**
      * Checks if the copy is equal to the object passed.
-     *
      * @param obj The object we are checking for.
-     * @return true if the object passed is equal to the copies,false otherwise.
+     * @return true if the object passed is equal to the copies,
+     *          false otherwise.
      */
     public boolean equals(Object obj) {
         if (obj == null) return false;

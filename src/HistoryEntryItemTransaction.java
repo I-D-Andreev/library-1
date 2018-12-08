@@ -19,9 +19,8 @@ public class HistoryEntryItemTransaction extends HistoryEntry {
 
     /**
      * Creates an item transaction type of history entry.
-     *
-     * @param date           The date of the item transaction.
-     * @param isBorrowed     True if the item was borrowed, false if it was returned.
+     * @param date The date of the item transaction.
+     * @param isBorrowed True if the item was borrowed, false if it was returned.
      * @param borrowedByUser The user who borrowed the item.
      */
     public HistoryEntryItemTransaction(Date date, boolean isBorrowed, User borrowedByUser) {

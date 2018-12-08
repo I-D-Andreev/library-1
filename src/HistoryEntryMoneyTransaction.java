@@ -2,7 +2,6 @@ import java.util.Date;
 
 /**
  * Models a money transaction type of history entry.
- *
  * @author Ivan Andreev
  */
 public class HistoryEntryMoneyTransaction extends HistoryEntry {
@@ -25,7 +24,7 @@ public class HistoryEntryMoneyTransaction extends HistoryEntry {
     /**
      * Get the amount of the transaction.
      *
-     * @return The amount of the transaction.
+     * @return amount The amount of the transaction.
      */
     public double getAmount() {
         return amount;

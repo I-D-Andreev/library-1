@@ -1,11 +1,5 @@
-/**
- * Superclass of all controllers.
- */
+// Superclass of all controllers
 public class Controller {
-
-    /**
-     * The library that all our resources are stored in.
-     */
     private Library library;
 
     /**

@@ -38,12 +38,11 @@ public class DVD extends Resource {
 
     /**
      * The constructor for a dvd.
-     *
-     * @param title     The title of a dvd.
-     * @param year      The year the dvd was produced.
+     * @param title The title of a dvd.
+     * @param year The year the dvd was produced.
      * @param thumbnail The thumbnail of the dvd.
-     * @param director  The director of the dvd.
-     * @param runtime   The runtime of the dvd.
+     * @param director The director of the dvd.
+     * @param runtime The runtime of the dvd.
      */
     public DVD(String title, int year, String thumbnail, String director, int runtime) {
         super(title, year, thumbnail);
@@ -58,13 +57,12 @@ public class DVD extends Resource {
     /**
      * The constructor of a dvd including the language and list of subtitle,
      * languages of the dvd.
-     *
-     * @param title                   The title of a dvd.
-     * @param year                    The year the dvd was produced.
-     * @param thumbnail               The thumbnail of the dvd.
-     * @param director                The director of the dvd.
-     * @param runtime                 The runtime of the dvd.
-     * @param language                The language of the dvd.
+     * @param title The title of a dvd.
+     * @param year The year the dvd was produced.
+     * @param thumbnail The thumbnail of the dvd.
+     * @param director The director of the dvd.
+     * @param runtime The runtime of the dvd.
+     * @param language The language of the dvd.
      * @param listOfSubtitleLanguages The list of all subtitle languages of the dvd.
      */
     public DVD(String title, int year, String thumbnail, String director, int runtime,
@@ -77,7 +75,6 @@ public class DVD extends Resource {
 
     /**
      * Sets the director of the dvd.
-     *
      * @param director The new director of the dvd.
      */
     public void setDirector(String director) {
@@ -86,8 +83,7 @@ public class DVD extends Resource {
 
     /**
      * Gets the director of the dvd.
-     *
-     * @return The director of the dvd.
+     * @return director The director of the dvd.
      */
     public String getDirector() {
         return this.director;
@@ -104,8 +100,7 @@ public class DVD extends Resource {
 
     /**
      * Gets the runtime of the dvd.
-     *
-     * @return The runtime of the dvd.
+     * @return runtime The runtime of the dvd.
      */
     public int getRuntime() {
         return this.runtime;
@@ -113,7 +108,6 @@ public class DVD extends Resource {
 
     /**
      * Sets the language of the dvd.
-     *
      * @param language The new language of the dvd.
      */
     public void setLanguage(String language) {
@@ -122,8 +116,7 @@ public class DVD extends Resource {
 
     /**
      * Gets the language of the dvd.
-     *
-     * @return The language of the dvd.
+     * @return language The language of the dvd.
      */
     public String getLanguage() {
         return this.language;
@@ -131,7 +124,6 @@ public class DVD extends Resource {
 
     /**
      * Sets the subtitle language ArrayList.
-     *
      * @param listOfSubtitleLanguages The new subtitle language ArrayList.
      */
     public void setListOfSubtitleLanguages(ArrayList<String> listOfSubtitleLanguages) {
@@ -140,8 +132,7 @@ public class DVD extends Resource {
 
     /**
      * Gets the subtitle language ArrayList.
-     *
-     * @return The subtitle language ArrayList.
+     * @return listOfSubtitleLanguages The subtitle language ArrayList.
      */
     public ArrayList<String> getListOfSubtitleLanguages() {
         return this.listOfSubtitleLanguages;
@@ -149,7 +140,6 @@ public class DVD extends Resource {
 
     /**
      * Adds subtitle languages in the ArrayList of subtitle languages.
-     *
      * @param language The language to be added.
      */
     public void addSubtitleLanguage(String language) {
@@ -161,7 +151,6 @@ public class DVD extends Resource {
 
     /**
      * Removes a subtitle language from the ArrayList of all subtitle languages.
-     *
      * @param language The language to be removed.
      */
     public void removeSubtitleLanguage(String language) {
@@ -170,8 +159,7 @@ public class DVD extends Resource {
 
     /**
      * Gets the late return fine per day of the dvd.
-     *
-     * @return The late return fine per day.
+     * @return lateReturnFinePerDay The late return fine per day.
      */
     public double getLateReturnFinePerDay() {
         return this.lateReturnFinePerDay;
@@ -179,8 +167,7 @@ public class DVD extends Resource {
 
     /**
      * Gets the maximum fine amount for a dvd.
-     *
-     * @return The maximum fine amount for a dvd.
+     * @return maxFineAmount The maximum fine amount for a dvd.
      */
     public double getMaxFineAmount() {
         return this.maxFineAmount;
@@ -188,8 +175,7 @@ public class DVD extends Resource {
 
     /**
      * Gets the string of what kind of object this object is.
-     *
-     * @return A string "DVD" that is the object this object is.
+     * @return String "DVD" the object this object is.
      */
     public String getType() {
         return "DVD";

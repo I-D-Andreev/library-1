@@ -1,6 +1,5 @@
 /**
  * Class to model book.
- *
  * @Author Kleanthis Liontis, Ivan Andreev.
  */
 public class Book extends Resource {
@@ -42,11 +41,10 @@ public class Book extends Resource {
 
     /**
      * The constructor for a book.
-     *
-     * @param title     The title of the book.
-     * @param year      The year the book was published.
+     * @param title The title of the book.
+     * @param year The year the book was published.
      * @param thumbnail The thumbnail of the book.
-     * @param author    The author of the book.
+     * @param author The author of the book.
      * @param publisher The publisher of the book.
      */
     public Book(String title, int year, String thumbnail, String author, String publisher) {
@@ -60,15 +58,14 @@ public class Book extends Resource {
 
     /**
      * Constructor for book but with all details included.
-     *
-     * @param title     The title of the book.
-     * @param year      The year the book was published.
+     * @param title The title of the book.
+     * @param year The year the book was published.
      * @param thumbnail The thumbnail of the book.
-     * @param author    The author of the book.
+     * @param author The author of the book.
      * @param publisher The publisher of the book.
-     * @param genre     the genre of the book.
-     * @param ISBN      The International Standard Book Number of the book.
-     * @param language  The language the book is written in.
+     * @param genre the genre of the book.
+     * @param ISBN The International Standard Book Number of the book.
+     * @param language The language the book is written in.
      */
     public Book(String title, int year, String thumbnail, String author, String publisher,
                 String genre, String ISBN, String language) {
@@ -81,7 +78,6 @@ public class Book extends Resource {
 
     /**
      * Sets the author of the book.
-     *
      * @param author The new author of the book.
      */
     public void setAuthor(String author) {
@@ -90,8 +86,7 @@ public class Book extends Resource {
 
     /**
      * Gets the author of the book.
-     *
-     * @return The author of the book.
+     * @return author The author of the book.
      */
     public String getAuthor() {
         return this.author;
@@ -99,7 +94,6 @@ public class Book extends Resource {
 
     /**
      * Sets the publisher of the book.
-     *
      * @param publisher The new publisher of the book.
      */
     public void setPublisher(String publisher) {
@@ -108,8 +102,7 @@ public class Book extends Resource {
 
     /**
      * Gets the publisher of the book.
-     *
-     * @return The new publisher of the book.
+     * @return publisher The publisher of the book.
      */
     public String getPublisher() {
         return this.publisher;
@@ -117,7 +110,6 @@ public class Book extends Resource {
 
     /**
      * Sets the genre of the book.
-     *
      * @param genre The new genre of the book.
      */
     public void setGenre(String genre) {
@@ -125,9 +117,8 @@ public class Book extends Resource {
     }
 
     /**
-     * Gets the genre of the book.
-     *
-     * @return The genre of the book.
+     *Gets the genre of the book.
+     * @return genre The genre of the book.
      */
     public String getGenre() {
         return this.genre;
@@ -135,7 +126,6 @@ public class Book extends Resource {
 
     /**
      * Sets the ISBN of the book.
-     *
      * @param ISBN The new ISBN of the book.
      */
     public void setISBN(String ISBN) {
@@ -144,8 +134,7 @@ public class Book extends Resource {
 
     /**
      * Gets the ISBN of the book.
-     *
-     * @return The ISBN of the book.
+     * @return ISBN The ISBN of the book.
      */
     public String getISBN() {
         return this.ISBN;
@@ -153,7 +142,6 @@ public class Book extends Resource {
 
     /**
      * Sets the language of the book.
-     *
      * @param language The new language of the book.
      */
     public void setLanguage(String language) {
@@ -162,8 +150,7 @@ public class Book extends Resource {
 
     /**
      * Gets the language of the book.
-     *
-     * @return The language of the book.
+     * @return language The language of the book.
      */
     public String getLanguage() {
         return this.language;
@@ -171,8 +158,7 @@ public class Book extends Resource {
 
     /**
      * Gets the late return fine per day of the book.
-     *
-     * @return The late return fine of the book.
+     * @return lateReturnFinePerDay The late return fine of the book.
      */
     public double getLateReturnFinePerDay() {
         return this.lateReturnFinePerDay;
@@ -180,8 +166,7 @@ public class Book extends Resource {
 
     /**
      * Gets the maximum fine amount of the book.
-     *
-     * @return The maximum fine amount of the book.
+     * @return maxFineAmount The maximum fine amount of the book.
      */
     public double getMaxFineAmount() {
         return this.maxFineAmount;
@@ -189,7 +174,6 @@ public class Book extends Resource {
 
     /**
      * Gets the a String with the type of the this object.
-     *
      * @return A string with the type of the object.
      */
     public String getType() {
