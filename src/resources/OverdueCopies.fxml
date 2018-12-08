@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="OverdueCopiesController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OverdueCopiesController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -34,14 +34,17 @@
             </Label>
          </children>
       </HBox>
-      <TableView fx:id="overdueCopiesTable" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-        <columns>
-          <TableColumn fx:id="overdueCopiesColumn" prefWidth="293.0" text="Overdue Copies" />
-            <TableColumn fx:id="daysOverdueColumn" prefWidth="266.0" text="Number of Days Overdue" />
-        </columns>
+      <TableView fx:id="overdueCopiesTable" prefHeight="223.0" prefWidth="534.0" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets left="20.0" right="20.0" />
          </GridPane.margin>
+         <columns>
+            <TableColumn fx:id="copyIDColumn" prefWidth="56.800048828125" text="Copy ID" />
+            <TableColumn fx:id="borrowedByColumn" prefWidth="93.5999755859375" text="Borrowed By" />
+            <TableColumn fx:id="borrowedOnColumn" prefWidth="137.5999755859375" text="Borrowed On" />
+            <TableColumn fx:id="dueDateColumn" prefWidth="161.60003662109375" text="Due date" />
+            <TableColumn fx:id="daysOverdueColumn" prefWidth="121.60003662109375" text="Days Overdue" />
+         </columns>
       </TableView>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
          <children>
