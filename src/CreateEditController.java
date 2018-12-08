@@ -1170,10 +1170,10 @@ public class CreateEditController extends Controller {
     }
 
     /**
-     * Check if a certain string contains numbers only.
+     * Check if a certain string contains digits only.
      *
      * @param s The string.
-     * @return True if the string contains only numbers, false otherwise.
+     * @return True if the string contains only digits, false otherwise.
      */
     private boolean isStringNumber(String s) {
         // regular expression
