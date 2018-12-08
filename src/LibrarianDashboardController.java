@@ -62,6 +62,9 @@ public class LibrarianDashboardController extends Controller {
     @FXML // fx:id="viewAllUsersButton"
     private Button viewAllUsersButton; // Value injected by FXMLLoader
 
+    @FXML
+    private Label employmentDateLabel;
+
     /**
      * Loads the librarian information on startup.
      */
