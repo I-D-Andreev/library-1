@@ -273,4 +273,14 @@ public class CopyManager implements Serializable {
             this.removeFirstUserInQueue();
         }
     }
+
+    /**
+     * Gives the user's position in the request queue.
+     * @param user The user.
+     * @return The position in the queue.
+     */
+    public int positionInQueue(User user){
+        // add +1 because positions start from 1, and not 0
+        return this.requestQueue.indexOf(user) + 1;
+    }
 }
