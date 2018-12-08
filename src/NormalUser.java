@@ -55,13 +55,11 @@ public class NormalUser extends User {
      *
      * @param amount The amount the user is paying off.
      */
-    public boolean payFines(double amount) {
-        if(amount < 0 || amount > this.balance){
-            return false;
-        }
+    public void payFines(double amount) {
 
         this.balance -= amount;
-        return true;
+
+        transactionHistory.addEntry(new HistoryEntryMoneyTransaction(new Date(), amount));
     }
 
     /**

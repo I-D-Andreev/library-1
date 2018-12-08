@@ -198,15 +198,16 @@ public class CopyManager implements Serializable {
      * @return Return copy to loan to user if one is available or null if there are no available copies to loan.
      */
     public Copy loanCopy(NormalUser toUser) {
-        if (this.getNumOfAvailableCopies() == 0) {
-            return null;
-        }
         // We look if there is a reserved copy for the User.
         for (Copy copy : listOfAllCopies) {
             if (copy.getReservedFor() != null && copy.getReservedFor().equals(toUser)) {
                 copy.loanCopyTo(toUser);
                 return copy;
             }
+        }
+
+        if (this.getNumOfAvailableCopies() == 0) {
+            return null;
         }
 
         // We loan the first available copy.
