@@ -148,7 +148,7 @@ public class LibrarianDashboardController extends Controller {
     @FXML
     public void overdueResourcesButtonClicked(ActionEvent event) {
 
-        new NewWindow("resources/OverdueCopies.fxml", event, "Overdue Copies - TaweLib");
+        new NewWindow("resources/OverdueCopies.fxml", event, "Overdue Copies - TaweLib", getLibrary());
     }
 
     @FXML

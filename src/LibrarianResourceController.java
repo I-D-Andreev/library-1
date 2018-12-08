@@ -35,7 +35,7 @@ public class LibrarianResourceController extends Controller {
     @FXML
     void okButtonClicked(ActionEvent event) {
 
-        new NewWindow("resources/BrowseResources.fxml", event, "thing");
+        new NewWindow("resources/BrowseResources.fxml", event, "Librarian Copy View", getLibrary());
     }
 
 }

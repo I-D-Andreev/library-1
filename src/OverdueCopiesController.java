@@ -10,7 +10,7 @@ import javafx.scene.control.TableView;
  *
  * @author Sian Pike
  */
-public class OverdueCopiesController {
+public class OverdueCopiesController extends Controller{
 
     @FXML // fx:id="overdueCopiesTable"
     private TableView<?> overdueCopiesTable; // Value injected by FXMLLoader
@@ -27,7 +27,7 @@ public class OverdueCopiesController {
     @FXML
     void okButtonClicked(ActionEvent event) {
 
-        new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib");
+        new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
 
 }

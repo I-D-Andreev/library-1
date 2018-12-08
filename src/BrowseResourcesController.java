@@ -1,6 +1,7 @@
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -78,38 +79,15 @@ public class BrowseResourcesController extends Controller {
         displayTable.setOnMouseClicked(event -> {
 
             if(event.getClickCount() == 2) {
+                if(getLibrary().getCurrentUserLoggedIn().hasAdminAccess()){
+                    new NewWindow("resources/LibrarianResource.fxml", event,
+                            "Librarian Copy View - Tawe Lib", getLibrary());
 
-                Parent root;
 
-                //Attempt to load the fxml file and set the scene.
-                try {
-
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("resources/UserResource.fxml"));
-                    root = fxmlLoader.load();
-                    setLibrary(getLibrary());
-                    //fxmlLoader.<Controller>getController().setLibrary(getLibrary());
-
-                    Stage stage = new Stage();
-
-                    stage.setTitle("Resource Information");
-                    stage.setScene(new Scene(root));
-                    stage.show();
-                    ((Node) (event.getSource())).getScene().getWindow().hide();
-
-                    // save data on stage close
-                    stage.setOnCloseRequest(eventHandler -> {
-                        getLibrary().save();
-                    });
-
-                } catch (IOException e) {
-
-                    e.printStackTrace();
-                    System.exit(0);
-
-                } catch (Exception e) {
-
-                    e.printStackTrace();
-                    System.exit(1);
+                } else {
+                    UserResourceController.setClickedResource(displayTable.getSelectionModel().getSelectedItem());
+                    new NewWindow("resources/UserResource.fxml", event,
+                            "Librarian Copy View - Tawe Lib", getLibrary());
                 }
             }});
     }
@@ -159,7 +137,7 @@ public class BrowseResourcesController extends Controller {
                 }
             }
         }
-       data.removeAll(shouldNotBeDisplayed);
+        data.removeAll(shouldNotBeDisplayed);
 
         displayTable.getItems().addAll(data);
     }

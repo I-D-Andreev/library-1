@@ -1,4 +1,5 @@
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -20,36 +21,9 @@ public class NewWindow extends Controller {
      * @param fxmlResource The location of the fxml document for the new window.
      * @param event The current event being executed.
      * @param title The title of the window.
+     * @param library The library.
      */
-    public NewWindow(String fxmlResource, ActionEvent event, String title) {
-
-        Parent root;
-
-        //Attempt to load the fxml file and set the scene.
-        try {
-
-            root = FXMLLoader.load(getClass().getClassLoader().getResource(fxmlResource));
-            Stage stage = new Stage();
-
-            stage.setTitle(title);
-            stage.setScene(new Scene(root));
-            stage.show();
-            ((Node) (event.getSource())).getScene().getWindow().hide();
-
-        } catch (IOException e) {
-
-            System.exit(0);
-
-        } catch (Exception e) {
-
-            System.exit(1);
-        }
-    }
-
-
-    //for now override
-    // might change later
-    public NewWindow(String fxmlResource, ActionEvent event, String title, Library library) {
+    public NewWindow(String fxmlResource, Event event, String title, Library library) {
 
         Parent root;
 
