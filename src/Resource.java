@@ -176,10 +176,10 @@ public abstract class Resource implements Serializable {
     }
 
     /**
-     * Checks what the resource equals to.
+     * Checks that the resource is equal to an object of type resource.
      *
      * @param obj The resource to be checked.
-     * @return The objects unique ID if true,false otherwise.
+     * @return The resource's unique ID if true,false otherwise.
      */
     public boolean equals(Object obj) {
         if (obj == null) return false;

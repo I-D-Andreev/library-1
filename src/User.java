@@ -45,7 +45,7 @@ public abstract class User implements Serializable {
     /**
      * Gets the user's id.
      *
-     * @return id The user's id.
+     * @return The user's id.
      */
     public String getId() {
         return id;
@@ -54,7 +54,7 @@ public abstract class User implements Serializable {
     /**
      * Gets the user's first name.
      *
-     * @return firstName User's first name.
+     * @return The user's first name.
      */
     public String getFirstName() {
         return firstName;
@@ -72,7 +72,7 @@ public abstract class User implements Serializable {
     /**
      * Gets user's last name.
      *
-     * @return lastName User's last name.
+     * @return the user's last name.
      */
     public String getLastName() {
         return lastName;
@@ -90,7 +90,7 @@ public abstract class User implements Serializable {
     /**
      * Gets the user's account username.
      *
-     * @return username The user's account username.
+     * @return The user's account username.
      */
     public String getUsername() {
         return username;
@@ -100,7 +100,7 @@ public abstract class User implements Serializable {
     /**
      * Gets the user's phone number.
      *
-     * @return phoneNumber The user's phone number.
+     * @return The user's phone number.
      */
     public String getPhoneNumber() {
         return phoneNumber;
@@ -119,7 +119,7 @@ public abstract class User implements Serializable {
     /**
      * Gets the user's address.
      *
-     * @return address The user's address.
+     * @return The user's address.
      */
     public Address getAddress() {
         return address;
@@ -137,7 +137,7 @@ public abstract class User implements Serializable {
     /**
      * Gets the path to the user's profile image.
      *
-     * @return profileImage The path to the user's profile image.
+     * @return The path to the user's profile image.
      */
     //Instead of string will be profile image type when class is created
     public String getProfileImagePath() {
@@ -174,23 +174,29 @@ public abstract class User implements Serializable {
     }
 
     /**
-     * Get the next id variable.
+     * Get the next ID variable.
      *
-     * @return
+     * @return The next ID variable.
      */
     public static int getNextID() {
         return nextID;
     }
 
     /**
-     * Sets the next id variable.
+     * Sets the next ID variable.
      *
-     * @param nextID The new next id variable.
+     * @param nextID The new next ID variable.
      */
     public static void setNextID(int nextID) {
         User.nextID = nextID;
     }
 
+    /**
+     * Checks that the user is an object of type user and gets its ID.
+     *
+     * @param obj The user to be checked.
+     * @return The user's unique ID if true,false otherwise.
+     */
     public boolean equals(Object obj) {
         if (obj == null) return false;
         if (obj == this) return true;

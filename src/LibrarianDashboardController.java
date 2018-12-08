@@ -62,6 +62,9 @@ public class LibrarianDashboardController extends Controller {
     @FXML
     private Button usersBorrowing;
 
+    @FXML
+    private Label employmentDateLabel;
+
     /**
      * Loads the librarian information on startup.
      */
@@ -176,6 +179,8 @@ public class LibrarianDashboardController extends Controller {
         new NewWindow("resources/ViewAllUsersCurrentlyBorrowing.fxml", event,
                 "View All Users Currently Borrowing", getLibrary());
 
+        new NewWindow("resources/UsersBorrowing.fxml", event, "Users Currently Borrowing - TaweLib",
+                getLibrary());
     }
 
 }

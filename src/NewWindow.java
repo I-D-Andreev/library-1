@@ -14,7 +14,7 @@ import java.io.IOException;
  * @author Sian Pike
  */
 
-public class NewWindow extends Controller {
+public class NewWindow {
 
     /**
      * Creates a new window when called.
@@ -25,6 +25,8 @@ public class NewWindow extends Controller {
      * @param library      The library.
      */
     public NewWindow(String fxmlResource, Event event, String title, Library library) {
+        final int windowHeight = 600;
+        final int windowWidth = 700;
 
         Parent root;
 
@@ -40,6 +42,11 @@ public class NewWindow extends Controller {
 
             stage.setTitle(title);
             stage.setScene(new Scene(root));
+            stage.setMinHeight(windowHeight);
+            stage.setMaxHeight(windowHeight);
+            stage.setMinWidth(windowWidth);
+            stage.setMaxWidth(windowWidth);
+
             stage.show();
             ((Node) (event.getSource())).getScene().getWindow().hide();
 

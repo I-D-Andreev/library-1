@@ -18,7 +18,9 @@ public class UserManager implements Serializable {
         User.setNextID(new SaveStaticVariables().getUserNextID());
     }
 
-
+    /**
+     * Saves the user manager data.
+     */
     public void save() {
         File file = fileToReadWrite();
 
@@ -93,12 +95,27 @@ public class UserManager implements Serializable {
         return file;
     }
 
+    /**
+     * Adds a user into the user manager.
+     *
+     * @param user The user to be added.
+     */
     public void addUser(User user) {
         this.users.add(user);
     }
 
+    /**
+     * Edit a user from the user manager.
+     *
+     * @param user        The user to be edited
+     * @param firstName   The new first name of the user.
+     * @param lastName    The new last name of the user.
+     * @param phoneNumber The new phone number of the user.
+     * @param imagePath   The new thumbnail image path of the user.
+     * @param address     The new address of the user.
+     */
     public void editUser(User user, String firstName, String lastName, String phoneNumber,
-                              String imagePath, Address address ) {
+                         String imagePath, Address address) {
 
         user.setFirstName(firstName);
         user.setLastName(lastName);
@@ -107,14 +124,30 @@ public class UserManager implements Serializable {
         user.setAddress(address);
     }
 
+    /**
+     * Removes a user from the user manager.
+     *
+     * @param user The user to be removed.
+     */
     public void removeUser(User user) {
         this.users.remove(user);
     }
 
+    /**
+     * Removes a user from the user manager, using his unique ID.
+     *
+     * @param userId The unique ID of the user to be removed.
+     */
     public void removeUser(String userId) {
         this.users.remove(this.getUserById(userId));
     }
 
+    /**
+     * Gets a user by his unique ID.
+     *
+     * @param userId The ID of the user to be returned.
+     * @return The user if found, null otherwise.
+     */
     public User getUserById(String userId) {
         User returnUser = null;
         for (User user : users) {
@@ -125,6 +158,12 @@ public class UserManager implements Serializable {
         return returnUser;
     }
 
+    /**
+     * Gets a user by the username they use.
+     *
+     * @param username The username of the user to be found.
+     * @return The user if he is found, null otherwise.
+     */
     public User getUserByUsername(String username) {
         User returnUser = null;
         for (User user : users) {
@@ -136,10 +175,21 @@ public class UserManager implements Serializable {
         return returnUser;
     }
 
+    /**
+     * An ArrayList that includes all the users.
+     *
+     * @return An ArrayList with all the users.
+     */
     public ArrayList<User> getAllUsers() {
         return this.users;
     }
 
+    /**
+     * Allows a user to pay a fine.
+     *
+     * @param amount The amount to pay.
+     * @param user   The user paying.
+     */
     public void payFine(double amount, User user) {
         if (!user.hasAdminAccess()) {
             ((NormalUser) user).payFines(amount);

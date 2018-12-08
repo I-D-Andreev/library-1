@@ -30,6 +30,10 @@ public class Main extends Application {
      * @param primaryStage The current window.
      */
     public void start(Stage primaryStage) {
+        // window size constraints
+        final int windowHeight = 600;
+        final int windowWidth = 700;
+
         // load the library info
         Library library = new Library();
         Parent root = null;
@@ -50,6 +54,10 @@ public class Main extends Application {
             System.exit(0);
         }
 
+        primaryStage.setMinHeight(windowHeight);
+        primaryStage.setMaxHeight(windowHeight);
+        primaryStage.setMinWidth(windowWidth);
+        primaryStage.setMaxWidth(windowWidth);
 
         primaryStage.setScene(new Scene(root));
         primaryStage.setTitle("TaweLib - Login");

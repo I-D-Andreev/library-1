@@ -74,8 +74,14 @@ public class UserDashboardController extends Controller {
     @FXML
     private Label balanceLabel;
 
+    @FXML
+    private Label accountCreationLabel;
 
-
+    /**
+     * Takes the user to the borrowed resources tab after the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void borrowedResourcesButtonClicked(ActionEvent event) {
 
@@ -83,12 +89,22 @@ public class UserDashboardController extends Controller {
                 getLibrary());
     }
 
+    /**
+     * Takes the user to the edit account tab when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void editProfileButtonClicked(ActionEvent event) {
         new NewWindow("resources/EditAccount.fxml", event,
                 "Edit Account - TaweLib", getLibrary());
     }
 
+    /**
+     * todo comment this
+     *
+     * @param event
+     */
     @FXML
     public void mostPopularResourceButtonClicked(ActionEvent event) {
         if(getLibrary().getResourceManager().getAllResources().size() == 0){
@@ -106,9 +122,11 @@ public class UserDashboardController extends Controller {
         }
     }
 
-
+    /**
+     * Loads information into the user dashboard.
+     */
     @Override
-    public void onStart(){
+    public void onStart() {
         this.loadUserInformation();
     }
 
@@ -133,6 +151,11 @@ public class UserDashboardController extends Controller {
                 "Login - TaweLib", getLibrary());
     }
 
+    /**
+     * Takes the user to the overdue resources tab when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void overdueResourcesButtonClicked(ActionEvent event) {
 
@@ -140,6 +163,11 @@ public class UserDashboardController extends Controller {
                 getLibrary());
     }
 
+    /**
+     * Takes the user to the resources requested tab after the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void requestedResourcesButtonClicked(ActionEvent event) {
 
@@ -147,6 +175,11 @@ public class UserDashboardController extends Controller {
                 getLibrary());
     }
 
+    /**
+     * Takes the user to the reserved resources tab after the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void reservedResourcesButtonClicked(ActionEvent event) {
 
@@ -154,6 +187,11 @@ public class UserDashboardController extends Controller {
                 getLibrary());
     }
 
+    /**
+     * Takes the user to the transaction history tab after the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void transHistoryButtonClicked(ActionEvent event) {
 
@@ -162,13 +200,13 @@ public class UserDashboardController extends Controller {
     }
 
 
-    private void loadUserInformation(){
+    private void loadUserInformation() {
 
         try {
             Image image = new Image(getLibrary().getCurrentUserLoggedIn().getProfileImagePath());
             userImage.setImage(image);
         } catch (IllegalArgumentException e) {
-            userImage.setImage(null);
+            userImage.setImage(new Image("resources/noImage.png"));
         } catch (NullPointerException e) {
             userImage.setImage(null);
         }

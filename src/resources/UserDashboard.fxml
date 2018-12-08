@@ -125,6 +125,16 @@
                   <Insets top="-2.0" />
                </VBox.margin>
             </HBox>
+            <HBox prefHeight="34.0" prefWidth="322.0">
+               <children>
+                  <Label text="Account Creation Date:" />
+                  <Label fx:id="accountCreationLabel" text="Refresh to load">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets top="7.0" />
@@ -135,7 +145,7 @@
                         <Insets left="12.0" right="20.0" top="20.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="mostPopularResourceButton" mnemonicParsing="false" onAction="#mostPopularResourceButtonClicked" prefHeight="46.0" prefWidth="150.0" text="Most popular resource">
+                  <Button fx:id="mostPopularResourceButton" mnemonicParsing="false" onAction="#mostPopularResourceButtonClicked" prefHeight="46.0" prefWidth="150.0" text="Most popular resource" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
                         <Insets left="20.0" right="20.0" top="20.0" />
                      </HBox.margin>

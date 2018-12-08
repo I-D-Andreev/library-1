@@ -27,6 +27,11 @@ public class TransactionHistoryController extends Controller {
     @FXML
     private TableColumn<TableRepresentationMoneyTransaction, String> typeColumn;
 
+    /**
+     * Returns the user back to the dashboard when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     private TableColumn<TableRepresentationMoneyTransaction, String> dateColumn;
 
