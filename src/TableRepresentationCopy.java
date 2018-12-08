@@ -2,15 +2,17 @@ public class TableRepresentationCopy {
     private String uniqueCopyID;
     private String isAvailable;
     private String borrowedBy;
+    private String reservedFor;
 
     public TableRepresentationCopy(String uniqueCopyID, String isAvailable){
         this.uniqueCopyID = uniqueCopyID;
         this.isAvailable = isAvailable;
     }
 
-    public TableRepresentationCopy(String uniqueCopyID, String isAvailable, String borrowedBy){
+    public TableRepresentationCopy(String uniqueCopyID, String isAvailable, String borrowedBy, String reservedFor){
         this(uniqueCopyID, isAvailable);
         this.borrowedBy = borrowedBy;
+        this.reservedFor = reservedFor;
     }
 
     public String getUniqueCopyID() {
@@ -23,5 +25,9 @@ public class TableRepresentationCopy {
 
     public String getBorrowedBy() {
         return borrowedBy;
+    }
+
+    public String getReservedFor() {
+        return reservedFor;
     }
 }
