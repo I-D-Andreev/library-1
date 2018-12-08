@@ -44,13 +44,7 @@ public class ProfileImageController extends Controller {
 
     @FXML // fx:id="cancelButton"
     private Button cancelButton; // Value injected by FXMLLoader
-
-    /**
-     * When the button is clicked takes the user either back to the user tab if he is an admin, or the dashboard
-     * if he is not.
-     *
-     * @param event The button is clicked.
-     */
+    
     @FXML
     private void initialize() {
 
