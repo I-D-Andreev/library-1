@@ -33,17 +33,17 @@ public class UserResourceController extends Controller {
     private static Resource clickedResource;
 
     @FXML
-    private TableView <TableRepresentationCopy> tableView;
+    private TableView <TableRepresentationCopyAvailable> tableView;
 
     @FXML
-    private TableColumn<TableRepresentationCopy, String> uniqueIDColumn;
+    private TableColumn<TableRepresentationCopyAvailable, String> uniqueIDColumn;
 
     @FXML
-    private TableColumn<TableRepresentationCopy, String> isAvailableColumn;
+    private TableColumn<TableRepresentationCopyAvailable, String> isAvailableColumn;
 
 
     @FXML
-    private ObservableList<TableRepresentationCopy> data;
+    private ObservableList<TableRepresentationCopyAvailable> data;
 
     @FXML
     public void okButtonClicked(ActionEvent event) {
@@ -59,11 +59,11 @@ public class UserResourceController extends Controller {
     @Override
     public void onStart(){
         data = FXCollections.observableArrayList();
-        uniqueIDColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopy, String>("uniqueCopyID"));
-        isAvailableColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopy, String>("isAvailable"));
+        uniqueIDColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopyAvailable, String>("uniqueCopyID"));
+        isAvailableColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopyAvailable, String>("isAvailable"));
 
         for (Copy copy : clickedResource.getCopyManager().getListOfAllCopies()){
-            data.add(new TableRepresentationCopy(copy.getUniqueCopyID(),
+            data.add(new TableRepresentationCopyAvailable(copy.getUniqueCopyID(),
                     (copy.isAvailable())? "available": "not available"));
         }
 

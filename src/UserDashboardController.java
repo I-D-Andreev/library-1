@@ -118,7 +118,7 @@ public class UserDashboardController extends Controller {
      * Takes the user back to the login screen.
      */
     void logOutButtonClicked(ActionEvent event) {
-
+        getLibrary().save();
         new NewWindow("resources/Login.fxml", event,
                 "Login - TaweLib", getLibrary());
     }

@@ -27,22 +27,22 @@ public class LibrarianResourceController extends Controller {
     private Label dueDateLabel; // Value injected by FXMLLoader
 
     @FXML // fx:id="copyHistoryTable"
-    private TableView<TableRepresentationCopy> displayTable; // Value injected by FXMLLoader
+    private TableView<TableRepresentationCopyAvailable> displayTable; // Value injected by FXMLLoader
 
     @FXML // fx:id="copyHistoryColumn"
-    private TableColumn<TableRepresentationCopy, String> copyIDColumn; // Value injected by FXMLLoader
+    private TableColumn<TableRepresentationCopyAvailable, String> copyIDColumn; // Value injected by FXMLLoader
 
     @FXML
-    private TableColumn<TableRepresentationCopy, String> copyAvailableColumn; // Value injected by FXMLLoader
+    private TableColumn<TableRepresentationCopyAvailable, String> copyAvailableColumn; // Value injected by FXMLLoader
 
     @FXML
-    private TableColumn<TableRepresentationCopy, String> copyBorrowedByColumn; // Value injected by FXMLLoader
+    private TableColumn<TableRepresentationCopyAvailable, String> copyBorrowedByColumn; // Value injected by FXMLLoader
 
     @FXML
-    private TableColumn<TableRepresentationCopy, String> copyReservedForColumn; // Value injected by FXMLLoader
+    private TableColumn<TableRepresentationCopyAvailable, String> copyReservedForColumn; // Value injected by FXMLLoader
 
     @FXML
-    private ObservableList<TableRepresentationCopy> data;
+    private ObservableList<TableRepresentationCopyAvailable> data;
 
     @FXML // fx:id="okButton"
     private Button okButton; // Value injected by FXMLLoader
@@ -63,16 +63,16 @@ public class LibrarianResourceController extends Controller {
     @Override
     public void onStart() {
         data = FXCollections.observableArrayList();
-        copyIDColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopy, String>("uniqueCopyID"));
-        copyAvailableColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopy, String>("isAvailable"));
-        copyBorrowedByColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopy, String>("borrowedBy"));
-        copyReservedForColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopy, String>("reservedFor"));
+        copyIDColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopyAvailable, String>("uniqueCopyID"));
+        copyAvailableColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopyAvailable, String>("isAvailable"));
+        copyBorrowedByColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopyAvailable, String>("borrowedBy"));
+        copyReservedForColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopyAvailable, String>("reservedFor"));
 
         for (Copy copy : clickedResource.getCopyManager().getListOfAllCopies()) {
 
 
             data.add(
-                    new TableRepresentationCopy(copy.getUniqueCopyID(),
+                    new TableRepresentationCopyAvailable(copy.getUniqueCopyID(),
                             (copy.isAvailable()) ? "available" : "not available",
                             (copy.getBorrowedBy() == null) ? "no one" : copy.getBorrowedBy().getUsername(),
                             (copy.getReservedFor() == null) ? "no one" : copy.getReservedFor().getUsername())

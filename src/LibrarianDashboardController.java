@@ -113,7 +113,7 @@ public class LibrarianDashboardController extends Controller {
      * Takes the user back to the login window.
      */
     public void logOutButtonClicked(ActionEvent event) {
-
+        getLibrary().save();
         new NewWindow("resources/Login.fxml", event,
                 "Login - TaweLib", getLibrary());
     }

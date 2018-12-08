@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -6,7 +7,7 @@ import java.util.Date;
  *
  * @author Christina Meggs, Ivan ANdreev
  */
-public class NormalUser extends User {
+public class NormalUser extends User implements  Serializable {
     private double balance;
     private ArrayList<Copy>  borrowedCopies;
     private History transactionHistory;

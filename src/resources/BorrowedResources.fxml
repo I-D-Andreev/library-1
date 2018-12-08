@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="BorrowedResourcesController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BorrowedResourcesController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -29,7 +29,11 @@
       </HBox>
       <TableView fx:id="borrowedResourcesTable" prefHeight="200.0" prefWidth="200.0">
         <columns>
-          <TableColumn fx:id="borrowedResourcesColumn" prefWidth="559.0" text="Borrowed Resources" />
+          <TableColumn fx:id="copyIDColumn" prefWidth="92.79998779296875" text="Copy ID" />
+            <TableColumn fx:id="nameColumn" prefWidth="121.60003662109375" text="Name" />
+            <TableColumn fx:id="typeColumn" prefWidth="113.5999755859375" text="Type" />
+            <TableColumn fx:id="borrowDateColumn" prefWidth="112.0" text="Borrow Date" />
+            <TableColumn fx:id="dueDateColumn" prefWidth="123.2000732421875" text="Due date" />
         </columns>
          <GridPane.margin>
             <Insets left="20.0" right="20.0" top="20.0" />

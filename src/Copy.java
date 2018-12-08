@@ -243,6 +243,8 @@ public class Copy implements Serializable {
         this.loanHistory.addEntry(new HistoryEntryItemTransaction(new Date(), false, byUser));
         byUser.getBorrowedCopies().remove(this);
 
+
+
         double fineAmount = 0;
         if (shouldBeFined()) {
             fineAmount = giveFineToUser(byUser);
@@ -253,7 +255,6 @@ public class Copy implements Serializable {
 
         // Notify the copy's copy manager that a new copy is available.
         this.copysManager.newAvailableCopyEvent();
-
 
 
         return fineAmount;
