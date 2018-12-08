@@ -174,6 +174,8 @@ public class LibrarianDashboardController extends Controller {
     @FXML
     public void userButtonClicked(ActionEvent event) {
 
+        new NewWindow("resources/UsersBorrowing.fxml", event, "Users Currently Borrowing - TaweLib",
+                getLibrary());
     }
 
     /**
