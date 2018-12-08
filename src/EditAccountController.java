@@ -83,6 +83,7 @@ public class EditAccountController extends Controller {
         countryTextField.setText(user.getAddress().getCountry());
         postcodeTextField.setText(user.getAddress().getPostcode());
         imagePathLabel.setText(user.getProfileImagePath());
+
     }
 
     /**
@@ -134,7 +135,7 @@ public class EditAccountController extends Controller {
         String imagePath = imagePathLabel.getText();
 
         // TODO: REMOVE THIS
-        imagePath = "No File Chosen";
+        //imagePath = "No File Chosen";
 
         if (firstName.isEmpty() || lastName.isEmpty() || phoneNumber.isEmpty()
                 || addressLine1.isEmpty() || city.isEmpty() || country.isEmpty()

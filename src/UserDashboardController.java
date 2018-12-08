@@ -149,6 +149,8 @@ public class UserDashboardController extends Controller {
             userImage.setImage(image);
         } catch (IllegalArgumentException e) {
             userImage.setImage(null);
+        } catch (NullPointerException e) {
+            userImage.setImage(null);
         }
 
         usernameLabel.setText(getLibrary().getCurrentUserLoggedIn().getUsername());
