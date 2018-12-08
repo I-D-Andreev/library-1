@@ -21,6 +21,11 @@ public class OverdueResourcesController extends Controller {
     @FXML // fx:id="overdueResourcesColumn"
     private TableColumn<?, ?> overdueResourcesColumn; // Value injected by FXMLLoader
 
+    /**
+     * When the button is clicked the user is returned to the main dashboard.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void okButtonClicked(ActionEvent event) {
 
