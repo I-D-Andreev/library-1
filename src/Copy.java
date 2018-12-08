@@ -97,6 +97,7 @@ public class Copy implements Serializable {
      */
     public void setBorrowedBy(User borrowedBy) {
         this.borrowedBy = borrowedBy;
+        this.reservedFor = null;
     }
 
     /**
@@ -305,7 +306,7 @@ public class Copy implements Serializable {
      */
     public Copy loanCopyTo(NormalUser toUser) {
         this.borrowedOn = new Date();
-        this.borrowedBy = toUser;
+        this.setBorrowedBy(toUser);
         this.loanHistory.addEntry(new HistoryEntryItemTransaction(borrowedOn, true, toUser));
         toUser.getBorrowedCopies().add(this);
         return this;

@@ -128,14 +128,14 @@ public class ResourceManager implements Serializable {
         }
     }
 
-    private void editResource(Resource resource, String title, int year, String imagePath ) {
+    private void editResource(Resource resource, String title, int year, String imagePath) {
         resource.setTitle(title);
         resource.setYear(year);
         resource.setThumbnailImagePath(imagePath);
     }
 
     public void editLaptop(Laptop laptop, String title, int year, String imagePath,
-                           String manufacturer, String model, String installedOS){
+                           String manufacturer, String model, String installedOS) {
         editResource(laptop, title, year, imagePath);
         laptop.setManufacturer(manufacturer);
         laptop.setModel(model);
@@ -143,7 +143,7 @@ public class ResourceManager implements Serializable {
     }
 
     public void editBook(Book book, String title, int year, String imagePath,
-                         String author, String publisher, String genre, String ISBN, String language){
+                         String author, String publisher, String genre, String ISBN, String language) {
         editResource(book, title, year, imagePath);
         book.setAuthor(author);
         book.setPublisher(publisher);
@@ -153,7 +153,7 @@ public class ResourceManager implements Serializable {
     }
 
     public void editDVD(DVD dvd, String title, int year, String imagePath,
-                        String director, int runtime, String language, ArrayList<String> listOfSubtitleLanguages){
+                        String director, int runtime, String language, ArrayList<String> listOfSubtitleLanguages) {
         editResource(dvd, title, year, imagePath);
         dvd.setDirector(director);
         dvd.setRuntime(runtime);
@@ -238,7 +238,7 @@ public class ResourceManager implements Serializable {
     public ArrayList<Copy> getReservedCopiesFor(User user) {
         ArrayList<Copy> reservedCopies = new ArrayList<>();
         for (Copy copy : this.getAllCopies()) {
-            if (copy.getReservedFor().getId().equals(user.getId())) {
+            if (copy.getReservedFor() != null && copy.getReservedFor().getId().equals(user.getId())) {
                 reservedCopies.add(copy);
             }
         }

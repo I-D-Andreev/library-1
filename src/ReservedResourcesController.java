@@ -1,8 +1,11 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * Controller class for the reserved resources window.
@@ -12,19 +15,52 @@ import javafx.scene.control.TableView;
  */
 public class ReservedResourcesController extends Controller {
 
-    @FXML // fx:id="okButton"
-    private Button okButton; // Value injected by FXMLLoader
-
-    @FXML // fx:id="reservedResourcesTable"
-    private TableView<?> reservedResourcesTable; // Value injected by FXMLLoader
-
-    @FXML // fx:id="reservedResourcesColumn"
-    private TableColumn<?, ?> reservedResourcesColumn; // Value injected by FXMLLoader
+    @FXML
+    private Button okButton;
 
     @FXML
-    void okButtonClicked(ActionEvent event) {
+    private TableView<TableRepresentationCopyInformation> reservedResourcesTable;
 
+    @FXML
+    private TableColumn<TableRepresentationCopyInformation, String> copyIDColumn;
+
+    @FXML
+    private TableColumn<TableRepresentationCopyInformation, String> resourceNameColumn;
+
+    @FXML
+    private TableColumn<TableRepresentationCopyInformation, String> resourceTypeColumn;
+
+    @FXML
+    private ObservableList<TableRepresentationCopyInformation> data;
+
+    @FXML
+    public void okButtonClicked(ActionEvent event) {
         new NewWindow("resources/UserDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
+    }
+
+    @Override
+    public void onStart(){
+        data = FXCollections.observableArrayList();
+        copyIDColumn.setCellValueFactory(
+                new PropertyValueFactory<TableRepresentationCopyInformation, String>("copyID"));
+        resourceNameColumn.setCellValueFactory(
+                new PropertyValueFactory<TableRepresentationCopyInformation, String>("resourceName"));
+        resourceTypeColumn.setCellValueFactory(
+                new PropertyValueFactory<TableRepresentationCopyInformation, String>("resourceType"));
+
+        this.fillInData();
+        reservedResourcesTable.getItems().addAll(data);
+    }
+
+    private void fillInData() {
+        User userCurrentlyLoggedIn = getLibrary().getCurrentUserLoggedIn();
+        for(Copy copy : getLibrary().getResourceManager().getReservedCopiesFor(userCurrentlyLoggedIn)){
+            String copyID = copy.getUniqueCopyID();
+            String resourceName = copy.getCopyOf().getTitle();
+            String resourceType = copy.getCopyOf().getType();
+
+            data.add(new TableRepresentationCopyInformation(copyID, resourceName, resourceType));
+        }
     }
 
 }
