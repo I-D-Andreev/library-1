@@ -78,6 +78,7 @@ public class UserDashboardController extends Controller {
 
     /**
      * Takes the user to the borrowed resources tab after the button is clicked.
+     *
      * @param event The button is clicked.
      */
     @FXML
@@ -89,6 +90,7 @@ public class UserDashboardController extends Controller {
 
     /**
      * Takes the user to the edit account tab when the button is clicked.
+     *
      * @param event The button is clicked.
      */
     @FXML
@@ -98,6 +100,7 @@ public class UserDashboardController extends Controller {
     }
 
     /**
+     * todo comment this
      *
      * @param event
      */
@@ -107,7 +110,7 @@ public class UserDashboardController extends Controller {
     }
 
     /**
-     *Loads the user information
+     * Loads information into the user dashboard.
      */
     @Override
     public void onStart() {
@@ -135,6 +138,11 @@ public class UserDashboardController extends Controller {
                 "Login - TaweLib", getLibrary());
     }
 
+    /**
+     * Takes the user to the overdue resources tab when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void overdueResourcesButtonClicked(ActionEvent event) {
 
@@ -142,6 +150,11 @@ public class UserDashboardController extends Controller {
                 getLibrary());
     }
 
+    /**
+     * Takes the user to the resources requested tab after the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void requestedResourcesButtonClicked(ActionEvent event) {
 
@@ -149,6 +162,11 @@ public class UserDashboardController extends Controller {
                 getLibrary());
     }
 
+    /**
+     * Takes the user to the reserved resources tab after the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void reservedResourcesButtonClicked(ActionEvent event) {
 
@@ -156,6 +174,11 @@ public class UserDashboardController extends Controller {
                 getLibrary());
     }
 
+    /**
+     * Takes the user to the transaction history tab after the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void transHistoryButtonClicked(ActionEvent event) {
 
