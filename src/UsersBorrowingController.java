@@ -21,6 +21,11 @@ public class UsersBorrowingController extends Controller {
     @FXML // fx:id="usersBorrowingColumn"
     private TableColumn<?, ?> usersBorrowingColumn; // Value injected by FXMLLoader
 
+    /**
+     * Takes the user to the dashboard tab when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void okButtonClicked(ActionEvent event) {
 
