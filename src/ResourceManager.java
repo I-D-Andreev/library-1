@@ -1,3 +1,4 @@
+import javafx.util.Pair;
 import jdk.nashorn.internal.runtime.ECMAException;
 
 import java.util.ArrayList;
@@ -400,6 +401,42 @@ public class ResourceManager implements Serializable {
             return ((NormalUser) user).getBorrowedCopies();
         }
         return null;
+    }
+
+    /**
+     * Find the most popular resource.
+     * @return A pair containing the most popular resource and the number of times it was borrowed.
+     */
+    public Pair<Resource, Integer> mostPopularResource(){
+        if(this.getAllResources().size() == 0){
+            return null;
+        }
+
+        Resource mostPopularResource = this.getAllResources().get(0);
+        int numberOfTimeBorrowed = 0;
+
+        // Go through the history of each copy in each resource
+        // and count the number of times they were borrowed.
+        // The resource, whose sum of copies' borrowings is the most, will be the most popular one.
+
+        for(Resource resource : this.getAllResources()){
+            int currentResourceNumberOfTimesBorrowed = 0;
+
+            for(Copy copy : resource.getCopyManager().getListOfAllCopies()){
+                for(HistoryEntry entry : copy.getLoanHistory().getHistory()){
+                    if(((HistoryEntryItemTransaction) entry).isBorrowed()){
+                        currentResourceNumberOfTimesBorrowed++;
+                    }
+                }
+            }
+
+            if(currentResourceNumberOfTimesBorrowed > numberOfTimeBorrowed){
+                mostPopularResource = resource;
+                numberOfTimeBorrowed = currentResourceNumberOfTimesBorrowed;
+            }
+        }
+
+        return new Pair<Resource, Integer>(mostPopularResource, numberOfTimeBorrowed);
     }
 
     // test data

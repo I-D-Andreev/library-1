@@ -5,13 +5,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 
 import javax.annotation.Resources;
 import java.io.IOException;
@@ -93,7 +91,19 @@ public class UserDashboardController extends Controller {
 
     @FXML
     public void mostPopularResourceButtonClicked(ActionEvent event) {
-
+        if(getLibrary().getResourceManager().getAllResources().size() == 0){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "There are no resources in the library.",
+                    ButtonType.OK);
+        } else {
+            Pair<Resource, Integer> mostPopularResourcePair = getLibrary().getResourceManager().mostPopularResource();
+            String content = "The most popular resource in the library is " +
+                    mostPopularResourcePair.getKey().getTitle() + "! It was borrowed " +
+                    mostPopularResourcePair.getValue() + " times!";
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, content, ButtonType.OK);
+            alert.setTitle("Most Popular Resource");
+            alert.setHeaderText("Most Popular Resource");
+            alert.show();
+        }
     }
 
 
