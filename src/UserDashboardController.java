@@ -76,8 +76,10 @@ public class UserDashboardController extends Controller {
     @FXML
     private Label balanceLabel;
 
-
-
+    /**
+     * Takes the user to the borrowed resources tab after the button is clicked.
+     * @param event The button is clicked.
+     */
     @FXML
     public void borrowedResourcesButtonClicked(ActionEvent event) {
 
@@ -85,20 +87,30 @@ public class UserDashboardController extends Controller {
                 getLibrary());
     }
 
+    /**
+     * Takes the user to the edit account tab when the button is clicked.
+     * @param event The button is clicked.
+     */
     @FXML
     public void editProfileButtonClicked(ActionEvent event) {
         new NewWindow("resources/EditAccount.fxml", event,
                 "Edit Account - TaweLib", getLibrary());
     }
 
+    /**
+     *
+     * @param event
+     */
     @FXML
     public void mostPopularResourceButtonClicked(ActionEvent event) {
 
     }
 
-
+    /**
+     *Loads the user information
+     */
     @Override
-    public void onStart(){
+    public void onStart() {
         this.loadUserInformation();
     }
 
@@ -152,7 +164,7 @@ public class UserDashboardController extends Controller {
     }
 
 
-    private void loadUserInformation(){
+    private void loadUserInformation() {
 
         try {
             Image image = new Image(getLibrary().getCurrentUserLoggedIn().getProfileImagePath());
