@@ -113,7 +113,6 @@ public class NormalUser extends User implements  Serializable {
      * @param toDate   The end date.
      * @return Number of books borrowed between the start and the end date.
      */
-    //needs to be completed, string will be Date
     public int getNumberOfBooksBorrowedBetween(Date fromDate, Date toDate) {
         return 0;
     }
