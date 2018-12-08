@@ -2,6 +2,7 @@ import java.util.Date;
 
 /**
  * Models a fine type of history entry.
+ *
  * @author Ivan Andreev
  */
 public class HistoryEntryFine extends HistoryEntryMoneyTransaction {
@@ -39,6 +40,11 @@ public class HistoryEntryFine extends HistoryEntryMoneyTransaction {
         return daysOverdue;
     }
 
+    /**
+     * Gets the item not returned on time.
+     *
+     * @return The item that was not return on time.
+     */
     public Copy getItem() {
         return item;
     }

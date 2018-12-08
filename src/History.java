@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 import java.io.*;
+
 /**
  * Models a History class that contains entries with information about events.
  *
  * @author Ivan Andreev
  */
-public class History implements Serializable{
+public class History implements Serializable {
     /**
      * Holds all the different entries.
      */

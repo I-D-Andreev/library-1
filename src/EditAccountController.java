@@ -3,8 +3,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
-public class EditAccountController extends Controller{
+/**
+ * TODO comment this
+ * Controller class that models the edit tabs for the controller.
+ */
+public class EditAccountController extends Controller {
 
     @FXML
     private Button backButton;
@@ -48,13 +53,18 @@ public class EditAccountController extends Controller{
     @FXML
     private Button editAccountButton;
 
-
+    /**
+     * Calls method to fill fields with data.
+     */
     @Override
-    public void onStart(){
+    public void onStart() {
         this.fillInData();
     }
 
-    private void fillInData(){
+    /**
+     * Fills the fields with data.
+     */
+    private void fillInData() {
         User user = getLibrary().getCurrentUserLoggedIn();
         usernameTextField.setText(user.getUsername());
         firstNameTextField.setText(user.getFirstName());
@@ -68,10 +78,15 @@ public class EditAccountController extends Controller{
         imagePathLabel.setText(user.getProfileImagePath());
     }
 
+    /**
+     * Bring the user back to the main dashboard after the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void backButtonClicked(ActionEvent event) {
         //if librarian then go back to librarian dashboard else go back to user dashboard
-        if(getLibrary().getCurrentUserLoggedIn().hasAdminAccess()){
+        if (getLibrary().getCurrentUserLoggedIn().hasAdminAccess()) {
             new NewWindow("resources/LibrarianDashboard.fxml", event,
                     "Browse Resources - TaweLib", getLibrary());
         } else {
@@ -88,7 +103,9 @@ public class EditAccountController extends Controller{
 
     @FXML
     void drawProfileImageButtonClicked(ActionEvent event) {
-
+        DrawAvatar bapple = new DrawAvatar();
+        Stage newerStage = new Stage();
+        bapple.start(newerStage);
     }
 
     @FXML
@@ -112,9 +129,9 @@ public class EditAccountController extends Controller{
         // TODO: REMOVE THIS
         imagePath = "No File Chosen";
 
-        if(firstName.isEmpty() || lastName.isEmpty() || phoneNumber.isEmpty()
-        || addressLine1.isEmpty() || city.isEmpty() || country.isEmpty()
-        || postcode.isEmpty() || username.isEmpty() || imagePath.isEmpty()){
+        if (firstName.isEmpty() || lastName.isEmpty() || phoneNumber.isEmpty()
+                || addressLine1.isEmpty() || city.isEmpty() || country.isEmpty()
+                || postcode.isEmpty() || username.isEmpty() || imagePath.isEmpty()) {
 
             Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
                     ButtonType.OK);

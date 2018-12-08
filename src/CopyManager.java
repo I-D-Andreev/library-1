@@ -23,8 +23,7 @@ public class CopyManager implements Serializable {
     private Resource copyManagerOf;
 
     /**
-     * Creates ArrayLists of requestQueue and listofAllcopies
-     * for the resource it is a copymanager of.
+     * Initializes the copyManager for a resource.
      *
      * @param copyManagerOf The resource it is a copy manager of.
      */
@@ -35,7 +34,7 @@ public class CopyManager implements Serializable {
     }
 
     /**
-     * Gets the resource it is a copymanager of.
+     * Gets the resource it is a copy manager of.
      *
      * @return copyManagerOf The resource it is a copy manager of.
      */
@@ -109,7 +108,7 @@ public class CopyManager implements Serializable {
     /**
      * Gets a list of all available copies.
      *
-     * @return availableCopies An ArrayList of all available copies.
+     * @return availableCopies A list of all available copies.
      */
     public ArrayList<Copy> getListOfAvailableCopies() {
         ArrayList<Copy> availableCopies = new ArrayList<>();
@@ -125,7 +124,7 @@ public class CopyManager implements Serializable {
     /**
      * Gets the number of available copies.
      *
-     * @return int The number of available copies.
+     * @return The number of available copies.
      */
     public int getNumOfAvailableCopies() {
         return this.getListOfAvailableCopies().size();
@@ -167,7 +166,7 @@ public class CopyManager implements Serializable {
      * Find a copy by its ID inside the list of all copies.
      *
      * @param copyId The id of the copy to be found.
-     * @return copy The copy if found by its id,null otherwise.
+     * @return copy The copy if found by its id, null otherwise.
      */
     public Copy findCopyById(String copyId) {
         Copy returnCopy = null;
@@ -186,7 +185,7 @@ public class CopyManager implements Serializable {
      */
     public void removeCopyById(String copyId) {
         if (this.findCopyById(copyId) == null) {
-            return; // error?
+            return;
         }
         this.listOfAllCopies.remove(this.findCopyById(copyId));
     }
@@ -196,7 +195,7 @@ public class CopyManager implements Serializable {
      * loans the copy to him.
      *
      * @param toUser The user who will receive the loaned copy.
-     * @return Return reference to the loaned copy or null if there are no available copies to loan.
+     * @return Return copy to loan to user if one is available or null if there are no available copies to loan.
      */
     public Copy loanCopy(NormalUser toUser) {
         if (this.getNumOfAvailableCopies() == 0) {
@@ -249,8 +248,7 @@ public class CopyManager implements Serializable {
             }
 
         }
-//        System.out.println("Oldest copy is - " + oldestCopy.getUniqueCopyID());
-        // oldest copy remains null?
+
         if (oldestCopy != null) {
             oldestCopy.setDueDate();
         }

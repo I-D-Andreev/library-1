@@ -134,7 +134,7 @@ public class Book extends Resource {
 
     /**
      * Gets the ISBN of the book.
-     * @return ISBN the ISBN of the book.
+     * @return ISBN The ISBN of the book.
      */
     public String getISBN() {
         return this.ISBN;
@@ -174,7 +174,7 @@ public class Book extends Resource {
 
     /**
      * Gets the a String with the type of the this object.
-     * @return Book
+     * @return A string with the type of the object.
      */
     public String getType() {
         return "Book";

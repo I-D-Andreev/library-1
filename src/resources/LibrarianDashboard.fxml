@@ -49,7 +49,7 @@
                         <Insets right="15.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="overdueResourcesButton" mnemonicParsing="false" onAction="#overdueResourcesButtonClicked" text="Overdue Resources">
+                  <Button fx:id="overdueResourcesButton" mnemonicParsing="false" onAction="#overdueResourcesButtonClicked" text="Overdue Copies">
                      <HBox.margin>
                         <Insets right="15.0" />
                      </HBox.margin>
@@ -63,24 +63,19 @@
             </HBox>
             <HBox prefHeight="45.0" prefWidth="597.0">
                <children>
-                  <Button fx:id="createEditResourcesButton" mnemonicParsing="false" onAction="#createEditButtonClicked" text="Create/Edit Resources" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="createEditResourcesButton" mnemonicParsing="false" onAction="#createEditButtonClicked" text="Create/Edit Resources">
                      <HBox.margin>
-                        <Insets left="20.0" />
+                        <Insets left="45.0" right="30.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="manageResourcesButton" mnemonicParsing="false" onAction="#manageResourcesButtonClicked" prefHeight="45.0" prefWidth="131.0" text="Manage Resources" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="manageResourcesButton" mnemonicParsing="false" onAction="#manageResourcesButtonClicked" prefHeight="27.0" prefWidth="137.0" text="Manage Resources" wrapText="true">
                      <HBox.margin>
-                        <Insets left="20.0" />
+                        <Insets right="30.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="browseResourcesButton" mnemonicParsing="false" onAction="#browseButtonClicked" text="Browse Resources" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="browseResourcesButton" mnemonicParsing="false" onAction="#browseButtonClicked" text="Browse Resources">
                      <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="viewAllUsersButton" mnemonicParsing="false" onAction="#viewAllUsersButtonClicked" text="View All Users" textAlignment="CENTER" wrapText="true">
-                     <HBox.margin>
-                        <Insets left="20.0" right="20.0" />
+                        <Insets />
                      </HBox.margin>
                   </Button>
                </children>

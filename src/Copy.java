@@ -2,7 +2,7 @@ import java.util.Date;
 import java.io.*;
 
 /**
- * Class to model a copy
+ * Class to model a copy of a resource.
  */
 public class Copy implements Serializable {
 
@@ -22,7 +22,7 @@ public class Copy implements Serializable {
     private CopyManager copysManager;
 
     /**
-     * What user has borrowed this copy.
+     * The user who has borrowed this copy.
      */
     private User borrowedBy;
 
@@ -68,13 +68,12 @@ public class Copy implements Serializable {
         this.loanDurationInDays = loanDurationInDays;
         this.loanHistory = new History();
         this.setUniqueCopyID();
-
         this.nullifyValues();
     }
 
     /**
      * Gets the unique ID of a copy.
-     * @return uniqueCopyID The unique copy ID ofa copy.
+     * @return uniqueCopyID The unique copy ID of a copy.
      */
     public String getUniqueCopyID() {
         return uniqueCopyID;
@@ -98,7 +97,8 @@ public class Copy implements Serializable {
 
     /**
      * Gets the loan duration in days of a copy.
-     * @return
+     *
+     * @return The loan duration in days.
      */
     public int getLoanDurationInDays() {
         return loanDurationInDays;
@@ -121,7 +121,6 @@ public class Copy implements Serializable {
         return dueDate;
     }
 
-    // TODO: test this method
     /**
      * Sets the due date of the copy.
      */

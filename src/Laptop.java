@@ -122,8 +122,11 @@ public class Laptop extends Resource {
         return this.maxFineAmount;
     }
 
+    /**
+     * Gets a string with what type of resource this resource is.
+     * @return Returns a string "Laptop" the type of this resource.
+     */
     public String getType() {
         return "Laptop";
     }
-
 }

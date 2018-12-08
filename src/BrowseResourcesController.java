@@ -60,9 +60,6 @@ public class BrowseResourcesController extends Controller {
     @FXML // fx:id="backButton"
     private Button backButton; // Value injected by FXMLLoader
 
-    /**
-     * The resources that will be shown on the UI.
-     */
     private ObservableList<Resource> data;
 
     /**
@@ -70,11 +67,7 @@ public class BrowseResourcesController extends Controller {
      */
     private ArrayList<String> acceptableTypes;
 
-    /**
-     * Initializes the UI with the data from the acceptableType ArrayList.
-     */
     public void initialize() {
-
         data = FXCollections.observableArrayList();
         acceptableTypes = new ArrayList<>();
         uniqueIDColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("uniqueID"));
@@ -87,30 +80,16 @@ public class BrowseResourcesController extends Controller {
             if(event.getClickCount() == 2) {
 
                 Parent root;
-                FXMLLoader fxmlLoader;
-                Stage stage;
 
+                //Attempt to load the fxml file and set the scene.
                 try {
 
-                    if(getLibrary().getCurrentUserLoggedIn().hasAdminAccess()) {
-
-                        fxmlLoader = new FXMLLoader(getClass().getClassLoader()
-                                .getResource("resources/LibrarianResource.fxml"));
-
-                    } else {
-
-                        //Attempt to load the fxml file and set the scene.
-
-
-                        fxmlLoader = new FXMLLoader(getClass().getClassLoader()
-                                .getResource("resources/UserResource.fxml"));
-
-                    }
-
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("resources/UserResource.fxml"));
                     root = fxmlLoader.load();
-                    fxmlLoader.<Controller>getController().setLibrary(getLibrary());
+                    setLibrary(getLibrary());
+                    //fxmlLoader.<Controller>getController().setLibrary(getLibrary());
 
-                    stage = new Stage();
+                    Stage stage = new Stage();
 
                     stage.setTitle("Resource Information");
                     stage.setScene(new Scene(root));
@@ -139,13 +118,11 @@ public class BrowseResourcesController extends Controller {
      * Refreshes the table on startup.
      */
     @Override
-    public void onStart() {
+    public void onStart(){
         this.updateTable();
     }
 
-    /**
-     * Refreshes the values on the table to display correct data.
-     */
+
     @FXML
     public void updateTable() {
         // clear previous data
@@ -174,15 +151,15 @@ public class BrowseResourcesController extends Controller {
 
         // if none of the types have been ticked accept all
         // else remove the resources that are not permitted
-        ArrayList<Resource> shouldNotBeDisplayed = new ArrayList<>();
-        if (acceptableTypes.size() != 0) {
-            for (Resource resource : data) {
-                if (!acceptableTypes.contains(resource.getType())) {
+        ArrayList <Resource> shouldNotBeDisplayed = new ArrayList<>();
+        if(acceptableTypes.size() != 0) {
+            for(Resource resource : data){
+                if(!acceptableTypes.contains(resource.getType())){
                     shouldNotBeDisplayed.add(resource);
                 }
             }
         }
-        data.removeAll(shouldNotBeDisplayed);
+       data.removeAll(shouldNotBeDisplayed);
 
         displayTable.getItems().addAll(data);
     }
