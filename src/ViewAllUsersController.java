@@ -10,7 +10,7 @@ import javafx.scene.control.TableView;
  *
  * @author Sian Pike
  */
-public class ViewAllUsersController extends Controller{
+public class ViewAllUsersController extends Controller {
 
     @FXML // fx:id="userTable"
     private TableView<?> userTable; // Value injected by FXMLLoader
@@ -33,6 +33,11 @@ public class ViewAllUsersController extends Controller{
     @FXML // fx:id="okButton"
     private Button okButton; // Value injected by FXMLLoader
 
+    /**
+     * Takes the user back to the dashboard tab when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void okButtonClicked(ActionEvent event) {
 

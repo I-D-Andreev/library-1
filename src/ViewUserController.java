@@ -93,6 +93,11 @@ public class ViewUserController extends Controller {
         new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
 
+    /**
+     * Shows a tab with the user information if the user is found, when the button is pressed.
+     *
+     * @param event The button is pressed.
+     */
     @FXML
     void searchButtonClicked(ActionEvent event) {
         User user = getLibrary().getUserManager().getUserByUsername(searchUserTextField.getText());
@@ -116,6 +121,11 @@ public class ViewUserController extends Controller {
 
     }
 
+    /**
+     * Adds a user when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void addUserButtonClicked(ActionEvent event) {
         // mandatory info - username, first name,last name, phone number, address line 1, city,
@@ -153,12 +163,12 @@ public class ViewUserController extends Controller {
             // create the address
             Address address = new Address(addressLine1, addressLine2, city, country, addressPostcode);
 
-            String typeOfAccount="";
-            if(isLibrarian){
+            String typeOfAccount = "";
+            if (isLibrarian) {
                 getLibrary().getUserManager().addUser(new Librarian(firstName, lastName, username, phoneNumber,
                         imagePath, address));
                 typeOfAccount = "Librarian";
-            } else if(isUser){
+            } else if (isUser) {
                 getLibrary().getUserManager().addUser(new NormalUser(firstName, lastName, username, phoneNumber,
                         imagePath, address));
                 typeOfAccount = "User";
@@ -173,7 +183,7 @@ public class ViewUserController extends Controller {
         }
     }
 
-    private void clearAllCreateAccountFields(){
+    private void clearAllCreateAccountFields() {
         usernameTextField.clear();
         firstNameTextField.clear();
         surnameTextField.clear();
@@ -188,17 +198,31 @@ public class ViewUserController extends Controller {
         imagePathLabel.setText("No File Chosen.");
     }
 
-
+    /**
+     * Clicking the button makes the user view only normal user.
+     *
+     * @param event Clicking the button.
+     */
     @FXML
     public void userRadioButtonSelected(ActionEvent event) {
         librarianRadioButton.setSelected(false);
     }
 
+    /**
+     * Clicking the button makes the user view only librarians.
+     *
+     * @param event Clicking the button.
+     */
     @FXML
     public void librarianRadioButtonSelected(ActionEvent event) {
         userRadioButton.setSelected(false);
     }
 
+    /**
+     * Takes the user to choose a profile image tab after the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void chooseProfileImageButtonClicked(ActionEvent event) {
 
@@ -206,6 +230,11 @@ public class ViewUserController extends Controller {
 
     }
 
+    /**
+     * Takes the user to the draw an image tab after the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void drawProfileImageButtonClicked(ActionEvent event) {
 
