@@ -1,5 +1,7 @@
 /**
  * Class that models the representation of a copy in a table.
+ *
+ * @author Ivaan Andreev.
  */
 public class TableRepresentationCopyInformation {
 
