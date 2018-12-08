@@ -12,20 +12,15 @@ import javafx.scene.control.TableView;
  */
 public class OverdueCopiesController extends Controller{
 
-    @FXML // fx:id="overdueCopiesTable"
-    private TableView<?> overdueCopiesTable; // Value injected by FXMLLoader
-
-    @FXML // fx:id="overdueCopiesColumn"
-    private TableColumn<?, ?> overdueCopiesColumn; // Value injected by FXMLLoader
-
-    @FXML // fx:id="daysOverdueColumn"
-    private TableColumn<?, ?> daysOverdueColumn; // Value injected by FXMLLoader
-
-    @FXML // fx:id="okButton"
-    private Button okButton; // Value injected by FXMLLoader
+    @FXML
+    private TableView<TableRepresentationCopyInformation> overdueCopiesTable;
 
     @FXML
-    void okButtonClicked(ActionEvent event) {
+    private TableColumn<TableRepresentationCopyInformation, String> copyIDColumn;
+
+
+    @FXML
+    public void okButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }

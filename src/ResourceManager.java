@@ -248,16 +248,12 @@ public class ResourceManager implements Serializable {
 
     public ArrayList<Copy> getOverdueCopies() {
         ArrayList<Copy> overdueCopies = new ArrayList<>();
-        Date today = new Date();
 
         for (Copy copy : this.getAllCopies()) {
-            // If a copy's due date is "smaller" than the current date. I.E. We are past
-            // the due date.
-            if (copy.getDueDate() != null && copy.getDueDate().compareTo(today) == -1) {
+            if(copy.isOverdue()){
                 overdueCopies.add(copy);
             }
         }
-
         return overdueCopies;
     }
 

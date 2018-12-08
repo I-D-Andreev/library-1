@@ -247,7 +247,7 @@ public class Copy implements Serializable {
 
 
         double fineAmount = 0;
-        if (shouldBeFined()) {
+        if (this.isOverdue()) {
             fineAmount = giveFineToUser(byUser);
         }
 
@@ -262,13 +262,13 @@ public class Copy implements Serializable {
     }
 
     /**
-     * Checks if the user should be fined.
+     * Checks if the copy is overdue.
      *
-     * @return true if the due date is not past,false otherwise.
+     * @return true if the due date has been passed, false otherwise.
      */
-    private boolean shouldBeFined() {
+    public boolean isOverdue() {
         Date today = new Date();
-        // If the item is overdue, the user should be fined.
+        // If today > due date, the item is overdue
         return ((this.dueDate != null) && (today.compareTo(this.dueDate) == 1));
     }
 
