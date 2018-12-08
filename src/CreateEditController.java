@@ -767,6 +767,7 @@ public class CreateEditController extends Controller {
 
     /**
      * After the button is clicked we can edit the DVD .
+     *
      * @param event The button is clicked.
      */
     @FXML
@@ -945,6 +946,8 @@ public class CreateEditController extends Controller {
      */
     @FXML
     void copyCreateButtonClicked(ActionEvent event) {
+        // Find the resource.
+        Resource resource = getLibrary().getResourceManager().getResourceById(resourceUniqueIDtextField.getText());
 
         // mandatory information - loan duration
         if (copyLoanDurationTextField.getText().isEmpty()) {
@@ -961,13 +964,16 @@ public class CreateEditController extends Controller {
 
             alert.show();
 
+        } else if (resource == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Could not find resource.",
+                    ButtonType.OK);
+
+            alert.show();
         } else {
 
             // gather the information
             int loanDuration = Integer.parseInt(copyLoanDurationTextField.getText());
 
-            // Find the resource.
-            Resource resource = getLibrary().getResourceManager().getResourceById(resourceUniqueIDtextField.getText());
 
             // Change the resource.
             getLibrary().getResourceManager().addCopyOfResource(loanDuration, resource);
@@ -989,6 +995,7 @@ public class CreateEditController extends Controller {
 
     /**
      * Searches for a resource after the button is clicked.
+     *
      * @param event The button is clicked.
      */
     @FXML
@@ -1017,6 +1024,7 @@ public class CreateEditController extends Controller {
 
     /**
      * Searches for a copy after the button is clicked.
+     *
      * @param event The button is clicked.
      */
     @FXML
@@ -1040,6 +1048,7 @@ public class CreateEditController extends Controller {
 
     /**
      * The copy is edited after the button is clicked.
+     *
      * @param event The button is clicked.
      */
     @FXML
@@ -1081,6 +1090,7 @@ public class CreateEditController extends Controller {
 
     /**
      * The copy is deleted after the button is clicked.
+     *
      * @param event The button is clicked.
      */
     @FXML
