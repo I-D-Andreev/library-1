@@ -7,7 +7,7 @@ import java.util.Date;
  *
  * @author Christina Meggs, Ivan Andreev
  */
-public class NormalUser extends User implements  Serializable {
+public class NormalUser extends User implements Serializable {
     private double balance;
     private ArrayList<Copy> borrowedCopies;
     private History transactionHistory;
@@ -59,6 +59,7 @@ public class NormalUser extends User implements  Serializable {
     public void payFines(double amount) {
 
         this.balance -= amount;
+        this.balance = Math.round(this.balance * 100.0) / 100.0;
 
         transactionHistory.addEntry(new HistoryEntryMoneyTransaction(new Date(), amount));
     }

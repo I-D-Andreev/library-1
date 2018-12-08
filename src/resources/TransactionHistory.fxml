@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="TransactionHistoryController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TransactionHistoryController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -28,12 +28,16 @@
          </children>
       </HBox>
       <TableView fx:id="transactionHistoryTable" prefHeight="200.0" prefWidth="200.0">
-        <columns>
-          <TableColumn fx:id="transactionHistoryColumn" prefWidth="599.0" text="Transaction History" />
-        </columns>
          <GridPane.margin>
             <Insets left="20.0" right="20.0" top="20.0" />
          </GridPane.margin>
+         <columns>
+            <TableColumn fx:id="typeColumn" prefWidth="89.60003662109375" text="type" />
+            <TableColumn fx:id="dateColumn" prefWidth="173.5999755859375" text="date" />
+            <TableColumn fx:id="amountColumn" minWidth="0.0" prefWidth="76.79998779296875" text="amount" />
+            <TableColumn fx:id="itemID" prefWidth="115.20001220703125" text="item" />
+            <TableColumn fx:id="daysOverdue" prefWidth="102.4000244140625" text="days overdue" />
+         </columns>
       </TableView>
    </children>
 </GridPane>
