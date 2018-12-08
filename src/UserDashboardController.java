@@ -131,6 +131,8 @@ public class UserDashboardController extends Controller {
     @FXML
     void requestedResourcesButtonClicked(ActionEvent event) {
 
+        new NewWindow("resources/RequestedResources.fxml", event, "Requested Resources - TaweLib",
+                getLibrary());
     }
 
     @FXML
