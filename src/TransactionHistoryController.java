@@ -21,6 +21,11 @@ public class TransactionHistoryController extends Controller {
     @FXML // fx:id="transactionHistoryColumn"
     private TableColumn<?, ?> transactionHistoryColumn; // Value injected by FXMLLoader
 
+    /**
+     * Returns the user back to the dashboard when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void okButtonClicked(ActionEvent event) {
 
