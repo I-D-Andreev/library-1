@@ -2,6 +2,7 @@ import java.io.*;
 
 /**
  * The sole purpose of this class is to store static variables as non-static ones in order to be saved easily.
+ *
  * @author Ivan Andreev
  */
 public class SaveStaticVariables implements Serializable {
@@ -9,41 +10,83 @@ public class SaveStaticVariables implements Serializable {
     private int resourceNextID;
     private int copyNextID;
 
-    public SaveStaticVariables(int userNextID, int resourceNextID, int copyNextID){
+    /**
+     * Saves the static variables we use for unique ID.
+     *
+     * @param userNextID     The user next unique ID.
+     * @param resourceNextID The resource next unique ID.
+     * @param copyNextID     The copy next unique ID.
+     */
+    public SaveStaticVariables(int userNextID, int resourceNextID, int copyNextID) {
         this.userNextID = userNextID;
         this.resourceNextID = resourceNextID;
         this.copyNextID = copyNextID;
     }
 
-    public SaveStaticVariables(){
+    /**
+     * Populates the static variables we are saving.
+     */
+    public SaveStaticVariables() {
         this.selfPopulate();
     }
 
-
+    /**
+     * Gets the user's next unique ID.
+     *
+     * @return The user's next unique ID.
+     */
     public int getUserNextID() {
         return userNextID;
     }
 
+    /**
+     * Sets the user's next unique ID.
+     *
+     * @param userNextID The next unique user ID.
+     */
     public void setUserNextID(int userNextID) {
         this.userNextID = userNextID;
     }
 
+    /**
+     * Gets the next resource unique ID.
+     *
+     * @return The next unique resource ID.
+     */
     public int getResourceNextID() {
         return resourceNextID;
     }
 
+    /**
+     * Sets the resource's next unique ID.
+     *
+     * @param resourceNextID The resources next unique ID.
+     */
     public void setResourceNextID(int resourceNextID) {
         this.resourceNextID = resourceNextID;
     }
 
+    /**
+     * Gets the next unique copy ID.
+     *
+     * @return The next unique copy ID.
+     */
     public int getCopyNextID() {
         return copyNextID;
     }
 
+    /**
+     * Sets the next copy's unique ID.
+     *
+     * @param copyNextID The copy's next unique ID.
+     */
     public void setCopyNextID(int copyNextID) {
         this.copyNextID = copyNextID;
     }
 
+    /**
+     * Saves the IDs.
+     */
     public void save() {
 
         // Get a file to write in or create it if it doesn't exist.
@@ -124,9 +167,9 @@ public class SaveStaticVariables implements Serializable {
     }
 
     // for testing purposes
-    public void selfPopulate1(){
+    public void selfPopulate1() {
         this.resourceNextID = 4;
-        this.userNextID  = 3;
+        this.userNextID = 3;
         this.copyNextID = 4;
     }
 }
