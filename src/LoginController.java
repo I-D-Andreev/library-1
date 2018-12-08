@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 /**
  * @author Chris McAuley, Sian Pike
- * <p>
+ *
  * Controller class for the Login Window.  Handles user interaction with the UI.
  */
 public class LoginController extends Controller {
@@ -26,7 +26,6 @@ public class LoginController extends Controller {
 
     @FXML // fx:id="loginButton"
     private Button loginButton; // Value injected by FXMLLoader
-
 
 
     @FXML

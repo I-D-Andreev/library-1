@@ -22,7 +22,7 @@ public class History implements Serializable {
     /**
      * Get the full history.
      *
-     * @return history A list of entries in the history.
+     * @return A list of entries in the history.
      */
     public ArrayList<HistoryEntry> getHistory() {
         return history;

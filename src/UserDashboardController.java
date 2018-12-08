@@ -126,6 +126,8 @@ public class UserDashboardController extends Controller {
     @FXML
     void overdueResourcesButtonClicked(ActionEvent event) {
 
+        new NewWindow("resources/OverdueResources.fxml", event, "Overdue Resources - TaweLib",
+                getLibrary());
     }
 
     @FXML
@@ -145,6 +147,8 @@ public class UserDashboardController extends Controller {
     @FXML
     void transHistoryButtonClicked(ActionEvent event) {
 
+        new NewWindow("resources/TransactionHistory.fxml", event, "Transaction History - TaweLib",
+                getLibrary());
     }
 
 

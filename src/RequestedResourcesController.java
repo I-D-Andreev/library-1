@@ -33,6 +33,11 @@ public class RequestedResourcesController extends Controller {
     @FXML
     private TableColumn<TableRepresentationResourceInformation, Integer> numberInQueue;
 
+    /**
+     * When the button is clicked returns user back to the dashboard.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     private ObservableList<TableRepresentationResourceInformation> data;
 

@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Date;
 
-public class Main extends Application{
+public class Main extends Application {
 
     public static void main(String[] args) {
         //Launches the application - do not remove.
@@ -44,7 +44,7 @@ public class Main extends Application{
 
             System.exit(1);
 
-        } catch(Exception e) {
+        } catch (Exception e) {
 
             e.printStackTrace();
             System.exit(0);

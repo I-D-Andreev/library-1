@@ -34,6 +34,11 @@ public class OverdueCopiesController extends Controller {
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> dueDateColumn;
 
+    /**
+     * When the button is clicked the user is returned to the main dashboard.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, Integer> daysOverdueColumn;
 

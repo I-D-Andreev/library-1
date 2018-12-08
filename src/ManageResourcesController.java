@@ -66,22 +66,28 @@ public class ManageResourcesController extends Controller {
     @FXML // fx:id="outstandingAmountLabel"
     private Label outstandingAmountLabel; // Value injected by FXMLLoader
 
+    /**
+     * When a copy is to be borrowed checks if the user is eligible for a loan and tries to reserve,
+     * and loan one to user.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void borrowButtonClicked(ActionEvent event) {
 
         User user = getLibrary().getUserManager().getUserByUsername(borrowUserUsernameTextField.getText());
         Resource resource = getLibrary().getResourceManager().getResourceById(borrowResourceIDTextField.getText());
 
-        if(user == null || (user instanceof Librarian )){
+        if (user == null || (user instanceof Librarian)) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid username.",
                     ButtonType.OK);
             alert.show();
-        } else if(!((NormalUser)user).canBorrowCopy()){
+        } else if (!((NormalUser) user).canBorrowCopy()) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "This user can not borrow a copy" +
                     " because they have outstanding fines or overdue items to return.",
                     ButtonType.OK);
             alert.show();
-        } else if(resource == null){
+        } else if (resource == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid resource ID.",
                     ButtonType.OK);
             alert.show();
@@ -89,7 +95,7 @@ public class ManageResourcesController extends Controller {
             // Successfully lend a copy.
             Copy copy = getLibrary().getResourceManager().loanCopy(resource, user);
 
-            if(copy == null){
+            if (copy == null) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, "No available copies.\n"
                         + "Try reserving one.",
                         ButtonType.OK);
@@ -113,7 +119,7 @@ public class ManageResourcesController extends Controller {
     /**
      * Goes back to the librarian dashboard when clicked.
      *
-     * @param event The current event.
+     * @param event The button is pressed.
      */
     @FXML
     public void backButtonClicked(ActionEvent event) {
@@ -121,20 +127,25 @@ public class ManageResourcesController extends Controller {
         new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
 
+    /**
+     * When the button is pressed a copy is tried to be reserved and loaned to a user if available.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
-    public void reserveButtonClicked(ActionEvent event){
+    public void reserveButtonClicked(ActionEvent event) {
         User user = getLibrary().getUserManager().getUserByUsername(reserveUserUsernameTextField.getText());
         Resource resource = getLibrary().getResourceManager().getResourceById(reserveResourceIDTextField.getText());
 
-        if(user == null || (user instanceof Librarian)){
+        if (user == null || (user instanceof Librarian)) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid username.",
                     ButtonType.OK);
             alert.show();
-        } else if(resource == null){
+        } else if (resource == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid resource ID.",
                     ButtonType.OK);
             alert.show();
-        } else if(resource.getCopyManager().getNumOfAvailableCopies() > 0){
+        } else if (resource.getCopyManager().getNumOfAvailableCopies() > 0) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "There are available copies. Please borrow one.",
                     ButtonType.OK);
             alert.show();
@@ -150,24 +161,29 @@ public class ManageResourcesController extends Controller {
             reserveResourceIDTextField.clear();
         }
 
-        for(Copy copy: resource.getCopyManager().getListOfAllCopies()){
+        for (Copy copy : resource.getCopyManager().getListOfAllCopies()) {
             System.out.println(copy.getUniqueCopyID() + " - " + copy.getDueDate());
         }
     }
 
+    /**
+     * When the button is pressed takes a fine is tried to be paid.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void payButtonClicked(ActionEvent event) {
         NormalUser user = (NormalUser) getLibrary().getUserManager()
                 .getUserByUsername(fineUserUsernameTextField.getText());
         String fineText = payTextField.getText();
 
-        if(!isStringNumber(fineText)){
+        if (!isStringNumber(fineText)) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "The fine must be a number.",
                     ButtonType.OK);
             alert.show();
         } else {
             double fine = Double.parseDouble(fineText);
-            if(fine<0.01 || fine > user.getBalance()){
+            if (fine < 0.01 || fine > user.getBalance()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, "You should pay between 0.01 and the fine amount.",
                         ButtonType.OK);
                 alert.show();
@@ -203,57 +219,67 @@ public class ManageResourcesController extends Controller {
         return s.matches("\\d*[.,]?\\d+");
     }
 
+    /**
+     * When the button is clicked the copy is returned to the library and we check if the user is to be fined.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void returnButtonClicked(ActionEvent event) {
         Copy copy = getLibrary().getResourceManager().getCopyById(returnCopyIDTextField.getText());
 
-         if(copy == null || copy.getBorrowedBy() == null){
+        if (copy == null || copy.getBorrowedBy() == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid copy ID.",
                     ButtonType.OK);
             alert.show();
         } else {
 
-             // All the data is correct so now we are returning the copy.
-             User user = copy.getBorrowedBy();
+            // All the data is correct so now we are returning the copy.
+            User user = copy.getBorrowedBy();
 
-             // set up a confirmation dialog
-             // to prevent return by  mistake
-             Alert confirmationDialog = new Alert(Alert.AlertType.CONFIRMATION);
-             confirmationDialog.setTitle("Confirm choice");
-             confirmationDialog.setHeaderText("Copy return confirmation");
-             confirmationDialog.setContentText("Return copy with ID: " + copy.getUniqueCopyID()
-             + " , which is returned by user " + user.getUsername() + "?");
+            // set up a confirmation dialog
+            // to prevent return by  mistake
+            Alert confirmationDialog = new Alert(Alert.AlertType.CONFIRMATION);
+            confirmationDialog.setTitle("Confirm choice");
+            confirmationDialog.setHeaderText("Copy return confirmation");
+            confirmationDialog.setContentText("Return copy with ID: " + copy.getUniqueCopyID()
+                    + " , which is returned by user " + user.getUsername() + "?");
 
-             Optional<ButtonType> result = confirmationDialog.showAndWait();
+            Optional<ButtonType> result = confirmationDialog.showAndWait();
 
-             // proceed only if the librarian is sure of their choice
-             if(result.get() == ButtonType.OK) {
-                 double fineAmount = getLibrary().getResourceManager().returnCopy(copy);
+            // proceed only if the librarian is sure of their choice
+            if (result.get() == ButtonType.OK) {
+                double fineAmount = getLibrary().getResourceManager().returnCopy(copy);
 
-                 if (fineAmount == 0) {
-                     Alert alert = new Alert(Alert.AlertType.INFORMATION, "Successfully returned copy." +
-                             " No fine incurred for user " + user.getUsername() + ".",
-                             ButtonType.OK);
-                     alert.show();
-                 } else {
-                     String content = "This copy is overdue. User " + user.getUsername() + " has been fined " +
-                             fineAmount + ".";
+                if (fineAmount == 0) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "Successfully returned copy." +
+                            " No fine incurred for user " + user.getUsername() + ".",
+                            ButtonType.OK);
+                    alert.show();
+                } else {
+                    String content = "This copy is overdue. User " + user.getUsername() + " has been fined " +
+                            fineAmount + ".";
 
-                     Alert alert = new Alert(Alert.AlertType.ERROR, content,
-                             ButtonType.OK);
-                     alert.show();
-                 }
+                    Alert alert = new Alert(Alert.AlertType.ERROR, content,
+                            ButtonType.OK);
+                    alert.show();
+                }
 
-                 // nullify fields
-                 returnCopyIDTextField.clear();
-             }
-         }
+                // nullify fields
+                returnCopyIDTextField.clear();
+            }
+        }
     }
 
+    /**
+     * When the button is clicked we search for a user and check his balance.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void searchButtonClicked(ActionEvent event) {
         User searchUser = getLibrary().getUserManager().getUserByUsername(fineUserUsernameTextField.getText());
-        if(searchUser == null || !(searchUser instanceof NormalUser)){
+        if (searchUser == null || !(searchUser instanceof NormalUser)) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid username.",
                     ButtonType.OK);
             alert.show();
@@ -261,7 +287,7 @@ public class ManageResourcesController extends Controller {
             // the username is legitimate
             NormalUser user = (NormalUser) searchUser;
 
-            if(user.getBalance() == 0){
+            if (user.getBalance() == 0) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION, "User has no fines.",
                         ButtonType.OK);
                 alert.show();

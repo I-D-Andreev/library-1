@@ -25,7 +25,7 @@ public class HistoryEntry implements Serializable {
     /**
      * Gets the date of the entry.
      *
-     * @return date The date of the entry.
+     * @return The date of the entry.
      */
     public Date getDate() {
         return date;

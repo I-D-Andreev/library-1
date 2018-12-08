@@ -10,7 +10,6 @@ import java.util.Optional;
 
 
 /**
- * TODO comment this
  * Controller class that models the edit tabs for the controller.
  */
 public class EditAccountController extends Controller {
@@ -103,12 +102,22 @@ public class EditAccountController extends Controller {
         }
     }
 
+    /**
+     * Sends the user to select a profile image when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void chooseProfileImageButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/ProfileImage.fxml", event, "Choose Image - TaweLib", getLibrary());
     }
 
+    /**
+     * Sends the user to draw a profile image after the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void drawProfileImageButtonClicked(ActionEvent event) {
         DrawAvatar bapple = new DrawAvatar();
@@ -116,6 +125,11 @@ public class EditAccountController extends Controller {
         bapple.start(newerStage);
     }
 
+    /**
+     * Sends the user to edit his account after the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void editAccountButtonClicked(ActionEvent event) {
         // mandatory - first name, last name, phone number, address line 1
@@ -162,8 +176,13 @@ public class EditAccountController extends Controller {
         }
     }
 
+    /**
+     * Sends the user to delete his account after the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
-    public void deleteAccountButtonClicked(ActionEvent event){
+    public void deleteAccountButtonClicked(ActionEvent event) {
         // create an alert to make sure the user
         // didn't click this button accidentally
 
@@ -174,11 +193,11 @@ public class EditAccountController extends Controller {
         confirmChoiceDialog.getButtonTypes().clear();
         confirmChoiceDialog.getButtonTypes().addAll(ButtonType.YES, ButtonType.NO);
 
-        Optional <ButtonType> result = confirmChoiceDialog.showAndWait();
+        Optional<ButtonType> result = confirmChoiceDialog.showAndWait();
 
-        if(result.get() == ButtonType.YES){
+        if (result.get() == ButtonType.YES) {
             User user = getLibrary().getUserManager().getUserByUsername(usernameTextField.getText());
-            if((user instanceof NormalUser) && ((NormalUser)user).getBalance() > 0){
+            if ((user instanceof NormalUser) && ((NormalUser) user).getBalance() > 0) {
                 Alert alert = new Alert(Alert.AlertType.ERROR,
                         "Can not delete account because there are outstanding fines",
                         ButtonType.OK);

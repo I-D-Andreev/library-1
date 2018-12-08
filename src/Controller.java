@@ -1,4 +1,5 @@
 /**
+ * @author Chris McAuley.
  * Superclass of all controllers, class to model a controller.
  */
 public class Controller {

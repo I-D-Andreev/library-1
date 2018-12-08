@@ -5,11 +5,11 @@ import java.util.Date;
 /**
  * This is used to make an account for a normal user
  *
- * @author Christina Meggs, Ivan ANdreev
+ * @author Christina Meggs, Ivan Andreev
  */
 public class NormalUser extends User implements  Serializable {
     private double balance;
-    private ArrayList<Copy>  borrowedCopies;
+    private ArrayList<Copy> borrowedCopies;
     private History transactionHistory;
 
     /**
@@ -34,7 +34,7 @@ public class NormalUser extends User implements  Serializable {
     /**
      * Gets the user's account balance.
      *
-     * @return balance The user's account balance.
+     * @return The user's account balance.
      */
     public double getBalance() {
         return balance;
@@ -94,12 +94,12 @@ public class NormalUser extends User implements  Serializable {
         return !(balance > 0 || hasOverdueCopies());
     }
 
-    private boolean hasOverdueCopies(){
+    private boolean hasOverdueCopies() {
         boolean hasOverdueCopies = false;
         Date today = new Date();
-        for(Copy copy : borrowedCopies){
-            if(copy.getDueDate() != null && copy.getDueDate().compareTo(today) == -1){
-                hasOverdueCopies =  true;
+        for (Copy copy : borrowedCopies) {
+            if (copy.getDueDate() != null && copy.getDueDate().compareTo(today) == -1) {
+                hasOverdueCopies = true;
             }
         }
         return hasOverdueCopies;
