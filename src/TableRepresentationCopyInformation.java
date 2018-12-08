@@ -15,6 +15,14 @@ public class TableRepresentationCopyInformation {
         this.resourceType = resourceType;
     }
 
+    public TableRepresentationCopyInformation(String copyID, String borrowedBy,
+                                              String resourceName, String borrowDate) {
+        this.copyID = copyID;
+        this.borrowedBy = borrowedBy;
+        this.resourceName = resourceName;
+        this.borrowDate = borrowDate;
+    }
+
     public TableRepresentationCopyInformation(String copyID, String resourceName,
                                               String resourceType, String borrowDate, String dueDate) {
        this(copyID, resourceName, resourceType);

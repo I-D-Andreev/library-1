@@ -33,14 +33,14 @@ public class RequestedResourcesController extends Controller {
     @FXML
     private TableColumn<TableRepresentationResourceInformation, Integer> numberInQueue;
 
+    @FXML
+    private ObservableList<TableRepresentationResourceInformation> data;
+
     /**
      * When the button is clicked returns user back to the dashboard.
      *
      * @param event The button is clicked.
      */
-    @FXML
-    private ObservableList<TableRepresentationResourceInformation> data;
-
     @FXML
     public void okButtonClicked(ActionEvent event) {
         new NewWindow("resources/UserDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());

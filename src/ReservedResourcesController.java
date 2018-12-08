@@ -30,14 +30,14 @@ public class ReservedResourcesController extends Controller {
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> resourceTypeColumn;
 
+    @FXML
+    private ObservableList<TableRepresentationCopyInformation> data;
+
     /**
      * When the user clicks the button he is returned to the dashboard.
      *
      * @param event The button is clicked.
      */
-    @FXML
-    private ObservableList<TableRepresentationCopyInformation> data;
-
     @FXML
     public void okButtonClicked(ActionEvent event) {
         new NewWindow("resources/UserDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());

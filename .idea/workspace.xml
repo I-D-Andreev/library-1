@@ -7,7 +7,11 @@
     <list default="true" id="6e3b68db-e3f9-4a5f-a067-ee60d4dfb31b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LibrarianDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibrarianDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/LibrarianDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/LibrarianDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RequestedResourcesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RequestedResourcesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReservedResourcesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReservedResourcesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableRepresentationCopyInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableRepresentationCopyInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ViewAllUsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewAllUsersCurrentlyBorrowingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/ViewAllUsers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/ViewAllUsersCurrentlyBorrowing.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,27 +24,27 @@
     <session id="-1710960564">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="fxml" value="4" />
-          <entry key="java" value="186" />
+          <entry key="fxml" value="5" />
+          <entry key="java" value="191" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="186" />
-          <entry key="XML" value="7" />
+          <entry key="JAVA" value="191" />
+          <entry key="XML" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="8301" />
-          <entry key="txt" value="470" />
+          <entry key="java" value="8687" />
+          <entry key="txt" value="523" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8301" />
-          <entry key="PLAIN_TEXT" value="470" />
+          <entry key="JAVA" value="8687" />
+          <entry key="PLAIN_TEXT" value="523" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -73,19 +77,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/LibrarianDashboardController.java">
+        <entry file="file://$PROJECT_DIR$/src/ViewAllUsersCurrentlyBorrowingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="178" column="4" selection-start-line="178" selection-start-column="4" selection-end-line="178" selection-end-column="4" />
+            <state relative-caret-position="168">
+              <caret line="71" column="62" lean-forward="true" selection-start-line="71" selection-start-column="62" selection-end-line="71" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ViewAllUsersController.java">
+        <entry file="file://$PROJECT_DIR$/src/TableRepresentationCopyInformation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-172">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="68">
+              <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -102,7 +106,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fineuser</find>
       <find>payButtonClicked</find>
       <find>is</find>
       <find>payfine</find>
@@ -132,6 +135,7 @@
       <find>owed</find>
       <find>usersb</find>
       <find>usersbutton</find>
+      <find>viewall</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -175,12 +179,9 @@
         <option value="$PROJECT_DIR$/src/TableRepresentationCopyAvailable.java" />
         <option value="$PROJECT_DIR$/src/BorrowedResourcesController.java" />
         <option value="$PROJECT_DIR$/src/UserDashboardController.java" />
-        <option value="$PROJECT_DIR$/src/RequestedResourcesController.java" />
         <option value="$PROJECT_DIR$/src/CopyManager.java" />
         <option value="$PROJECT_DIR$/src/TableRepresentationResourceInformation.java" />
-        <option value="$PROJECT_DIR$/src/ReservedResourcesController.java" />
         <option value="$PROJECT_DIR$/src/Copy.java" />
-        <option value="$PROJECT_DIR$/src/TableRepresentationCopyInformation.java" />
         <option value="$PROJECT_DIR$/src/OverdueCopiesController.java" />
         <option value="$PROJECT_DIR$/src/TableRepresentationMoneyTransaction.java" />
         <option value="$PROJECT_DIR$/src/TransactionHistoryController.java" />
@@ -190,6 +191,12 @@
         <option value="$PROJECT_DIR$/src/SaveStaticVariables.java" />
         <option value="$PROJECT_DIR$/src/UserManager.java" />
         <option value="$PROJECT_DIR$/src/LibrarianDashboardController.java" />
+        <option value="$PROJECT_DIR$/src/ViewAllUsersController.java" />
+        <option value="$PROJECT_DIR$/src/ViewAllUsersControllerCurrentlyBorrowing.java" />
+        <option value="$PROJECT_DIR$/src/TableRepresentationCopyInformation.java" />
+        <option value="$PROJECT_DIR$/src/ReservedResourcesController.java" />
+        <option value="$PROJECT_DIR$/src/RequestedResourcesController.java" />
+        <option value="$PROJECT_DIR$/src/ViewAllUsersCurrentlyBorrowingController.java" />
       </list>
     </option>
   </component>
@@ -232,7 +239,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544302141431" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544303940510" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
@@ -289,13 +296,6 @@
       <workItem from="1542452792911" duration="4471000" />
       <workItem from="1544087590965" duration="6407000" />
       <workItem from="1544192909022" duration="4422000" />
-    </task>
-    <task id="LOCAL-00080" summary="Current user logged in.">
-      <created>1544061136420</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1544061136420</updated>
     </task>
     <task id="LOCAL-00081" summary="Remove close button method.">
       <created>1544061392957</created>
@@ -633,7 +633,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544301143085</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="ViewAllUsers -&gt; View all users currently borrowing.">
+      <created>1544302266937</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1544302266937</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -749,7 +756,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="View user displays some contact info in an alert box.&#10;Some text fields added to create user." />
     <MESSAGE value="Add user + Add Librarian. GUI needs some fixing." />
     <MESSAGE value="removing address because it can't fit anyway" />
     <MESSAGE value="Add edit profile button.&#10;Add most popular resource button." />
@@ -774,13 +780,10 @@
     <MESSAGE value="Overdue copies preparation" />
     <MESSAGE value="Overdue copies works" />
     <MESSAGE value="Transaction history in user now working." />
-    <option name="LAST_COMMIT_MESSAGE" value="Transaction history in user now working." />
+    <MESSAGE value="ViewAllUsers -&gt; View all users currently borrowing." />
+    <option name="LAST_COMMIT_MESSAGE" value="ViewAllUsers -&gt; View all users currently borrowing." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/CreateEdit.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/javafx-src.zip!/javafx/fxml/Initializable.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
     <entry file="file://$PROJECT_DIR$/src/resources/ViewUser.fxml">
@@ -979,19 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TableRepresentationCopyInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-          <folding>
-            <element signature="e#1191#1192#0" expanded="true" />
-            <element signature="e#1225#1226#0" expanded="true" />
-            <element signature="e#1262#1263#0" expanded="true" />
-            <element signature="e#1295#1296#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/OverdueCopiesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="712">
@@ -1010,27 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2584">
           <caret line="169" selection-start-line="169" selection-end-line="169" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RequestedResourcesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="64" column="56" lean-forward="true" selection-start-line="64" selection-start-column="56" selection-end-line="64" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BorrowedResourcesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="71" column="67" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ReservedResourcesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1135,6 +1104,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/ViewAllUsersCurrentlyBorrowing.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="12" column="238" selection-start-line="12" selection-start-column="238" selection-end-line="12" selection-end-column="238" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BorrowedResourcesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="71" column="1" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ReservedResourcesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RequestedResourcesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LibrarianDashboardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1145,17 +1150,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ViewAllUsersController.java">
+    <entry file="file://$PROJECT_DIR$/src/TableRepresentationCopyInformation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-172">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="68">
+          <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LibrarianDashboardController.java">
+    <entry file="file://$PROJECT_DIR$/src/ViewAllUsersCurrentlyBorrowingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="178" column="4" selection-start-line="178" selection-start-column="4" selection-end-line="178" selection-end-column="4" />
+        <state relative-caret-position="168">
+          <caret line="71" column="62" lean-forward="true" selection-start-line="71" selection-start-column="62" selection-end-line="71" selection-end-column="62" />
         </state>
       </provider>
     </entry>

@@ -173,7 +173,7 @@ public class LibrarianDashboardController extends Controller {
      */
     @FXML
     public void usersBorrowingButtonClicked(ActionEvent event) {
-        new NewWindow("resources/ViewAllUsers.fxml", event,
+        new NewWindow("resources/ViewAllUsersCurrentlyBorrowing.fxml", event,
                 "View All Users Currently Borrowing", getLibrary());
 
     }
