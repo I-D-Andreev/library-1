@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6e3b68db-e3f9-4a5f-a067-ee60d4dfb31b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/EditAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/EditAccount.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/values.ser" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/values.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CreateEditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CreateEditController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,31 +19,32 @@
     <session id="-1710960564">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="48" />
+          <entry key="fxml" value="1" />
+          <entry key="java" value="78" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="48" />
-          <entry key="XML" value="3" />
+          <entry key="JAVA" value="78" />
+          <entry key="XML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2835" />
-          <entry key="txt" value="121" />
+          <entry key="java" value="4331" />
+          <entry key="txt" value="305" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2835" />
-          <entry key="PLAIN_TEXT" value="121" />
+          <entry key="JAVA" value="4331" />
+          <entry key="PLAIN_TEXT" value="305" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
         <counts>
-          <entry key="git.branch.checkout.local" value="1" />
+          <entry key="git.branch.checkout.local" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -55,20 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/EditAccountController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="191" column="16" selection-start-line="191" selection-start-column="16" selection-end-line="191" selection-end-column="16" />
+            <state relative-caret-position="442">
+              <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,10 +64,26 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ManageResourcesController.java">
+        <entry file="file://$PROJECT_DIR$/src/LibrarianResourceController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="183" column="69" selection-start-line="183" selection-start-column="62" selection-end-line="183" selection-end-column="69" />
+            <state relative-caret-position="385">
+              <caret line="76" column="107" lean-forward="true" selection-start-line="76" selection-start-column="107" selection-end-line="76" selection-end-column="107" />
+              <folding>
+                <element signature="e#2014#2015#0" expanded="true" />
+                <element signature="e#2056#2057#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CreateEditController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="967" column="83" selection-start-line="967" selection-start-column="83" selection-end-line="967" selection-end-column="83" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,16 +100,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getmax</find>
-      <find>return</find>
-      <find>milli</find>
-      <find>date</find>
-      <find>languagesub</find>
-      <find>split</find>
-      <find>deletebutton</find>
-      <find>delete</find>
-      <find>create</find>
-      <find>uniqueid</find>
       <find>alert</find>
       <find>addresste</find>
       <find>drawprof</find>
@@ -122,6 +115,21 @@
       <find>getuni</find>
       <find>deletecopybuttonC</find>
       <find>showAnd</find>
+      <find>fineuser</find>
+      <find>payButtonClicked</find>
+      <find>is</find>
+      <find>payfine</find>
+      <find>newavailab</find>
+      <find>newavailablecopyevent</find>
+      <find>get</find>
+      <find>loancopy</find>
+      <find>reservebuttoncl</find>
+      <find>reserve</find>
+      <find>newavai</find>
+      <find>nully</find>
+      <find>return</find>
+      <find>returnco</find>
+      <find>should be returned in</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,7 +145,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/HistoryEntryItemTransaction.java" />
         <option value="$PROJECT_DIR$/src/HistoryEntryFine.java" />
-        <option value="$PROJECT_DIR$/src/NormalUser.java" />
         <option value="$PROJECT_DIR$/src/Book.java" />
         <option value="$PROJECT_DIR$/src/History.java" />
         <option value="$PROJECT_DIR$/src/Laptop.java" />
@@ -155,23 +162,24 @@
         <option value="$PROJECT_DIR$/src/ViewUserController.java" />
         <option value="$PROJECT_DIR$/src/UserDashboardController.java" />
         <option value="$PROJECT_DIR$/src/Librarian.java" />
-        <option value="$PROJECT_DIR$/src/ManageResourcesController.java" />
-        <option value="$PROJECT_DIR$/src/CopyManager.java" />
         <option value="$PROJECT_DIR$/src/LibrarianDashboardController.java" />
         <option value="$PROJECT_DIR$/src/OverdueCopiesController.java" />
         <option value="$PROJECT_DIR$/src/NewWindow.java" />
         <option value="$PROJECT_DIR$/src/BrowseResourcesController.java" />
         <option value="$PROJECT_DIR$/src/LibrarianTableCopy.java" />
+        <option value="$PROJECT_DIR$/src/UserResourceController.java" />
+        <option value="$PROJECT_DIR$/src/EditAccountController.java" />
+        <option value="$PROJECT_DIR$/src/NormalUser.java" />
+        <option value="$PROJECT_DIR$/src/TableRepresentationCopy.java" />
         <option value="$PROJECT_DIR$/src/Copy.java" />
+        <option value="$PROJECT_DIR$/src/ManageResourcesController.java" />
+        <option value="$PROJECT_DIR$/src/CopyManager.java" />
+        <option value="$PROJECT_DIR$/src/SaveStaticVariables.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/ResourceManager.java" />
-        <option value="$PROJECT_DIR$/src/SaveStaticVariables.java" />
         <option value="$PROJECT_DIR$/src/UserManager.java" />
-        <option value="$PROJECT_DIR$/src/TableRepresentationCopy.java" />
-        <option value="$PROJECT_DIR$/src/UserResourceController.java" />
         <option value="$PROJECT_DIR$/src/LibrarianResourceController.java" />
         <option value="$PROJECT_DIR$/src/CreateEditController.java" />
-        <option value="$PROJECT_DIR$/src/EditAccountController.java" />
       </list>
     </option>
   </component>
@@ -214,7 +222,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544263519269" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544268869925" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
@@ -271,34 +279,6 @@
       <workItem from="1542452792911" duration="4471000" />
       <workItem from="1544087590965" duration="6407000" />
       <workItem from="1544192909022" duration="4422000" />
-    </task>
-    <task id="LOCAL-00069" summary="Library save method.">
-      <created>1543800009800</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1543800009800</updated>
-    </task>
-    <task id="LOCAL-00070" summary="User, UserManager, Address implement serializable.">
-      <created>1543800263640</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1543800263640</updated>
-    </task>
-    <task id="LOCAL-00071" summary="Save should be protected. Only used by the library.">
-      <created>1543800358178</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1543800358178</updated>
-    </task>
-    <task id="LOCAL-00072" summary="Changed my mind. (and too lazy to revert commits).">
-      <created>1543800428945</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1543800428945</updated>
     </task>
     <task id="LOCAL-00073" summary="Some refactoring in resource manager.">
       <created>1543803655755</created>
@@ -615,7 +595,35 @@
       <option name="project" value="LOCAL" />
       <updated>1544262562703</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="Numbers != digits at Javadoc comment">
+      <created>1544264297966</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1544264297966</updated>
+    </task>
+    <task id="LOCAL-00119" summary="Pay fines working.">
+      <created>1544266286599</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1544266286599</updated>
+    </task>
+    <task id="LOCAL-00120" summary="Additional table for Librarian in the copies.">
+      <created>1544267842693</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1544267842693</updated>
+    </task>
+    <task id="LOCAL-00121" summary="Fixed a problem with reserving.&#10;1 more additional copy in the hardcoded tests.">
+      <created>1544267871625</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1544267871625</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -728,10 +736,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Now all fields are cleared after creating/editing resource." />
-    <MESSAGE value="Refactor the FXML tags in create edit controller." />
-    <MESSAGE value="Refactor some code in create/edit.&#10;Added 1 more dvd while testing." />
-    <MESSAGE value="Refactor delete laptop, book, DVD." />
     <MESSAGE value="Copy text field -&gt; resource unique id text field" />
     <MESSAGE value="Copy search button -&gt; resource search button" />
     <MESSAGE value="Added create/edit copy button." />
@@ -753,7 +757,11 @@
     <MESSAGE value="Copy in user loads with some data (not all)." />
     <MESSAGE value="Table is now properly populated." />
     <MESSAGE value="Delete copy now clears the fields." />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete copy now clears the fields." />
+    <MESSAGE value="Numbers != digits at Javadoc comment" />
+    <MESSAGE value="Pay fines working." />
+    <MESSAGE value="Additional table for Librarian in the copies." />
+    <MESSAGE value="Fixed a problem with reserving.&#10;1 more additional copy in the hardcoded tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed a problem with reserving.&#10;1 more additional copy in the hardcoded tests." />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Object.java" />
@@ -854,13 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NormalUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-309">
-          <caret line="18" column="58" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ViewUserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -889,10 +890,6 @@
           <caret line="135" selection-start-line="126" selection-end-line="135" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/ManageResources.fxml">
-      <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UserDashboardController.java">
@@ -946,32 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CopyManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
-          <caret line="222" column="46" selection-start-line="222" selection-start-column="46" selection-end-line="222" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1007#1008#0" expanded="true" />
-            <element signature="e#1043#1044#0" expanded="true" />
-            <element signature="e#1194#1195#0" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
-            <element signature="e#1491#1492#0" expanded="true" />
-            <element signature="e#1548#1549#0" expanded="true" />
-            <element signature="e#1702#1703#0" expanded="true" />
-            <element signature="e#1749#1750#0" expanded="true" />
-            <element signature="e#1855#1856#0" expanded="true" />
-            <element signature="e#1898#1899#0" expanded="true" />
-            <element signature="e#2056#2057#0" expanded="true" />
-            <element signature="e#2099#2100#0" expanded="true" />
-            <element signature="e#2252#2253#0" expanded="true" />
-            <element signature="e#2295#2296#0" expanded="true" />
-            <element signature="e#2930#2931#0" expanded="true" />
-            <element signature="e#2991#2992#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/OverdueCopiesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -1001,6 +972,54 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LibrarianTableCopy.java" />
+    <entry file="file://$PROJECT_DIR$/src/UserResourceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="60" column="51" lean-forward="true" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BrowseResourcesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2465">
+          <caret line="162" selection-start-line="162" selection-end-line="162" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/ManageResources.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NormalUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="61" column="87" selection-start-line="61" selection-start-column="87" selection-end-line="61" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EditAccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="192" column="32" lean-forward="true" selection-start-line="192" selection-start-column="32" selection-end-line="192" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TableRepresentationCopy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+          <folding>
+            <element signature="e#861#862#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/UserManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1014,7 +1033,16 @@
           <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
           <folding>
             <element signature="e#555#556#0" expanded="true" />
-            <element signature="e#590#591#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CopyManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="267" selection-start-line="267" selection-end-line="267" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1031,51 +1059,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CreateEditController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="1109" column="7" lean-forward="true" selection-start-line="1109" selection-start-column="7" selection-end-line="1109" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TableRepresentationCopy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserResourceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="60" column="51" lean-forward="true" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BrowseResourcesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="82" column="117" selection-start-line="82" selection-start-column="117" selection-end-line="82" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LibrarianResourceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="71" column="43" selection-start-line="71" selection-start-column="43" selection-end-line="71" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Copy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="191" column="20" selection-start-line="191" selection-start-column="20" selection-end-line="191" selection-end-column="20" />
+        <state relative-caret-position="-1175">
+          <caret line="235" lean-forward="true" selection-start-line="235" selection-end-line="235" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1681#1682#0" expanded="true" />
@@ -1104,27 +1091,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ManageResourcesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="973">
+          <caret line="98" column="73" selection-start-line="98" selection-start-column="73" selection-end-line="98" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="442">
+          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ManageResourcesController.java">
+    <entry file="file://$PROJECT_DIR$/src/LibrarianResourceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="183" column="69" selection-start-line="183" selection-start-column="62" selection-end-line="183" selection-end-column="69" />
+        <state relative-caret-position="385">
+          <caret line="76" column="107" lean-forward="true" selection-start-line="76" selection-start-column="107" selection-end-line="76" selection-end-column="107" />
+          <folding>
+            <element signature="e#2014#2015#0" expanded="true" />
+            <element signature="e#2056#2057#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EditAccountController.java">
+    <entry file="file://$PROJECT_DIR$/src/CreateEditController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="191" column="16" selection-start-line="191" selection-start-column="16" selection-end-line="191" selection-end-column="16" />
+        <state relative-caret-position="263">
+          <caret line="967" column="83" selection-start-line="967" selection-start-column="83" selection-end-line="967" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

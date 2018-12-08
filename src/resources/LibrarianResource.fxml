@@ -14,8 +14,8 @@
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LibrarianResourceController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.4000244140625" minWidth="10.0" prefWidth="224.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="419.199951171875" minWidth="10.0" prefWidth="376.79999999999995" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.4000244140625" minWidth="10.0" prefWidth="203.20001220703125" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="419.199951171875" minWidth="10.0" prefWidth="397.5999877929687" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
@@ -32,18 +32,19 @@
             </Label>
          </children>
       </HBox>
-      <ImageView fx:id="resourceImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+      <ImageView fx:id="resourceImage" fitHeight="150.0" fitWidth="176.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin>
       </ImageView>
       <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
-            <TableView fx:id="displayTable" prefHeight="287.0" prefWidth="290.0">
+            <TableView fx:id="displayTable" prefHeight="304.0" prefWidth="378.0">
               <columns>
-                <TableColumn fx:id="copyIDColumn" prefWidth="90.40000915527344" text="Copy ID" />
-                  <TableColumn fx:id="copyAvailableColumn" prefWidth="123.20001220703125" text="Availability" />
-                  <TableColumn fx:id="copyBorrowedByColumn" prefWidth="139.20001220703125" text="Borrowed By" />
+                <TableColumn fx:id="copyIDColumn" prefWidth="80.00000303983688" text="Copy ID" />
+                  <TableColumn fx:id="copyAvailableColumn" prefWidth="91.20001220703125" text="Availability" />
+                  <TableColumn fx:id="copyBorrowedByColumn" prefWidth="103.99998474121094" text="Borrowed By" />
+                  <TableColumn fx:id="copyReservedForColumn" prefWidth="98.39996337890625" text="Reserved For" />
               </columns>
                <VBox.margin>
                   <Insets right="20.0" />

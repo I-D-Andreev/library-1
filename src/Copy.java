@@ -248,10 +248,13 @@ public class Copy implements Serializable {
             fineAmount = giveFineToUser(byUser);
         }
 
+        // nullify the copy's values
+        nullifyValues();
+
         // Notify the copy's copy manager that a new copy is available.
         this.copysManager.newAvailableCopyEvent();
 
-        nullifyValues();
+
 
         return fineAmount;
     }

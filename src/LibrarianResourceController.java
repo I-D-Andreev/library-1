@@ -39,6 +39,9 @@ public class LibrarianResourceController extends Controller {
     private TableColumn<TableRepresentationCopy, String> copyBorrowedByColumn; // Value injected by FXMLLoader
 
     @FXML
+    private TableColumn<TableRepresentationCopy, String> copyReservedForColumn; // Value injected by FXMLLoader
+
+    @FXML
     private ObservableList<TableRepresentationCopy> data;
 
     @FXML // fx:id="okButton"
@@ -53,32 +56,32 @@ public class LibrarianResourceController extends Controller {
         new NewWindow("resources/BrowseResources.fxml", event, "Librarian Copy View", getLibrary());
     }
 
-    public static void setClickedResource(Resource resource){
+    public static void setClickedResource(Resource resource) {
         clickedResource = resource;
     }
 
     @Override
-    public void onStart(){
+    public void onStart() {
         data = FXCollections.observableArrayList();
         copyIDColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopy, String>("uniqueCopyID"));
         copyAvailableColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopy, String>("isAvailable"));
         copyBorrowedByColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopy, String>("borrowedBy"));
+        copyReservedForColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopy, String>("reservedFor"));
 
-        for (Copy copy : clickedResource.getCopyManager().getListOfAllCopies()){
+        for (Copy copy : clickedResource.getCopyManager().getListOfAllCopies()) {
 
 
             data.add(
                     new TableRepresentationCopy(copy.getUniqueCopyID(),
-                            (copy.isAvailable())? "available": "not available",
-                            (copy.getBorrowedBy()==null)? "no one" : copy.getBorrowedBy().getUsername())
+                            (copy.isAvailable()) ? "available" : "not available",
+                            (copy.getBorrowedBy() == null) ? "no one" : copy.getBorrowedBy().getUsername(),
+                            (copy.getReservedFor() == null) ? "no one" : copy.getReservedFor().getUsername())
             );
 
         }
 
         displayTable.getItems().addAll(data);
     }
-
-
 
 
 }

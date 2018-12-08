@@ -39,8 +39,8 @@ public class ManageResourcesController extends Controller {
     @FXML // fx:id="fineTab"
     private Tab fineTab; // Value injected by FXMLLoader
 
-    @FXML // fx:id="fineUserIDTextField"
-    private TextField fineUserIDTextField; // Value injected by FXMLLoader
+    @FXML // fx:id="fineUserUsernameTextField"
+    private TextField fineUserUsernameTextField; // Value injected by FXMLLoader
 
     @FXML // fx:id="searchButton"
     private Button searchButton; // Value injected by FXMLLoader
@@ -96,7 +96,7 @@ public class ManageResourcesController extends Controller {
                 alert.show();
             } else {
                 String content = "The user has successfully been given a copy - ID: "
-                        + copy.getUniqueCopyID() + ". It should be returned in " + copy.getLoanDurationInDays() +
+                        + copy.getUniqueCopyID() + ". It loan duration is " + copy.getLoanDurationInDays() +
                         " day(s)!";
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION, content,
@@ -157,7 +157,50 @@ public class ManageResourcesController extends Controller {
 
     @FXML
     public void payButtonClicked(ActionEvent event) {
+        NormalUser user = (NormalUser) getLibrary().getUserManager()
+                .getUserByUsername(fineUserUsernameTextField.getText());
+        String fineText = payTextField.getText();
 
+        if(!isStringNumber(fineText)){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "The fine must be a number.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            double fine = Double.parseDouble(fineText);
+            if(fine<0.01 || fine > user.getBalance()){
+                Alert alert = new Alert(Alert.AlertType.ERROR, "You should pay between 0.01 and the fine amount.",
+                        ButtonType.OK);
+                alert.show();
+            } else {
+                getLibrary().getUserManager().payFine(fine, user);
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION,
+                        "Successfully paid fine. Current amount owed: " + user.getBalance(),
+                        ButtonType.OK);
+                alert.show();
+
+                // unlock username box
+                fineUserUsernameTextField.setDisable(false);
+
+                // clear fields
+                fineUserUsernameTextField.clear();
+                payTextField.clear();
+                outstandingAmountLabel.setText("");
+            }
+
+        }
+    }
+
+    /**
+     * Check if a certain string contains digits only.
+     *
+     * @param s The string.
+     * @return True if the string contains only digits, false otherwise.
+     */
+    public boolean isStringNumber(String s) {
+        // regular expression
+        // a number is: digits(0 or more) + comma/dot + digits(at least 1)
+        return s.matches("\\d*[.,]?\\d+");
     }
 
     @FXML
@@ -209,8 +252,28 @@ public class ManageResourcesController extends Controller {
 
     @FXML
     void searchButtonClicked(ActionEvent event) {
+        User searchUser = getLibrary().getUserManager().getUserByUsername(fineUserUsernameTextField.getText());
+        if(searchUser == null || !(searchUser instanceof NormalUser)){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid username.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // the username is legitimate
+            NormalUser user = (NormalUser) searchUser;
 
+            if(user.getBalance() == 0){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "User has no fines.",
+                        ButtonType.OK);
+                alert.show();
+            } else {
+                outstandingAmountLabel.setText(String.valueOf(user.getBalance()));
+
+                // lock the username text field
+                fineUserUsernameTextField.setDisable(true);
+            }
+        }
     }
+
 }
 
 /*
