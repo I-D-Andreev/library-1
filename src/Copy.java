@@ -189,7 +189,7 @@ public class Copy implements Serializable {
      * Checks if the copy is available.
      * @return true if the copy is not borrowed or reserved,false otherwise.
      */
-    public boolean isAvailable() {
+    public boolean getIsAvailable() {
         return this.borrowedBy == null && this.reservedFor == null;
     }
 
