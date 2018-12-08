@@ -44,7 +44,7 @@
                         <Insets left="30.0" right="15.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="userButton" mnemonicParsing="false" onAction="#userButtonClicked" text="Users Currently Borrowing">
+                  <Button fx:id="usersBorrowing" mnemonicParsing="false" onAction="#usersBorrowingButtonClicked" text="Users Currently Borrowing">
                      <HBox.margin>
                         <Insets right="15.0" />
                      </HBox.margin>

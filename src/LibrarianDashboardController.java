@@ -59,8 +59,8 @@ public class LibrarianDashboardController extends Controller {
     @FXML
     private ImageView librarianImage;
 
-    @FXML // fx:id="viewAllUsersButton"
-    private Button viewAllUsersButton; // Value injected by FXMLLoader
+    @FXML
+    private Button usersBorrowing;
 
     /**
      * Loads the librarian information on startup.
@@ -172,19 +172,10 @@ public class LibrarianDashboardController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    public void userButtonClicked(ActionEvent event) {
+    public void usersBorrowingButtonClicked(ActionEvent event) {
+        new NewWindow("resources/ViewAllUsers.fxml", event,
+                "View All Users Currently Borrowing", getLibrary());
 
     }
 
-    /**
-     * All the users are shown.
-     *
-     * @param event The button is clicked.
-     */
-    @FXML
-    void viewAllUsersButtonClicked(ActionEvent event) {
-
-        new NewWindow("resources/ViewAllUsers.fxml", event, "View All Users", getLibrary());
-
-    }
 }
