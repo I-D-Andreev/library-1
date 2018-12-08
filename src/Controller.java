@@ -1,4 +1,6 @@
-// Superclass of all controllers
+/**
+ * Superclass of all controllers, class to model a controller.
+ */
 public class Controller {
     private Library library;
 

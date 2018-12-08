@@ -68,6 +68,9 @@ public class BrowseResourcesController extends Controller {
      */
     private ArrayList<String> acceptableTypes;
 
+    /**
+     * Fills the table with data.
+     */
     public void initialize() {
         data = FXCollections.observableArrayList();
         acceptableTypes = new ArrayList<>();
@@ -78,8 +81,8 @@ public class BrowseResourcesController extends Controller {
 
         displayTable.setOnMouseClicked(event -> {
 
-            if(event.getClickCount() == 2) {
-                if(getLibrary().getCurrentUserLoggedIn().hasAdminAccess()){
+            if (event.getClickCount() == 2) {
+                if (getLibrary().getCurrentUserLoggedIn().hasAdminAccess()) {
                     LibrarianResourceController.setClickedResource(displayTable.getSelectionModel().getSelectedItem());
                     new NewWindow("resources/LibrarianResource.fxml", event,
                             "Librarian Copy View - Tawe Lib", getLibrary());
@@ -90,18 +93,22 @@ public class BrowseResourcesController extends Controller {
                     new NewWindow("resources/UserResource.fxml", event,
                             "Librarian Copy View - Tawe Lib", getLibrary());
                 }
-            }});
+            }
+        });
     }
 
     /**
      * Refreshes the table on startup.
      */
     @Override
-    public void onStart(){
+    public void onStart() {
         this.updateTable();
     }
 
 
+    /**
+     * Updates the data shown on the table.
+     */
     @FXML
     public void updateTable() {
         // clear previous data
@@ -130,10 +137,10 @@ public class BrowseResourcesController extends Controller {
 
         // if none of the types have been ticked accept all
         // else remove the resources that are not permitted
-        ArrayList <Resource> shouldNotBeDisplayed = new ArrayList<>();
-        if(acceptableTypes.size() != 0) {
-            for(Resource resource : data){
-                if(!acceptableTypes.contains(resource.getType())){
+        ArrayList<Resource> shouldNotBeDisplayed = new ArrayList<>();
+        if (acceptableTypes.size() != 0) {
+            for (Resource resource : data) {
+                if (!acceptableTypes.contains(resource.getType())) {
                     shouldNotBeDisplayed.add(resource);
                 }
             }
