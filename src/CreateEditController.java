@@ -1094,6 +1094,13 @@ public class CreateEditController extends Controller {
 
         alert.show();
 
+        // unlock the search id
+        editCopyIdSearchTextField.setDisable(false);
+
+        //clear the text fields
+        editCopyIdSearchTextField.clear();
+        editCopyLoanDurationTextField.clear();
+
     }
 
     /**
