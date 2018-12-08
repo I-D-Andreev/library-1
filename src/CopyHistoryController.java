@@ -1,8 +1,12 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 /**
  * Controller for the copy history window.
@@ -12,19 +16,83 @@ import javafx.scene.control.TableView;
  */
 public class CopyHistoryController extends Controller{
 
-    @FXML // fx:id="okButton"
-    private Button okButton; // Value injected by FXMLLoader
-
-    @FXML // fx:id="copyHistoryTable"
-    private TableView<?> copyHistoryTable; // Value injected by FXMLLoader
-
-    @FXML // fx:id="copyHistoryColumn"
-    private TableColumn<?, ?> copyHistoryColumn; // Value injected by FXMLLoader
+    @FXML
+    private Button okButton;
 
     @FXML
-    void okButtonClicked(ActionEvent event) {
+    private TableView<TableRepresentationItemTransaction> copyHistoryTable;
 
+    @FXML
+    private TableColumn<TableRepresentationItemTransaction, String> borrowReturnColumn;
+
+    @FXML
+    private TableColumn<TableRepresentationItemTransaction, String> usernameColumn;
+
+    @FXML
+    private TableColumn<TableRepresentationItemTransaction, String> dateColumn;
+
+    @FXML
+    private TextField copyIDTextField;
+
+    @FXML
+    private Button copySearchButton;
+
+    @FXML
+    private ObservableList<TableRepresentationItemTransaction> data;
+
+    @FXML
+    public void okButtonClicked(ActionEvent event) {
         new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
+    }
+
+
+    @FXML
+    public void copySearchButtonClicked(ActionEvent event) {
+        String copyID = copyIDTextField.getText();
+        Copy copy = getLibrary().getResourceManager().getCopyById(copyID);
+
+        if(copy == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Incorrect Copy ID.",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            this.fillTable(copy);
+        }
+    }
+
+    @Override
+    public void onStart(){
+        data = FXCollections.observableArrayList();
+
+        borrowReturnColumn.setCellValueFactory(
+                new PropertyValueFactory<TableRepresentationItemTransaction, String>("borrowedOrReturned"));
+
+        usernameColumn.setCellValueFactory(
+                new PropertyValueFactory<TableRepresentationItemTransaction, String>("username"));
+
+        dateColumn.setCellValueFactory(
+                new PropertyValueFactory<TableRepresentationItemTransaction, String>("date"));
+    }
+
+    private void fillTable(Copy copy) {
+
+        // clear previous data
+        copyHistoryTable.getItems().clear();
+        data.clear();
+
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+
+        for(HistoryEntry eachEntry : copy.getLoanHistory().getHistory()){
+            HistoryEntryItemTransaction entry = (HistoryEntryItemTransaction) eachEntry;
+            String borrowOrReturn = (entry.isBorrowed()) ? "borrowed" : "returned";
+            String username = entry.getBorrowedBy().getUsername();
+            String date = dateFormat.format(entry.getDate());
+
+            data.add(new TableRepresentationItemTransaction(borrowOrReturn, username, date));
+        }
+
+        copyHistoryTable.getItems().addAll(data);
     }
 
 }

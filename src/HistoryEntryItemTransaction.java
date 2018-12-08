@@ -15,7 +15,7 @@ public class HistoryEntryItemTransaction extends HistoryEntry {
     /**
      * The person who borrowed the item.
      */
-    private User borrowedBy; // should be User
+    private User borrowedBy;
 
     /**
      * Creates an item transaction type of history entry.
