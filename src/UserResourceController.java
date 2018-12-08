@@ -34,7 +34,7 @@ public class UserResourceController extends Controller {
     private static Resource clickedResource;
 
     @FXML
-    private TableView <TableRepresentationCopyAvailable> tableView;
+    private TableView<TableRepresentationCopyAvailable> tableView;
 
     @FXML
     private TableColumn<TableRepresentationCopyAvailable, String> uniqueIDColumn;
@@ -46,6 +46,10 @@ public class UserResourceController extends Controller {
     @FXML
     private ObservableList<TableRepresentationCopyAvailable> data;
 
+    /**
+     * Takes the user to the browse resource tab after the button is clicked.
+     * @param event The button is clicked.
+     */
     @FXML
     public void okButtonClicked(ActionEvent event) {
         clickedResource = null;
@@ -53,19 +57,22 @@ public class UserResourceController extends Controller {
                 "Browse Resources - TaweLib", getLibrary());
     }
 
-    public static void setClickedResource(Resource resource){
+    public static void setClickedResource(Resource resource) {
         clickedResource = resource;
     }
 
+    /**
+     * Initializes the tab for the user.
+     */
     @Override
-    public void onStart(){
+    public void onStart() {
         data = FXCollections.observableArrayList();
         uniqueIDColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopyAvailable, String>("uniqueCopyID"));
         isAvailableColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopyAvailable, String>("isAvailable"));
 
-        for (Copy copy : clickedResource.getCopyManager().getListOfAllCopies()){
+        for (Copy copy : clickedResource.getCopyManager().getListOfAllCopies()) {
             data.add(new TableRepresentationCopyAvailable(copy.getUniqueCopyID(),
-                    (copy.isAvailable())? "available": "not available"));
+                    (copy.isAvailable()) ? "available" : "not available"));
         }
 
         tableView.getItems().addAll(data);
