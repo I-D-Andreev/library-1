@@ -147,6 +147,8 @@ public class UserDashboardController extends Controller {
     @FXML
     void transHistoryButtonClicked(ActionEvent event) {
 
+        new NewWindow("resources/TransactionHistory.fxml", event, "Transaction History - TaweLib",
+                getLibrary());
     }
 
 
