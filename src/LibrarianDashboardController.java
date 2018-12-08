@@ -62,11 +62,17 @@ public class LibrarianDashboardController extends Controller {
     @FXML // fx:id="viewAllUsersButton"
     private Button viewAllUsersButton; // Value injected by FXMLLoader
 
+    /**
+     * Loads the librarian information on startup.
+     */
     @Override
     public void onStart() {
         this.loadLibrarianInformation();
     }
 
+    /**
+     * Loads the librarian information into the dashboard.
+     */
     private void loadLibrarianInformation() {
 
         try {
@@ -83,10 +89,10 @@ public class LibrarianDashboardController extends Controller {
         staffIDLabel.setText(((Librarian) (getLibrary().getCurrentUserLoggedIn())).getStaffNumber());
     }
 
-    @FXML
     /**
      * Opens the browse resources window.
      */
+    @FXML
     public void browseButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/BrowseResources.fxml", event,
@@ -98,53 +104,55 @@ public class LibrarianDashboardController extends Controller {
                 "Browse Resources - TaweLib", getLibrary());
     }
 
-    @FXML
     /**
      * Opens the create/edit resources window.
      */
+    @FXML
     public void createEditButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/CreateEdit.fxml", event,
                 "Create/Edit Resources - TaweLib", getLibrary());
     }
 
-    @FXML
     /**
      * Takes the user back to the login window.
      */
+    @FXML
     public void logOutButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/Login.fxml", event,
                 "Login - TaweLib", getLibrary());
     }
 
-    @FXML
     /**
      * Opens the manage resources window.
      */
+    @FXML
     public void manageResourcesButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/ManageResources.fxml", event, "Manage Resources - TaweLib",
                 getLibrary());
     }
 
-    @FXML
     /**
      * Opens the view user window.
      */
+    @FXML
     public void viewUserButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/ViewUser.fxml", event, "Manage Resources - TaweLib",
                 getLibrary());
     }
 
-
     @FXML
     public void copyHistoryButtonClicked(ActionEvent event) {
 
     }
 
-
+    /**
+     *
+     * @param event
+     */
     @FXML
     public void overdueResourcesButtonClicked(ActionEvent event) {
 

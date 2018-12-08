@@ -34,7 +34,7 @@ public class HistoryEntryFine extends HistoryEntryMoneyTransaction {
     /**
      * Get the number of days an item is overdue.
      *
-     * @return daysOverdue The number of days.
+     * @return The number of days the item is overdue.
      */
     public int getDaysOverdue() {
         return daysOverdue;
