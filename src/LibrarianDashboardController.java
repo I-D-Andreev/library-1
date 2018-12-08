@@ -144,14 +144,20 @@ public class LibrarianDashboardController extends Controller {
                 getLibrary());
     }
 
+    /**
+     * The copy history button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void copyHistoryButtonClicked(ActionEvent event) {
 
     }
 
     /**
+     * Shows the overdue resources when the button is clicked.
      *
-     * @param event
+     * @param event The button is clicked.
      */
     @FXML
     public void overdueResourcesButtonClicked(ActionEvent event) {
@@ -159,11 +165,21 @@ public class LibrarianDashboardController extends Controller {
         new NewWindow("resources/OverdueCopies.fxml", event, "Overdue Copies - TaweLib", getLibrary());
     }
 
+    /**
+     * The user button being clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void userButtonClicked(ActionEvent event) {
 
     }
 
+    /**
+     * All the users are shown.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void viewAllUsersButtonClicked(ActionEvent event) {
 
