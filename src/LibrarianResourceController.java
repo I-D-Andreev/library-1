@@ -66,7 +66,7 @@ public class LibrarianResourceController extends Controller {
         copyIDColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopy, String>("uniqueCopyID"));
         copyAvailableColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopy, String>("isAvailable"));
         copyBorrowedByColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopy, String>("borrowedBy"));
-        copyBorrowedByColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopy, String>("reservedFor"));
+        copyReservedForColumn.setCellValueFactory(new PropertyValueFactory<TableRepresentationCopy, String>("reservedFor"));
 
         for (Copy copy : clickedResource.getCopyManager().getListOfAllCopies()) {
 
