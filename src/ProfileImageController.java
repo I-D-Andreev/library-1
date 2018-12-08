@@ -44,7 +44,7 @@ public class ProfileImageController extends Controller {
 
     @FXML // fx:id="cancelButton"
     private Button cancelButton; // Value injected by FXMLLoader
-    
+
     @FXML
     private void initialize() {
 

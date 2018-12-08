@@ -152,6 +152,7 @@ public class LibrarianDashboardController extends Controller {
     @FXML
     public void copyHistoryButtonClicked(ActionEvent event) {
 
+        new NewWindow("resources/CopyHistory.fxml", event, "Copy History - TaweLib", getLibrary());
     }
 
     /**
