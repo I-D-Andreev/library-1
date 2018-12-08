@@ -18,37 +18,68 @@ import java.text.SimpleDateFormat;
  */
 public class BorrowedResourcesController extends Controller {
 
+    /**
+     * The button to confirm an action.
+     */
     @FXML
     private Button okButton;
 
+    /**
+     * The table that shows borrowed resources.
+     */
     @FXML
     private TableView<TableRepresentationCopyInformation> borrowedResourcesTable;
 
+    /**
+     * The table column showing copy ID of the resource.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> copyIDColumn;
 
+    /**
+     * The column showing name of the resource..
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> nameColumn;
 
+    /**
+     * The column showing the type of the resource.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> typeColumn;
 
+    /**
+     * The column showing the borrowed date of the resource.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> borrowDateColumn;
 
+    /**
+     * The column showing the due date of the resource.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> dueDateColumn;
 
+    /**
+     * The data inside the table.
+     */
     @FXML
     private ObservableList<TableRepresentationCopyInformation> data;
 
-
+    /**
+     * Takes the user to the resources tab when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void okButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/UserDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
 
+    /**
+     * Initializes the table and then fills it with data.
+     */
     @Override
     public void onStart() {
         data = FXCollections.observableArrayList();
@@ -67,6 +98,9 @@ public class BorrowedResourcesController extends Controller {
         borrowedResourcesTable.getItems().addAll(data);
     }
 
+    /**
+     * Method that fills the table with data.
+     */
     private void fillInData() {
         User currentlyLoggedIn = getLibrary().getCurrentUserLoggedIn();
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
