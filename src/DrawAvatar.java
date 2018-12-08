@@ -29,6 +29,8 @@ import javafx.util.Pair;
 
 public class DrawAvatar extends Application {
 
+    private String filePath;
+
     /**
      * The set window width for the window that appears
      */
@@ -68,6 +70,16 @@ public class DrawAvatar extends Application {
      * Current canvas to use to trace a line
      */
     private Canvas trace;
+
+    public void setFilePath(String filePath) {
+
+        this.filePath = filePath;
+    }
+
+    public String getFilePath() {
+
+        return filePath;
+    }
 
     /**
      * Starts the whole drawing system.
@@ -128,6 +140,8 @@ public class DrawAvatar extends Application {
         saveButton.setText("Save");
         saveButton.setOnAction(e -> {
             captureAndSaveDisplay(grid, root, primaryStage);
+            Stage stage = (Stage) saveButton.getScene().getWindow();
+            stage.close();
 //
 //            // here we make image from vbox and add it to scene, can be repeated :)
 //            WritableImage snapshot = grid.snapshot(new SnapshotParameters(), null);
@@ -281,6 +295,8 @@ public class DrawAvatar extends Application {
                 ex.printStackTrace();
             }
         }
+
+        setFilePath(file.getAbsolutePath());
     }
 
 

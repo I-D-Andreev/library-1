@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="ReservedResourcesController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="334.0" minHeight="10.0" prefHeight="334.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="195.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+         <children>
+            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" text="OK">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <TableView fx:id="reservedResourcesTable" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="reservedResourcesColumn" prefWidth="559.0" text="Reserved Resources" />
+        </columns>
+         <GridPane.margin>
+            <Insets left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </TableView>
+   </children>
+</GridPane>

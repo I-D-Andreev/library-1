@@ -81,6 +81,8 @@ public class UserDashboardController extends Controller {
     @FXML
     public void borrowedResourcesButtonClicked(ActionEvent event) {
 
+        new NewWindow("resources/BorrowedResources.fxml", event, "Borrowed Resources - TaweLib",
+                getLibrary());
     }
 
     @FXML
@@ -124,21 +126,29 @@ public class UserDashboardController extends Controller {
     @FXML
     void overdueResourcesButtonClicked(ActionEvent event) {
 
+        new NewWindow("resources/OverdueResources.fxml", event, "Overdue Resources - TaweLib",
+                getLibrary());
     }
 
     @FXML
     void requestedResourcesButtonClicked(ActionEvent event) {
 
+        new NewWindow("resources/RequestedResources.fxml", event, "Requested Resources - TaweLib",
+                getLibrary());
     }
 
     @FXML
     void reservedResourcesButtonClicked(ActionEvent event) {
 
+        new NewWindow("resources/ReservedResources.fxml", event, "Reserved Resources - TaweLib",
+                getLibrary());
     }
 
     @FXML
     void transHistoryButtonClicked(ActionEvent event) {
 
+        new NewWindow("resources/TransactionHistory.fxml", event, "Transaction History - TaweLib",
+                getLibrary());
     }
 
 
@@ -148,6 +158,8 @@ public class UserDashboardController extends Controller {
             Image image = new Image(getLibrary().getCurrentUserLoggedIn().getProfileImagePath());
             userImage.setImage(image);
         } catch (IllegalArgumentException e) {
+            userImage.setImage(null);
+        } catch (NullPointerException e) {
             userImage.setImage(null);
         }
 
