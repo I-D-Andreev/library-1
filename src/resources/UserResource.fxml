@@ -45,11 +45,15 @@
             </Button>
          </children>
       </HBox>
-      <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-        <columns>
-          <TableColumn fx:id="uniqueIDColumn" prefWidth="175.19994509220123" text="Copy ID" />
-          <TableColumn fx:id="isAvailableColumn" prefWidth="186.4000244140625" text="Availability" />
-        </columns>
-      </TableView>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <TableView fx:id="tableView" prefHeight="230.0" prefWidth="351.0">
+               <columns>
+                  <TableColumn fx:id="uniqueIDColumn" prefWidth="175.19994509220123" text="Copy ID" />
+                  <TableColumn fx:id="isAvailableColumn" prefWidth="184.800048828125" text="Availability" />
+               </columns>
+            </TableView>
+         </children>
+      </HBox>
    </children>
 </GridPane>

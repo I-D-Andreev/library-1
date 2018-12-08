@@ -12,10 +12,10 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="LibrarianResourceController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LibrarianResourceController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.4000244140625" minWidth="10.0" prefWidth="224.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="419.199951171875" minWidth="10.0" prefWidth="376.79999999999995" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
@@ -39,29 +39,11 @@
       </ImageView>
       <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Borrowed by:" />
-                  <Label fx:id="borrowedByLabel" text="Info">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Label>
-               </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Due Date:" />
-                  <Label fx:id="dueDateLabel" text="Info">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Label>
-               </children>
-            </HBox>
-            <TableView fx:id="copyHistoryTable" prefHeight="200.0" prefWidth="200.0">
+            <TableView fx:id="displayTable" prefHeight="287.0" prefWidth="290.0">
               <columns>
-                <TableColumn fx:id="copyHistoryColumn" prefWidth="279.0" text="Copy History" />
+                <TableColumn fx:id="copyIDColumn" prefWidth="90.40000915527344" text="Copy ID" />
+                  <TableColumn fx:id="copyAvailableColumn" prefWidth="123.20001220703125" text="Availability" />
+                  <TableColumn fx:id="copyBorrowedByColumn" prefWidth="139.20001220703125" text="Borrowed By" />
               </columns>
                <VBox.margin>
                   <Insets right="20.0" />

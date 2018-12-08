@@ -80,6 +80,7 @@ public class BrowseResourcesController extends Controller {
 
             if(event.getClickCount() == 2) {
                 if(getLibrary().getCurrentUserLoggedIn().hasAdminAccess()){
+                    LibrarianResourceController.setClickedResource(displayTable.getSelectionModel().getSelectedItem());
                     new NewWindow("resources/LibrarianResource.fxml", event,
                             "Librarian Copy View - Tawe Lib", getLibrary());
 

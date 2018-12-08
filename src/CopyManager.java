@@ -114,7 +114,7 @@ public class CopyManager implements Serializable {
         ArrayList<Copy> availableCopies = new ArrayList<>();
 
         for (int i = 0; i < listOfAllCopies.size(); i++) {
-            if (listOfAllCopies.get(i).getIsAvailable()) {
+            if (listOfAllCopies.get(i).isAvailable()) {
                 availableCopies.add(listOfAllCopies.get(i));
             }
         }
@@ -156,7 +156,7 @@ public class CopyManager implements Serializable {
      * @param copy The copy to be removed.
      */
     public void removeCopy(Copy copy) {
-        if (!copy.getIsAvailable()) {
+        if (!copy.isAvailable()) {
             return; // error?
         }
         this.listOfAllCopies.remove(copy);
