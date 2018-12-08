@@ -18,238 +18,456 @@ import java.util.ArrayList;
 
 public class CreateEditController extends Controller {
 
-    // Create Book Tab
+    /**
+     * The book's title field.
+     */
     @FXML
     private TextField titleBookTextField;
 
+    /**
+     * The book's year field.
+     */
     @FXML
     private TextField yearBookTextField;
 
+    /**
+     * The book's thumbnail image path field.
+     */
     @FXML
     private TextField imagePathBookTextField;
 
+    /**
+     * The book's author field.
+     */
     @FXML
     private TextField authorBookTextField;
 
+    /**
+     * The book's publisher field.
+     */
     @FXML
     private TextField publisherBookTextField;
 
+    /**
+     * The book's genre field.
+     */
     @FXML
     private TextField genreBookTextField;
 
+    /**
+     * The book's ISBN field.
+     */
     @FXML
     private TextField isbnBookTextField;
 
+    /**
+     * The book's language field.
+     */
     @FXML
     private TextField languageBookTextField;
 
+    /**
+     * The button that creates book resources.
+     */
     @FXML
     private Button createBookButton;
 
+    /**
+     * The DVD's title field.
+     */
     @FXML
     private TextField titleDVDTextField;
 
+    /**
+     * The DVD's year field.
+     */
     @FXML
     private TextField yearDVDTextField;
 
+    /**
+     * The DVD's thumbnail image path field.
+     */
     @FXML
     private TextField imagePathDVDTextField;
 
+    /**
+     * The DVD's director field.
+     */
     @FXML
     private TextField directorDVDTextField;
 
+    /**
+     * The DVD's runtime field.
+     */
     @FXML
     private TextField runtimeDVDTextField;
 
+    /**
+     * The DVD's language field.
+     */
     @FXML
     private TextField languageDVDTextField;
 
+    /**
+     * The DVD's language of subtitles field.
+     */
     @FXML
     private TextField languageSubtitlesDVDTextField;
 
+    /**
+     * The button that creates a DVD resource.
+     */
     @FXML
     private Button createDVDButton;
 
-    // Create laptop tab.
+    /**
+     * The laptop's title field.
+     */
     @FXML
     private TextField titleLaptopTextField;
 
+    /**
+     * The laptop's year field.
+     */
     @FXML
     private TextField yearLaptopTextField;
 
+    /**
+     * The laptop's thumbnail image path field.
+     */
     @FXML
     private TextField imagePathLaptopTextField;
 
+    /**
+     * The laptop's manufacturer field.
+     */
     @FXML
     private TextField manufacturerLaptopTextField;
 
+    /**
+     * The laptop's model field.
+     */
     @FXML
     private TextField modelLaptopTextField;
 
+    /**
+     * The laptops operating system field.
+     */
     @FXML
     private TextField operatingSystemLaptopTextField;
 
+    /**
+     * The button that creates laptop resources.
+     */
     @FXML
     private Button createLaptopButton;
 
-    // Edit book tab.
+    /**
+     * The book's field where we edit the unique ID.
+     */
     @FXML
     private TextField uniqueIDSearchEditBookTextField;
 
+    /**
+     * The book's field where we edit the title.
+     */
     @FXML
     private TextField titleEditBookTextField;
 
+    /**
+     * The book's field where we edit the year.
+     */
     @FXML
     private TextField yearEditBookTextField;
 
+    /**
+     * The book's field where we edit the author.
+     */
     @FXML
     private TextField authorEditBookTextField;
 
+    /**
+     * The book's field where we edit the thumbnail image path.
+     */
     @FXML
     private TextField imagePathEditBook;
 
+    /**
+     * The book's field where we edit the publisher.
+     */
     @FXML
     private TextField publisherEditBookTextField;
 
+    /**
+     * The book's field where we edit the genre.
+     */
     @FXML
     private TextField genreEditBookTextField;
 
+    /**
+     * The book's field where we edit the ISBN.
+     */
     @FXML
     private TextField isbnEditBookTextField;
 
+    /**
+     * The book's field where we edit the language.
+     */
     @FXML
     private TextField languageEditBookTextField;
 
+    /**
+     * The button that allows us to edit a book.
+     */
     @FXML
     private Button editBookButton;
 
+    /**
+     * The book's edit search button.
+     */
     @FXML
     private Button editBookSearchButton;
 
-    // Edit DVD tab.
+    /**
+     * The DVD's edit search field by unique ID.
+     */
     @FXML
     private TextField uniqueIDSearchEditDVDTextField;
 
+    /**
+     * The DVD's field where we edit the title.
+     */
     @FXML
     private TextField titleEditDVDTextField;
 
+    /**
+     * The DVD's field where we edit the year.
+     */
     @FXML
     private TextField yearEditDVDTextField;
 
+    /**
+     * The DVD's field where we edit the thumbnail image path.
+     */
     @FXML
     private TextField imagePathEditDVD;
 
+    /**
+     * The DVD's field where we edit the director.
+     */
     @FXML
     private TextField directorEditDVDTextField;
 
+    /**
+     * The DVD's field where we edit the runtime.
+     */
     @FXML
     private TextField runtimeEditDVDTextField;
 
+    /**
+     * The DVD's field where we edit the language.
+     */
     @FXML
     private TextField languageEditDVDTextField;
 
+    /**
+     * The DVD's field where we edit the subtitle languages of the dvd.
+     */
     @FXML
     private TextField languageSubtitlesEditDVDTextField;
 
+    /**
+     * The edit button of the DVDs.
+     */
     @FXML
     private Button editDVDButton;
 
+    /**
+     * The DVD's button that allows us to search for a dvd to edit.
+     */
     @FXML
     private Button editDVDSearchButton;
 
+    /**
+     * The tab where we edit a laptop.
+     */
     @FXML
     private Tab editLaptopTab;
 
+    /**
+     * The laptop's field where we search for a laptop to edit by unique ID.
+     */
     @FXML
+
     private TextField uniqueIDSearchEditLaptopTextField;
 
+    /**
+     * The laptop's field where we edit the title.
+     */
     @FXML
     private TextField titleEditLaptopTextField;
 
+    /**
+     * The laptop's field where we edit the year.
+     */
     @FXML
     private TextField yearEditLaptopTextField;
 
+    /**
+     * The laptop's field where we edit the manufacturer.
+     */
     @FXML
     private TextField manufacturerEditLaptopTextField;
 
+    /**
+     * The laptop's field where we edit the model.
+     */
     @FXML
     private TextField modelEditLaptopTextField;
 
+    /**
+     * The laptop's field where we edit the OS.
+     */
     @FXML
     private TextField operatingSystemEditLaptopTextField;
 
+    /**
+     * The button that allows us to edit a laptop.
+     */
     @FXML
     private Button editLaptopButton;
 
+    /**
+     * The button that allows us to search for laptop to edit.
+     */
     @FXML
     private Button editLaptopSearchButton;
 
+    /**
+     * The laptop's field where we edit the thumbnail image path.
+     */
     @FXML
     private TextField imagePathEditLaptop;
 
+    /**
+     * The back button.
+     */
     @FXML
     private Button backButton;
 
+    /**
+     * Button for laptop deletion.
+     */
     @FXML // fx:id="laptopDeleteButton"
     private Button laptopDeleteButton; // Value injected by FXMLLoader
 
+    /**
+     * Button for DVD deletion.
+     */
     @FXML // fx:id="dvdDeleteButton"
     private Button dvdDeleteButton; // Value injected by FXMLLoader
 
+    /**
+     * Button for book deletion.
+     */
     @FXML // fx:id="bookDeleteButton"
     private Button bookDeleteButton; // Value injected by FXMLLoader
 
+    /**
+     * The resources field for unique ID.
+     */
     @FXML // fx:id="resourceUniqueIDtextField"
     private TextField resourceUniqueIDtextField; // Value injected by FXMLLoader
 
+    /**
+     * The resources search button.
+     */
     @FXML // fx:id="copySearchButton"
     private Button resourceSearchButton; // Value injected by FXMLLoader
 
+    /**
+     * The copy's loan duration field.
+     */
     @FXML // fx:id="copyLoanDurationTextField"
     private TextField copyLoanDurationTextField; // Value injected by FXMLLoader
 
+    /**
+     * The button that creates a copy.
+     */
     @FXML // fx:id="copyCreateButton"
     private Button copyCreateButton; // Value injected by FXMLLoader
 
+    /**
+     * The button that creates a book image.
+     */
     @FXML // fx:id="createBookFindImageButton"
     private Button createBookFindImageButton; // Value injected by FXMLLoader
 
+    /**
+     * The button that creates a dvd image.
+     */
     @FXML // fx:id="createDvdFindImageButton"
     private Button createDvdFindImageButton; // Value injected by FXMLLoader
 
+    /**
+     * The button that creates a laptop image.
+     */
     @FXML // fx:id="createLaptopFindImageButton"
     private Button createLaptopFindImageButton; // Value injected by FXMLLoader
 
+    /**
+     * The button that creates a book image.
+     */
     @FXML // fx:id="editBookFindImageButton"
     private Button editBookFindImageButton; // Value injected by FXMLLoader
 
+    /**
+     * The edit dvd image button.
+     */
     @FXML // fx:id="editDvdFindImageButton"
     private Button editDvdFindImageButton; // Value injected by FXMLLoader
 
+    /**
+     * The edit laptop image button.
+     */
     @FXML // fx:id="editLaptopFindImageButton"
     private Button editLaptopFindImageButton; // Value injected by FXMLLoader
 
+    /**
+     * Field for the edit of the search ID of the copy.
+     */
     @FXML
     private TextField editCopyIdSearchTextField;
 
+    /**
+     * Field for the edit of the loan duration of the copy.
+     */
     @FXML
     private TextField editCopyLoanDurationTextField;
 
+    /**
+     * The button to search for a copy.
+     */
     @FXML
     private Button copySearchButton;
 
+    /**
+     * The button to edit a copy.
+     */
     @FXML
     private Button editCopyButton;
 
+    /**
+     * The button to delete a copy.
+     */
     @FXML
     private Button deleteCopyButton;
-
 
 
     /**
      * Goes back to the librarian dashboard when clicked.
      *
-     * @param event The current event.
+     * @param event When the back button is clicked.
      */
     @FXML
     public void backButtonClicked(ActionEvent event) {
@@ -257,7 +475,11 @@ public class CreateEditController extends Controller {
         new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
 
-
+    /**
+     * Creates a book when the button is clicked.
+     *
+     * @param event When the button is clicked.
+     */
     @FXML
     public void createBookButtonClicked(ActionEvent event) {
         // mandatory information- title, year, thumbnail, author, publisher
@@ -297,6 +519,11 @@ public class CreateEditController extends Controller {
         }
     }
 
+    /**
+     * Creates dvd when the button is clicked
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void createDVDButtonClicked(ActionEvent event) {
         // mandatory information- title, year, thumbnail, director, runtime
@@ -338,7 +565,13 @@ public class CreateEditController extends Controller {
         }
     }
 
-    private ArrayList<String> stringToArrayListOfStrings(String subtitleLanguages){
+    /**
+     * Converts a string with the subtitle languages into a ArrayList.
+     *
+     * @param subtitleLanguages The subtitle languages read from a string.
+     * @return The list of subtitle languages.
+     */
+    private ArrayList<String> stringToArrayListOfStrings(String subtitleLanguages) {
         // split the string into smaller strings on new comma or space
         String[] arrayOfSubtitleLanguages = subtitleLanguages.split(",| ");
 
@@ -354,6 +587,11 @@ public class CreateEditController extends Controller {
         return listOfSubtitleLanguages;
     }
 
+    /**
+     * Creates a laptop when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void createLaptopButtonClicked(ActionEvent event) {
         // mandatory information - title, year, thumbnail, manufacturer, model, installedOS
@@ -390,6 +628,11 @@ public class CreateEditController extends Controller {
         }
     }
 
+    /**
+     * Searches for a book with a specific ID after you click the button.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void editBookSearchButtonClicked(ActionEvent event) {
         String bookID = uniqueIDSearchEditBookTextField.getText();
@@ -418,6 +661,11 @@ public class CreateEditController extends Controller {
         }
     }
 
+    /**
+     * After clicking the button you can edit a book.
+     *
+     * @param event The button is clicked..
+     */
     @FXML
     public void editBookButtonClicked(ActionEvent event) {
         // mandatory information- title, year, thumbnail, author, publisher
@@ -461,6 +709,11 @@ public class CreateEditController extends Controller {
         }
     }
 
+    /**
+     * After you click the button you can edit the dvd.
+     *
+     * @param event The button is clicked..
+     */
     @FXML
     void editDVDSearchButtonClicked(ActionEvent event) {
         String dvdId = uniqueIDSearchEditDVDTextField.getText();
@@ -493,7 +746,13 @@ public class CreateEditController extends Controller {
         }
     }
 
-    private String toCommaSeparatedString(ArrayList<String> listOfSubtitleLanguages){
+    /**
+     * Returns a string with the subtitle languages split up.
+     *
+     * @param listOfSubtitleLanguages The ArrayList to be turned into a string.
+     * @return A string with the subtitle languages.
+     */
+    private String toCommaSeparatedString(ArrayList<String> listOfSubtitleLanguages) {
         String subtitleLanguages = "";
         for (String language : listOfSubtitleLanguages) {
             subtitleLanguages = subtitleLanguages + language + ',';
@@ -506,7 +765,10 @@ public class CreateEditController extends Controller {
         return subtitleLanguages;
     }
 
-
+    /**
+     * After the button is clicked we can edit the DVD .
+     * @param event The button is clicked.
+     */
     @FXML
     public void editDVDButtonClicked(ActionEvent event) {
         // mandatory information- title, year, thumbnail, director, runtime
@@ -708,7 +970,7 @@ public class CreateEditController extends Controller {
             Resource resource = getLibrary().getResourceManager().getResourceById(resourceUniqueIDtextField.getText());
 
             // Change the resource.
-            getLibrary().getResourceManager().addCopyOfResource(loanDuration,resource);
+            getLibrary().getResourceManager().addCopyOfResource(loanDuration, resource);
 
             // notify the user
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "Resource copy added successfully.",
@@ -725,10 +987,11 @@ public class CreateEditController extends Controller {
         }
     }
 
-    @FXML
     /**
-     * Searches for the resource ID.
+     * Searches for a resource after the button is clicked.
+     * @param event The button is clicked.
      */
+    @FXML
     void resourceSearchButtonClicked(ActionEvent event) {
 
         Resource resource = getLibrary().getResourceManager().getResourceById(resourceUniqueIDtextField.getText());
@@ -752,11 +1015,15 @@ public class CreateEditController extends Controller {
         }
     }
 
+    /**
+     * Searches for a copy after the button is clicked.
+     * @param event The button is clicked.
+     */
     @FXML
-    public void copySearchButtonClicked(ActionEvent event){
+    public void copySearchButtonClicked(ActionEvent event) {
         Copy copy = getLibrary().getResourceManager().getCopyById(editCopyIdSearchTextField.getText());
 
-        if(copy == null){
+        if (copy == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Couldn't find a copy with such ID.",
                     ButtonType.OK);
 
@@ -771,15 +1038,19 @@ public class CreateEditController extends Controller {
         }
     }
 
+    /**
+     * The copy is edited after the button is clicked.
+     * @param event The button is clicked.
+     */
     @FXML
-    public void editCopyButtonClicked(ActionEvent event){
+    public void editCopyButtonClicked(ActionEvent event) {
         // mandatory - loan duration
-        if(editCopyLoanDurationTextField.getText().isEmpty()){
+        if (editCopyLoanDurationTextField.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in the required text fields.",
                     ButtonType.OK);
 
             alert.show();
-        } else if(!isStringNumber(editCopyLoanDurationTextField.getText())){
+        } else if (!isStringNumber(editCopyLoanDurationTextField.getText())) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "The loan duration must be a number.",
                     ButtonType.OK);
 
@@ -808,6 +1079,10 @@ public class CreateEditController extends Controller {
         }
     }
 
+    /**
+     * The copy is deleted after the button is clicked.
+     * @param event The button is clicked.
+     */
     @FXML
     public void deleteCopyButtonClicked(ActionEvent event) {
         // delete copy
@@ -918,6 +1193,9 @@ public class CreateEditController extends Controller {
         imageTextField.setText(selectedFile.toString());
     }
 
+    /**
+     * Makes all the fields null for a book resource.
+     */
     private void clearAllCreateBookFields() {
         titleBookTextField.setText("");
         authorBookTextField.setText("");
@@ -930,6 +1208,9 @@ public class CreateEditController extends Controller {
         yearBookTextField.setText("");
     }
 
+    /**
+     * Makes all the fields null for a laptop.
+     */
     private void clearAllCreateLaptopFields() {
         titleLaptopTextField.setText("");
         yearLaptopTextField.setText("");
@@ -939,6 +1220,9 @@ public class CreateEditController extends Controller {
         operatingSystemLaptopTextField.setText("");
     }
 
+    /**
+     * Makes all the fields null for a DVD.
+     */
     private void clearAllCreateDVDFields() {
         titleDVDTextField.setText("");
         yearDVDTextField.setText("");
@@ -949,6 +1233,9 @@ public class CreateEditController extends Controller {
         languageSubtitlesDVDTextField.setText("");
     }
 
+    /**
+     * Makes all the fields null for a book edit.
+     */
     private void clearAllEditBookFields() {
         uniqueIDSearchEditBookTextField.setText("");
         titleEditBookTextField.setText("");
@@ -961,6 +1248,9 @@ public class CreateEditController extends Controller {
         languageEditBookTextField.setText("");
     }
 
+    /**
+     * Makes all the fields null for a book edit.
+     */
     private void clearAllEditLaptopFields() {
         uniqueIDSearchEditLaptopTextField.setText("");
         titleEditLaptopTextField.setText("");
@@ -971,6 +1261,9 @@ public class CreateEditController extends Controller {
         operatingSystemEditLaptopTextField.setText("");
     }
 
+    /**
+     * Makes all the fields null for a DVD edit.
+     */
     private void clearAllEditDVDFields() {
         uniqueIDSearchEditDVDTextField.setText("");
         titleEditDVDTextField.setText("");

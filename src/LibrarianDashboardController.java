@@ -1,10 +1,7 @@
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -148,6 +145,7 @@ public class LibrarianDashboardController extends Controller {
     @FXML
     public void overdueResourcesButtonClicked(ActionEvent event) {
 
+        new NewWindow("resources/OverdueCopies.fxml", event, "Overdue Copies - TaweLib");
     }
 
     @FXML

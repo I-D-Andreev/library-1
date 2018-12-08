@@ -2,13 +2,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -57,24 +60,78 @@ public class BrowseResourcesController extends Controller {
     @FXML // fx:id="backButton"
     private Button backButton; // Value injected by FXMLLoader
 
+    /**
+     * The resources that will be shown on the UI.
+     */
     private ObservableList<Resource> data;
+
+    /**
+     * An ArrayList containing which resources should be shown.
+     */
     private ArrayList<String> acceptableTypes;
 
+    /**
+     * Initializes the UI with the data from the acceptableType ArrayList.
+     */
     public void initialize() {
+
         data = FXCollections.observableArrayList();
         acceptableTypes = new ArrayList<>();
         uniqueIDColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("uniqueID"));
         titleColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("title"));
         yearColumn.setCellValueFactory(new PropertyValueFactory<Resource, Integer>("year"));
         typeColumn.setCellValueFactory(new PropertyValueFactory<Resource, String>("type"));
+
+        displayTable.setOnMouseClicked(event -> {
+
+            if(event.getClickCount() == 2) {
+
+                Parent root;
+
+                //Attempt to load the fxml file and set the scene.
+                try {
+
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("resources/UserResource.fxml"));
+                    root = fxmlLoader.load();
+                    setLibrary(getLibrary());
+                    //fxmlLoader.<Controller>getController().setLibrary(getLibrary());
+
+                    Stage stage = new Stage();
+
+                    stage.setTitle("Resource Information");
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                    ((Node) (event.getSource())).getScene().getWindow().hide();
+
+                    // save data on stage close
+                    stage.setOnCloseRequest(eventHandler -> {
+                        getLibrary().save();
+                    });
+
+                } catch (IOException e) {
+
+                    e.printStackTrace();
+                    System.exit(0);
+
+                } catch (Exception e) {
+
+                    e.printStackTrace();
+                    System.exit(1);
+                }
+            }});
     }
 
+    /**
+     * Refreshes the table on startup.
+     */
     @Override
-    public void onStart(){
+    public void onStart() {
         this.updateTable();
     }
 
-
+    /**
+     * Refreshes the values on the table to display correct data.
+     */
     @FXML
     public void updateTable() {
         // clear previous data
@@ -103,27 +160,28 @@ public class BrowseResourcesController extends Controller {
 
         // if none of the types have been ticked accept all
         // else remove the resources that are not permitted
-        ArrayList <Resource> shouldNotBeDisplayed = new ArrayList<>();
-        if(acceptableTypes.size() != 0) {
-            for(Resource resource : data){
-                if(!acceptableTypes.contains(resource.getType())){
+        ArrayList<Resource> shouldNotBeDisplayed = new ArrayList<>();
+        if (acceptableTypes.size() != 0) {
+            for (Resource resource : data) {
+                if (!acceptableTypes.contains(resource.getType())) {
                     shouldNotBeDisplayed.add(resource);
                 }
             }
         }
-       data.removeAll(shouldNotBeDisplayed);
+        data.removeAll(shouldNotBeDisplayed);
 
         displayTable.getItems().addAll(data);
     }
 
     /**
      * Goes back to the previous window when the back button is clicked.
-     * @param event The current event.
+     *
+     * @param event Clicking on the back button.
      */
     @FXML
     void backButtonClicked(ActionEvent event) {
         //if librarian then go back to librarian dashboard else go back to user dashboard
-        if(getLibrary().getCurrentUserLoggedIn().hasAdminAccess()){
+        if (getLibrary().getCurrentUserLoggedIn().hasAdminAccess()) {
             new NewWindow("resources/LibrarianDashboard.fxml", event,
                     "Browse Resources - TaweLib", getLibrary());
         } else {
@@ -133,17 +191,20 @@ public class BrowseResourcesController extends Controller {
 
     }
 
-    private void manageCheckedBoxTypes(){
+    /**
+     * Checks which boxes are ticked and shows data accordingly.
+     */
+    private void manageCheckedBoxTypes() {
         acceptableTypes.clear();
-        if(dvdFilter.isSelected()){
+        if (dvdFilter.isSelected()) {
             acceptableTypes.add("DVD");
         }
 
-        if(bookFilter.isSelected()){
+        if (bookFilter.isSelected()) {
             acceptableTypes.add("Book");
         }
 
-        if(laptopFilter.isSelected()){
+        if (laptopFilter.isSelected()) {
             acceptableTypes.add("Laptop");
         }
     }

@@ -2,6 +2,7 @@ import java.util.Date;
 
 /**
  * Models an item transaction type of history entry.
+ *
  * @author Ivan Andreev
  */
 public class HistoryEntryItemTransaction extends HistoryEntry {
@@ -18,8 +19,9 @@ public class HistoryEntryItemTransaction extends HistoryEntry {
 
     /**
      * Creates an item transaction type of history entry.
-     * @param date The date of the item transaction.
-     * @param isBorrowed True if the item was borrowed, false if it was returned.
+     *
+     * @param date           The date of the item transaction.
+     * @param isBorrowed     True if the item was borrowed, false if it was returned.
      * @param borrowedByUser The user who borrowed the item.
      */
     public HistoryEntryItemTransaction(Date date, boolean isBorrowed, User borrowedByUser) {
@@ -30,12 +32,18 @@ public class HistoryEntryItemTransaction extends HistoryEntry {
 
     /**
      * Get whether the item was borrowed.
+     *
      * @return isBorrowed True if the item was borrowed, false if it was returned.
      */
     public boolean isBorrowed() {
         return isBorrowed;
     }
 
+    /**
+     * Gets the user that borrowed this item.
+     *
+     * @return The user that borrowed this item.
+     */
     public User getBorrowedBy() {
         return borrowedBy;
     }

@@ -49,7 +49,7 @@
                         <Insets right="15.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="overdueResourcesButton" mnemonicParsing="false" onAction="#overdueResourcesButtonClicked" text="Overdue Resources">
+                  <Button fx:id="overdueResourcesButton" mnemonicParsing="false" onAction="#overdueResourcesButtonClicked" text="Overdue Copies">
                      <HBox.margin>
                         <Insets right="15.0" />
                      </HBox.margin>
@@ -68,7 +68,7 @@
                         <Insets left="45.0" right="30.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="manageResourcesButton" mnemonicParsing="false" onAction="#manageResourcesButtonClicked" prefHeight="26.0" prefWidth="122.0" text="Manage Resources">
+                  <Button fx:id="manageResourcesButton" mnemonicParsing="false" onAction="#manageResourcesButtonClicked" prefHeight="27.0" prefWidth="137.0" text="Manage Resources" wrapText="true">
                      <HBox.margin>
                         <Insets right="30.0" />
                      </HBox.margin>
