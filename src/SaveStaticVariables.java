@@ -16,7 +16,7 @@ public class SaveStaticVariables implements Serializable {
     }
 
     public SaveStaticVariables(){
-        this.selfPopulate1();
+        this.selfPopulate();
     }
 
 
