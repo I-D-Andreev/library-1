@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 /**
@@ -68,6 +69,15 @@ public class UserResourceController extends Controller {
         }
 
         tableView.getItems().addAll(data);
+
+        try {
+
+            resourceImage.setImage(new Image(clickedResource.getThumbnailImagePath()));
+
+        } catch (IllegalArgumentException e) {
+
+            resourceImage.setImage(new Image("resources/noImage.png"));
+        }
     }
 
 }

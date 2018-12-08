@@ -158,7 +158,7 @@ public class UserDashboardController extends Controller {
             Image image = new Image(getLibrary().getCurrentUserLoggedIn().getProfileImagePath());
             userImage.setImage(image);
         } catch (IllegalArgumentException e) {
-            userImage.setImage(null);
+            userImage.setImage(new Image("resources/noImage.png"));
         } catch (NullPointerException e) {
             userImage.setImage(null);
         }
