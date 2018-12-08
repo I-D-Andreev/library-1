@@ -40,6 +40,8 @@ public class NewWindow extends Controller {
 
             stage.setTitle(title);
             stage.setScene(new Scene(root));
+            stage.setMinHeight(800);
+            stage.setMaxHeight(800);
             stage.show();
             ((Node) (event.getSource())).getScene().getWindow().hide();
 

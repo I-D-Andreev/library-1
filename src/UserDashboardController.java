@@ -76,6 +76,9 @@ public class UserDashboardController extends Controller {
     @FXML
     private Label balanceLabel;
 
+    @FXML
+    private Label accountCreationLabel;
+
     /**
      * Takes the user to the borrowed resources tab after the button is clicked.
      *
