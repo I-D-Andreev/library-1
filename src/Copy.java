@@ -245,7 +245,6 @@ public class Copy implements Serializable {
         byUser.getBorrowedCopies().remove(this);
 
 
-
         double fineAmount = 0;
         if (this.isOverdue()) {
             fineAmount = giveFineToUser(byUser);
