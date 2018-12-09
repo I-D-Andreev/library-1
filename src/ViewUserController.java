@@ -1,6 +1,10 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+
+import java.io.File;
 
 /**
  * Controller class for the View User Window.  Handles user actions when the UI is interacted with.
@@ -143,10 +147,10 @@ public class ViewUserController extends Controller {
     private TextField addressCityTextField;
 
     /**
-     * Label showing the thumbnail image path.
+     * Text Field showing the thumbnail image path.
      */
     @FXML
-    private Label imagePathLabel;
+    private TextField imagePathTextField;
 
 
     /**
@@ -211,7 +215,7 @@ public class ViewUserController extends Controller {
         String addressPostcode = addressPostcodeTextField.getText();
         boolean isLibrarian = librarianRadioButton.isSelected();
         boolean isUser = userRadioButton.isSelected();
-        String imagePath = imagePathLabel.getText();
+        String imagePath = imagePathTextField.getText();
 
         // check if info is filled in
         if (username.isEmpty() || firstName.isEmpty() || lastName.isEmpty()
@@ -265,7 +269,7 @@ public class ViewUserController extends Controller {
         addressPostcodeTextField.clear();
         librarianRadioButton.setSelected(false);
         userRadioButton.setSelected(false);
-        imagePathLabel.setText("No File Chosen.");
+        imagePathTextField.setText("No File Chosen.");
     }
 
     /**
@@ -295,9 +299,31 @@ public class ViewUserController extends Controller {
      */
     @FXML
     void chooseProfileImageButtonClicked(ActionEvent event) {
+        selectFile(imagePathTextField);
+    }
 
-        new NewWindow("resources/ProfileImage.fxml", event, "Choose Image - TaweLib", getLibrary());
 
+    /**
+     * Opens file explorer and adds the file path to the specified text field when an image is chosen.
+     *
+     * @param imageTextField The specified text field that contains the file path.
+     */
+    private void selectFile(TextField imageTextField) {
+
+        Stage currentStage = (Stage) imageTextField.getScene().getWindow();
+        FileChooser fileChooser = new FileChooser();
+
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("PNG Files", "*.png"),
+                new FileChooser.ExtensionFilter("JPEG Files", "*.jpg"));
+
+        try {
+            File selectedFile = fileChooser.showOpenDialog(currentStage);
+            imageTextField.setText(selectedFile.toString());
+        } catch (Exception e) {
+            imageTextField.setText("");
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -307,7 +333,9 @@ public class ViewUserController extends Controller {
      */
     @FXML
     void drawProfileImageButtonClicked(ActionEvent event) {
-
+        DrawAvatar drawAvatar = new DrawAvatar(this.imagePathTextField);
+        Stage newerStage = new Stage();
+        drawAvatar.start(newerStage);
     }
 }
 
