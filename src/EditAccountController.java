@@ -81,7 +81,7 @@ public class EditAccountController extends Controller {
     private Button chooseProfileImageButton;
 
     /**
-     * Displays the image path.
+     * Label that displays the image path.
      */
     @FXML
     private Label imagePathLabel;
