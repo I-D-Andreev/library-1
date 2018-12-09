@@ -258,9 +258,6 @@ public class EditAccountController extends Controller {
                 Platform.exit();
             }
         }
-
-
     }
-
 }
 

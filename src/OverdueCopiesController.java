@@ -99,7 +99,7 @@ public class OverdueCopiesController extends Controller {
     }
 
     /**
-     * Fills the table with data.
+     * Fills the tables data.
      */
     private void fillInData() {
         // The current user

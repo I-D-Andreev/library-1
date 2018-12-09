@@ -128,6 +128,4 @@ public class LibrarianResourceController extends Controller {
 
         displayTable.getItems().addAll(data);
     }
-
-
 }

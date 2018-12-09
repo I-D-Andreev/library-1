@@ -97,7 +97,7 @@ public class OverdueResourcesController extends Controller {
     }
 
     /**
-     * Fills the table with data.
+     * Fills the tables data.
      */
     private void fillInData() {
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
