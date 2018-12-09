@@ -5,6 +5,9 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 /**
  * Controller class for the Librarian Dashboard.
  * Handles what happens when the user interacts with the UI.
@@ -85,11 +88,18 @@ public class LibrarianDashboardController extends Controller {
             librarianImage.setImage(null);
         }
 
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
         usernameLabel.setText(getLibrary().getCurrentUserLoggedIn().getUsername());
         firstNameLabel.setText(getLibrary().getCurrentUserLoggedIn().getFirstName());
         lastNameLabel.setText(getLibrary().getCurrentUserLoggedIn().getLastName());
         phoneNumberLabel.setText(getLibrary().getCurrentUserLoggedIn().getPhoneNumber());
         staffIDLabel.setText(((Librarian) (getLibrary().getCurrentUserLoggedIn())).getStaffNumber());
+        employmentDateLabel.setText(
+                dateFormat.format(
+                        ((Librarian)(getLibrary().getCurrentUserLoggedIn())).getEmploymentDate()
+                )
+        );
     }
 
     /**

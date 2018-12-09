@@ -14,6 +14,8 @@ import javafx.util.Pair;
 import javax.annotation.Resources;
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
 /**
@@ -211,11 +213,19 @@ public class UserDashboardController extends Controller {
             userImage.setImage(null);
         }
 
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
         usernameLabel.setText(getLibrary().getCurrentUserLoggedIn().getUsername());
         firstNameLabel.setText(getLibrary().getCurrentUserLoggedIn().getFirstName());
         lastNameLabel.setText(getLibrary().getCurrentUserLoggedIn().getLastName());
         phoneNumberLabel.setText(getLibrary().getCurrentUserLoggedIn().getPhoneNumber());
         balanceLabel.setText(String.valueOf(((NormalUser) getLibrary().getCurrentUserLoggedIn()).getBalance()));
+        accountCreationLabel.setText(
+                dateFormat.format(
+                        ((NormalUser)getLibrary().getCurrentUserLoggedIn()).getAccountCreationDate()
+                )
+        );
+
 
     }
 }

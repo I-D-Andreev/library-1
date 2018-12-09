@@ -28,6 +28,20 @@ public class TableRepresentationCopyInformation {
 
     /**
      * Constructor for a copy representation in a table.
+     * @param copyID    The unique copy ID.
+     * @param borrowDate The date the copy was borrowed.
+     * @param dueDate The date the copy is due.
+     * @param daysOverdue The days overdue the copy is.
+     */
+    public TableRepresentationCopyInformation(String copyID, String borrowDate, String dueDate, Integer daysOverdue) {
+        this.copyID = copyID;
+        this.borrowDate = borrowDate;
+        this.dueDate = dueDate;
+        this.daysOverdue = daysOverdue;
+    }
+
+    /**
+     * Constructor for a copy representation in a table.
      *
      * @param copyID       The unique copy ID.
      * @param resourceName The resource name this copy is a copy of.

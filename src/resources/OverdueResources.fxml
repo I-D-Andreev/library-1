@@ -28,12 +28,15 @@
          </children>
       </HBox>
       <TableView fx:id="overdueResourcesTable" prefHeight="382.0" prefWidth="662.0">
-        <columns>
-          <TableColumn fx:id="overdueResourcesColumn" prefWidth="659.199987411499" text="Overdue Resources" />
-        </columns>
          <GridPane.margin>
             <Insets left="20.0" right="20.0" top="20.0" />
          </GridPane.margin>
+         <columns>
+            <TableColumn fx:id="copyIDColumn" prefWidth="124.0000057220459" text="CopyID" />
+            <TableColumn fx:id="borrowedOnColumn" prefWidth="155.20001220703125" text="Borrowed On" />
+            <TableColumn fx:id="dueDateColumn" prefWidth="194.4000244140625" text="Due Date" />
+            <TableColumn fx:id="daysOverdueColumn" prefWidth="179.19998168945312" text="Days Overdue" />
+         </columns>
       </TableView>
    </children>
 </GridPane>
