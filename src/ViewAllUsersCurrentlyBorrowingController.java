@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat;
  *
  * @author Sian Pike
  */
-public class ViewAllUsersCurrentlyBorrowingController extends Controller{
+public class ViewAllUsersCurrentlyBorrowingController extends Controller {
 
     /**
      * The table showing the users.
@@ -56,6 +56,7 @@ public class ViewAllUsersCurrentlyBorrowingController extends Controller{
 
     /**
      * The user is returned to the dashboard when the button is clicked.
+     *
      * @param event The button is clicked.
      */
     @FXML
@@ -67,7 +68,7 @@ public class ViewAllUsersCurrentlyBorrowingController extends Controller{
      * Initializes the table and fills it with data.
      */
     @Override
-    public void onStart(){
+    public void onStart() {
         data = FXCollections.observableArrayList();
 
         copyNameColumn.setCellValueFactory(
@@ -90,8 +91,8 @@ public class ViewAllUsersCurrentlyBorrowingController extends Controller{
     private void fillInData() {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-        for(Copy copy : getLibrary().getResourceManager().getAllCopies()){
-            if(copy.getBorrowedBy() != null){
+        for (Copy copy : getLibrary().getResourceManager().getAllCopies()) {
+            if (copy.getBorrowedBy() != null) {
                 String copyID = copy.getUniqueCopyID();
                 String copyName = copy.getCopyOf().getTitle();
                 String username = copy.getBorrowedBy().getUsername();
