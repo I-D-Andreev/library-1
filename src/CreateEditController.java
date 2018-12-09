@@ -629,7 +629,7 @@ public class CreateEditController extends Controller {
     }
 
     /**
-     * Searches for a book with a specific ID after you click the button.
+     * Searches for a book with a specific ID to edit after you click the button.
      *
      * @param event The button is clicked.
      */
@@ -662,9 +662,9 @@ public class CreateEditController extends Controller {
     }
 
     /**
-     * After clicking the button you can edit a book.
+     * After the button is clicked we can edit the Book.
      *
-     * @param event The button is clicked..
+     * @param event The button is clicked.
      */
     @FXML
     public void editBookButtonClicked(ActionEvent event) {
@@ -710,9 +710,9 @@ public class CreateEditController extends Controller {
     }
 
     /**
-     * After you click the button you can edit the dvd.
+     * After the button is clicked we search for the DVD to edit.
      *
-     * @param event The button is clicked..
+     * @param event The button is clicked.
      */
     @FXML
     void editDVDSearchButtonClicked(ActionEvent event) {
@@ -817,7 +817,11 @@ public class CreateEditController extends Controller {
         }
     }
 
-
+    /**
+     * After the button is clicked we search for the laptop to edit.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void editLaptopSearchButtonClicked(ActionEvent event) {
         String laptopId = uniqueIDSearchEditLaptopTextField.getText();
@@ -844,6 +848,11 @@ public class CreateEditController extends Controller {
         }
     }
 
+    /**
+     * After the button is clicked we can edit the laptop.
+     *
+     * @param event The button is clicked
+     */
     @FXML
     public void editLaptopButtonClicked(ActionEvent event) {
         // mandatory information - title, year, thumbnail, manufacturer, model, installedOS
@@ -888,7 +897,7 @@ public class CreateEditController extends Controller {
     /**
      * Deletes a laptop resource.
      *
-     * @param event The current event.
+     * @param event The button is clicked.
      */
     @FXML
     void laptopDeleteButtonClicked(ActionEvent event) {
@@ -915,7 +924,7 @@ public class CreateEditController extends Controller {
     /**
      * Deletes a DVD resource.
      *
-     * @param event The current event.
+     * @param event The button is clicked.
      */
     @FXML
     void dvdDeleteButtonClicked(ActionEvent event) {
@@ -943,7 +952,7 @@ public class CreateEditController extends Controller {
     /**
      * Deletes a book resource.
      *
-     * @param event The current event.
+     * @param event The button is clicked.
      */
     @FXML
     void bookDeleteButtonClicked(ActionEvent event) {
@@ -980,7 +989,7 @@ public class CreateEditController extends Controller {
     /**
      * Creates a copy of the chosen resource.
      *
-     * @param event The current event.
+     * @param event The button is clicked.
      */
     @FXML
     void copyCreateButtonClicked(ActionEvent event) {
@@ -1163,7 +1172,7 @@ public class CreateEditController extends Controller {
     /**
      * Opens file explorer so that an image can be chosen.
      *
-     * @param event The current event.
+     * @param event The button is clicked.
      */
     @FXML
     void createBookFindImageButtonClicked(ActionEvent event) {
@@ -1174,7 +1183,7 @@ public class CreateEditController extends Controller {
     /**
      * Opens file explorer so that an image can be chosen.
      *
-     * @param event The current event.
+     * @param event The button is clicked.
      */
     @FXML
     void createDvdFindImageButtonClicked(ActionEvent event) {
@@ -1185,7 +1194,7 @@ public class CreateEditController extends Controller {
     /**
      * Opens file explorer so that an image can be chosen.
      *
-     * @param event The current event.
+     * @param event The button is clicked.
      */
     @FXML
     void createLaptopFindImageButtonClicked(ActionEvent event) {
@@ -1196,7 +1205,7 @@ public class CreateEditController extends Controller {
     /**
      * Opens file explorer so that an image can be chosen.
      *
-     * @param event The current event.
+     * @param event The button is clicked.
      */
     @FXML
     void editBookFindImageButtonClicked(ActionEvent event) {
@@ -1207,7 +1216,7 @@ public class CreateEditController extends Controller {
     /**
      * Opens file explorer so that an image can be chosen.
      *
-     * @param event The current event.
+     * @param event The button is clicked.
      */
     @FXML
     void editDvdFindImageButtonClicked(ActionEvent event) {
@@ -1218,7 +1227,7 @@ public class CreateEditController extends Controller {
     /**
      * Opens file explorer so that an image can be chosen.
      *
-     * @param event The current event.
+     * @param event The button is clicked.
      */
     @FXML
     void editLaptopFindImageButtonClicked(ActionEvent event) {

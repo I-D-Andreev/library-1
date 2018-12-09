@@ -14,11 +14,17 @@ import java.text.SimpleDateFormat;
  *
  * @author Sian Pike
  */
-public class CopyHistoryController extends Controller{
+public class CopyHistoryController extends Controller {
 
+    /**
+     * Button to take user back to the dashboard.
+     */
     @FXML
     private Button okButton;
 
+    /**
+     * The table for the copy's history.
+     */
     @FXML
     private TableView<TableRepresentationItemTransaction> copyHistoryTable;
 
@@ -40,6 +46,12 @@ public class CopyHistoryController extends Controller{
     @FXML
     private ObservableList<TableRepresentationItemTransaction> data;
 
+
+    /**
+     * Takes the user back to the dashboard when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void okButtonClicked(ActionEvent event) {
         new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());

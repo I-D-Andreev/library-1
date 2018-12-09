@@ -17,54 +17,105 @@ import java.text.SimpleDateFormat;
 
 public class LibrarianDashboardController extends Controller {
 
+    /**
+     * The button to log out.
+     */
     @FXML // fx:id="logOutButton"
     private Button logOutButton; // Value injected by FXMLLoader
 
+    /**
+     * The button to take you to the manage resources tab.
+     */
     @FXML // fx:id="manageResourcesButton"
     private Button manageResourcesButton; // Value injected by FXMLLoader
 
+    /**
+     * The button to create or edit resources.
+     */
     @FXML // fx:id="createEditResourcesButton"
     private Button createEditResourcesButton; // Value injected by FXMLLoader
 
+    /**
+     * The button to browse resources.
+     */
     @FXML // fx:id="browseResourcesButton"
     private Button browseResourcesButton; // Value injected by FXMLLoader
 
+    /**
+     * The button to view users.
+     */
     @FXML // fx:id="viewUserButton"
     private Button viewUserButton; // Value injected by FXMLLoader
 
+    /**
+     * The button to filter users.
+     */
     @FXML // fx:id="userButton"
     private Button userButton; // Value injected by FXMLLoader
 
+    /**
+     * The button to view the overdue resources.
+     */
     @FXML // fx:id="overdueResourcesButton"
     private Button overdueResourcesButton; // Value injected by FXMLLoader
 
+    /**
+     * The button to view copy history.
+     */
     @FXML // fx:id="copyHistoryButton"
     private Button copyHistoryButton; // Value injected by FXMLLoader
 
+    /**
+     * The button to edit accounts.
+     */
     @FXML
     private Button editAccountButton;
 
+    /**
+     * The label that displays the username.
+     */
     @FXML
     private Label usernameLabel;
 
+    /**
+     * The label that displays the first name.
+     */
     @FXML
     private Label firstNameLabel;
 
+    /**
+     * The label that displays the last name.
+     */
     @FXML
     private Label lastNameLabel;
 
+    /**
+     * The label that shows the phone number.
+     */
     @FXML
     private Label phoneNumberLabel;
 
+    /**
+     * The label that shows the staff ID.
+     */
     @FXML
     private Label staffIDLabel;
 
+    /**
+     * The profile image of the librarian.
+     */
     @FXML
     private ImageView librarianImage;
 
+    /**
+     * Button to view all users currently borrowing.
+     */
     @FXML
     private Button usersBorrowing;
 
+    /**
+     * Label that shows the employment date of the librarian.
+     */
     @FXML
     private Label employmentDateLabel;
 
@@ -112,6 +163,10 @@ public class LibrarianDashboardController extends Controller {
                 "Browse Resources - TaweLib", getLibrary());
     }
 
+    /**
+     * Takes the user to the edit account tab when the button is clicked.
+     * @param event The button is clicked.
+     */
     public void editAccountButtonClicked(ActionEvent event) {
         new NewWindow("resources/EditAccount.fxml", event,
                 "Browse Resources - TaweLib", getLibrary());
@@ -193,4 +248,15 @@ public class LibrarianDashboardController extends Controller {
                 getLibrary());
     }
 
+    /**
+     * All the users are shown.
+     *
+     * @param event The button is clicked.
+     */
+    @FXML
+    void viewAllUsersButtonClicked(ActionEvent event) {
+
+        new NewWindow("resources/ViewAllUsers.fxml", event, "View All Users", getLibrary());
+
+    }
 }
