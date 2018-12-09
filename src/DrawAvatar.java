@@ -318,10 +318,12 @@ public class DrawAvatar extends Application {
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
+
+            setFilePath(file.getAbsolutePath());
+            passFilePathToController(this.getFilePath());
         }
 
-        setFilePath(file.getAbsolutePath());
-        passFilePathToController(this.getFilePath());
+
     }
 
     private void passFilePathToController(String filePath){

@@ -7,7 +7,7 @@
     <list default="true" id="6e3b68db-e3f9-4a5f-a067-ee60d4dfb31b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DrawAvatar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawAvatar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserDashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/users.ser" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/users.ser" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,26 +22,26 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="fxml" value="4" />
-          <entry key="java" value="200" />
+          <entry key="java" value="201" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="200" />
+          <entry key="JAVA" value="201" />
           <entry key="XML" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="9031" />
-          <entry key="txt" value="636" />
+          <entry key="java" value="9504" />
+          <entry key="txt" value="665" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9031" />
-          <entry key="PLAIN_TEXT" value="636" />
+          <entry key="JAVA" value="9504" />
+          <entry key="PLAIN_TEXT" value="665" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -74,6 +74,18 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/UserDashboardController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="203" column="4" selection-start-line="203" selection-start-column="4" selection-end-line="203" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EditAccountController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -88,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DrawAvatar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="114" column="39" selection-start-line="114" selection-start-column="39" selection-end-line="114" selection-end-column="39" />
+            <state relative-caret-position="267">
+              <caret line="331" column="16" lean-forward="true" selection-start-line="331" selection-start-column="16" selection-end-line="331" selection-end-column="16" />
               <folding>
                 <element signature="e#1967#1968#0" expanded="true" />
                 <element signature="e#2011#2012#0" expanded="true" />
@@ -117,8 +129,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>should be returned in</find>
-      <find>returncopy</find>
       <find>fined</find>
       <find>returnco</find>
       <find>new Library</find>
@@ -136,7 +146,6 @@
       <find>overdueresourcesButtoncl</find>
       <find>borrowed</find>
       <find>daysoverdue</find>
-      <find>onstart</find>
       <find>label</find>
       <find>account</find>
       <find>Dateforma</find>
@@ -147,6 +156,9 @@
       <find>drawprofileima</find>
       <find>pathlabel</find>
       <find>button</find>
+      <find>onstart</find>
+      <find>initialize</find>
+      <find>imag</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -202,18 +214,18 @@
         <option value="$PROJECT_DIR$/src/OverdueResourcesController.java" />
         <option value="$PROJECT_DIR$/src/TableRepresentationCopyInformation.java" />
         <option value="$PROJECT_DIR$/src/OverdueCopiesController.java" />
-        <option value="$PROJECT_DIR$/src/UserDashboardController.java" />
         <option value="$PROJECT_DIR$/src/LibrarianDashboardController.java" />
         <option value="$PROJECT_DIR$/src/ProfileImageController.java" />
         <option value="$PROJECT_DIR$/src/EditAccountController.java" />
         <option value="$PROJECT_DIR$/src/DrawAvatar.java" />
+        <option value="$PROJECT_DIR$/src/UserDashboardController.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
+    <option name="x" value="-8" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -249,7 +261,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544320942616" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544322745832" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
@@ -306,13 +318,6 @@
       <workItem from="1542452792911" duration="4471000" />
       <workItem from="1544087590965" duration="6407000" />
       <workItem from="1544192909022" duration="4422000" />
-    </task>
-    <task id="LOCAL-00086" summary="Add laptop now works.">
-      <created>1544068655054</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1544068655054</updated>
     </task>
     <task id="LOCAL-00087" summary="Stop tracking production.">
       <created>1544068859169</created>
@@ -650,7 +655,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544318808883</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="some paddings in draw avatar">
+      <created>1544320967271</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1544320967271</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -669,7 +681,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.2080537" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" weight="0.33557048" />
       <window_info id="Structure" order="1" sideWeight="0.5064516" side_tool="true" weight="0.24093817" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -766,7 +778,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Prettier user dashboard." />
     <MESSAGE value="Focus the text field." />
     <MESSAGE value="Edit account window now opens with data loaded." />
     <MESSAGE value="Edit account in librarian." />
@@ -791,7 +802,8 @@
     <MESSAGE value="Setting image path works in a kinda bad way. (For user only)." />
     <MESSAGE value="Resize." />
     <MESSAGE value="remove that one todo" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove that one todo" />
+    <MESSAGE value="some paddings in draw avatar" />
+    <option name="LAST_COMMIT_MESSAGE" value="some paddings in draw avatar" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/resources/BrowseResources.fxml">
@@ -1116,16 +1128,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserDashboardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="215" selection-start-line="215" selection-end-line="216" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1150,8 +1152,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DrawAvatar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="114" column="39" selection-start-line="114" selection-start-column="39" selection-end-line="114" selection-end-column="39" />
+        <state relative-caret-position="267">
+          <caret line="331" column="16" lean-forward="true" selection-start-line="331" selection-start-column="16" selection-end-line="331" selection-end-column="16" />
           <folding>
             <element signature="e#1967#1968#0" expanded="true" />
             <element signature="e#2011#2012#0" expanded="true" />
@@ -1159,6 +1161,16 @@
             <element signature="e#2177#2178#0" expanded="true" />
             <element signature="e#2135#2136#0" expanded="true" />
             <element signature="e#2166#2167#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserDashboardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="203" column="4" selection-start-line="203" selection-start-column="4" selection-end-line="203" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

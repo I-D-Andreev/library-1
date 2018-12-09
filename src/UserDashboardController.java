@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import javafx.util.Pair;
 
 import javax.annotation.Resources;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
@@ -109,7 +110,7 @@ public class UserDashboardController extends Controller {
      */
     @FXML
     public void mostPopularResourceButtonClicked(ActionEvent event) {
-        if(getLibrary().getResourceManager().getAllResources().size() == 0){
+        if (getLibrary().getResourceManager().getAllResources().size() == 0) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "There are no resources in the library.",
                     ButtonType.OK);
         } else {
@@ -201,11 +202,19 @@ public class UserDashboardController extends Controller {
                 getLibrary());
     }
 
-
     private void loadUserInformation() {
 
         try {
-            Image image = new Image(getLibrary().getCurrentUserLoggedIn().getProfileImagePath());
+            String path = getLibrary().getCurrentUserLoggedIn().getProfileImagePath();
+            Image image;
+            // relative path
+            if (path.charAt(0) >= 'a' && path.charAt(0) <= 'z') {
+                image = new Image(path);
+            } else {
+                // absolute path
+                image = new Image(new File(path).toURI().toString());
+            }
+
             userImage.setImage(image);
         } catch (IllegalArgumentException e) {
             userImage.setImage(new Image("resources/noImage.png"));
@@ -222,7 +231,7 @@ public class UserDashboardController extends Controller {
         balanceLabel.setText(String.valueOf(((NormalUser) getLibrary().getCurrentUserLoggedIn()).getBalance()));
         accountCreationLabel.setText(
                 dateFormat.format(
-                        ((NormalUser)getLibrary().getCurrentUserLoggedIn()).getAccountCreationDate()
+                        ((NormalUser) getLibrary().getCurrentUserLoggedIn()).getAccountCreationDate()
                 )
         );
 
