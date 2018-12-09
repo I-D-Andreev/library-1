@@ -26,9 +26,9 @@
                         <Insets left="30.0" right="30.0" top="35.0" />
                      </HBox.margin>
                   </Label>
-                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="32.0" prefWidth="61.0" text="Back">
+                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="42.0" prefWidth="80.0" text="Back">
                      <HBox.margin>
-                        <Insets left="280.0" top="28.0" />
+                        <Insets left="280.0" top="18.0" />
                      </HBox.margin>
                   </Button>
                </children>
@@ -41,126 +41,126 @@
                   <HBox prefHeight="9.0" prefWidth="622.0" />
                   <HBox layoutX="10.0" layoutY="12.0" prefHeight="33.0" prefWidth="622.0">
                      <children>
-                        <Label text="Username">
+                        <Label minWidth="120.0" text="Username">
                            <HBox.margin>
                               <Insets left="190.0" top="9.0" />
                            </HBox.margin>
                         </Label>
                         <TextField fx:id="usernameTextField" disable="true">
                            <HBox.margin>
-                              <Insets left="43.0" top="5.0" />
+                              <Insets left="15.0" top="5.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="30.0" prefHeight="33.0" prefWidth="622.0">
                      <children>
-                        <Label text="First name">
+                        <Label minWidth="120.0" text="First name">
                            <HBox.margin>
                               <Insets left="190.0" top="9.0" />
                            </HBox.margin>
                         </Label>
                         <TextField fx:id="firstNameTextField">
                            <HBox.margin>
-                              <Insets left="42.0" top="5.0" />
+                              <Insets left="15.0" top="5.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="68.0" prefHeight="33.0" prefWidth="622.0">
                      <children>
-                        <Label text="Last name">
+                        <Label minWidth="120.0" text="Last name">
                            <HBox.margin>
                               <Insets left="190.0" top="9.0" />
                            </HBox.margin>
                         </Label>
                         <TextField fx:id="lastNameTextField">
                            <HBox.margin>
-                              <Insets left="42.0" top="5.0" />
+                              <Insets left="15.0" top="5.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="107.0" prefHeight="33.0" prefWidth="622.0">
                      <children>
-                        <Label prefHeight="18.0" prefWidth="94.0" text="Phone number">
+                        <Label maxHeight="18.0" maxWidth="99.0" minHeight="18.0" minWidth="120.0" prefHeight="18.0" prefWidth="97.0" text="Phone number">
                            <HBox.margin>
                               <Insets left="190.0" top="9.0" />
                            </HBox.margin>
                         </Label>
                         <TextField fx:id="phoneNumberTextField">
                            <HBox.margin>
-                              <Insets left="2.0" top="5.0" />
+                              <Insets left="15.0" top="5.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="145.0" prefHeight="33.0" prefWidth="622.0">
                      <children>
-                        <Label text="Address Line 1">
+                        <Label minWidth="120.0" text="Address Line 1">
                            <HBox.margin>
                               <Insets left="190.0" top="9.0" />
                            </HBox.margin>
                         </Label>
                         <TextField fx:id="addressLine1TextField">
                            <HBox.margin>
-                              <Insets left="19.0" top="5.0" />
+                              <Insets left="15.0" top="5.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="184.0" prefHeight="33.0" prefWidth="622.0">
                      <children>
-                        <Label text="Address Line 2*">
+                        <Label minWidth="120.0" text="Address Line 2*">
                            <HBox.margin>
                               <Insets left="190.0" top="9.0" />
                            </HBox.margin>
                         </Label>
                         <TextField fx:id="addressLine2TextField">
                            <HBox.margin>
-                              <Insets left="14.0" top="5.0" />
+                              <Insets left="15.0" top="5.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="222.0" prefHeight="33.0" prefWidth="634.0">
                      <children>
-                        <Label text="City">
+                        <Label minWidth="120.0" text="City">
                            <HBox.margin>
                               <Insets left="190.0" top="9.0" />
                            </HBox.margin>
                         </Label>
                         <TextField fx:id="cityTextField">
                            <HBox.margin>
-                              <Insets left="76.0" top="5.0" />
+                              <Insets left="15.0" top="5.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="260.0" prefHeight="33.0" prefWidth="622.0">
                      <children>
-                        <Label text="Country">
+                        <Label minWidth="120.0" text="Country">
                            <HBox.margin>
                               <Insets left="190.0" top="9.0" />
                            </HBox.margin>
                         </Label>
                         <TextField fx:id="countryTextField">
                            <HBox.margin>
-                              <Insets left="55.0" top="5.0" />
+                              <Insets left="15.0" top="5.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="299.0" prefHeight="33.0" prefWidth="622.0">
                      <children>
-                        <Label text="Postcode">
+                        <Label minWidth="120.0" text="Postcode">
                            <HBox.margin>
                               <Insets left="190.0" top="9.0" />
                            </HBox.margin>
                         </Label>
                         <TextField fx:id="postcodeTextField">
                            <HBox.margin>
-                              <Insets left="48.0" top="5.0" />
+                              <Insets left="15.0" top="5.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
