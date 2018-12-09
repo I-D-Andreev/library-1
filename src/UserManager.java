@@ -8,8 +8,14 @@ import java.util.ArrayList;
  * @author Ivan Andreev, Arran Taylor
  */
 public class UserManager implements Serializable {
+    /**
+     * An arrayList with all the users.
+     */
     private ArrayList<User> users;
 
+    /**
+     * Constructor for a user manager taking an arrayList of users.
+     */
     public UserManager() {
         users = new ArrayList<>();
         this.selfPopulate();
@@ -48,6 +54,9 @@ public class UserManager implements Serializable {
         System.out.println("Successfully written user in file.");
     }
 
+    /**
+     * Fills the user manager with data.
+     */
     private void selfPopulate() {
         // Get a file to read from or create it if it doesn't exist.
         File file = fileToReadWrite();
@@ -196,8 +205,13 @@ public class UserManager implements Serializable {
         }
     }
 
+    // todo remove this.
     // test data
     // to be removed just before end
+
+    /**
+     * Fills the user manager with data.
+     */
     public void selfPopulate1() {
         this.addUser(new NormalUser("Sian", "Pike", "sianspike",
                 "07813931066", "", new Address("14 Bryn Y Mor Crescent",
