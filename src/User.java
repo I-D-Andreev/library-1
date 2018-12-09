@@ -7,15 +7,50 @@ import java.util.Date;
  * @author Christina Meggs, Ivan Andreev
  */
 public abstract class User implements Serializable {
+
+    /**
+     * Unique ID of the next user.
+     */
     private static int nextID = 0;
+
+    /**
+     * The username of the user.
+     */
     private final String username;
 
+    /**
+     * The id if the user.
+     */
     private String id;
+
+    /**
+     * The first name of the user.
+     */
     private String firstName;
+
+    /**
+     * The last name of the user.
+     */
     private String lastName;
+
+    /**
+     * The phone number of the user.
+     */
     private String phoneNumber;
+
+    /**
+     * The thumbnail image path of the user.
+     */
     private String profileImagePath;
+
+    /**
+     * The user's account creation date.
+     */
     private Date creationDate;
+
+    /**
+     * The user's address.
+     */
     private Address address;
 
     /**
@@ -136,10 +171,10 @@ public abstract class User implements Serializable {
 
     /**
      * Gets the path to the user's profile image.
+     * Instead of string will be profile image type when class is created.
      *
      * @return The path to the user's profile image.
      */
-    //Instead of string will be profile image type when class is created
     public String getProfileImagePath() {
         return profileImagePath;
     }
