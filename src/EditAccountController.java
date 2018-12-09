@@ -131,6 +131,14 @@ public class EditAccountController extends Controller {
     }
 
     /**
+     * Sets the text of the label that contains the image path.
+     * @param filePath The path to the image.
+     */
+    public void setImagePathLabelText(String filePath){
+        this.imagePathLabel.setText(filePath);
+    }
+
+    /**
      * Bring the user back to the main dashboard after the button is clicked.
      *
      * @param event The button is clicked.
@@ -165,9 +173,9 @@ public class EditAccountController extends Controller {
      */
     @FXML
     public void drawProfileImageButtonClicked(ActionEvent event) {
-        DrawAvatar bapple = new DrawAvatar();
+        DrawAvatar drawAvatar = new DrawAvatar(this);
         Stage newerStage = new Stage();
-        bapple.start(newerStage);
+        drawAvatar.start(newerStage);
     }
 
     /**

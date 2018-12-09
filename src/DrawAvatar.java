@@ -7,6 +7,7 @@ import javax.imageio.ImageIO;
 
 import javafx.application.Application;
 import javafx.embed.swing.SwingFXUtils;
+import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -71,13 +72,24 @@ public class DrawAvatar extends Application {
      */
     private Canvas trace;
 
-    public void setFilePath(String filePath) {
+    /**
+     * The controller class from which DrawAvatar was called.
+     */
+    private Controller controller;
 
+    /**
+     * Constructs DrawAvatar.
+     * @param controller  The controller class from which DrawAvatar was called.
+     */
+    public DrawAvatar(Controller controller){
+        this.controller = controller;
+    }
+
+    public void setFilePath(String filePath) {
         this.filePath = filePath;
     }
 
     public String getFilePath() {
-
         return filePath;
     }
 
@@ -95,9 +107,12 @@ public class DrawAvatar extends Application {
         Canvas canvas = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
         final GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        ColorPicker cp = new ColorPicker();
-        cp.setValue(Color.BLACK);
+        ColorPicker colorPicker = new ColorPicker();
+        colorPicker.setValue(Color.BLACK);
+        colorPicker.setPadding(new Insets(0,0,0,10));
+
         Slider slider = new Slider();
+        slider.setPadding(new Insets(10,0,0,10));
         Label label = new Label("1.0");
 
         slider.setMax(100);
@@ -112,7 +127,12 @@ public class DrawAvatar extends Application {
 
 
         RadioButton lineButton = new RadioButton("Line");
+        lineButton.setPadding(new Insets(0,0,0,10));
+
         RadioButton traceButton = new RadioButton("Trace");
+        traceButton.setPadding(new Insets(0,0,0,10));
+
+
         ToggleGroup toggleGroup = new ToggleGroup();
 
         lineButton.setToggleGroup(toggleGroup);
@@ -120,17 +140,18 @@ public class DrawAvatar extends Application {
 
         borderRect(gc);
         toggleGroup.selectToggle(lineButton);
-        makeLine(canvas, root, cp, slider);
+        makeLine(canvas, root, colorPicker, slider);
         toggleGroup.selectedToggleProperty().addListener((observable, oldVal, newVal) -> {
             if (newVal == lineButton) {
-                makeLine(canvas, root, cp, slider);
+                makeLine(canvas, root, colorPicker, slider);
             } else if (newVal == traceButton) {
-                makeTrace(canvas, root, cp, slider);
+                makeTrace(canvas, root, colorPicker, slider);
             }
             borderRect(gc);
         });
 
         Button clearButton = new Button();
+
         clearButton.setText("Clear");
         clearButton.setOnAction(e -> {
             clear(root, grid, canvas);
@@ -138,6 +159,9 @@ public class DrawAvatar extends Application {
 
         Button saveButton = new Button();
         saveButton.setText("Save");
+
+
+
         saveButton.setOnAction(e -> {
             captureAndSaveDisplay(grid, root, primaryStage);
             Stage stage = (Stage) saveButton.getScene().getWindow();
@@ -152,7 +176,7 @@ public class DrawAvatar extends Application {
         });
 
 
-        grid.getChildren().addAll(cp, lineButton, traceButton, slider, saveButton, clearButton);
+        grid.getChildren().addAll(colorPicker, lineButton, traceButton, slider, saveButton, clearButton);
 
         root.getChildren().addAll(canvas);
         Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -297,7 +321,15 @@ public class DrawAvatar extends Application {
         }
 
         setFilePath(file.getAbsolutePath());
+        passFilePathToController(this.getFilePath());
     }
 
+    private void passFilePathToController(String filePath){
+        if(controller instanceof EditAccountController){
+            ((EditAccountController) controller).setImagePathLabelText(filePath);
+        } else {
+
+        }
+    }
 
 }
