@@ -187,7 +187,7 @@ public class UserDashboardController extends Controller {
      * Opens the browse resources window.
      */
     @FXML
-    void browseResourcesButtonClicked(ActionEvent event) {
+    public void browseResourcesButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/BrowseResources.fxml", event,
                 "Browse Resources - TaweLib", getLibrary());
@@ -198,7 +198,7 @@ public class UserDashboardController extends Controller {
      * Takes the user back to the login screen.
      */
     @FXML
-    void logOutButtonClicked(ActionEvent event) {
+    public void logOutButtonClicked(ActionEvent event) {
         getLibrary().save();
         new NewWindow("resources/Login.fxml", event,
                 "Login - TaweLib", getLibrary());
@@ -210,7 +210,7 @@ public class UserDashboardController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void overdueResourcesButtonClicked(ActionEvent event) {
+    public void overdueResourcesButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/OverdueResources.fxml", event, "Overdue Resources - TaweLib",
                 getLibrary());
@@ -222,7 +222,7 @@ public class UserDashboardController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void requestedResourcesButtonClicked(ActionEvent event) {
+    public void requestedResourcesButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/RequestedResources.fxml", event, "Requested Resources - TaweLib",
                 getLibrary());
@@ -234,7 +234,7 @@ public class UserDashboardController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void reservedResourcesButtonClicked(ActionEvent event) {
+    public void reservedResourcesButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/ReservedResources.fxml", event, "Reserved Resources - TaweLib",
                 getLibrary());
@@ -246,7 +246,7 @@ public class UserDashboardController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void transHistoryButtonClicked(ActionEvent event) {
+    public void transHistoryButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/TransactionHistory.fxml", event, "Transaction History - TaweLib",
                 getLibrary());
