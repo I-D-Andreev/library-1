@@ -137,12 +137,12 @@
                            <children>
                               <RadioButton fx:id="librarianRadioButton" mnemonicParsing="false" onAction="#librarianRadioButtonSelected" text="librarian">
                                  <HBox.margin>
-                                    <Insets left="120.0" right="50.0" top="5.0" />
+                                    <Insets left="120.0" right="50.0" top="2.0" />
                                  </HBox.margin>
                               </RadioButton>
                               <RadioButton fx:id="userRadioButton" mnemonicParsing="false" onAction="#userRadioButtonSelected" text="user">
                                  <HBox.margin>
-                                    <Insets left="120.0" right="30.0" top="5.0" />
+                                    <Insets left="120.0" right="30.0" top="2.0" />
                                  </HBox.margin>
                               </RadioButton>
                            </children>
@@ -151,17 +151,17 @@
                            <children>
                               <Button fx:id="chooseProfileImageButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#chooseProfileImageButtonClicked" prefHeight="27.0" prefWidth="167.0" text="Choose Profile Image">
                                  <HBox.margin>
-                                    <Insets left="20.0" right="10.0" />
+                                    <Insets left="20.0" right="10.0" top="5.0" />
                                  </HBox.margin>
                               </Button>
                               <TextField fx:id="imagePathTextField" disable="true">
                                  <HBox.margin>
-                                    <Insets left="10.0" />
+                                    <Insets left="10.0" top="5.0" />
                                  </HBox.margin>
                               </TextField>
                               <Button fx:id="drawProfileImageButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#drawProfileImageButtonClicked" prefHeight="27.0" prefWidth="167.0" text="Draw Profile Image">
                                  <HBox.margin>
-                                    <Insets left="20.0" right="10.0" top="2.0" />
+                                    <Insets left="20.0" right="10.0" top="5.0" />
                                  </HBox.margin>
                               </Button>
                            </children>
