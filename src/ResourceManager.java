@@ -64,6 +64,9 @@ public class ResourceManager implements Serializable {
         System.out.println("Successfully written resource to file.");
     }
 
+    /**
+     * Fills the resource manager with data.
+     */
     private void selfPopulate() {
         // Get a file to read from or create it if it doesn't exist.
         File file = this.fileToReadWrite();
@@ -131,7 +134,7 @@ public class ResourceManager implements Serializable {
     }
 
     /**
-     * Adds a copy of a resource in the copy manager of the resource using the copy and type of resource..
+     * Adds a copy of a resource in the copy manager of the resource using the copy and type of resource.
      *
      * @param copy     The copy to be added.
      * @param resource The resource this copy is a copy of.
@@ -160,6 +163,13 @@ public class ResourceManager implements Serializable {
         }
     }
 
+    /**
+     * Edits a resource.
+     * @param resource The resource to be edited.
+     * @param title The new title of the resource.
+     * @param year The new year of the resource.
+     * @param imagePath The new image path of the resource.
+     */
     private void editResource(Resource resource, String title, int year, String imagePath) {
         resource.setTitle(title);
         resource.setYear(year);
@@ -170,12 +180,12 @@ public class ResourceManager implements Serializable {
      * Method to edit a laptop resource.
      *
      * @param laptop       The laptop resource to be edited.
-     * @param title        The title of the resource.
-     * @param year         The year the laptop was manufactured.
-     * @param imagePath    The thumbnail image path of the resource.
-     * @param manufacturer The manufacturer of the laptop.
-     * @param model        The model of the laptop.
-     * @param installedOS  The OS on the laptop.
+     * @param title        The new title of the resource.
+     * @param year         The new year the laptop was manufactured.
+     * @param imagePath    The new thumbnail image path of the resource.
+     * @param manufacturer The new manufacturer of the laptop.
+     * @param model        The new model of the laptop.
+     * @param installedOS  The new OS on the laptop.
      */
     public void editLaptop(Laptop laptop, String title, int year, String imagePath,
                            String manufacturer, String model, String installedOS) {
@@ -189,14 +199,14 @@ public class ResourceManager implements Serializable {
      * Method to edit a book resource.
      *
      * @param book      The book resource to be edited.
-     * @param title     The title of the book.
-     * @param year      The year the book was published.
-     * @param imagePath The thumbnail image path of the book.
-     * @param author    The author of the book.
-     * @param publisher The publisher of the book.
-     * @param genre     The genre of the book.
-     * @param ISBN      The ISBN of the book.
-     * @param language  The language of the book.
+     * @param title     The new title of the book.
+     * @param year      The new year the book was published.
+     * @param imagePath The new thumbnail image path of the book.
+     * @param author    The new author of the book.
+     * @param publisher The new publisher of the book.
+     * @param genre     The new genre of the book.
+     * @param ISBN      The new ISBN of the book.
+     * @param language  The new language of the book.
      */
     public void editBook(Book book, String title, int year, String imagePath,
                          String author, String publisher, String genre, String ISBN, String language) {
@@ -210,13 +220,13 @@ public class ResourceManager implements Serializable {
 
     /**
      * @param dvd                     The dvd resource to be edited.
-     * @param title                   The title of the dvd.
-     * @param year                    The year the dvd came out.
-     * @param imagePath               The thumbnail image path of the dvd.
-     * @param director                The director of the dvd.
-     * @param runtime                 The runtime of the dvd.
-     * @param language                The language of the dvd.
-     * @param listOfSubtitleLanguages The list of subtitles of the dvd.
+     * @param title                   The new title of the dvd.
+     * @param year                    The new year the dvd came out.
+     * @param imagePath               The new thumbnail image path of the dvd.
+     * @param director                The new director of the dvd.
+     * @param runtime                 The new runtime of the dvd.
+     * @param language                The new language of the dvd.
+     * @param listOfSubtitleLanguages The new list of subtitles of the dvd.
      */
     public void editDVD(DVD dvd, String title, int year, String imagePath,
                         String director, int runtime, String language, ArrayList<String> listOfSubtitleLanguages) {
@@ -246,7 +256,7 @@ public class ResourceManager implements Serializable {
     /**
      * Gets all the resources.
      *
-     * @return All the resources.
+     * @return An ArrayList of all the resources.
      */
     public ArrayList<Resource> getAllResources() {
         return resources;
@@ -314,7 +324,7 @@ public class ResourceManager implements Serializable {
      *
      * @param resource The resource requested.
      * @param toUser   The user that the copy is loaned to.
-     * @return The user that has loaned the copy if he isnt an admin, null otherwise.
+     * @return The user that has loaned the copy if he isn't an admin, null otherwise.
      */
     public Copy loanCopy(Resource resource, User toUser) {
         if (!toUser.hasAdminAccess()) {
@@ -346,7 +356,7 @@ public class ResourceManager implements Serializable {
     /**
      * Gets all the copies
      *
-     * @return All the copies.
+     * @return An ArrayList of all the copies.
      */
     public ArrayList<Copy> getAllCopies() {
         ArrayList<Copy> listOfAllCopies = new ArrayList<>();
@@ -405,10 +415,11 @@ public class ResourceManager implements Serializable {
 
     /**
      * Find the most popular resource.
+     *
      * @return A pair containing the most popular resource and the number of times it was borrowed.
      */
-    public Pair<Resource, Integer> mostPopularResource(){
-        if(this.getAllResources().size() == 0){
+    public Pair<Resource, Integer> mostPopularResource() {
+        if (this.getAllResources().size() == 0) {
             return null;
         }
 
@@ -419,18 +430,18 @@ public class ResourceManager implements Serializable {
         // and count the number of times they were borrowed.
         // The resource, whose sum of copies' borrowings is the most, will be the most popular one.
 
-        for(Resource resource : this.getAllResources()){
+        for (Resource resource : this.getAllResources()) {
             int currentResourceNumberOfTimesBorrowed = 0;
 
-            for(Copy copy : resource.getCopyManager().getListOfAllCopies()){
-                for(HistoryEntry entry : copy.getLoanHistory().getHistory()){
-                    if(((HistoryEntryItemTransaction) entry).isBorrowed()){
+            for (Copy copy : resource.getCopyManager().getListOfAllCopies()) {
+                for (HistoryEntry entry : copy.getLoanHistory().getHistory()) {
+                    if (((HistoryEntryItemTransaction) entry).isBorrowed()) {
                         currentResourceNumberOfTimesBorrowed++;
                     }
                 }
             }
 
-            if(currentResourceNumberOfTimesBorrowed > numberOfTimeBorrowed){
+            if (currentResourceNumberOfTimesBorrowed > numberOfTimeBorrowed) {
                 mostPopularResource = resource;
                 numberOfTimeBorrowed = currentResourceNumberOfTimesBorrowed;
             }
@@ -439,10 +450,12 @@ public class ResourceManager implements Serializable {
         return new Pair<Resource, Integer>(mostPopularResource, numberOfTimeBorrowed);
     }
 
-    // test data
+    // todo remove this test data
     // to be removed just before end
-
     // test data
+    /**
+     * Method that fills the resource manager with data.
+     */
     public void selfPopulate1() {
         Book b = new Book("Harry Potter", 2010, "", "J.K.R.", "dn");
         Book b2 = new Book("Harry Potter2", 2010, "", "J.K.R.", "dn");
