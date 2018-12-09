@@ -6,8 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="6e3b68db-e3f9-4a5f-a067-ee60d4dfb31b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ViewAllUsersCurrentlyBorrowingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewAllUsersCurrentlyBorrowingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/BorrowedResources.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/BorrowedResources.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/BrowseResources.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/BrowseResources.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/CopyHistory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/CopyHistory.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/CreateEdit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/CreateEdit.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/EditAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/EditAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/LibrarianDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/LibrarianDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/LibrarianResource.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/LibrarianResource.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/ManageResources.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/ManageResources.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/OverdueCopies.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/OverdueCopies.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/OverdueResources.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/OverdueResources.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/ProfileImage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/ProfileImage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/RequestedResources.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/RequestedResources.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/ReservedResources.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/ReservedResources.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/TransactionHistory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/TransactionHistory.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/UserDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/UserDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/UserResource.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/UserResource.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,26 +36,26 @@
     <session id="-1710960564">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="fxml" value="3" />
-          <entry key="java" value="169" />
+          <entry key="fxml" value="4" />
+          <entry key="java" value="170" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="169" />
-          <entry key="XML" value="6" />
+          <entry key="JAVA" value="170" />
+          <entry key="XML" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="7690" />
+          <entry key="java" value="7692" />
           <entry key="txt" value="426" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="7690" />
+          <entry key="JAVA" value="7692" />
           <entry key="PLAIN_TEXT" value="426" />
         </counts>
       </usages-collector>
@@ -60,11 +76,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="-119">
+              <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,50 +88,29 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/OverdueCopies.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BrowseResourcesController.java">
+        <entry file="file://$PROJECT_DIR$/src/ViewAllUsersCurrentlyBorrowingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="169" selection-start-line="169" selection-end-line="169" />
+            <state relative-caret-position="68">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ResourceManager.java">
+        <entry file="file://$PROJECT_DIR$/src/CreateEditController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+            <state relative-caret-position="-2794">
+              <caret line="1145" column="63" lean-forward="true" selection-start-line="1145" selection-start-column="63" selection-end-line="1145" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/NewWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="44" selection-start-line="44" selection-end-line="47" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UserManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SaveStaticVariables.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -218,6 +213,7 @@
         <option value="$PROJECT_DIR$/src/ResourceManager.java" />
         <option value="$PROJECT_DIR$/src/NewWindow.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/ViewAllUsersCurrentlyBorrowingController.java" />
       </list>
     </option>
   </component>
@@ -260,7 +256,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544311339754" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544313875804" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
@@ -678,9 +674,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.2080537" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.2080537" />
       <window_info id="Structure" order="1" sideWeight="0.5064516" side_tool="true" weight="0.24093817" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -689,7 +684,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4986577" visible="true" weight="0.3319149" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986577" weight="0.3319149" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -805,14 +800,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Overdue copies works" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/event/EventHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/HistoryEntry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -951,8 +938,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CreateEditController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-417">
-          <caret line="1104" column="21" lean-forward="true" selection-start-line="1104" selection-start-column="21" selection-end-line="1104" selection-end-column="21" />
+        <state relative-caret-position="-2794">
+          <caret line="1145" column="63" lean-forward="true" selection-start-line="1145" selection-start-column="63" selection-end-line="1145" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1013,27 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1021#1022#0" expanded="true" />
-            <element signature="e#1057#1058#0" expanded="true" />
-            <element signature="e#1208#1209#0" expanded="true" />
-            <element signature="e#1255#1256#0" expanded="true" />
-            <element signature="e#1505#1506#0" expanded="true" />
-            <element signature="e#1562#1563#0" expanded="true" />
-            <element signature="e#1716#1717#0" expanded="true" />
-            <element signature="e#1763#1764#0" expanded="true" />
-            <element signature="e#1869#1870#0" expanded="true" />
-            <element signature="e#1912#1913#0" expanded="true" />
-            <element signature="e#2070#2071#0" expanded="true" />
-            <element signature="e#2113#2114#0" expanded="true" />
-            <element signature="e#2322#2323#0" expanded="true" />
-            <element signature="e#2377#2378#0" expanded="true" />
-            <element signature="e#2546#2547#0" expanded="true" />
-            <element signature="e#2589#2590#0" expanded="true" />
-            <element signature="e#3234#3235#0" expanded="true" />
-            <element signature="e#3295#3296#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1151,15 +1117,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ViewAllUsersCurrentlyBorrowingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="-119">
+          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/OverdueCopies.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

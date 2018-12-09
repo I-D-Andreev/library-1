@@ -10,14 +10,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OverdueCopiesController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OverdueCopiesController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="250.0" minHeight="10.0" prefHeight="249.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="411.9999755859375" minHeight="10.0" prefHeight="411.9999755859375" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="214.60001220703123" minHeight="10.0" prefHeight="57.80002441406248" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
@@ -39,18 +39,18 @@
             <Insets left="20.0" right="20.0" />
          </GridPane.margin>
          <columns>
-            <TableColumn fx:id="copyIDColumn" prefWidth="56.800048828125" text="Copy ID" />
-            <TableColumn fx:id="borrowedByColumn" prefWidth="93.5999755859375" text="Borrowed By" />
-            <TableColumn fx:id="borrowedOnColumn" prefWidth="137.5999755859375" text="Borrowed On" />
-            <TableColumn fx:id="dueDateColumn" prefWidth="161.60003662109375" text="Due date" />
-            <TableColumn fx:id="daysOverdueColumn" prefWidth="121.60003662109375" text="Days Overdue" />
+            <TableColumn fx:id="copyIDColumn" prefWidth="91.99999809265137" text="Copy ID" />
+            <TableColumn fx:id="borrowedByColumn" prefWidth="105.59998321533203" text="Borrowed By" />
+            <TableColumn fx:id="borrowedOnColumn" prefWidth="146.4000244140625" text="Borrowed On" />
+            <TableColumn fx:id="dueDateColumn" prefWidth="156.79995727539062" text="Due date" />
+            <TableColumn fx:id="daysOverdueColumn" prefWidth="160.0" text="Days Overdue" />
          </columns>
       </TableView>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
          <children>
-            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" text="OK">
+            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="46.0" prefWidth="85.0" text="OK">
                <HBox.margin>
-                  <Insets right="20.0" />
+                  <Insets right="60.0" />
                </HBox.margin>
             </Button>
          </children>

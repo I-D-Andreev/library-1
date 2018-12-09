@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EditAccountController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EditAccountController">
    <children>
       <BorderPane prefHeight="541.0" prefWidth="641.0">
          <top>
@@ -37,7 +37,7 @@
          <center>
             <VBox prefHeight="414.0" prefWidth="642.0" BorderPane.alignment="CENTER">
                <children>
-                  <Line endX="542.4928588867188" endY="2.3245811462402344E-6" startX="-100.0" />
+                  <Line endX="599.2929077148438" endY="-1.1670589447021484E-4" startX="-100.0" />
                   <HBox prefHeight="9.0" prefWidth="622.0" />
                   <HBox layoutX="10.0" layoutY="12.0" prefHeight="33.0" prefWidth="622.0">
                      <children>

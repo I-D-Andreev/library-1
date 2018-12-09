@@ -22,9 +22,6 @@ public class ViewAllUsersCurrentlyBorrowingController extends Controller{
     private TableView<TableRepresentationCopyInformation> userTable;
 
     @FXML
-    private TableColumn<TableRepresentationCopyInformation, String> copyIDColumn;
-
-    @FXML
     private TableColumn<TableRepresentationCopyInformation, String> copyNameColumn;
 
     @FXML
@@ -46,8 +43,6 @@ public class ViewAllUsersCurrentlyBorrowingController extends Controller{
     @Override
     public void onStart(){
         data = FXCollections.observableArrayList();
-        copyIDColumn.setCellValueFactory(
-                new PropertyValueFactory<TableRepresentationCopyInformation, String>("copyID"));
 
         copyNameColumn.setCellValueFactory(
                 new PropertyValueFactory<TableRepresentationCopyInformation, String>("resourceName"));
@@ -73,7 +68,7 @@ public class ViewAllUsersCurrentlyBorrowingController extends Controller{
                 String username = copy.getBorrowedBy().getUsername();
                 String borrowedOn = dateFormat.format(copy.getBorrowedOn());
 
-                data.add(new TableRepresentationCopyInformation(copyID, username, copyName, borrowedOn));
+                data.add(new TableRepresentationCopyInformation(username, copyName, borrowedOn));
             }
         }
     }

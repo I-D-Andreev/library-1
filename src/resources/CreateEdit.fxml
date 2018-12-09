@@ -14,14 +14,14 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateEditController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="693.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateEditController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="562.0" minWidth="10.0" prefWidth="527.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.0" minWidth="10.0" prefWidth="73.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="126.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="471.0" minHeight="10.0" prefHeight="471.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="126.0" minHeight="0.0" prefHeight="37.199995040893555" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="471.0" minHeight="10.0" prefHeight="456.00000495910643" vgrow="SOMETIMES" />
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
@@ -124,7 +124,7 @@
                         <Text layoutX="23.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre (Optional)" />
                         <Button fx:id="editBookSearchButton" layoutX="375.0" layoutY="30.0" mnemonicParsing="false" onAction="#editBookSearchButtonClicked" text="Search" />
                         <Text layoutX="22.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unique ID Search" />
-                        <Line endX="529.0" layoutX="101.0" layoutY="78.0" startX="-122.0" />
+                        <Line endX="608.0000610351562" endY="-1.52587890625E-5" layoutX="101.0" layoutY="78.0" startX="-122.0" />
                         <Text layoutX="27.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thumbnail Image path" />
                         <Button fx:id="bookDeleteButton" layoutX="20.0" layoutY="441.0" mnemonicParsing="false" onAction="#bookDeleteButtonClicked" text="Delete" />
                         <Button fx:id="editBookFindImageButton" layoutX="366.0" layoutY="230.0" mnemonicParsing="false" onAction="#editBookFindImageButtonClicked" text="..." />
@@ -153,7 +153,7 @@
                         <Text layoutX="27.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Runtime" />
                         <Text layoutX="27.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Language (Optional)" />
                         <Text layoutX="22.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unique ID Search" />
-                        <Line endX="529.0" layoutX="101.0" layoutY="78.0" startX="-122.0" />
+                        <Line endX="641.6000366210938" endY="-1.52587890625E-5" layoutX="101.0" layoutY="78.0" startX="-122.0" />
                         <Text layoutX="27.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thumbnail Image path" />
                         <Button fx:id="dvdDeleteButton" layoutX="38.0" layoutY="421.0" mnemonicParsing="false" onAction="#dvdDeleteButtonClicked" text="Delete" />
                         <Button fx:id="editDvdFindImageButton" layoutX="356.0" layoutY="188.0" mnemonicParsing="false" onAction="#editDvdFindImageButtonClicked" text="..." />
@@ -178,7 +178,7 @@
                         <Text layoutX="22.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model" />
                         <Text layoutX="22.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operating System" />
                         <Text layoutX="22.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unique ID Search" />
-                        <Line endX="529.0" layoutX="101.0" layoutY="78.0" startX="-122.0" />
+                        <Line endX="608.7999877929688" endY="-1.52587890625E-5" layoutX="101.0" layoutY="78.0" startX="-122.0" />
                         <Button fx:id="editLaptopSearchButton" layoutX="375.0" layoutY="30.0" mnemonicParsing="false" onAction="#editLaptopSearchButtonClicked" text="Search" />
                         <Text layoutX="22.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thumbnail Image path" />
                         <TextField fx:id="imagePathEditLaptop" layoutX="181.0" layoutY="186.0" />
@@ -200,7 +200,7 @@
                         <TextField fx:id="editCopyLoanDurationTextField" layoutX="183.0" layoutY="356.0" />
                         <Label layoutX="45.0" layoutY="124.0" prefHeight="17.0" prefWidth="109.0" text="Loan Duration" />
                         <Button fx:id="copyCreateButton" layoutX="388.0" layoutY="186.0" mnemonicParsing="false" onAction="#copyCreateButtonClicked" text="Create" />
-                        <Line endX="529.0" layoutX="89.0" layoutY="257.0" startX="-122.0" />
+                        <Line endX="623.2000122070312" layoutX="89.0" layoutY="257.0" startX="-122.0" />
                         <Button fx:id="copySearchButton" layoutX="387.0" layoutY="308.0" mnemonicParsing="false" onAction="#copySearchButtonClicked" text="Search" />
                         <Button fx:id="editCopyButton" layoutX="387.0" layoutY="405.0" mnemonicParsing="false" onAction="#editCopyButtonClicked" text="Edit" />
                         <Button fx:id="deleteCopyButton" layoutX="48.0" layoutY="418.0" mnemonicParsing="false" onAction="#deleteCopyButtonClicked" text="Delete" />
@@ -226,7 +226,7 @@
             </Label>
          </children>
       </HBox>
-      <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButtonClicked" text="Back" GridPane.columnIndex="1">
+      <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="34.0" prefWidth="58.0" text="Back" GridPane.columnIndex="1">
          <GridPane.margin>
             <Insets left="10.0" />
          </GridPane.margin>

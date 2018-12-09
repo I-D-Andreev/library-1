@@ -9,20 +9,20 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TransactionHistoryController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="599.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TransactionHistoryController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="341.0" minHeight="10.0" prefHeight="341.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="491.9999633789063" minHeight="10.0" prefHeight="483.9999633789063" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="52.00003662109373" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
          <children>
-            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" text="OK">
+            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="52.0" prefWidth="83.0" text="OK">
                <HBox.margin>
-                  <Insets right="20.0" />
+                  <Insets right="60.0" />
                </HBox.margin>
             </Button>
          </children>
@@ -32,11 +32,11 @@
             <Insets left="20.0" right="20.0" top="20.0" />
          </GridPane.margin>
          <columns>
-            <TableColumn fx:id="typeColumn" prefWidth="89.60003662109375" text="type" />
-            <TableColumn fx:id="dateColumn" prefWidth="173.5999755859375" text="date" />
-            <TableColumn fx:id="amountColumn" minWidth="0.0" prefWidth="76.79998779296875" text="amount" />
-            <TableColumn fx:id="itemID" prefWidth="115.20001220703125" text="item" />
-            <TableColumn fx:id="daysOverdue" prefWidth="102.4000244140625" text="days overdue" />
+            <TableColumn fx:id="typeColumn" prefWidth="123.20001792907715" text="type" />
+            <TableColumn fx:id="dateColumn" prefWidth="153.5999755859375" text="date" />
+            <TableColumn fx:id="amountColumn" minWidth="0.0" prefWidth="127.20001220703125" text="amount" />
+            <TableColumn fx:id="itemID" prefWidth="117.60000610351562" text="item" />
+            <TableColumn fx:id="daysOverdue" prefWidth="136.800048828125" text="days overdue" />
          </columns>
       </TableView>
    </children>

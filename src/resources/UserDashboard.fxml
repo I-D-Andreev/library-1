@@ -10,15 +10,15 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserDashboardController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserDashboardController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.0" minWidth="10.0" prefWidth="278.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="322.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="10.0" prefWidth="356.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="299.20000000000005" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints maxHeight="130.0" minHeight="0.0" prefHeight="64.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="319.0" minHeight="10.0" prefHeight="271.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="319.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="401.60002441406255" minHeight="10.0" prefHeight="376.8000366210938" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="319.0" minHeight="10.0" prefHeight="92.99996337890627" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <Label text="TaweLib">
@@ -69,7 +69,7 @@
             </Button>
          </children>
       </HBox>
-      <ImageView fx:id="userImage" fitHeight="179.0" fitWidth="225.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+      <ImageView fx:id="userImage" fitHeight="202.0" fitWidth="283.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin>
@@ -140,12 +140,12 @@
                   <Insets top="7.0" />
                </VBox.margin>
                <children>
-                  <Button fx:id="editProfileButton" mnemonicParsing="false" onAction="#editProfileButtonClicked" prefHeight="46.0" prefWidth="85.0" text="Edit Profile">
+                  <Button fx:id="editProfileButton" mnemonicParsing="false" onAction="#editProfileButtonClicked" prefHeight="46.0" prefWidth="143.0" text="Edit Profile">
                      <HBox.margin>
                         <Insets left="12.0" right="20.0" top="20.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="mostPopularResourceButton" mnemonicParsing="false" onAction="#mostPopularResourceButtonClicked" prefHeight="46.0" prefWidth="150.0" text="Most popular resource" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="mostPopularResourceButton" mnemonicParsing="false" onAction="#mostPopularResourceButtonClicked" prefHeight="67.0" prefWidth="134.0" text="Most popular resource" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
                         <Insets left="20.0" right="20.0" top="20.0" />
                      </HBox.margin>
