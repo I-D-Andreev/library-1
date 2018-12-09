@@ -69,7 +69,7 @@
             </Button>
          </children>
       </HBox>
-      <ImageView fx:id="userImage" fitHeight="202.0" fitWidth="283.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+      <ImageView fx:id="userImage" fitHeight="237.0" fitWidth="321.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin>

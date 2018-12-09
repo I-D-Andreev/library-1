@@ -172,6 +172,6 @@
             <Insets top="35.0" />
          </padding>
       </VBox>
-      <ImageView fx:id="librarianImage" fitHeight="227.0" fitWidth="305.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
+      <ImageView fx:id="librarianImage" fitHeight="237.0" fitWidth="310.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
    </children>
 </GridPane>
