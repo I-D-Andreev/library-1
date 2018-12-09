@@ -137,7 +137,7 @@ public class LibrarianDashboardController extends Controller {
             String path = getLibrary().getCurrentUserLoggedIn().getProfileImagePath();
             Image image;
             // relative path
-            if (path.charAt(0) >= 'a' && path.charAt(0) <= 'z') {
+            if (!path.isEmpty() && path.charAt(0) >= 'a' && path.charAt(0) <= 'z') {
                 image = new Image(path);
             } else {
                 // absolute path
