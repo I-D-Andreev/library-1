@@ -82,11 +82,13 @@ public class ProfileImageController extends Controller {
 
         if (getLibrary().getCurrentUserLoggedIn().hasAdminAccess()) {
 
-            new NewWindow("resources/ViewUser.fxml", event, "View User - TaweLib", getLibrary());
+            new NewWindow("resources/LibrarianDashboard.fxml",
+                    event, "View User - TaweLib", getLibrary());
 
         } else {
 
-            new NewWindow("resources/UserDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
+            new NewWindow("resources/UserDashboard.fxml", event,
+                    "Dashboard - TaweLib", getLibrary());
         }
 
     }

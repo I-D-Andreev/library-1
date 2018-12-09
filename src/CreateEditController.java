@@ -358,80 +358,80 @@ public class CreateEditController extends Controller {
     /**
      * Button for laptop deletion.
      */
-    @FXML // fx:id="laptopDeleteButton"
-    private Button laptopDeleteButton; // Value injected by FXMLLoader
+    @FXML
+    private Button laptopDeleteButton;
 
     /**
      * Button for DVD deletion.
      */
-    @FXML // fx:id="dvdDeleteButton"
-    private Button dvdDeleteButton; // Value injected by FXMLLoader
+    @FXML
+    private Button dvdDeleteButton;
 
     /**
      * Button for book deletion.
      */
-    @FXML // fx:id="bookDeleteButton"
-    private Button bookDeleteButton; // Value injected by FXMLLoader
+    @FXML
+    private Button bookDeleteButton;
 
     /**
      * The resources field for unique ID.
      */
-    @FXML // fx:id="resourceUniqueIDtextField"
-    private TextField resourceUniqueIDtextField; // Value injected by FXMLLoader
+    @FXML
+    private TextField resourceUniqueIDtextField;
 
     /**
      * The resources search button.
      */
-    @FXML // fx:id="copySearchButton"
-    private Button resourceSearchButton; // Value injected by FXMLLoader
+    @FXML
+    private Button resourceSearchButton;
 
     /**
      * The copy's loan duration field.
      */
-    @FXML // fx:id="copyLoanDurationTextField"
-    private TextField copyLoanDurationTextField; // Value injected by FXMLLoader
+    @FXML
+    private TextField copyLoanDurationTextField;
 
     /**
      * The button that creates a copy.
      */
-    @FXML // fx:id="copyCreateButton"
-    private Button copyCreateButton; // Value injected by FXMLLoader
+    @FXML
+    private Button copyCreateButton;
 
     /**
      * The button that creates a book image.
      */
-    @FXML // fx:id="createBookFindImageButton"
-    private Button createBookFindImageButton; // Value injected by FXMLLoader
+    @FXML
+    private Button createBookFindImageButton;
 
     /**
      * The button that creates a dvd image.
      */
-    @FXML // fx:id="createDvdFindImageButton"
-    private Button createDvdFindImageButton; // Value injected by FXMLLoader
+    @FXML
+    private Button createDvdFindImageButton;
 
     /**
      * The button that creates a laptop image.
      */
-    @FXML // fx:id="createLaptopFindImageButton"
-    private Button createLaptopFindImageButton; // Value injected by FXMLLoader
+    @FXML
+    private Button createLaptopFindImageButton;
 
     /**
      * The button that creates a book image.
      */
-    @FXML // fx:id="editBookFindImageButton"
-    private Button editBookFindImageButton; // Value injected by FXMLLoader
+    @FXML
+    private Button editBookFindImageButton;
 
     /**
      * The edit dvd image button.
      */
-    @FXML // fx:id="editDvdFindImageButton"
-    private Button editDvdFindImageButton; // Value injected by FXMLLoader
+    @FXML
+    private Button editDvdFindImageButton;
 
     /**
      * The edit laptop image button.
      */
-    @FXML // fx:id="editLaptopFindImageButton"
-    private Button editLaptopFindImageButton; // Value injected by FXMLLoader
+    @FXML
+    private Button editLaptopFindImageButton;
 
     /**
      * Field for the edit of the search ID of the copy.
@@ -462,6 +462,42 @@ public class CreateEditController extends Controller {
      */
     @FXML
     private Button deleteCopyButton;
+
+    /**
+     * The button to draw an image in the create book tab.
+     */
+    @FXML
+    private Button drawButtonCreateBook;
+
+    /**
+     * The button to draw an image in the create DVD tab.
+     */
+    @FXML
+    private Button drawButtonCreateDVD;
+
+    /**
+     * The button to draw an image in the create laptop tab.
+     */
+    @FXML
+    private Button drawButtonCreateLaptop;
+
+    /**
+     * The button to draw an image in the edit book tab.
+     */
+    @FXML
+    private Button drawButtonEditBook;
+
+    /**
+     * The button to draw an image in the edit DVD tab.
+     */
+    @FXML
+    private Button drawButtonEditDVD;
+
+    /**
+     * The button to draw an image in the edit laptop tab.
+     */
+    @FXML
+    private Button drawButtonEditLaptop;
 
 
     /**
@@ -715,7 +751,7 @@ public class CreateEditController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void editDVDSearchButtonClicked(ActionEvent event) {
+    public void editDVDSearchButtonClicked(ActionEvent event) {
         String dvdId = uniqueIDSearchEditDVDTextField.getText();
         Resource resource = getLibrary().getResourceManager().getResourceById(dvdId);
 
@@ -823,7 +859,7 @@ public class CreateEditController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void editLaptopSearchButtonClicked(ActionEvent event) {
+    public void editLaptopSearchButtonClicked(ActionEvent event) {
         String laptopId = uniqueIDSearchEditLaptopTextField.getText();
         Resource resource = getLibrary().getResourceManager().getResourceById(laptopId);
 
@@ -900,11 +936,11 @@ public class CreateEditController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void laptopDeleteButtonClicked(ActionEvent event) {
+    public void laptopDeleteButtonClicked(ActionEvent event) {
         Resource resource = getLibrary().getResourceManager().
                 getResourceById(uniqueIDSearchEditLaptopTextField.getText());
 
-        if(!canDeleteResource(resource)){
+        if (!canDeleteResource(resource)) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Can't delete resource, because some of its" +
                     " copies are still in use!",
                     ButtonType.OK);
@@ -927,12 +963,12 @@ public class CreateEditController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void dvdDeleteButtonClicked(ActionEvent event) {
+    public void dvdDeleteButtonClicked(ActionEvent event) {
 
         Resource resource = getLibrary().getResourceManager().
                 getResourceById(uniqueIDSearchEditDVDTextField.getText());
 
-        if(!canDeleteResource(resource)){
+        if (!canDeleteResource(resource)) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Can't delete resource, because some of its" +
                     " copies are still in use!",
                     ButtonType.OK);
@@ -955,11 +991,11 @@ public class CreateEditController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void bookDeleteButtonClicked(ActionEvent event) {
+    public void bookDeleteButtonClicked(ActionEvent event) {
         Resource resource = getLibrary().getResourceManager().
                 getResourceById(uniqueIDSearchEditBookTextField.getText());
 
-        if(!canDeleteResource(resource)){
+        if (!canDeleteResource(resource)) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Can't delete resource, because some of its" +
                     " copies are still in use!",
                     ButtonType.OK);
@@ -992,7 +1028,7 @@ public class CreateEditController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void copyCreateButtonClicked(ActionEvent event) {
+    public void copyCreateButtonClicked(ActionEvent event) {
         // Find the resource.
         Resource resource = getLibrary().getResourceManager().getResourceById(resourceUniqueIDtextField.getText());
 
@@ -1046,7 +1082,7 @@ public class CreateEditController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void resourceSearchButtonClicked(ActionEvent event) {
+    public void resourceSearchButtonClicked(ActionEvent event) {
 
         Resource resource = getLibrary().getResourceManager().getResourceById(resourceUniqueIDtextField.getText());
 
@@ -1175,7 +1211,7 @@ public class CreateEditController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void createBookFindImageButtonClicked(ActionEvent event) {
+    public void createBookFindImageButtonClicked(ActionEvent event) {
 
         selectFile(imagePathBookTextField);
     }
@@ -1186,7 +1222,7 @@ public class CreateEditController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void createDvdFindImageButtonClicked(ActionEvent event) {
+    public void createDvdFindImageButtonClicked(ActionEvent event) {
 
         selectFile(imagePathDVDTextField);
     }
@@ -1197,7 +1233,7 @@ public class CreateEditController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void createLaptopFindImageButtonClicked(ActionEvent event) {
+    public void createLaptopFindImageButtonClicked(ActionEvent event) {
 
         selectFile(imagePathLaptopTextField);
     }
@@ -1208,7 +1244,7 @@ public class CreateEditController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void editBookFindImageButtonClicked(ActionEvent event) {
+    public void editBookFindImageButtonClicked(ActionEvent event) {
 
         selectFile(imagePathEditBook);
     }
@@ -1219,7 +1255,7 @@ public class CreateEditController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void editDvdFindImageButtonClicked(ActionEvent event) {
+    public void editDvdFindImageButtonClicked(ActionEvent event) {
 
         selectFile(imagePathEditDVD);
     }
@@ -1230,9 +1266,86 @@ public class CreateEditController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void editLaptopFindImageButtonClicked(ActionEvent event) {
+    public void editLaptopFindImageButtonClicked(ActionEvent event) {
 
         selectFile(imagePathEditLaptop);
+    }
+
+    /**
+     * Opens the drawing interface.
+     *
+     * @param event The button is clicked.
+     */
+    @FXML
+    public void drawButtonCreateBookClicked(ActionEvent event) {
+        callDrawingInterface(imagePathBookTextField);
+    }
+
+
+    /**
+     * Opens the drawing interface.
+     *
+     * @param event The button is clicked.
+     */
+    @FXML
+    public void drawButtonCreateDVDClicked(ActionEvent event) {
+        callDrawingInterface(imagePathDVDTextField);
+
+    }
+
+    /**
+     * Opens the drawing interface.
+     *
+     * @param event The button is clicked.
+     */
+    @FXML
+    public void drawButtonCreateLaptopClicked(ActionEvent event) {
+        callDrawingInterface(imagePathLaptopTextField);
+
+    }
+
+    /**
+     * Opens the drawing interface.
+     *
+     * @param event The button is clicked.
+     */
+    @FXML
+    public void drawButtonEditBookClicked(ActionEvent event) {
+        callDrawingInterface(imagePathEditBook);
+
+    }
+
+    /**
+     * Opens the drawing interface.
+     *
+     * @param event The button is clicked.
+     */
+    @FXML
+    public void drawButtonEditDVDClicked(ActionEvent event) {
+        callDrawingInterface(imagePathEditDVD);
+
+    }
+
+    /**
+     * Opens the drawing interface.
+     *
+     * @param event The button is clicked.
+     */
+    @FXML
+    public void drawButtonEditLaptopClicked(ActionEvent event) {
+        callDrawingInterface(imagePathEditLaptop);
+
+    }
+
+    /**
+     * Calls the drawing interface.
+     *
+     * @param textField The text field to put the file path from drawing.
+     */
+    private void callDrawingInterface(TextField textField) {
+        DrawAvatar drawAvatar = new DrawAvatar(textField);
+        Stage newerStage = new Stage();
+        drawAvatar.start(newerStage);
     }
 
     /**
@@ -1258,12 +1371,16 @@ public class CreateEditController extends Controller {
         FileChooser fileChooser = new FileChooser();
 
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("JPEG Files", "*.jpg"),
-                new FileChooser.ExtensionFilter("PNG Files", "*.png"));
+                new FileChooser.ExtensionFilter("PNG Files", "*.png"),
+                new FileChooser.ExtensionFilter("JPEG Files", "*.jpg"));
 
-        File selectedFile = fileChooser.showOpenDialog(currentStage);
-
-        imageTextField.setText(selectedFile.toString());
+        try {
+            File selectedFile = fileChooser.showOpenDialog(currentStage);
+            imageTextField.setText(selectedFile.toString());
+        } catch (Exception e) {
+            imageTextField.setText("");
+            e.printStackTrace();
+        }
     }
 
     /**

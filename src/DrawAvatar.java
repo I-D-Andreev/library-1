@@ -77,18 +77,29 @@ public class DrawAvatar extends Application {
      */
     private Controller controller;
 
+    private TextField textFieldToSet;
+
     /**
-     * Constructs DrawAvatar.
-     * @param controller  The controller class from which DrawAvatar was called.
+     * Constructs drawing interface.
+     * @param textField The text field in which the path will be saved.
      */
-    public DrawAvatar(Controller controller){
-        this.controller = controller;
+    public DrawAvatar(TextField textField){
+        this.textFieldToSet = textField;
     }
 
+
+    /**
+     * Set the file path to a new one.
+     * @param filePath The new file path.
+     */
     public void setFilePath(String filePath) {
         this.filePath = filePath;
     }
 
+    /**
+     * Gets the file path.
+     * @return The file path.
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -320,18 +331,11 @@ public class DrawAvatar extends Application {
             }
 
             setFilePath(file.getAbsolutePath());
-            passFilePathToController(this.getFilePath());
+            textFieldToSet.setText(filePath);
         }
 
 
     }
 
-    private void passFilePathToController(String filePath){
-        if(controller instanceof EditAccountController){
-            ((EditAccountController) controller).setImagePathLabelText(filePath);
-        } else {
-
-        }
-    }
 
 }

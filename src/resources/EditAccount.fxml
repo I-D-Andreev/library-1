@@ -169,14 +169,14 @@
                      <children>
                         <Button fx:id="chooseProfileImageButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#chooseProfileImageButtonClicked" prefHeight="27.0" prefWidth="167.0" text="Choose Profile Image">
                            <HBox.margin>
-                              <Insets left="20.0" right="10.0" top="10.0" />
+                              <Insets left="40.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Label fx:id="imagePathLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="184.0" text="No File Chosen">
+                        <TextField fx:id="imagePathTextField" disable="true">
                            <HBox.margin>
-                              <Insets left="15.0" right="20.0" top="10.0" />
+                              <Insets left="20.0" right="20.0" top="13.0" />
                            </HBox.margin>
-                        </Label>
+                        </TextField>
                         <Button fx:id="drawProfileImageButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#drawProfileImageButtonClicked" prefHeight="27.0" prefWidth="167.0" text="Draw Profile Image">
                            <HBox.margin>
                               <Insets left="20.0" right="10.0" top="10.0" />

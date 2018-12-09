@@ -1,9 +1,7 @@
-import com.sun.org.glassfish.gmbal.ManagedObject;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.util.Optional;
@@ -84,7 +82,7 @@ public class EditAccountController extends Controller {
      * Label that displays the image path.
      */
     @FXML
-    private Label imagePathLabel;
+    private TextField imagePathTextField;
 
     /**
      * Button to draw a profile image.
@@ -126,7 +124,7 @@ public class EditAccountController extends Controller {
         cityTextField.setText(user.getAddress().getCity());
         countryTextField.setText(user.getAddress().getCountry());
         postcodeTextField.setText(user.getAddress().getPostcode());
-        imagePathLabel.setText(user.getProfileImagePath());
+        imagePathTextField.setText(user.getProfileImagePath());
 
     }
 
@@ -135,7 +133,7 @@ public class EditAccountController extends Controller {
      * @param filePath The path to the image.
      */
     public void setImagePathLabelText(String filePath){
-        this.imagePathLabel.setText(filePath);
+        this.imagePathTextField.setText(filePath);
     }
 
     /**
@@ -173,7 +171,7 @@ public class EditAccountController extends Controller {
      */
     @FXML
     public void drawProfileImageButtonClicked(ActionEvent event) {
-        DrawAvatar drawAvatar = new DrawAvatar(this);
+        DrawAvatar drawAvatar = new DrawAvatar(this.imagePathTextField);
         Stage newerStage = new Stage();
         drawAvatar.start(newerStage);
     }
@@ -199,9 +197,7 @@ public class EditAccountController extends Controller {
         String city = cityTextField.getText();
         String country = countryTextField.getText();
         String postcode = postcodeTextField.getText();
-        String imagePath = imagePathLabel.getText();
-
-        imagePath = (imagePath.isEmpty())? "No File Chosen" : imagePath;
+        String imagePath = imagePathTextField.getText();
 
         if (firstName.isEmpty() || lastName.isEmpty() || phoneNumber.isEmpty()
                 || addressLine1.isEmpty() || city.isEmpty() || country.isEmpty()
