@@ -16,13 +16,13 @@
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="583.0" minWidth="10.0" prefWidth="35.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="583.0" minWidth="10.0" prefWidth="78.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="694.0" minWidth="10.0" prefWidth="335.0" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="618.0" minWidth="10.0" prefWidth="99.0" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="589.0" minWidth="10.0" prefWidth="70.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="694.0" minWidth="10.0" prefWidth="417.5999938964843" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="618.0" minWidth="10.0" prefWidth="153.60000610351562" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="589.0" minWidth="10.0" prefWidth="13.600024414062545" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="129.0" minHeight="0.0" prefHeight="36.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="267.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="129.0" minHeight="0.0" prefHeight="38.399993896484375" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="267.0" minHeight="10.0" prefHeight="52.00000610351563" vgrow="SOMETIMES" />
     <RowConstraints maxHeight="214.0" minHeight="10.0" prefHeight="143.6" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="169.0" minHeight="10.0" prefHeight="91.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="99.0" vgrow="SOMETIMES" />
@@ -47,12 +47,12 @@
       <CheckBox fx:id="dvdFilter" mnemonicParsing="false" onAction="#updateTable" text="DVD" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       <CheckBox fx:id="bookFilter" mnemonicParsing="false" onAction="#updateTable" text="Book" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <CheckBox fx:id="laptopFilter" mnemonicParsing="false" onAction="#updateTable" text="Laptop" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <TableView fx:id="displayTable" prefHeight="384.0" prefWidth="551.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.rowSpan="3">
+      <TableView fx:id="displayTable" prefHeight="384.0" prefWidth="575.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.rowSpan="3">
         <columns>
-          <TableColumn fx:id="uniqueIDColumn" prefWidth="164.00000154972076" text="Unique ID" />
-          <TableColumn fx:id="titleColumn" minWidth="5.0" prefWidth="84.0" text="Title" />
-            <TableColumn fx:id="yearColumn" minWidth="5.0" prefWidth="105.60003662109375" text="Year" />
-            <TableColumn fx:id="typeColumn" minWidth="5.0" prefWidth="161.5999755859375" text="Type" />
+          <TableColumn fx:id="uniqueIDColumn" prefWidth="138.40002596378326" text="Unique ID" />
+          <TableColumn fx:id="titleColumn" minWidth="5.0" prefWidth="154.39996337890625" text="Title" />
+            <TableColumn fx:id="yearColumn" minWidth="5.0" prefWidth="131.19992065429688" text="Year" />
+            <TableColumn fx:id="typeColumn" minWidth="5.0" prefWidth="144.00003051757812" text="Type" />
         </columns>
       </TableView>
       <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="42.0" prefWidth="66.0" text="Back" GridPane.columnIndex="3" GridPane.rowIndex="5">
