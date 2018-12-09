@@ -193,8 +193,7 @@ public class EditAccountController extends Controller {
         String postcode = postcodeTextField.getText();
         String imagePath = imagePathLabel.getText();
 
-        // TODO: REMOVE THIS
-        //imagePath = "No File Chosen";
+        imagePath = (imagePath.isEmpty())? "No File Chosen" : imagePath;
 
         if (firstName.isEmpty() || lastName.isEmpty() || phoneNumber.isEmpty()
                 || addressLine1.isEmpty() || city.isEmpty() || country.isEmpty()
