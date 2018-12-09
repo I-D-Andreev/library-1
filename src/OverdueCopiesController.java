@@ -113,7 +113,7 @@ public class OverdueCopiesController extends Controller {
         Date today = new Date();
 
         for (Copy copy : user.getBorrowedCopies()) {
-            if(copy.isOverdue()) {
+            if (copy.isOverdue()) {
                 String copyID = copy.getUniqueCopyID();
                 String borrowedBy = copy.getBorrowedBy().getUsername();
                 String borrowedOn = dateFormat.format(copy.getBorrowedOn());

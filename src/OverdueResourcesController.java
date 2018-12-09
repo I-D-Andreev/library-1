@@ -19,24 +19,45 @@ import java.util.Date;
  */
 public class OverdueResourcesController extends Controller {
 
+    /**
+     * The button to return to the dashboard.
+     */
     @FXML
     private Button okButton;
 
+    /**
+     * Table that shows the overdue resources.
+     */
     @FXML
     private TableView<TableRepresentationCopyInformation> overdueResourcesTable;
 
+    /**
+     * The column showing the copy ID.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> copyIDColumn;
 
+    /**
+     * The column showing the date the resource was borrowed on.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> borrowedOnColumn;
 
+    /**
+     * The column showing the due date of the resource.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> dueDateColumn;
 
+    /**
+     * The column showing the days overdue the resource is.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, Integer> daysOverdueColumn;
 
+    /**
+     * The data inside the table.
+     */
     @FXML
     private ObservableList<TableRepresentationCopyInformation> data;
 
@@ -50,13 +71,15 @@ public class OverdueResourcesController extends Controller {
         new NewWindow("resources/UserDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
 
+    /**
+     * Initializes the table, fills it with data.
+     */
     @Override
-    public void onStart(){
+    public void onStart() {
         NormalUser currentlyLoggedIn = (NormalUser) getLibrary().getCurrentUserLoggedIn();
         data = FXCollections.observableArrayList();
         copyIDColumn.setCellValueFactory(
                 new PropertyValueFactory<TableRepresentationCopyInformation, String>("copyID"));
-
 
 
         borrowedOnColumn.setCellValueFactory(
@@ -73,6 +96,9 @@ public class OverdueResourcesController extends Controller {
         overdueResourcesTable.getItems().addAll(data);
     }
 
+    /**
+     * Fills the table with data.
+     */
     private void fillInData() {
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
         //final long oneDayInMilliseconds = 3600 * 24 * 1000;
@@ -85,10 +111,9 @@ public class OverdueResourcesController extends Controller {
             String copyID = copy.getUniqueCopyID();
             String borrowedOn = dateFormat.format(copy.getBorrowedOn());
             String dueDate = dateFormat.format(copy.getDueDate());
-            Integer daysOverdue = Math.toIntExact ((today.getTime() - copy.getDueDate().getTime()) / oneDayInMilliseconds);
+            Integer daysOverdue = Math.toIntExact((today.getTime() - copy.getDueDate().getTime()) / oneDayInMilliseconds);
 
             data.add(new TableRepresentationCopyInformation(copyID, borrowedOn, dueDate, daysOverdue));
         }
     }
-
 }
