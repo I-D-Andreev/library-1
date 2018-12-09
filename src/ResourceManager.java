@@ -165,9 +165,10 @@ public class ResourceManager implements Serializable {
 
     /**
      * Edits a resource.
-     * @param resource The resource to be edited.
-     * @param title The new title of the resource.
-     * @param year The new year of the resource.
+     *
+     * @param resource  The resource to be edited.
+     * @param title     The new title of the resource.
+     * @param year      The new year of the resource.
      * @param imagePath The new image path of the resource.
      */
     private void editResource(Resource resource, String title, int year, String imagePath) {
@@ -453,6 +454,7 @@ public class ResourceManager implements Serializable {
     // todo remove this test data
     // to be removed just before end
     // test data
+
     /**
      * Method that fills the resource manager with data.
      */
