@@ -39,22 +39,22 @@
          <children>
             <HBox prefHeight="43.0" prefWidth="596.0">
                <children>
-                  <Button fx:id="viewUserButton" mnemonicParsing="false" onAction="#viewUserButtonClicked" text="View User">
+                  <Button fx:id="viewUserButton" minWidth="120.0" mnemonicParsing="false" onAction="#viewUserButtonClicked" text="Create/Check User">
                      <HBox.margin>
-                        <Insets left="110.0" right="15.0" />
+                        <Insets left="40.0" right="15.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="usersBorrowing" mnemonicParsing="false" onAction="#usersBorrowingButtonClicked" text="Users Currently Borrowing">
-                     <HBox.margin>
-                        <Insets right="15.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="overdueResourcesButton" mnemonicParsing="false" onAction="#overdueResourcesButtonClicked" text="Overdue Copies">
+                  <Button fx:id="usersBorrowing" minWidth="160.0" mnemonicParsing="false" onAction="#usersBorrowingButtonClicked" text="Users Currently Borrowing">
                      <HBox.margin>
                         <Insets right="15.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="copyHistoryButton" mnemonicParsing="false" onAction="#copyHistoryButtonClicked" text="Copy History">
+                  <Button fx:id="overdueResourcesButton" minWidth="105.0" mnemonicParsing="false" onAction="#overdueResourcesButtonClicked" text="Overdue Copies">
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="copyHistoryButton" minWidth="90.0" mnemonicParsing="false" onAction="#copyHistoryButtonClicked" text="Copy History">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -68,7 +68,7 @@
                         <Insets left="110.0" right="30.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="manageResourcesButton" mnemonicParsing="false" onAction="#manageResourcesButtonClicked" prefHeight="27.0" prefWidth="137.0" text="Manage Resources" wrapText="true">
+                  <Button fx:id="manageResourcesButton" minWidth="150.0" mnemonicParsing="false" onAction="#manageResourcesButtonClicked" prefHeight="27.0" prefWidth="137.0" text="Manage Resources" wrapText="true">
                      <HBox.margin>
                         <Insets right="30.0" />
                      </HBox.margin>
