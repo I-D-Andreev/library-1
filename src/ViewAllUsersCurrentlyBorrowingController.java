@@ -18,28 +18,54 @@ import java.text.SimpleDateFormat;
  */
 public class ViewAllUsersCurrentlyBorrowingController extends Controller{
 
+    /**
+     * The table showing the users.
+     */
     @FXML
     private TableView<TableRepresentationCopyInformation> userTable;
 
+    /**
+     * Column showing the copy name.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> copyNameColumn;
 
+    /**
+     * Column showing the username.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> usernameColumn;
 
+    /**
+     * The column showing the date the copy was borrowed on.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> borrowedOnColumn;
 
+    /**
+     * The data inside the table.
+     */
     @FXML
     private ObservableList<TableRepresentationCopyInformation> data;
 
+    /**
+     * The button to return to the dashboard.
+     */
     @FXML
     private Button okButton;
+
+    /**
+     * The user is returned to the dashboard when the button is clicked.
+     * @param event The button is clicked.
+     */
     @FXML
     void okButtonClicked(ActionEvent event) {
         new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
 
+    /**
+     * Initializes the table and fills it with data.
+     */
     @Override
     public void onStart(){
         data = FXCollections.observableArrayList();
@@ -58,6 +84,9 @@ public class ViewAllUsersCurrentlyBorrowingController extends Controller{
         userTable.getItems().addAll(data);
     }
 
+    /**
+     * Fills in data.
+     */
     private void fillInData() {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -72,5 +101,4 @@ public class ViewAllUsersCurrentlyBorrowingController extends Controller{
             }
         }
     }
-
 }
