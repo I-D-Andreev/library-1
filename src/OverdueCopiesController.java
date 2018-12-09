@@ -19,24 +19,45 @@ import java.util.Date;
  */
 public class OverdueCopiesController extends Controller {
 
+    /**
+     * Table that shows the overdue copies.
+     */
     @FXML
     private TableView<TableRepresentationCopyInformation> overdueCopiesTable;
 
+    /**
+     * Column that shows the copy ID.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> copyIDColumn;
 
+    /**
+     * Column that shows the user that borrowed the copies.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> borrowedByColumn;
 
+    /**
+     * Column that shows the date the copy was borrowed on.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> borrowedOnColumn;
 
+    /**
+     * Column that shows the due date of the resource.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> dueDateColumn;
 
+    /**
+     * Column that shows the how many days the copy is overdue.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, Integer> daysOverdueColumn;
 
+    /**
+     * The data inside the table.
+     */
     @FXML
     private ObservableList<TableRepresentationCopyInformation> data;
 
@@ -50,7 +71,9 @@ public class OverdueCopiesController extends Controller {
         new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
 
-
+    /**
+     * Initializes the table and fills it with data.
+     */
     @Override
     public void onStart() {
         data = FXCollections.observableArrayList();
@@ -75,6 +98,9 @@ public class OverdueCopiesController extends Controller {
         overdueCopiesTable.getItems().addAll(data);
     }
 
+    /**
+     * Fills the table with data.
+     */
     private void fillInData() {
         // The current user
         NormalUser user = (NormalUser) getLibrary().getCurrentUserLoggedIn();
@@ -98,5 +124,4 @@ public class OverdueCopiesController extends Controller {
             }
         }
     }
-
 }
