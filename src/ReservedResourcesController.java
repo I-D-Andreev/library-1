@@ -65,7 +65,7 @@ public class ReservedResourcesController extends Controller {
      * Initializes the table, fills it with data.
      */
     @Override
-    public void onStart(){
+    public void onStart() {
         data = FXCollections.observableArrayList();
         copyIDColumn.setCellValueFactory(
                 new PropertyValueFactory<TableRepresentationCopyInformation, String>("copyID"));
@@ -83,7 +83,7 @@ public class ReservedResourcesController extends Controller {
      */
     private void fillInData() {
         User userCurrentlyLoggedIn = getLibrary().getCurrentUserLoggedIn();
-        for(Copy copy : getLibrary().getResourceManager().getReservedCopiesFor(userCurrentlyLoggedIn)){
+        for (Copy copy : getLibrary().getResourceManager().getReservedCopiesFor(userCurrentlyLoggedIn)) {
             String copyID = copy.getUniqueCopyID();
             String resourceName = copy.getCopyOf().getTitle();
             String resourceType = copy.getCopyOf().getType();
