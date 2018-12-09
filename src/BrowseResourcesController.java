@@ -194,7 +194,7 @@ public class BrowseResourcesController extends Controller {
      * @param event Clicking on the back button.
      */
     @FXML
-    void backButtonClicked(ActionEvent event) {
+    public void backButtonClicked(ActionEvent event) {
         //if librarian then go back to librarian dashboard else go back to user dashboard
         if (getLibrary().getCurrentUserLoggedIn().hasAdminAccess()) {
             new NewWindow("resources/LibrarianDashboard.fxml", event,

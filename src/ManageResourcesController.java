@@ -329,7 +329,7 @@ public class ManageResourcesController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void searchButtonClicked(ActionEvent event) {
+    public void searchButtonClicked(ActionEvent event) {
         User searchUser = getLibrary().getUserManager().getUserByUsername(fineUserUsernameTextField.getText());
         if (searchUser == null || !(searchUser instanceof NormalUser)) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid username.",
