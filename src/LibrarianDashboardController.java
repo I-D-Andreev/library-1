@@ -146,9 +146,10 @@ public class LibrarianDashboardController extends Controller {
             librarianImage.setImage(image);
 
         } catch (IllegalArgumentException e) {
+            librarianImage.setImage(new Image("resources/noImage.png"));
+        } catch (NullPointerException e) {
             librarianImage.setImage(null);
         }
-
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
         usernameLabel.setText(getLibrary().getCurrentUserLoggedIn().getUsername());

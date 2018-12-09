@@ -7,7 +7,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
+import java.io.File;
 
 /**
  * Controller class for the librarian resource window.
@@ -127,6 +130,33 @@ public class LibrarianResourceController extends Controller {
         }
 
         displayTable.getItems().addAll(data);
+
+        this.loadImage();
+    }
+
+    /**
+     * Tries to load an image.
+     */
+    private void loadImage() {
+        try {
+            String path = clickedResource.getThumbnailImagePath();
+            Image image;
+            // relative path
+            if (path.charAt(0) >= 'a' && path.charAt(0) <= 'z') {
+                image = new Image(path);
+            } else {
+                // absolute path
+                image = new Image(new File(path).toURI().toString());
+            }
+            resourceImage.setImage(image);
+
+        } catch (Exception e) {
+            try {
+                resourceImage.setImage(new Image("resources/noImage.png"));
+            } catch (Exception ex) {
+                resourceImage.setImage(null);
+            }
+        }
     }
 
 

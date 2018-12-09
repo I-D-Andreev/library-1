@@ -129,7 +129,7 @@ public class BrowseResourcesController extends Controller {
                 } else {
                     UserResourceController.setClickedResource(displayTable.getSelectionModel().getSelectedItem());
                     new NewWindow("resources/UserResource.fxml", event,
-                            "Librarian Copy View - Tawe Lib", getLibrary());
+                            "User Copy View - Tawe Lib", getLibrary());
                 }
             }
         });

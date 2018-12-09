@@ -17,9 +17,9 @@
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="377.60002441406255" minWidth="10.0" prefWidth="377.60002441406255" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="130.0" minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="341.0" minHeight="10.0" prefHeight="297.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="257.0" minHeight="6.0" prefHeight="50.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="130.0" minHeight="0.0" prefHeight="55.200006866455084" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="452.79999313354494" minHeight="10.0" prefHeight="425.5999877929687" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="257.0" minHeight="6.0" prefHeight="101.60001220703123" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2">
@@ -31,7 +31,7 @@
             </Label>
          </children>
       </HBox>
-      <ImageView fx:id="resourceImage" fitHeight="188.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+      <ImageView fx:id="resourceImage" fitHeight="202.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin>
@@ -47,7 +47,7 @@
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
-            <TableView fx:id="tableView" prefHeight="342.0" prefWidth="357.0">
+            <TableView fx:id="tableView" prefHeight="414.0" prefWidth="351.0">
                <columns>
                   <TableColumn fx:id="uniqueIDColumn" prefWidth="175.19994509220123" text="Copy ID" />
                   <TableColumn fx:id="isAvailableColumn" prefWidth="184.800048828125" text="Availability" />
