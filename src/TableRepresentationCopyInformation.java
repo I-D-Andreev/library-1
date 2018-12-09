@@ -5,16 +5,43 @@
  */
 public class TableRepresentationCopyInformation {
 
+    /**
+     * The unique copy ID.
+     */
     private String copyID;
+
+    /**
+     * The name of the user that borrowed this copy.
+     */
     private String borrowedBy;
+
+    /**
+     * The name of the copy.
+     */
     private String resourceName;
+
+    /**
+     * The type of resource this copy is a copy of.
+     */
     private String resourceType;
+
+    /**
+     * The date the copy was borrowed.
+     */
     private String borrowDate;
+
+    /**
+     * The date the copy is due.
+     */
     private String dueDate;
+
+    /**
+     * The days overdue the copy is.
+     */
     private Integer daysOverdue;
 
     /**
-     * Constructor for a copy representation in a table.
+     * Constructor for a copy representation in a table, containing its ID,name and type of copy it is.
      *
      * @param copyID       The unique copy ID.
      * @param resourceName The resource name this copy is a copy of.
@@ -26,6 +53,14 @@ public class TableRepresentationCopyInformation {
         this.resourceType = resourceType;
     }
 
+    /**
+     * Constructor for the table for a copy containing its ID,who borrowed it,its name and borrow date.
+     *
+     * @param copyID       The unique copy ID.
+     * @param borrowedBy   The name of the user that borrowed this copy.
+     * @param resourceName The name of the copy.
+     * @param borrowDate   The date the copy was borrowed.
+     */
     public TableRepresentationCopyInformation(String copyID, String borrowedBy, String resourceName, String borrowDate) {
         this.copyID = copyID;
         this.borrowedBy = borrowedBy;
@@ -34,10 +69,11 @@ public class TableRepresentationCopyInformation {
     }
 
     /**
-     * Constructor for a copy representation in a table.
-     * @param copyID    The unique copy ID.
-     * @param borrowDate The date the copy was borrowed.
-     * @param dueDate The date the copy is due.
+     * Constructor for a copy representation in a table,containing its ID, borrow date, due date and days overdue.
+     *
+     * @param copyID      The unique copy ID.
+     * @param borrowDate  The date the copy was borrowed.
+     * @param dueDate     The date the copy is due.
      * @param daysOverdue The days overdue the copy is.
      */
     public TableRepresentationCopyInformation(String copyID, String borrowDate, String dueDate, Integer daysOverdue) {
@@ -48,7 +84,7 @@ public class TableRepresentationCopyInformation {
     }
 
     /**
-     * Constructor for a copy representation in a table.
+     * Constructor for a copy representation in a table containing, its ID, name, type, borrow date and due date.
      *
      * @param copyID       The unique copy ID.
      * @param resourceName The resource name this copy is a copy of.
@@ -64,7 +100,8 @@ public class TableRepresentationCopyInformation {
     }
 
     /**
-     * Constructor for a copy representation in a table.
+     * Constructor for a copy representation in a table containing, its ID, borrow date, due date, days overdue and
+     * by whom it was borrowed.
      *
      * @param copyID      The unique copy ID.
      * @param borrowDate  The date the copy was borrowed.

@@ -82,6 +82,11 @@ public class NormalUser extends User implements Serializable {
         return transactionHistory;
     }
 
+    /**
+     * Gets an arrayList of all the borrowed copies.
+     *
+     * @return An arrayList of all the borrowed copies.
+     */
     public ArrayList<Copy> getBorrowedCopies() {
         return borrowedCopies;
     }
@@ -95,6 +100,11 @@ public class NormalUser extends User implements Serializable {
         return !(balance > 0 || hasOverdueCopies());
     }
 
+    /**
+     * Checks the arrayList of all borrowed copies for overdue copies.
+     *
+     * @return True if there are overdue copies,false otherwise.
+     */
     private boolean hasOverdueCopies() {
         boolean hasOverdueCopies = false;
         Date today = new Date();
@@ -105,7 +115,6 @@ public class NormalUser extends User implements Serializable {
         }
         return hasOverdueCopies;
     }
-
 
     /**
      * Gets the number of books borrowed by the users in between dates.

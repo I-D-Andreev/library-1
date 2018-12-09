@@ -6,8 +6,20 @@ import java.io.*;
  * @author Ivan Andreev
  */
 public class SaveStaticVariables implements Serializable {
+
+    /**
+     * The user next unique ID.
+     */
     private int userNextID;
+
+    /**
+     * The resource next unique ID.
+     */
     private int resourceNextID;
+
+    /**
+     * The copy next unique ID.
+     */
     private int copyNextID;
 
     /**

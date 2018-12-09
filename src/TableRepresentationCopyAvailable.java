@@ -5,9 +5,24 @@
  */
 public class TableRepresentationCopyAvailable {
 
+    /**
+     *  The unique copy ID.
+     */
     private String uniqueCopyID;
+
+    /**
+     * If the copy is available.
+     */
     private String isAvailable;
+
+    /**
+     * Who borrowed the copy.
+     */
     private String borrowedBy;
+
+    /**
+     * ho it is reserved for.
+     */
     private String reservedFor;
 
     /**

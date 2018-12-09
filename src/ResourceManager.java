@@ -100,7 +100,9 @@ public class ResourceManager implements Serializable {
 
     }
 
-    // Get a file to read/write or create it if it doesn't exist.
+    /**
+     * Get a file to read/write or create it if it doesn't exist.
+     */
     private File fileToReadWrite() {
         File file = null;
         try {
@@ -454,6 +456,7 @@ public class ResourceManager implements Serializable {
     // todo remove this test data
     // to be removed just before end
     // test data
+
     /**
      * Method that fills the resource manager with data.
      */
