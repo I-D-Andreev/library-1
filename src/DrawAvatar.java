@@ -81,15 +81,17 @@ public class DrawAvatar extends Application {
 
     /**
      * Constructs drawing interface.
+     *
      * @param textField The text field in which the path will be saved.
      */
-    public DrawAvatar(TextField textField){
+    public DrawAvatar(TextField textField) {
         this.textFieldToSet = textField;
     }
 
 
     /**
      * Set the file path to a new one.
+     *
      * @param filePath The new file path.
      */
     public void setFilePath(String filePath) {
@@ -98,6 +100,7 @@ public class DrawAvatar extends Application {
 
     /**
      * Gets the file path.
+     *
      * @return The file path.
      */
     public String getFilePath() {
@@ -120,10 +123,10 @@ public class DrawAvatar extends Application {
 
         ColorPicker colorPicker = new ColorPicker();
         colorPicker.setValue(Color.BLACK);
-        colorPicker.setPadding(new Insets(0,0,0,10));
+        colorPicker.setPadding(new Insets(0, 0, 0, 10));
 
         Slider slider = new Slider();
-        slider.setPadding(new Insets(10,0,0,10));
+        slider.setPadding(new Insets(10, 0, 0, 10));
         Label label = new Label("1.0");
 
         slider.setMax(100);
@@ -138,10 +141,10 @@ public class DrawAvatar extends Application {
 
 
         RadioButton lineButton = new RadioButton("Line");
-        lineButton.setPadding(new Insets(0,0,0,10));
+        lineButton.setPadding(new Insets(0, 0, 0, 10));
 
         RadioButton traceButton = new RadioButton("Trace");
-        traceButton.setPadding(new Insets(0,0,0,10));
+        traceButton.setPadding(new Insets(0, 0, 0, 10));
 
 
         ToggleGroup toggleGroup = new ToggleGroup();
@@ -172,7 +175,6 @@ public class DrawAvatar extends Application {
         saveButton.setText("Save");
 
 
-
         saveButton.setOnAction(e -> {
             captureAndSaveDisplay(grid, root, primaryStage);
             Stage stage = (Stage) saveButton.getScene().getWindow();
@@ -198,11 +200,11 @@ public class DrawAvatar extends Application {
     /**
      * Clears the whole canvas for the user to start fresh.
      *
-     * @param root The Stackpane which contains all nodes on screen.
-     * @param g    The FlowPane which the all the buttons etc appear on.
-     * @param c    The canvas we want to remain after it is cleared.
+     * @param root   The Stackpane which contains all nodes on screen.
+     * @param flow   The FlowPane which the all the buttons etc appear on.
+     * @param canvas The canvas we want to remain after it is cleared.
      */
-    private void clear(StackPane root, FlowPane g, Canvas c) {
+    private void clear(StackPane root, FlowPane flow, Canvas canvas) {
         counter = 0;
         layer = new Canvas();
         trace = new Canvas();
@@ -210,8 +212,8 @@ public class DrawAvatar extends Application {
         ArrayList<Node> list = new ArrayList<>();
 
         list.addAll(root.getChildren());
-        list.remove(g);
-        list.remove(c);
+        list.remove(flow);
+        list.remove(canvas);
 
         root.getChildren().removeAll(list);
     }
@@ -219,12 +221,12 @@ public class DrawAvatar extends Application {
     /**
      * Add a border to the canvas.
      *
-     * @param gc The current GraphicContents the canvas is working on.
+     * @param graphicsContext The current GraphicContents the canvas is working on.
      */
-    public void borderRect(GraphicsContext gc) {
-        gc.setLineWidth(8);
-        gc.setStroke(Color.BLACK);
-        gc.strokeRect(
+    public void borderRect(GraphicsContext graphicsContext) {
+        graphicsContext.setLineWidth(8);
+        graphicsContext.setStroke(Color.BLACK);
+        graphicsContext.strokeRect(
                 0,              //x of the upper left corner
                 0,              //y of the upper left corner
                 CANVAS_WIDTH,    //width of the rectangle
@@ -234,16 +236,16 @@ public class DrawAvatar extends Application {
     /**
      * Allows the user to trace a line (free draw).
      *
-     * @param c  The current canvas the user is drawing on.
-     * @param r  The StackPane the contains all the nodes, used to add new canvas to.
-     * @param cp The ColorPicker to allow the line to change colour.
-     * @param s  The Slider to allow the line to change width.
+     * @param canvas      The current canvas the user is drawing on.
+     * @param stackPanel  The StackPane the contains all the nodes, used to add new canvas to.
+     * @param colorPicker The ColorPicker to allow the line to change colour.
+     * @param slider      The Slider to allow the line to change width.
      */
-    private void makeTrace(Canvas c, StackPane r, ColorPicker cp, Slider s) {
-        c.setOnMousePressed(e -> {
+    private void makeTrace(Canvas canvas, StackPane stackPanel, ColorPicker colorPicker, Slider slider) {
+        canvas.setOnMousePressed(e -> {
             Canvas newTrace = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
             trace = newTrace;
-            r.getChildren().add(counter, newTrace);
+            stackPanel.getChildren().add(counter, newTrace);
             counter++;
             GraphicsContext gc = trace.getGraphicsContext2D();
             gc.beginPath();
@@ -251,39 +253,39 @@ public class DrawAvatar extends Application {
             gc.stroke();
             borderRect(gc);
         });
-        c.setOnMouseDragged(e -> {
+        canvas.setOnMouseDragged(e -> {
             GraphicsContext gc = trace.getGraphicsContext2D();
-            gc.setStroke(cp.getValue());
-            gc.setLineWidth(s.getValue());
+            gc.setStroke(colorPicker.getValue());
+            gc.setLineWidth(slider.getValue());
             gc.lineTo(e.getX(), e.getY());
             gc.stroke();
             borderRect(gc);
         });
-        c.toFront();
+        canvas.toFront();
     }
 
     /**
      * Allows the user to draw a line.
      *
-     * @param c  the current canvas the user is drawing on.
-     * @param r  the StackPane the contains all the nodes, used to add new canvas to.
-     * @param cp the ColorPicker to allow the line to change colour.
-     * @param s  the Slider to allow the line to change width.
+     * @param canvas      The current canvas the user is drawing on.
+     * @param stackPanel  The StackPane the contains all the nodes, used to add new canvas to.
+     * @param colorPicker The ColorPicker to allow the line to change colour.
+     * @param slider      The Slider to allow the line to change width.
      */
-    private void makeLine(Canvas c, StackPane r, ColorPicker cp, Slider s) {
-        c.setOnMousePressed(e -> {
+    private void makeLine(Canvas canvas, StackPane stackPanel, ColorPicker colorPicker, Slider slider) {
+        canvas.setOnMousePressed(e -> {
             Canvas newLayer = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
             layer = newLayer;
-            r.getChildren().add(counter, newLayer);
+            stackPanel.getChildren().add(counter, newLayer);
             counter++;
             initialTouch = new Pair<>(e.getX(), e.getY());
         });
 
-        c.setOnMouseDragged(e -> {
+        canvas.setOnMouseDragged(e -> {
             GraphicsContext context = layer.getGraphicsContext2D();
             context.clearRect(0, 0, layer.getWidth(), layer.getHeight());
-            context.setStroke(cp.getValue());
-            context.setLineWidth(s.getValue());
+            context.setStroke(colorPicker.getValue());
+            context.setLineWidth(slider.getValue());
             context.strokeLine(initialTouch.getKey(), initialTouch.getValue(), e.getX(), e.getY());
         });
 
@@ -292,11 +294,11 @@ public class DrawAvatar extends Application {
     /**
      * Used to save the avatars (canvas's) that user has just drawn.
      *
-     * @param g the FlowPane that contains all buttons etc at the top.
-     * @param r the StackPane the contains all of the nodes.
-     * @param s the Stage the class is working in.
+     * @param flowPanel  The FlowPane that contains all buttons etc at the top.
+     * @param stackPanel The StackPane the contains all of the nodes.
+     * @param stage      The Stage the class is working in.
      */
-    public void captureAndSaveDisplay(FlowPane g, StackPane r, Stage s) {
+    public void captureAndSaveDisplay(FlowPane flowPanel, StackPane stackPanel, Stage stage) {
         FileChooser fileChooser = new FileChooser();
 
         //Set extension filter
@@ -309,8 +311,8 @@ public class DrawAvatar extends Application {
             try {
                 //Pad the capture area
                 ArrayList<Node> list = new ArrayList<>();
-                list.addAll(r.getChildren());
-                list.remove(g);
+                list.addAll(stackPanel.getChildren());
+                list.remove(flowPanel);
 
                 Group group = new Group();
                 group.getChildren().addAll(list);
@@ -322,9 +324,9 @@ public class DrawAvatar extends Application {
                 //Write the snapshot to the chosen file
                 ImageIO.write(renderedImage, "png", file);
 
-                group.getChildren().removeAll(r.getChildren());
+                group.getChildren().removeAll(stackPanel.getChildren());
 
-                r.getChildren().addAll(list);
+                stackPanel.getChildren().addAll(list);
 
             } catch (IOException ex) {
                 ex.printStackTrace();
@@ -336,6 +338,4 @@ public class DrawAvatar extends Application {
 
 
     }
-
-
 }
