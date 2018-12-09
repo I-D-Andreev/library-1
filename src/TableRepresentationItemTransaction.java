@@ -1,5 +1,7 @@
 /**
  * Class to model the table of an item transaction.
+ *
+ * @author Ivan Andreev.
  */
 public class TableRepresentationItemTransaction {
 
@@ -8,7 +10,7 @@ public class TableRepresentationItemTransaction {
      */
     private String borrowedOrReturned;
     /**
-     * The username of the user that borrowed or returned the item..
+     * The username of the user that borrowed or returned the item.
      */
     private String username;
     /**
