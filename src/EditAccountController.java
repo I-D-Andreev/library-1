@@ -14,48 +14,93 @@ import java.util.Optional;
  */
 public class EditAccountController extends Controller {
 
+    /**
+     * The back button for the table.
+     */
     @FXML
     private Button backButton;
 
+    /**
+     * The field for the username of the table.
+     */
     @FXML
     private TextField usernameTextField;
 
+    /**
+     * The field for the first name of the table.
+     */
     @FXML
     private TextField firstNameTextField;
 
+    /**
+     * The field for the last name of the table.
+     */
     @FXML
     private TextField lastNameTextField;
 
+    /**
+     * The field for the phone number of the table.
+     */
     @FXML
     private TextField phoneNumberTextField;
 
+    /**
+     * The field for the first address line of the table.
+     */
     @FXML
     private TextField addressLine1TextField;
 
+    /**
+     * The field for the second address line of the table.
+     */
     @FXML
     private TextField addressLine2TextField;
 
+    /**
+     * The field for the city of the table.
+     */
     @FXML
     private TextField cityTextField;
 
+    /**
+     * The field for the country of the table.
+     */
     @FXML
     private TextField countryTextField;
 
+    /**
+     * The field for the postcode of the table.
+     */
     @FXML
     private TextField postcodeTextField;
 
+    /**
+     * The button for choosing a profile image.
+     */
     @FXML
     private Button chooseProfileImageButton;
 
+    /**
+     * Displays the image path.
+     */
     @FXML
     private Label imagePathLabel;
 
+    /**
+     * Button to draw a profile image.
+     */
     @FXML
     private Button drawProfileImageButton;
 
+    /**
+     * Button to edit account information.
+     */
     @FXML
     private Button editAccountButton;
 
+    /**
+     * Button to delete an account.
+     */
     @FXML
     private Button deleteAccountButton;
 
