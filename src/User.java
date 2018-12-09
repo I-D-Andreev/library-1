@@ -145,11 +145,11 @@ public abstract class User implements Serializable {
     }
 
     /**
-     * Sets the user's new profile image path.
+     * Sets the user's new profile image path,
+     * instead of string will be profile image type when class is created.
      *
      * @param imagePath The user's new profile image path.
      */
-    //Instead of string will be profile image type when class is created
     public void setProfileImagePath(String imagePath) {
         this.profileImagePath = imagePath;
     }

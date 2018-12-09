@@ -13,39 +13,74 @@ import javafx.scene.image.ImageView;
  */
 public class ProfileImageController extends Controller {
 
+    /**
+     * The path where the file of the image is located.
+     */
     private String filePath;
 
+    /**
+     * The button for the first image.
+     */
     @FXML // fx:id="imageOneButton"
     private Button imageOneButton; // Value injected by FXMLLoader
 
+    /**
+     * The button for the second image.
+     */
     @FXML // fx:id="imageTwoButton"
     private Button imageTwoButton; // Value injected by FXMLLoader
 
+    /**
+     * The button for the third image.
+     */
     @FXML // fx:id="imageThreeButton"
     private Button imageThreeButton; // Value injected by FXMLLoader
 
+    /**
+     * The button for the fourth image.
+     */
     @FXML // fx:id="imageFourButton"
     private Button imageFourButton; // Value injected by FXMLLoader
 
+    /**
+     * The button for the fifth image.
+     */
     @FXML // fx:id="imageFiveButton"
     private Button imageFiveButton; // Value injected by FXMLLoader
 
+    /**
+     * The button for the sixth image.
+     */
     @FXML // fx:id="imageSixButton"
     private Button imageSixButton; // Value injected by FXMLLoader
 
+    /**
+     * The button for the seventh image.
+     */
     @FXML // fx:id="imageSevenButton"
     private Button imageSevenButton; // Value injected by FXMLLoader
 
+    /**
+     * The button for the eighth image.
+     */
     @FXML // fx:id="imageEightButton"
     private Button imageEightButton; // Value injected by FXMLLoader
 
+    /**
+     * The button for the ninth image.
+     */
     @FXML // fx:id="imageNineButton"
     private Button imageNineButton; // Value injected by FXMLLoader
 
+    /**
+     * Button to cancel current action.
+     */
     @FXML // fx:id="cancelButton"
     private Button cancelButton; // Value injected by FXMLLoader
 
-
+    /**
+     * Initializes the images for the user to select.
+     */
     @FXML
     private void initialize() {
 
@@ -77,6 +112,11 @@ public class ProfileImageController extends Controller {
         imageNineButton.setText("");
     }
 
+    /**
+     * Returns user to the dashboard when the button is clicked.
+     *
+     * @param event The button is pressed.
+     */
     @FXML
     void cancelButtonClicked(ActionEvent event) {
 

@@ -15,24 +15,45 @@ import javafx.scene.control.cell.PropertyValueFactory;
  */
 public class RequestedResourcesController extends Controller {
 
+    /**
+     * Button to return to the dashboard.
+     */
     @FXML
     private Button okButton;
 
+    /**
+     * The table that showing the requested resources.
+     */
     @FXML
     private TableView<TableRepresentationResourceInformation> requestedResourcesTable;
 
+    /**
+     * The column showing resource ID.
+     */
     @FXML
     private TableColumn<TableRepresentationResourceInformation, String> resourceID;
 
+    /**
+     * The column showing the resource name.
+     */
     @FXML
     private TableColumn<TableRepresentationResourceInformation, String> resourceName;
 
+    /**
+     * The column showing the resource type.
+     */
     @FXML
     private TableColumn<TableRepresentationResourceInformation, String> resourceType;
 
+    /**
+     * The column showing the number of resources in queue.
+     */
     @FXML
     private TableColumn<TableRepresentationResourceInformation, Integer> numberInQueue;
 
+    /**
+     * The data inside the table.
+     */
     @FXML
     private ObservableList<TableRepresentationResourceInformation> data;
 
@@ -46,8 +67,11 @@ public class RequestedResourcesController extends Controller {
         new NewWindow("resources/UserDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
 
+    /**
+     * Initializes the table, fills it with data.
+     */
     @Override
-    public void onStart(){
+    public void onStart() {
         data = FXCollections.observableArrayList();
         resourceID.setCellValueFactory(
                 new PropertyValueFactory<TableRepresentationResourceInformation, String>("resourceID"));
@@ -65,9 +89,12 @@ public class RequestedResourcesController extends Controller {
         requestedResourcesTable.getItems().addAll(data);
     }
 
+    /**
+     * Fills the tables data.
+     */
     private void fillInData() {
         User currentlyLoggedIn = getLibrary().getCurrentUserLoggedIn();
-        for(Resource resource : getLibrary().getResourceManager().getRequestedResourcesBy(currentlyLoggedIn)){
+        for (Resource resource : getLibrary().getResourceManager().getRequestedResourcesBy(currentlyLoggedIn)) {
             String resID = resource.getUniqueID();
             String name = resource.getTitle();
             String type = resource.getType();
@@ -75,5 +102,4 @@ public class RequestedResourcesController extends Controller {
             data.add(new TableRepresentationResourceInformation(resID, name, type, positionInQueue));
         }
     }
-
 }

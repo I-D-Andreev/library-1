@@ -108,7 +108,7 @@ public class NormalUser extends User implements Serializable {
 
 
     /**
-     * Gets the number of books borrowed by the users inbetween dates.
+     * Gets the number of books borrowed by the users in between dates.
      *
      * @param fromDate The start date.
      * @param toDate   The end date.

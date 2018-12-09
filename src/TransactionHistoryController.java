@@ -18,14 +18,54 @@ import java.text.SimpleDateFormat;
  */
 public class TransactionHistoryController extends Controller {
 
+    /**
+     * Button to return to the dashboard.
+     */
     @FXML
     private Button okButton;
 
+    /**
+     * Table that shows the transaction history.
+     */
     @FXML
     private TableView<TableRepresentationMoneyTransaction> transactionHistoryTable;
 
+    /**
+     * Column showing the type of the resource.
+     */
     @FXML
     private TableColumn<TableRepresentationMoneyTransaction, String> typeColumn;
+
+    /**
+     * Column showing the date of the transaction.
+     */
+    @FXML
+    private TableColumn<TableRepresentationMoneyTransaction, String> dateColumn;
+
+    /**
+     * Table showing the amount of the transaction.
+     */
+    @FXML
+    private TableColumn<TableRepresentationMoneyTransaction, Double> amountColumn;
+
+    /**
+     * Column showing the item ID.
+     */
+    @FXML
+    private TableColumn<TableRepresentationMoneyTransaction, String> itemID;
+
+    /**
+     * Column showing the days overdue the item was.
+     */
+    @FXML
+    private TableColumn<TableRepresentationMoneyTransaction, Integer> daysOverdue;
+
+    /**
+     * The data inside the table.
+     */
+    @FXML
+    private ObservableList<TableRepresentationMoneyTransaction> data;
+
 
     /**
      * Returns the user back to the dashboard when the button is clicked.
@@ -33,25 +73,13 @@ public class TransactionHistoryController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    private TableColumn<TableRepresentationMoneyTransaction, String> dateColumn;
-
-    @FXML
-    private TableColumn<TableRepresentationMoneyTransaction, Double> amountColumn;
-
-    @FXML
-    private TableColumn<TableRepresentationMoneyTransaction, String> itemID;
-
-    @FXML
-    private TableColumn<TableRepresentationMoneyTransaction, Integer> daysOverdue;
-
-    @FXML
-    private ObservableList<TableRepresentationMoneyTransaction> data;
-
-    @FXML
     void okButtonClicked(ActionEvent event) {
         new NewWindow("resources/UserDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
 
+    /**
+     * Initializes the table, fills it with data.
+     */
     @Override
     public void onStart() {
         data = FXCollections.observableArrayList();
@@ -75,6 +103,9 @@ public class TransactionHistoryController extends Controller {
         transactionHistoryTable.getItems().addAll(data);
     }
 
+    /**
+     * Fills the data.
+     */
     private void fillInData() {
 
         NormalUser currentlyLoggedIn = (NormalUser) getLibrary().getCurrentUserLoggedIn();
@@ -96,5 +127,4 @@ public class TransactionHistoryController extends Controller {
             }
         }
     }
-
 }

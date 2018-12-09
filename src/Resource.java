@@ -188,5 +188,4 @@ public abstract class Resource implements Serializable {
         Resource o = (Resource) obj;
         return o.getUniqueID().equals(this.getUniqueID());
     }
-
 }

@@ -28,55 +28,105 @@ import java.util.ResourceBundle;
 
 public class UserDashboardController extends Controller {
 
+    /**
+     * Button to browse the resources.
+     */
     @FXML // fx:id="browseResourcesButton"
     private Button browseResourcesButton; // Value injected by FXMLLoader
 
+    /**
+     * Button to log out.
+     */
     @FXML // fx:id="logOutButton"
     private Button logOutButton; // Value injected by FXMLLoader
 
+    /**
+     * Button to show borrowed resources.
+     */
     @FXML // fx:id="borrowedResourcesButton"
     private Button borrowedResourcesButton; // Value injected by FXMLLoader
 
+    /**
+     * Button to show requested resources.
+     */
     @FXML // fx:id="requestedResourcesButton"
     private Button requestedResourcesButton; // Value injected by FXMLLoader
 
+    /**
+     * Button to show the reserved resources.
+     */
     @FXML // fx:id="reservedResourcesButton"
     private Button reservedResourcesButton; // Value injected by FXMLLoader
 
+    /**
+     * Button to show the overdue resources.
+     */
     @FXML // fx:id="overdueResourcesButton"
     private Button overdueResourcesButton; // Value injected by FXMLLoader
 
+    /**
+     * Button to show the transaction history.
+     */
     @FXML // fx:id="transHistoryButton"
     private Button transHistoryButton; // Value injected by FXMLLoader
 
+    /**
+     * The user image.
+     */
     @FXML // fx:id="userImage"
     private ImageView userImage; // Value injected by FXMLLoader
 
+    /**
+     * Label showing user's username.
+     */
     @FXML // fx:id="usernameLabel"
     private Label usernameLabel; // Value injected by FXMLLoader
 
+    /**
+     * Label showing user's first name.
+     */
     @FXML // fx:id="firstNameLabel"
     private Label firstNameLabel; // Value injected by FXMLLoader
 
+    /**
+     * Label showing user's last name.
+     */
     @FXML // fx:id="lastNameLabel"
     private Label lastNameLabel; // Value injected by FXMLLoader
 
+    /**
+     * Label showing user's phone number.
+     */
     @FXML // fx:id="phoneNumberLabel"
     private Label phoneNumberLabel; // Value injected by FXMLLoader
 
-
+    /**
+     * Label showing the popular resources.
+     */
     @FXML // fx:id="popularResourceLabel"
     private Label popularResourceLabel; // Value injected by FXMLLoader
 
+    /**
+     * Button to edit user profile.
+     */
     @FXML
     private Button editProfileButton;
 
+    /**
+     * Button to show most popular resources.
+     */
     @FXML
     private Button mostPopularResourceButton;
 
+    /**
+     * Label that shows the user's balance.
+     */
     @FXML
     private Label balanceLabel;
 
+    /**
+     * Label that shows when the account was created.
+     */
     @FXML
     private Label accountCreationLabel;
 
@@ -104,9 +154,9 @@ public class UserDashboardController extends Controller {
     }
 
     /**
-     * todo comment this
+     * When the button is clicked shows the most popular resources in the library.
      *
-     * @param event
+     * @param event the button is clicked.
      */
     @FXML
     public void mostPopularResourceButtonClicked(ActionEvent event) {
@@ -133,10 +183,10 @@ public class UserDashboardController extends Controller {
         this.loadUserInformation();
     }
 
-    @FXML
     /**
      * Opens the browse resources window.
      */
+    @FXML
     void browseResourcesButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/BrowseResources.fxml", event,
@@ -144,10 +194,10 @@ public class UserDashboardController extends Controller {
 
     }
 
-    @FXML
     /**
      * Takes the user back to the login screen.
      */
+    @FXML
     void logOutButtonClicked(ActionEvent event) {
         getLibrary().save();
         new NewWindow("resources/Login.fxml", event,
@@ -202,6 +252,9 @@ public class UserDashboardController extends Controller {
                 getLibrary());
     }
 
+    /**
+     * Loads the user information into the table.
+     */
     private void loadUserInformation() {
 
         try {
@@ -234,7 +287,5 @@ public class UserDashboardController extends Controller {
                         ((NormalUser) getLibrary().getCurrentUserLoggedIn()).getAccountCreationDate()
                 )
         );
-
-
     }
 }

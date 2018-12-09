@@ -117,6 +117,9 @@ public class SaveStaticVariables implements Serializable {
         System.out.println("Successfully written values to file.");
     }
 
+    /**
+     * Fills the static variables with data.
+     */
     private void selfPopulate() {
         // Get a file to read from or create it if it doesn't exist.
         File file = this.fileToReadWrite();

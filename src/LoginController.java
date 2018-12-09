@@ -14,23 +14,28 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * @author Chris McAuley, Sian Pike
+ * @author Chris McAuley, Sian Pike.
  *
  * Controller class for the Login Window.  Handles user interaction with the UI.
  */
 public class LoginController extends Controller {
 
-
+    /**
+     * The field showing the username.
+     */
     @FXML // fx:id="usernameTextField"
     private TextField usernameTextField; // Value injected by FXMLLoader
 
+    /**
+     * The button for logging in.
+     */
     @FXML // fx:id="loginButton"
     private Button loginButton; // Value injected by FXMLLoader
 
 
     @FXML
     /**
-     * When the login button is clicked, this method retrieves the text from the usernameTextField and checks
+     * When the login button is clicked, this method retrieves the text from the usernameTextField and checks,
      * whether the user exists.
      */
     private void loginButtonClicked(ActionEvent event) {
@@ -57,8 +62,5 @@ public class LoginController extends Controller {
                         "Dashboard - TaweLib", getLibrary());
             }
         }
-
     }
-
-
 }
