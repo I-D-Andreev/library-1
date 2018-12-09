@@ -9,66 +9,117 @@ import java.util.Optional;
 /**
  * @author Chris McAuley, Sian Pike
  *
- * Controller class for the Manage Resources Window.  Handles interaction with the UI from the user.
+ * Controller class for the Manage Resources Window.
+ * Handles interaction with the UI from the user.
  */
 
 public class ManageResourcesController extends Controller {
 
+    /**
+     * Tab showing information related to borrowing.
+     */
     @FXML // fx:id="borrowTab"
     private Tab borrowTab; // Value injected by FXMLLoader
 
+    /**
+     * The field showing the user name of the borrower.
+     */
     @FXML
     private TextField borrowUserUsernameTextField;
 
+    /**
+     * The field showing the borrowed resource's ID.
+     */
     @FXML // fx:id="borrowResourceIDTextField"
     private TextField borrowResourceIDTextField; // Value injected by FXMLLoader
 
+    /**
+     * The button for borrowing.
+     */
     @FXML // fx:id="borrowButton"
     private Button borrowButton; // Value injected by FXMLLoader
 
+    /**
+     * The tab showing information related to returns.
+     */
     @FXML // fx:id="returnTab"
     private Tab returnTab; // Value injected by FXMLLoader
 
+    /**
+     * Field showing the return copy ID.
+     */
     @FXML
     private TextField returnCopyIDTextField;
 
+    /**
+     * Button to return a resource.
+     */
     @FXML // fx:id="returnButton"
     private Button returnButton; // Value injected by FXMLLoader
 
-
+    /**
+     * The tab showing information related to fines.
+     */
     @FXML // fx:id="fineTab"
     private Tab fineTab; // Value injected by FXMLLoader
 
+    /**
+     * The field showing the username of the user fined.
+     */
     @FXML // fx:id="fineUserUsernameTextField"
     private TextField fineUserUsernameTextField; // Value injected by FXMLLoader
 
+    /**
+     * Button for searches.
+     */
     @FXML // fx:id="searchButton"
     private Button searchButton; // Value injected by FXMLLoader
 
+    /**
+     * Field showing how much was paid by the user.
+     */
     @FXML // fx:id="payTextField"
     private TextField payTextField; // Value injected by FXMLLoader
 
+    /**
+     * Button for paying fines.
+     */
     @FXML // fx:id="payButton"
     private Button payButton; // Value injected by FXMLLoader
 
+    /**
+     * Button to return back to dashboard.
+     */
     @FXML // fx:id="backButton"
     private Button backButton; // Value injected by FXMLLoader
 
+    /**
+     * Field that shows the user's username that has reserved a resource.
+     */
     @FXML
     private TextField reserveUserUsernameTextField;
 
+    /**
+     * Field showing the resources ID that have been reserved.
+     */
     @FXML
     private TextField reserveResourceIDTextField;
 
+    /**
+     * Button for reserving resources.
+     */
     @FXML
     private Button reserveButton;
 
+    /**
+     * Label showing the outstanding amount to be paid by the user.
+     */
     @FXML // fx:id="outstandingAmountLabel"
     private Label outstandingAmountLabel; // Value injected by FXMLLoader
 
     /**
-     * When a copy is to be borrowed checks if the user is eligible for a loan and tries to reserve,
-     * and loan one to user.
+     * When a copy is to be borrowed checks if the user is eligible for a loan and loans a copy to the user,
+     * if one is available, otherwise one is reserved.
      *
      * @param event The button is clicked.
      */
@@ -117,7 +168,7 @@ public class ManageResourcesController extends Controller {
     }
 
     /**
-     * Goes back to the librarian dashboard when clicked.
+     * User goes back to the dashboard when clicked.
      *
      * @param event The button is pressed.
      */
@@ -128,7 +179,8 @@ public class ManageResourcesController extends Controller {
     }
 
     /**
-     * When the button is pressed a copy is tried to be reserved and loaned to a user if available.
+     * When the button is pressed a copy is reserved to a user if none are available,
+     * otherwise it tells the user to borrow it instead.
      *
      * @param event The button is clicked.
      */
@@ -167,7 +219,7 @@ public class ManageResourcesController extends Controller {
     }
 
     /**
-     * When the button is pressed takes a fine is tried to be paid.
+     * When the button is pressed the fine of the user is paid.
      *
      * @param event The button is clicked.
      */
@@ -299,9 +351,7 @@ public class ManageResourcesController extends Controller {
             }
         }
     }
-
 }
-
 /*
 
             Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
