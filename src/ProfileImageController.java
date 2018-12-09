@@ -45,6 +45,7 @@ public class ProfileImageController extends Controller {
     @FXML // fx:id="cancelButton"
     private Button cancelButton; // Value injected by FXMLLoader
 
+
     @FXML
     private void initialize() {
 
@@ -91,58 +92,69 @@ public class ProfileImageController extends Controller {
     }
 
     @FXML
-    void imageEightButtonClicked(ActionEvent event) {
-
+    void imageOneButtonClicked(ActionEvent event) {
+        this.filePath = "resources/avatar1.png";
+        this.goBackToPreviousWindow(event);
     }
 
     @FXML
-    void imageFiveButtonClicked(ActionEvent event) {
+    void imageTwoButtonClicked(ActionEvent event) {
+        this.filePath = "resources/avatar2.png";
+        this.goBackToPreviousWindow(event);
+    }
 
+    @FXML
+    void imageThreeButtonClicked(ActionEvent event) {
+        this.filePath = "resources/avatar3.png";
+        this.goBackToPreviousWindow(event);
     }
 
     @FXML
     void imageFourButtonClicked(ActionEvent event) {
+        this.filePath = "resources/avatar4.png";
+        this.goBackToPreviousWindow(event);
+    }
+
+    @FXML
+    void imageFiveButtonClicked(ActionEvent event) {
+        this.filePath = "resources/avatar5.png";
+        this.goBackToPreviousWindow(event);
+    }
+
+    @FXML
+    void imageSixButtonClicked(ActionEvent event) {
+        this.filePath = "resources/avatar6.png";
+        this.goBackToPreviousWindow(event);
+    }
+
+    @FXML
+    void imageSevenButtonClicked(ActionEvent event) {
+        this.filePath = "resources/avatar7.png";
+        this.goBackToPreviousWindow(event);
+
+    }
+    @FXML
+    void imageEightButtonClicked(ActionEvent event) {
+        this.filePath = "resources/avatar8.png";
+        this.goBackToPreviousWindow(event);
 
     }
 
     @FXML
     void imageNineButtonClicked(ActionEvent event) {
-
+        this.filePath = "resources/avatar9.png";
+        this.goBackToPreviousWindow(event);
     }
 
-    @FXML
-    void imageOneButtonClicked(ActionEvent event) {
-
-        new NewWindow("resources/ViewUser.fxml", event, "View User - TaweLib", getLibrary());
+    private void goBackToPreviousWindow(ActionEvent event) {
+        getLibrary().getCurrentUserLoggedIn().setProfileImagePath(filePath);
+        if(getLibrary().getCurrentUserLoggedIn() instanceof NormalUser){
+            new NewWindow("resources/UserDashboard.fxml", event,
+                    "User Dashboard Controller", getLibrary());
+        } else {
+            new NewWindow("resources/LibrarianDashboard.fxml", event,
+                    "Librarian Dashboard Controller", getLibrary());
+        }
     }
 
-    @FXML
-    void imageSevenButtonClicked(ActionEvent event) {
-
-    }
-
-    @FXML
-    void imageSixButtonClicked(ActionEvent event) {
-
-    }
-
-    @FXML
-    void imageThreeButtonClicked(ActionEvent event) {
-
-    }
-
-    @FXML
-    void imageTwoButtonClicked(ActionEvent event) {
-
-    }
-
-    public String getFilePath() {
-
-        return filePath;
-    }
-
-    public void setFilePath(String filePath) {
-
-        this.filePath = filePath;
-    }
 }
