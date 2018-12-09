@@ -203,7 +203,6 @@ public class BrowseResourcesController extends Controller {
             new NewWindow("resources/UserDashboard.fxml", event,
                     "Dashboard - TaweLib", getLibrary());
         }
-
     }
 
     /**
@@ -223,7 +222,5 @@ public class BrowseResourcesController extends Controller {
             acceptableTypes.add("Laptop");
         }
     }
-
-
 }
 
