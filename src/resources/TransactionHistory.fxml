@@ -33,10 +33,10 @@
          </GridPane.margin>
          <columns>
             <TableColumn fx:id="typeColumn" prefWidth="123.20001792907715" text="type" />
-            <TableColumn fx:id="dateColumn" prefWidth="153.5999755859375" text="date" />
-            <TableColumn fx:id="amountColumn" minWidth="0.0" prefWidth="127.20001220703125" text="amount" />
-            <TableColumn fx:id="itemID" prefWidth="117.60000610351562" text="item" />
-            <TableColumn fx:id="daysOverdue" prefWidth="136.800048828125" text="days overdue" />
+            <TableColumn fx:id="dateColumn" prefWidth="142.39996337890625" text="date" />
+            <TableColumn fx:id="amountColumn" minWidth="0.0" prefWidth="125.60003662109375" text="amount" />
+            <TableColumn fx:id="itemID" prefWidth="109.59994506835938" text="item" />
+            <TableColumn fx:id="daysOverdue" minWidth="150.0" prefWidth="161.5999755859375" text="days overdue" />
          </columns>
       </TableView>
    </children>
