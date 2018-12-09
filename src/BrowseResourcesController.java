@@ -24,43 +24,81 @@ import java.util.ArrayList;
 
 public class BrowseResourcesController extends Controller {
 
+    /**
+     * The button to close the tab.
+     */
     @FXML// fx:id="closeButton"
     private Button closeButton;// Value injected by FXMLLoader
 
+    /**
+     * The button to filter the data to show dvds.
+     */
     @FXML// fx:id="dvdFilter"
     private CheckBox dvdFilter;// Value injected by FXMLLoader
 
+    /**
+     * The button to filer the data to show book.
+     */
     @FXML// fx:id="bookFilter"
     private CheckBox bookFilter;// Value injected by FXMLLoader
 
+    /**
+     * The button to filter the data to show laptops.
+     */
     @FXML// fx:id="laptopFilter"
     private CheckBox laptopFilter;// Value injected by FXMLLoader
 
+    /**
+     * The button to browse resources for resources.
+     */
     @FXML// fx:id="browseResourcesSearchTextField"
     private TextField browseResourcesSearchTextField;// Value injected by FXMLLoader
 
+    /**
+     * The button for searches.
+     */
     @FXML// fx:id="searchButton"
     private Button searchButton;// Value injected by FXMLLoader
 
-
+    /**
+     * Table that displays resources.
+     */
     @FXML// fx:id="displayTable"
     private TableView<Resource> displayTable;
 
+    /**
+     * The unique ID column of the table.
+     */
     @FXML// fx:id="uniqueIDColumn"
     private TableColumn<Resource, String> uniqueIDColumn;
 
+    /**
+     * The title column of the table.
+     */
     @FXML// fx:id="titleColumn"
     private TableColumn<Resource, String> titleColumn;
 
+    /**
+     * The year column of the table.
+     */
     @FXML// fx:id="yearColumn"
     private TableColumn<Resource, Integer> yearColumn;
 
+    /**
+     * The type of resource column of the table.
+     */
     @FXML// fx:id="typeColumn"
     private TableColumn<Resource, String> typeColumn;
 
+    /**
+     * Button to take the user back to the dashboard.
+     */
     @FXML // fx:id="backButton"
     private Button backButton; // Value injected by FXMLLoader
 
+    /**
+     * The data inside the table.
+     */
     private ObservableList<Resource> data;
 
     /**

@@ -17,49 +17,95 @@ import javafx.scene.image.ImageView;
  */
 public class LibrarianResourceController extends Controller {
 
+    /**
+     * Shows the image of the resource.
+     */
     @FXML // fx:id="resourceImage"
     private ImageView resourceImage; // Value injected by FXMLLoader
 
+    /**
+     * Label that shows who borrowed the resource.
+     */
     @FXML // fx:id="borrowedByLabel"
     private Label borrowedByLabel; // Value injected by FXMLLoader
 
+    /**
+     * Label that shows the due date of the resource.
+     */
     @FXML // fx:id="dueDateLabel"
     private Label dueDateLabel; // Value injected by FXMLLoader
 
+    /**
+     * The table showing the available copies.
+     */
     @FXML // fx:id="copyHistoryTable"
     private TableView<TableRepresentationCopyAvailable> displayTable; // Value injected by FXMLLoader
 
+    /**
+     * The column showing the copy Id.
+     */
     @FXML // fx:id="copyHistoryColumn"
     private TableColumn<TableRepresentationCopyAvailable, String> copyIDColumn; // Value injected by FXMLLoader
 
+    /**
+     * The column showing the available copies.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyAvailable, String> copyAvailableColumn; // Value injected by FXMLLoader
 
+    /**
+     * The column showing showing the borrowed by column.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyAvailable, String> copyBorrowedByColumn; // Value injected by FXMLLoader
 
+    /**
+     * Column showing the who the copies are reserved for.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyAvailable, String> copyReservedForColumn; // Value injected by FXMLLoader
 
+    /**
+     * The data for the table.
+     */
     @FXML
     private ObservableList<TableRepresentationCopyAvailable> data;
 
+    /**
+     * Button to return user to dashboard.
+     */
     @FXML // fx:id="okButton"
     private Button okButton; // Value injected by FXMLLoader
 
+    /**
+     * The resource we clicked on the table.
+     */
     @FXML
     private static Resource clickedResource;
 
+    /**
+     * Returns the user to the dashboard when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     public void okButtonClicked(ActionEvent event) {
         clickedResource = null;
         new NewWindow("resources/BrowseResources.fxml", event, "Librarian Copy View", getLibrary());
     }
 
+    /**
+     * Sets the clicked resource.
+     *
+     * @param resource The resource we clicked on.
+     */
     public static void setClickedResource(Resource resource) {
         clickedResource = resource;
     }
 
+    /**
+     * Initializes the table and fills it with data.
+     */
     @Override
     public void onStart() {
         data = FXCollections.observableArrayList();

@@ -2,7 +2,6 @@ import java.util.Date;
 
 /**
  * This is used to make an account for a librarian
- * <<<<<<< HEAD
  *
  * @author Christina Meggs
  */

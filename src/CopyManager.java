@@ -36,7 +36,7 @@ public class CopyManager implements Serializable {
     /**
      * Gets the resource it is a copy manager of.
      *
-     * @return copyManagerOf The resource it is a copy manager of.
+     * @return The resource it is a copy manager of.
      */
     public Resource getCopyManagerOf() {
         return copyManagerOf;
@@ -64,7 +64,7 @@ public class CopyManager implements Serializable {
     /**
      * Gets the first user in the queue.
      *
-     * @return User the first user in the queue.
+     * @return The first user in the queue.
      */
     public User getFirstUserInQueue() {
         return this.requestQueue.get(0);
@@ -99,7 +99,7 @@ public class CopyManager implements Serializable {
     /**
      * An ArrayList of all copies.
      *
-     * @return listOfAllCopies The ArrayList of all copies.
+     * @return The ArrayList of all copies.
      */
     public ArrayList<Copy> getListOfAllCopies() {
         return this.listOfAllCopies;
@@ -108,7 +108,7 @@ public class CopyManager implements Serializable {
     /**
      * Gets a list of all available copies.
      *
-     * @return availableCopies A list of all available copies.
+     * @return A list of all available copies.
      */
     public ArrayList<Copy> getListOfAvailableCopies() {
         ArrayList<Copy> availableCopies = new ArrayList<>();
@@ -166,7 +166,7 @@ public class CopyManager implements Serializable {
      * Find a copy by its ID inside the list of all copies.
      *
      * @param copyId The id of the copy to be found.
-     * @return copy The copy if found by its id, null otherwise.
+     * @return The copy if found by its id, null otherwise.
      */
     public Copy findCopyById(String copyId) {
         Copy returnCopy = null;
@@ -195,7 +195,7 @@ public class CopyManager implements Serializable {
      * loans the copy to him.
      *
      * @param toUser The user who will receive the loaned copy.
-     * @return Return copy to loan to user if one is available or null if there are no available copies to loan.
+     * @return Return the copy to loan to user if one is available or null if there are no available copies to loan.
      */
     public Copy loanCopy(NormalUser toUser) {
         // We look if there is a reserved copy for the User.
@@ -239,10 +239,10 @@ public class CopyManager implements Serializable {
                 // which is borrowed
                 if (oldestCopy == null && copy.getBorrowedBy() != null) {
                     oldestCopy = copy;
-                } else if (oldestCopy != null && copy.getBorrowedBy() != null){
+                } else if (oldestCopy != null && copy.getBorrowedBy() != null) {
                     // now we have our "oldest" copy and another borrowed copy with no due date set
                     // assign it to oldest, only if the other copy is older
-                    if(copy.getBorrowedOn().compareTo(oldestCopy.getBorrowedOn()) == -1){
+                    if (copy.getBorrowedOn().compareTo(oldestCopy.getBorrowedOn()) == -1) {
                         oldestCopy = copy;
                     }
                 }
@@ -276,10 +276,11 @@ public class CopyManager implements Serializable {
 
     /**
      * Gives the user's position in the request queue.
+     *
      * @param user The user.
      * @return The position in the queue.
      */
-    public int positionInQueue(User user){
+    public int positionInQueue(User user) {
         // add +1 because positions start from 1, and not 0
         return this.requestQueue.indexOf(user) + 1;
     }
