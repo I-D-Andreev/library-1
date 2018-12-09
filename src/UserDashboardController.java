@@ -214,8 +214,8 @@ public class UserDashboardController extends Controller {
                 // absolute path
                 image = new Image(new File(path).toURI().toString());
             }
-
             userImage.setImage(image);
+
         } catch (IllegalArgumentException e) {
             userImage.setImage(new Image("resources/noImage.png"));
         } catch (NullPointerException e) {

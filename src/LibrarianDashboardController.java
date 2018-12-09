@@ -5,6 +5,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
@@ -133,8 +134,17 @@ public class LibrarianDashboardController extends Controller {
     private void loadLibrarianInformation() {
 
         try {
-            Image image = new Image(getLibrary().getCurrentUserLoggedIn().getProfileImagePath());
+            String path = getLibrary().getCurrentUserLoggedIn().getProfileImagePath();
+            Image image;
+            // relative path
+            if (path.charAt(0) >= 'a' && path.charAt(0) <= 'z') {
+                image = new Image(path);
+            } else {
+                // absolute path
+                image = new Image(new File(path).toURI().toString());
+            }
             librarianImage.setImage(image);
+
         } catch (IllegalArgumentException e) {
             librarianImage.setImage(null);
         }
