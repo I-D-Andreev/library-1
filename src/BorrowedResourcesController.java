@@ -117,6 +117,4 @@ public class BorrowedResourcesController extends Controller {
                     borrowDate, dueDate));
         }
     }
-
-
 }

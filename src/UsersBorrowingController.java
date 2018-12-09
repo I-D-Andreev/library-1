@@ -12,14 +12,23 @@ import javafx.scene.control.TableView;
  */
 public class UsersBorrowingController extends Controller {
 
+    /**
+     * The button to return to the dashboard.
+     */
     @FXML // fx:id="okButton"
-    private Button okButton; // Value injected by FXMLLoader
+    private Button okButton;
 
+    /**
+     * The table showing the users borrowing.
+     */
     @FXML // fx:id="usersBorrowingTable"
-    private TableView<?> usersBorrowingTable; // Value injected by FXMLLoader
+    private TableView<?> usersBorrowingTable;
 
+    /**
+     * The column showing the user borrowing.
+     */
     @FXML // fx:id="usersBorrowingColumn"
-    private TableColumn<?, ?> usersBorrowingColumn; // Value injected by FXMLLoader
+    private TableColumn<?, ?> usersBorrowingColumn;
 
     /**
      * Takes the user to the dashboard tab when the button is clicked.

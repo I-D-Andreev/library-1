@@ -454,7 +454,6 @@ public class ResourceManager implements Serializable {
     // todo remove this test data
     // to be removed just before end
     // test data
-
     /**
      * Method that fills the resource manager with data.
      */

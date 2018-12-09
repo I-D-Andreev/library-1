@@ -10,74 +10,141 @@ import javafx.scene.control.*;
 
 public class ViewUserController extends Controller {
 
+    /**
+     * The tab to search users.
+     */
     @FXML // fx:id="searchUserTab"
-    private Tab searchUserTab; // Value injected by FXMLLoader
+    private Tab searchUserTab;
 
+    /**
+     * Field to type the user to search in.
+     */
     @FXML // fx:id="searchUserTextField"
-    private TextField searchUserTextField; // Value injected by FXMLLoader
+    private TextField searchUserTextField;
 
+    /**
+     * Button to press when we want to search for a user.
+     */
     @FXML // fx:id="searchButton"
-    private Button searchButton; // Value injected by FXMLLoader
+    private Button searchButton;
 
+    /**
+     * The tab where we can create a user.
+     */
     @FXML // fx:id="createUserTab"
-    private Tab createUserTab; // Value injected by FXMLLoader
+    private Tab createUserTab;
 
+    /**
+     * The field showing username.
+     */
     @FXML // fx:id="usernameTextField"
-    private TextField usernameTextField; // Value injected by FXMLLoader
+    private TextField usernameTextField;
 
+    /**
+     * The field showing first name.
+     */
     @FXML // fx:id="firstNameTextField"
-    private TextField firstNameTextField; // Value injected by FXMLLoader
+    private TextField firstNameTextField;
 
+    /**
+     * The field showing surname.
+     */
     @FXML // fx:id="surnameTextField"
-    private TextField surnameTextField; // Value injected by FXMLLoader
+    private TextField surnameTextField;
 
+    /**
+     * The field showing the phone number.
+     */
     @FXML // fx:id="phoneNumberTextField"
-    private TextField phoneNumberTextField; // Value injected by FXMLLoader
+    private TextField phoneNumberTextField;
 
+    /**
+     * The field showing the first address line.
+     */
     @FXML // fx:id="addressTextField"
-    private TextField addressTextField1; // Value injected by FXMLLoader
+    private TextField addressTextField1;
 
+    /**
+     * The field showing the second address line.
+     */
     @FXML // fx:id="addressTextField"
-    private TextField addressTextField2; // Value injected by FXMLLoader
+    private TextField addressTextField2;
 
+    /**
+     * The field showing the country of the address.
+     */
     @FXML
-    private TextField addressCountryTextField; // Value injected by FXMLLoader
+    private TextField addressCountryTextField;
 
+    /**
+     * The field showing the address post code.
+     */
     @FXML
-    private TextField addressPostcodeTextField; // Value injected by FXMLLoader
+    private TextField addressPostcodeTextField;
 
+    /**
+     * Shows the date the librarian was employed.
+     */
     @FXML // fx:id="employmentDatePicker"
-    private DatePicker employmentDatePicker; // Value injected by FXMLLoader
+    private DatePicker employmentDatePicker;
 
+    /**
+     * Field showing the stuff ID number.
+     */
     @FXML // fx:id="staffNumberTextField"
-    private TextField staffNumberTextField; // Value injected by FXMLLoader
+    private TextField staffNumberTextField;
 
+    /**
+     * Button to choose profile image.
+     */
     @FXML
     private Button chooseProfileImageButton;
 
+    /**
+     * Button to draw your own profile image.
+     */
     @FXML
     private Button drawProfileImageButton;
 
-
+    /**
+     * Label showing the profile image.
+     */
     @FXML // fx:id="profileImageFileLabel"
-    private Label profileImageFileLabel; // Value injected by FXMLLoader
+    private Label profileImageFileLabel;
 
-
+    /**
+     * Button to add a new user.
+     */
     @FXML // fx:id="addUserButton"
-    private Button addUserButton; // Value injected by FXMLLoader
+    private Button addUserButton;
 
+    /**
+     * Button to go back to the dashboard.
+     */
     @FXML // fx:id="backButton"
-    private Button backButton; // Value injected by FXMLLoader
+    private Button backButton;
 
+    /**
+     * Button to filter librarians.
+     */
     @FXML
     private RadioButton librarianRadioButton;
 
+    /**
+     * Button to filter normal users.
+     */
     @FXML
     private RadioButton userRadioButton;
 
+    /**
+     * Field showing the city the address is from.
+     */
     @FXML
     private TextField addressCityTextField;
 
+    /**
+     * Label showing the thumbnail image path.
+     */
     @FXML
     private Label imagePathLabel;
 
@@ -183,6 +250,9 @@ public class ViewUserController extends Controller {
         }
     }
 
+    /**
+     * Clears all the fields for creating an account, to be used after we make an account.
+     */
     private void clearAllCreateAccountFields() {
         usernameTextField.clear();
         firstNameTextField.clear();

@@ -28,21 +28,39 @@ public class CopyHistoryController extends Controller {
     @FXML
     private TableView<TableRepresentationItemTransaction> copyHistoryTable;
 
+    /**
+     * The column showing the copy's borrows and returns.
+     */
     @FXML
     private TableColumn<TableRepresentationItemTransaction, String> borrowReturnColumn;
 
+    /**
+     * The column showing the username of the user that borrowed or returned a copy.
+     */
     @FXML
     private TableColumn<TableRepresentationItemTransaction, String> usernameColumn;
 
+    /**
+     * The column showing the date a return or loan happened.
+     */
     @FXML
     private TableColumn<TableRepresentationItemTransaction, String> dateColumn;
 
+    /**
+     *  The field showing the copy ID.
+     */
     @FXML
     private TextField copyIDTextField;
 
+    /**
+     * Button to search for a copy.
+     */
     @FXML
     private Button copySearchButton;
 
+    /**
+     * The data inside the table.
+     */
     @FXML
     private ObservableList<TableRepresentationItemTransaction> data;
 
@@ -57,13 +75,16 @@ public class CopyHistoryController extends Controller {
         new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
 
-
+    /**
+     * When the button is clicked we search for a copy based on its unique copy ID.
+     * @param event The button is pressed.
+     */
     @FXML
     public void copySearchButtonClicked(ActionEvent event) {
         String copyID = copyIDTextField.getText();
         Copy copy = getLibrary().getResourceManager().getCopyById(copyID);
 
-        if(copy == null){
+        if (copy == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Incorrect Copy ID.",
                     ButtonType.OK);
             alert.show();
@@ -72,8 +93,11 @@ public class CopyHistoryController extends Controller {
         }
     }
 
+    /**
+     * Initializes the table and fills it with data.
+     */
     @Override
-    public void onStart(){
+    public void onStart() {
         data = FXCollections.observableArrayList();
 
         borrowReturnColumn.setCellValueFactory(
@@ -86,6 +110,10 @@ public class CopyHistoryController extends Controller {
                 new PropertyValueFactory<TableRepresentationItemTransaction, String>("date"));
     }
 
+    /**
+     * Fills the table with data.
+     * @param copy The copy whose history we will show on the table.
+     */
     private void fillTable(Copy copy) {
 
         // clear previous data
@@ -95,7 +123,7 @@ public class CopyHistoryController extends Controller {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
 
-        for(HistoryEntry eachEntry : copy.getLoanHistory().getHistory()){
+        for (HistoryEntry eachEntry : copy.getLoanHistory().getHistory()) {
             HistoryEntryItemTransaction entry = (HistoryEntryItemTransaction) eachEntry;
             String borrowOrReturn = (entry.isBorrowed()) ? "borrowed" : "returned";
             String username = entry.getBorrowedBy().getUsername();
@@ -106,5 +134,4 @@ public class CopyHistoryController extends Controller {
 
         copyHistoryTable.getItems().addAll(data);
     }
-
 }

@@ -102,9 +102,6 @@ public class OverdueCopiesController extends Controller {
      * Fills the tables data.
      */
     private void fillInData() {
-        // The current user
-        NormalUser user = (NormalUser) getLibrary().getCurrentUserLoggedIn();
-
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
         //final long oneDayInMilliseconds = 3600 * 24 * 1000;
         final long oneDayInMilliseconds = 15 * 1000;
@@ -112,7 +109,7 @@ public class OverdueCopiesController extends Controller {
         // current date
         Date today = new Date();
 
-        for (Copy copy : user.getBorrowedCopies()) {
+        for (Copy copy :  getLibrary().getResourceManager().getOverdueCopies()) {
             if (copy.isOverdue()) {
                 String copyID = copy.getUniqueCopyID();
                 String borrowedBy = copy.getBorrowedBy().getUsername();

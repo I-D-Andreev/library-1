@@ -59,7 +59,7 @@
          <children>
             <Label text="Copy ID">
                <HBox.margin>
-                  <Insets left="310.0" top="80.0" />
+                  <Insets left="310.0" top="70.0" />
                </HBox.margin>
             </Label>
          </children>

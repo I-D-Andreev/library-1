@@ -255,8 +255,6 @@ public class LibrarianDashboardController extends Controller {
         new NewWindow("resources/ViewAllUsersCurrentlyBorrowing.fxml", event,
                 "View All Users Currently Borrowing", getLibrary());
 
-        new NewWindow("resources/UsersBorrowing.fxml", event, "Users Currently Borrowing - TaweLib",
-                getLibrary());
     }
 
     /**

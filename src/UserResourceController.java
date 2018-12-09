@@ -20,36 +20,63 @@ import java.io.File;
  */
 public class UserResourceController extends Controller {
 
+    /**
+     * The resource image.
+     */
     @FXML // fx:id="resourceImage"
-    private ImageView resourceImage; // Value injected by FXMLLoader
+    private ImageView resourceImage;
 
+    /**
+     * Label showing the copy ID.
+     */
     @FXML // fx:id="copyIdLabel"
-    private Label copyIdLabel; // Value injected by FXMLLoader
+    private Label copyIdLabel;
 
+    /**
+     * Label showing if the resource is available.
+     */
     @FXML // fx:id="isAvailableLabel"
-    private Label isAvailableLabel; // Value injected by FXMLLoader
+    private Label isAvailableLabel;
 
+    /**
+     * Button to return to the dashboard.
+     */
     @FXML // fx:id="okButton"
-    private Button okButton; // Value injected by FXMLLoader
+    private Button okButton;
 
+    /**
+     * The resource we clicked on.
+     */
     @FXML
     private static Resource clickedResource;
 
+    /**
+     * The table showing the available copies.
+     */
     @FXML
     private TableView<TableRepresentationCopyAvailable> tableView;
 
+    /**
+     * The column showing unique copy ID.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyAvailable, String> uniqueIDColumn;
 
+    /**
+     * The column showing if the copy is available.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyAvailable, String> isAvailableColumn;
 
-
+    /**
+     * The data inside the table.
+     */
     @FXML
     private ObservableList<TableRepresentationCopyAvailable> data;
 
     /**
      * Takes the user to the browse resource tab after the button is clicked.
+     *
      * @param event The button is clicked.
      */
     @FXML
@@ -59,6 +86,11 @@ public class UserResourceController extends Controller {
                 "Browse Resources - TaweLib", getLibrary());
     }
 
+    /**
+     * Sets the clicked resource to be the resource we last clicked on.
+     *
+     * @param resource The resource we clicked on.
+     */
     public static void setClickedResource(Resource resource) {
         clickedResource = resource;
     }
@@ -107,5 +139,4 @@ public class UserResourceController extends Controller {
             }
         }
     }
-
 }

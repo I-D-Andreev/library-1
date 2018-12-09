@@ -26,6 +26,13 @@ public class TableRepresentationCopyInformation {
         this.resourceType = resourceType;
     }
 
+    public TableRepresentationCopyInformation(String copyID, String borrowedBy, String resourceName, String borrowDate) {
+        this.copyID = copyID;
+        this.borrowedBy = borrowedBy;
+        this.resourceName = resourceName;
+        this.borrowDate = borrowDate;
+    }
+
     /**
      * Constructor for a copy representation in a table.
      * @param copyID    The unique copy ID.
