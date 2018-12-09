@@ -15,21 +15,39 @@ import javafx.scene.control.cell.PropertyValueFactory;
  */
 public class ReservedResourcesController extends Controller {
 
+    /**
+     * Button to return user to dashboard.
+     */
     @FXML
     private Button okButton;
 
+    /**
+     * Table that shows the reserved resources.
+     */
     @FXML
     private TableView<TableRepresentationCopyInformation> reservedResourcesTable;
 
+    /**
+     * The column showing the copy ID of the reserved resource.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> copyIDColumn;
 
+    /**
+     * The column showing the resource name.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> resourceNameColumn;
 
+    /**
+     * The column showing the resource type.
+     */
     @FXML
     private TableColumn<TableRepresentationCopyInformation, String> resourceTypeColumn;
 
+    /**
+     * The data inside the table.
+     */
     @FXML
     private ObservableList<TableRepresentationCopyInformation> data;
 
@@ -43,6 +61,9 @@ public class ReservedResourcesController extends Controller {
         new NewWindow("resources/UserDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
 
+    /**
+     * Initializes the table, fills it with data.
+     */
     @Override
     public void onStart(){
         data = FXCollections.observableArrayList();
@@ -57,6 +78,9 @@ public class ReservedResourcesController extends Controller {
         reservedResourcesTable.getItems().addAll(data);
     }
 
+    /**
+     * Fills the data.
+     */
     private void fillInData() {
         User userCurrentlyLoggedIn = getLibrary().getCurrentUserLoggedIn();
         for(Copy copy : getLibrary().getResourceManager().getReservedCopiesFor(userCurrentlyLoggedIn)){
@@ -67,5 +91,4 @@ public class ReservedResourcesController extends Controller {
             data.add(new TableRepresentationCopyInformation(copyID, resourceName, resourceType));
         }
     }
-
 }

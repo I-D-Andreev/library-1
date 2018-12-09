@@ -16,7 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class RequestedResourcesController extends Controller {
 
     /**
-     * Button to confirm an action.
+     * Button to return to the dashboard.
      */
     @FXML
     private Button okButton;
