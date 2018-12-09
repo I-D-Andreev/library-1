@@ -32,79 +32,79 @@ public class UserDashboardController extends Controller {
      * Button to browse the resources.
      */
     @FXML // fx:id="browseResourcesButton"
-    private Button browseResourcesButton; // Value injected by FXMLLoader
+    private Button browseResourcesButton;
 
     /**
      * Button to log out.
      */
     @FXML // fx:id="logOutButton"
-    private Button logOutButton; // Value injected by FXMLLoader
+    private Button logOutButton;
 
     /**
      * Button to show borrowed resources.
      */
     @FXML // fx:id="borrowedResourcesButton"
-    private Button borrowedResourcesButton; // Value injected by FXMLLoader
+    private Button borrowedResourcesButton;
 
     /**
      * Button to show requested resources.
      */
     @FXML // fx:id="requestedResourcesButton"
-    private Button requestedResourcesButton; // Value injected by FXMLLoader
+    private Button requestedResourcesButton;
 
     /**
      * Button to show the reserved resources.
      */
     @FXML // fx:id="reservedResourcesButton"
-    private Button reservedResourcesButton; // Value injected by FXMLLoader
+    private Button reservedResourcesButton;
 
     /**
      * Button to show the overdue resources.
      */
     @FXML // fx:id="overdueResourcesButton"
-    private Button overdueResourcesButton; // Value injected by FXMLLoader
+    private Button overdueResourcesButton;
 
     /**
      * Button to show the transaction history.
      */
     @FXML // fx:id="transHistoryButton"
-    private Button transHistoryButton; // Value injected by FXMLLoader
+    private Button transHistoryButton;
 
     /**
      * The user image.
      */
     @FXML // fx:id="userImage"
-    private ImageView userImage; // Value injected by FXMLLoader
+    private ImageView userImage;
 
     /**
      * Label showing user's username.
      */
     @FXML // fx:id="usernameLabel"
-    private Label usernameLabel; // Value injected by FXMLLoader
+    private Label usernameLabel;
 
     /**
      * Label showing user's first name.
      */
     @FXML // fx:id="firstNameLabel"
-    private Label firstNameLabel; // Value injected by FXMLLoader
+    private Label firstNameLabel;
 
     /**
      * Label showing user's last name.
      */
     @FXML // fx:id="lastNameLabel"
-    private Label lastNameLabel; // Value injected by FXMLLoader
+    private Label lastNameLabel;
 
     /**
      * Label showing user's phone number.
      */
     @FXML // fx:id="phoneNumberLabel"
-    private Label phoneNumberLabel; // Value injected by FXMLLoader
+    private Label phoneNumberLabel;
 
     /**
      * Label showing the popular resources.
      */
     @FXML // fx:id="popularResourceLabel"
-    private Label popularResourceLabel; // Value injected by FXMLLoader
+    private Label popularResourceLabel;
 
     /**
      * Button to edit user profile.

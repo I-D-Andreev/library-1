@@ -40,5 +40,4 @@ public class UsersBorrowingController extends Controller {
 
         new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
-
 }

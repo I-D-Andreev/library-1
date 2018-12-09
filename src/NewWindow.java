@@ -66,5 +66,4 @@ public class NewWindow {
             System.exit(1);
         }
     }
-
 }

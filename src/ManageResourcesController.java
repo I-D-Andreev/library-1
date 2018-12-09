@@ -19,7 +19,7 @@ public class ManageResourcesController extends Controller {
      * Tab showing information related to borrowing.
      */
     @FXML // fx:id="borrowTab"
-    private Tab borrowTab; // Value injected by FXMLLoader
+    private Tab borrowTab;
 
     /**
      * The field showing the user name of the borrower.
@@ -31,19 +31,19 @@ public class ManageResourcesController extends Controller {
      * The field showing the borrowed resource's ID.
      */
     @FXML // fx:id="borrowResourceIDTextField"
-    private TextField borrowResourceIDTextField; // Value injected by FXMLLoader
+    private TextField borrowResourceIDTextField;
 
     /**
      * The button for borrowing.
      */
     @FXML // fx:id="borrowButton"
-    private Button borrowButton; // Value injected by FXMLLoader
+    private Button borrowButton;
 
     /**
      * The tab showing information related to returns.
      */
     @FXML // fx:id="returnTab"
-    private Tab returnTab; // Value injected by FXMLLoader
+    private Tab returnTab;
 
     /**
      * Field showing the return copy ID.
@@ -55,43 +55,43 @@ public class ManageResourcesController extends Controller {
      * Button to return a resource.
      */
     @FXML // fx:id="returnButton"
-    private Button returnButton; // Value injected by FXMLLoader
+    private Button returnButton;
 
     /**
      * The tab showing information related to fines.
      */
     @FXML // fx:id="fineTab"
-    private Tab fineTab; // Value injected by FXMLLoader
+    private Tab fineTab;
 
     /**
      * The field showing the username of the user fined.
      */
     @FXML // fx:id="fineUserUsernameTextField"
-    private TextField fineUserUsernameTextField; // Value injected by FXMLLoader
+    private TextField fineUserUsernameTextField;
 
     /**
      * Button for searches.
      */
     @FXML // fx:id="searchButton"
-    private Button searchButton; // Value injected by FXMLLoader
+    private Button searchButton;
 
     /**
      * Field showing how much was paid by the user.
      */
     @FXML // fx:id="payTextField"
-    private TextField payTextField; // Value injected by FXMLLoader
+    private TextField payTextField;
 
     /**
      * Button for paying fines.
      */
     @FXML // fx:id="payButton"
-    private Button payButton; // Value injected by FXMLLoader
+    private Button payButton;
 
     /**
      * Button to return back to dashboard.
      */
     @FXML // fx:id="backButton"
-    private Button backButton; // Value injected by FXMLLoader
+    private Button backButton;
 
     /**
      * Field that shows the user's username that has reserved a resource.
@@ -115,7 +115,7 @@ public class ManageResourcesController extends Controller {
      * Label showing the outstanding amount to be paid by the user.
      */
     @FXML // fx:id="outstandingAmountLabel"
-    private Label outstandingAmountLabel; // Value injected by FXMLLoader
+    private Label outstandingAmountLabel;
 
     /**
      * When a copy is to be borrowed checks if the user is eligible for a loan and loans a copy to the user,

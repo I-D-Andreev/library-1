@@ -90,7 +90,11 @@ public class UserManager implements Serializable {
     }
 
 
-    // Get a file to read/write or create it if it doesn't exist.
+    /**
+     * Get a file to read/write or create it if it doesn't exist.
+     *
+     * @return The file to read/write.
+     */
     private File fileToReadWrite() {
         File file = null;
         try {

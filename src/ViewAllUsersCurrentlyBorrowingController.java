@@ -66,7 +66,7 @@ public class ViewAllUsersCurrentlyBorrowingController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void okButtonClicked(ActionEvent event) {
+    public void okButtonClicked(ActionEvent event) {
         new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
 

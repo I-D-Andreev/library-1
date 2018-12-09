@@ -155,7 +155,9 @@ public class SaveStaticVariables implements Serializable {
 
     }
 
-    // Get a file to read/write or create it if it doesn't exist.
+    /**
+     * Get a file to read/write or create it if it doesn't exist.
+     */
     private File fileToReadWrite() {
         File file = null;
         try {
@@ -169,6 +171,7 @@ public class SaveStaticVariables implements Serializable {
         return file;
     }
 
+    //todo remove this?
     // for testing purposes
     public void selfPopulate1() {
         this.resourceNextID = 4;

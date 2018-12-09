@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 /**
  * @author Chris McAuley, Sian Pike.
- *
+ * <p>
  * Controller class for the Login Window.  Handles user interaction with the UI.
  */
 public class LoginController extends Controller {
@@ -24,20 +24,20 @@ public class LoginController extends Controller {
      * The field showing the username.
      */
     @FXML // fx:id="usernameTextField"
-    private TextField usernameTextField; // Value injected by FXMLLoader
+    private TextField usernameTextField;
 
     /**
      * The button for logging in.
      */
     @FXML // fx:id="loginButton"
-    private Button loginButton; // Value injected by FXMLLoader
+    private Button loginButton;
 
 
-    @FXML
     /**
      * When the login button is clicked, this method retrieves the text from the usernameTextField and checks,
      * whether the user exists.
      */
+    @FXML
     private void loginButtonClicked(ActionEvent event) {
         String username = usernameTextField.getText();
         User existingUser = getLibrary().getUserManager().getUserByUsername(username);

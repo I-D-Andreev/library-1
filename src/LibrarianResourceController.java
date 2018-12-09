@@ -24,49 +24,48 @@ public class LibrarianResourceController extends Controller {
      * Shows the image of the resource.
      */
     @FXML // fx:id="resourceImage"
-    private ImageView resourceImage; // Value injected by FXMLLoader
+    private ImageView resourceImage;
 
     /**
      * Label that shows who borrowed the resource.
      */
     @FXML // fx:id="borrowedByLabel"
-    private Label borrowedByLabel; // Value injected by FXMLLoader
+    private Label borrowedByLabel;
 
     /**
      * Label that shows the due date of the resource.
      */
     @FXML // fx:id="dueDateLabel"
-    private Label dueDateLabel; // Value injected by FXMLLoader
+    private Label dueDateLabel;
 
     /**
      * The table showing the available copies.
      */
     @FXML // fx:id="copyHistoryTable"
-    private TableView<TableRepresentationCopyAvailable> displayTable; // Value injected by FXMLLoader
+    private TableView<TableRepresentationCopyAvailable> displayTable;
 
     /**
      * The column showing the copy Id.
      */
     @FXML // fx:id="copyHistoryColumn"
-    private TableColumn<TableRepresentationCopyAvailable, String> copyIDColumn; // Value injected by FXMLLoader
-
+    private TableColumn<TableRepresentationCopyAvailable, String> copyIDColumn;
     /**
      * The column showing the available copies.
      */
     @FXML
-    private TableColumn<TableRepresentationCopyAvailable, String> copyAvailableColumn; // Value injected by FXMLLoader
+    private TableColumn<TableRepresentationCopyAvailable, String> copyAvailableColumn;
 
     /**
      * The column showing showing the borrowed by column.
      */
     @FXML
-    private TableColumn<TableRepresentationCopyAvailable, String> copyBorrowedByColumn; // Value injected by FXMLLoader
+    private TableColumn<TableRepresentationCopyAvailable, String> copyBorrowedByColumn;
 
     /**
      * Column showing the who the copies are reserved for.
      */
     @FXML
-    private TableColumn<TableRepresentationCopyAvailable, String> copyReservedForColumn; // Value injected by FXMLLoader
+    private TableColumn<TableRepresentationCopyAvailable, String> copyReservedForColumn;
 
     /**
      * The data for the table.
@@ -78,7 +77,7 @@ public class LibrarianResourceController extends Controller {
      * Button to return user to dashboard.
      */
     @FXML // fx:id="okButton"
-    private Button okButton; // Value injected by FXMLLoader
+    private Button okButton;
 
     /**
      * The resource we clicked on the table.

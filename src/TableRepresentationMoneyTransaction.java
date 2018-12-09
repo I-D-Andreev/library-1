@@ -2,6 +2,7 @@
  * Class to model the table representing the money transactions.
  */
 public class TableRepresentationMoneyTransaction {
+
     /**
      * The type of the item the transaction happened on.
      */

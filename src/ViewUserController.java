@@ -155,7 +155,7 @@ public class ViewUserController extends Controller {
      * @param event The current event.
      */
     @FXML
-    void backButtonClicked(ActionEvent event) {
+    public void backButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/LibrarianDashboard.fxml", event, "Dashboard - TaweLib", getLibrary());
     }
@@ -166,7 +166,7 @@ public class ViewUserController extends Controller {
      * @param event The button is pressed.
      */
     @FXML
-    void searchButtonClicked(ActionEvent event) {
+    public void searchButtonClicked(ActionEvent event) {
         User user = getLibrary().getUserManager().getUserByUsername(searchUserTextField.getText());
         if (user == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "A user with username " + searchUserTextField.getText()
@@ -294,7 +294,7 @@ public class ViewUserController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void chooseProfileImageButtonClicked(ActionEvent event) {
+    public void chooseProfileImageButtonClicked(ActionEvent event) {
 
         new NewWindow("resources/ProfileImage.fxml", event, "Choose Image - TaweLib", getLibrary());
 
@@ -306,7 +306,7 @@ public class ViewUserController extends Controller {
      * @param event The button is clicked.
      */
     @FXML
-    void drawProfileImageButtonClicked(ActionEvent event) {
+    public void drawProfileImageButtonClicked(ActionEvent event) {
 
     }
 }

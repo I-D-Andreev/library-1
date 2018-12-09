@@ -22,61 +22,61 @@ public class ProfileImageController extends Controller {
      * The button for the first image.
      */
     @FXML // fx:id="imageOneButton"
-    private Button imageOneButton; // Value injected by FXMLLoader
+    private Button imageOneButton;
 
     /**
      * The button for the second image.
      */
     @FXML // fx:id="imageTwoButton"
-    private Button imageTwoButton; // Value injected by FXMLLoader
+    private Button imageTwoButton;
 
     /**
      * The button for the third image.
      */
     @FXML // fx:id="imageThreeButton"
-    private Button imageThreeButton; // Value injected by FXMLLoader
+    private Button imageThreeButton;
 
     /**
      * The button for the fourth image.
      */
     @FXML // fx:id="imageFourButton"
-    private Button imageFourButton; // Value injected by FXMLLoader
+    private Button imageFourButton;
 
     /**
      * The button for the fifth image.
      */
     @FXML // fx:id="imageFiveButton"
-    private Button imageFiveButton; // Value injected by FXMLLoader
+    private Button imageFiveButton;
 
     /**
      * The button for the sixth image.
      */
     @FXML // fx:id="imageSixButton"
-    private Button imageSixButton; // Value injected by FXMLLoader
+    private Button imageSixButton;
 
     /**
      * The button for the seventh image.
      */
     @FXML // fx:id="imageSevenButton"
-    private Button imageSevenButton; // Value injected by FXMLLoader
+    private Button imageSevenButton;
 
     /**
      * The button for the eighth image.
      */
     @FXML // fx:id="imageEightButton"
-    private Button imageEightButton; // Value injected by FXMLLoader
+    private Button imageEightButton;
 
     /**
      * The button for the ninth image.
      */
     @FXML // fx:id="imageNineButton"
-    private Button imageNineButton; // Value injected by FXMLLoader
+    private Button imageNineButton;
 
     /**
      * Button to cancel current action.
      */
     @FXML // fx:id="cancelButton"
-    private Button cancelButton; // Value injected by FXMLLoader
+    private Button cancelButton;
 
     /**
      * Initializes the images for the user to select.
@@ -118,7 +118,7 @@ public class ProfileImageController extends Controller {
      * @param event The button is pressed.
      */
     @FXML
-    void cancelButtonClicked(ActionEvent event) {
+    public void cancelButtonClicked(ActionEvent event) {
 
         if (getLibrary().getCurrentUserLoggedIn().hasAdminAccess()) {
 
@@ -133,48 +133,89 @@ public class ProfileImageController extends Controller {
 
     }
 
+    /**
+     * Chooses the first image as the avatar when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
-    void imageOneButtonClicked(ActionEvent event) {
+    public void imageOneButtonClicked(ActionEvent event) {
         this.filePath = "resources/avatar1.png";
         this.goBackToPreviousWindow(event);
     }
 
+    /**
+     * Chooses the second image as the avatar when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void imageTwoButtonClicked(ActionEvent event) {
         this.filePath = "resources/avatar2.png";
         this.goBackToPreviousWindow(event);
     }
 
+    /**
+     * Chooses the third image as the avatar when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void imageThreeButtonClicked(ActionEvent event) {
         this.filePath = "resources/avatar3.png";
         this.goBackToPreviousWindow(event);
     }
 
+    /**
+     * Chooses the fourth image as the avatar when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void imageFourButtonClicked(ActionEvent event) {
         this.filePath = "resources/avatar4.png";
         this.goBackToPreviousWindow(event);
     }
 
+    /**
+     * Chooses the fifth image as the avatar when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void imageFiveButtonClicked(ActionEvent event) {
         this.filePath = "resources/avatar5.png";
         this.goBackToPreviousWindow(event);
     }
 
+    /**
+     * Chooses the sixth image as the avatar when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void imageSixButtonClicked(ActionEvent event) {
         this.filePath = "resources/avatar6.png";
         this.goBackToPreviousWindow(event);
     }
 
+    /**
+     * Chooses the seventh image as the avatar when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void imageSevenButtonClicked(ActionEvent event) {
         this.filePath = "resources/avatar7.png";
         this.goBackToPreviousWindow(event);
 
     }
+
+    /**
+     * Chooses the eighth image as the avatar when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void imageEightButtonClicked(ActionEvent event) {
         this.filePath = "resources/avatar8.png";
@@ -182,15 +223,25 @@ public class ProfileImageController extends Controller {
 
     }
 
+    /**
+     * Chooses the ninth image as the avatar when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     @FXML
     void imageNineButtonClicked(ActionEvent event) {
         this.filePath = "resources/avatar9.png";
         this.goBackToPreviousWindow(event);
     }
 
+    /**
+     * Takes the user to the previous window when the button is clicked.
+     *
+     * @param event The button is clicked.
+     */
     private void goBackToPreviousWindow(ActionEvent event) {
         getLibrary().getCurrentUserLoggedIn().setProfileImagePath(filePath);
-        if(getLibrary().getCurrentUserLoggedIn() instanceof NormalUser){
+        if (getLibrary().getCurrentUserLoggedIn() instanceof NormalUser) {
             new NewWindow("resources/UserDashboard.fxml", event,
                     "User Dashboard Controller", getLibrary());
         } else {
@@ -198,5 +249,4 @@ public class ProfileImageController extends Controller {
                     "Librarian Dashboard Controller", getLibrary());
         }
     }
-
 }

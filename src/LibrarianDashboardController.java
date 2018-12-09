@@ -22,49 +22,49 @@ public class LibrarianDashboardController extends Controller {
      * The button to log out.
      */
     @FXML // fx:id="logOutButton"
-    private Button logOutButton; // Value injected by FXMLLoader
+    private Button logOutButton;
 
     /**
      * The button to take you to the manage resources tab.
      */
     @FXML // fx:id="manageResourcesButton"
-    private Button manageResourcesButton; // Value injected by FXMLLoader
+    private Button manageResourcesButton;
 
     /**
      * The button to create or edit resources.
      */
     @FXML // fx:id="createEditResourcesButton"
-    private Button createEditResourcesButton; // Value injected by FXMLLoader
+    private Button createEditResourcesButton;
 
     /**
      * The button to browse resources.
      */
     @FXML // fx:id="browseResourcesButton"
-    private Button browseResourcesButton; // Value injected by FXMLLoader
+    private Button browseResourcesButton;
 
     /**
      * The button to view users.
      */
     @FXML // fx:id="viewUserButton"
-    private Button viewUserButton; // Value injected by FXMLLoader
+    private Button viewUserButton;
 
     /**
      * The button to filter users.
      */
     @FXML // fx:id="userButton"
-    private Button userButton; // Value injected by FXMLLoader
+    private Button userButton;
 
     /**
      * The button to view the overdue resources.
      */
     @FXML // fx:id="overdueResourcesButton"
-    private Button overdueResourcesButton; // Value injected by FXMLLoader
+    private Button overdueResourcesButton;
 
     /**
      * The button to view copy history.
      */
     @FXML // fx:id="copyHistoryButton"
-    private Button copyHistoryButton; // Value injected by FXMLLoader
+    private Button copyHistoryButton;
 
     /**
      * The button to edit accounts.
