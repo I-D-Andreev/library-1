@@ -3,13 +3,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.Date;
+
 
 public class Main extends Application {
 
@@ -17,7 +12,9 @@ public class Main extends Application {
         //Launches the application - do not remove.
         launch(args);
 
-
+//        if you want to run the program and there are errors
+//        you might need to run this code
+//        ---------------------------------
 //        Library l = new Library();
 //        l.save();
 
