@@ -4,11 +4,9 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e3b68db-e3f9-4a5f-a067-ee60d4dfb31b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/ViewUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/ViewUser.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="6e3b68db-e3f9-4a5f-a067-ee60d4dfb31b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path=".idea/encodings.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,41 +17,22 @@
     <session id="-1710960564">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="fxml" value="11" />
-          <entry key="java" value="254" />
-          <entry key="xml" value="3" />
+          <entry key="java" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="254" />
-          <entry key="XML" value="14" />
+          <entry key="JAVA" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="10966" />
-          <entry key="txt" value="783" />
+          <entry key="java" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10966" />
-          <entry key="PLAIN_TEXT" value="783" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages">
-        <counts>
-          <entry key="git.branch.checkout.local" value="9" />
-          <entry key="git.branch.delete.local" value="1" />
-          <entry key="git.branch.merge" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="JAVA" value="17" />
         </counts>
       </usages-collector>
     </session>
@@ -63,21 +42,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="305">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/ViewUser.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -94,9 +63,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>borrow</find>
-      <find>this.borrowedBy =</find>
-      <find>setborro</find>
       <find>overdue</find>
       <find>shouldbefined</find>
       <find>getoverdue</find>
@@ -124,13 +90,16 @@
       <find>try</find>
       <find>borrowing</find>
       <find>overdueresourcesbuttoncl</find>
+      <find>imagepathL</find>
+      <find>choose</find>
+      <find>editbookfin</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="GUI" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
   </component>
@@ -152,7 +121,6 @@
         <option value="$PROJECT_DIR$/src/Library.java" />
         <option value="$PROJECT_DIR$/src/resources/EditAccount.fxml" />
         <option value="$PROJECT_DIR$/src/Controller.java" />
-        <option value="$PROJECT_DIR$/src/ViewUserController.java" />
         <option value="$PROJECT_DIR$/src/Librarian.java" />
         <option value="$PROJECT_DIR$/src/LibrarianTableCopy.java" />
         <option value="$PROJECT_DIR$/src/ManageResourcesController.java" />
@@ -165,38 +133,40 @@
         <option value="$PROJECT_DIR$/src/ReservedResourcesController.java" />
         <option value="$PROJECT_DIR$/src/Copy.java" />
         <option value="$PROJECT_DIR$/src/NormalUser.java" />
-        <option value="$PROJECT_DIR$/src/SaveStaticVariables.java" />
-        <option value="$PROJECT_DIR$/src/UserManager.java" />
         <option value="$PROJECT_DIR$/src/NewWindow.java" />
-        <option value="$PROJECT_DIR$/src/UserDashboardController.java" />
         <option value="$PROJECT_DIR$/src/DrawAvatar.java" />
         <option value="$PROJECT_DIR$/src/ProfileImageController.java" />
         <option value="$PROJECT_DIR$/src/CreateEditController.java" />
         <option value="$PROJECT_DIR$/src/EditAccountController.java" />
         <option value="$PROJECT_DIR$/src/LibrarianResourceController.java" />
         <option value="$PROJECT_DIR$/src/UserResourceController.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/BrowseResourcesController.java" />
-        <option value="$PROJECT_DIR$/src/ResourceManager.java" />
-        <option value="$PROJECT_DIR$/src/LibrarianDashboardController.java" />
         <option value="$PROJECT_DIR$/src/TableRepresentationCopyInformation.java" />
         <option value="$PROJECT_DIR$/src/ViewAllUsersCurrentlyBorrowingController.java" />
         <option value="$PROJECT_DIR$/src/OverdueCopiesController.java" />
         <option value="$PROJECT_DIR$/src/OverdueResourcesController.java" />
+        <option value="$PROJECT_DIR$/src/ViewUserController.java" />
         <option value="$PROJECT_DIR$/src/resources/ViewUser.fxml" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/ResourceManager.java" />
+        <option value="$PROJECT_DIR$/src/UserManager.java" />
+        <option value="$PROJECT_DIR$/src/SaveStaticVariables.java" />
+        <option value="$PROJECT_DIR$/src/LibrarianDashboardController.java" />
+        <option value="$PROJECT_DIR$/src/UserDashboardController.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="x" value="950" />
+    <option name="width" value="979" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -210,25 +180,19 @@
               <item name="tawelib" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="tawelib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tawelib" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544363847776" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544393299435" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Gluon/SceneBuilder.lnk" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -283,20 +247,6 @@
       <workItem from="1542452792911" duration="4471000" />
       <workItem from="1544087590965" duration="6407000" />
       <workItem from="1544192909022" duration="4422000" />
-    </task>
-    <task id="LOCAL-00093" summary="Refactor some code in create/edit.&#10;Added 1 more dvd while testing.">
-      <created>1544143764109</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1544143764109</updated>
-    </task>
-    <task id="LOCAL-00094" summary="Refactor delete laptop, book, DVD.">
-      <created>1544144494068</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1544144494068</updated>
     </task>
     <task id="LOCAL-00095" summary="Copy text field -&gt; resource unique id text field">
       <created>1544146263552</created>
@@ -627,11 +577,25 @@
       <option name="project" value="LOCAL" />
       <updated>1544362353621</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="Clean state.">
+      <created>1544370852555</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1544370852555</updated>
+    </task>
+    <task id="LOCAL-00143" summary="Create account choose + draw image works.">
+      <created>1544373211937</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1544373211937</updated>
+    </task>
+    <option name="localTasksCounter" value="144" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25994000" />
+    <option name="totallyTimeSpent" value="28500000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -646,7 +610,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.26912752" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.26040268" />
       <window_info id="Structure" order="1" sideWeight="0.5064516" side_tool="true" weight="0.24093817" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -654,15 +618,15 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4986577" visible="true" weight="0.3319149" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986577" weight="0.33049646" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32765958" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49798658" weight="0.32907802" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49798658" visible="true" weight="0.3248227" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49928468" weight="0.32765958" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49928468" weight="0.32719547" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50201344" side_tool="true" weight="0.32907802" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32624114" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32907802" />
@@ -739,12 +703,7 @@
       </map>
     </option>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Delete copy now clears the fields." />
-    <MESSAGE value="Numbers != digits at Javadoc comment" />
     <MESSAGE value="Pay fines working." />
     <MESSAGE value="Additional table for Librarian in the copies." />
     <MESSAGE value="Fixed a problem with reserving.&#10;1 more additional copy in the hardcoded tests." />
@@ -768,16 +727,11 @@
     <MESSAGE value="fix view user.fxml" />
     <MESSAGE value="fix ViewUser.fxml" />
     <MESSAGE value="view all users borrowing fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="view all users borrowing fixed" />
+    <MESSAGE value="Clean state." />
+    <MESSAGE value="Create account choose + draw image works." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create account choose + draw image works." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Resource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/UserDashboard.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -898,13 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CreateEditController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="1379" column="31" selection-start-line="1379" selection-start-column="31" selection-end-line="1379" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ProfileImageController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
@@ -923,13 +870,6 @@
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EditAccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="63" column="32" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LibrarianResourceController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
@@ -941,13 +881,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="507">
           <caret line="108" column="5" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserDashboardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="271" column="10" selection-start-line="271" selection-start-column="10" selection-end-line="271" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1007,20 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SaveStaticVariables.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/NewWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
@@ -1028,19 +947,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ResourceManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="456" column="7" lean-forward="true" selection-start-line="456" selection-start-column="7" selection-end-line="456" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ViewAllUsersController.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ViewAllUsersController.java" />
     <entry file="file://$PROJECT_DIR$/src/ViewAllUsersCurrentlyBorrowingController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -1077,31 +984,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LibrarianDashboardController.java">
+    <entry file="file://$PROJECT_DIR$/src/EditAccountController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="244" column="57" selection-start-line="244" selection-start-column="57" selection-end-line="244" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="258">
+          <caret line="163" column="43" selection-start-line="163" selection-start-column="43" selection-end-line="163" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CreateEditController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="1248" column="8" selection-start-line="1248" selection-start-column="8" selection-end-line="1248" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ViewUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="302" column="5" lean-forward="true" selection-start-line="302" selection-start-column="5" selection-end-line="302" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/ViewUser.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+        <state relative-caret-position="119">
+          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SaveStaticVariables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ResourceManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="305">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LibrarianDashboardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="139" column="16" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserDashboardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="267" column="37" lean-forward="true" selection-start-line="267" selection-start-column="37" selection-end-line="267" selection-end-column="37" />
         </state>
       </provider>
     </entry>
