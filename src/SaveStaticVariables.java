@@ -183,8 +183,11 @@ public class SaveStaticVariables implements Serializable {
         return file;
     }
 
-    //todo remove this?
-    // for testing purposes
+    /**
+     * Fills the static values with dummy test data.
+     */
+    // Might be needed to rebuild the program if it is crashing.
+    // More in the README file.
     public void selfPopulate1() {
         this.resourceNextID = 4;
         this.userNextID = 3;

@@ -211,8 +211,10 @@ public class UserManager implements Serializable {
 
 
     /**
-     * Fills the user manager with data.
+     * Fills the user manager with dummy data.
      */
+    // Might be needed to rebuild the program if it is crashing.
+    // More in the README file.
     public void selfPopulate1() {
         this.addUser(new NormalUser("Sian", "Pike", "sianspike",
                 "07813931066", "", new Address("14 Bryn Y Mor Crescent",

@@ -458,8 +458,10 @@ public class ResourceManager implements Serializable {
     // test data
 
     /**
-     * Method that fills the resource manager with data.
+     * Method that fills the resource manager with dummy data.
      */
+    // Might be needed to rebuild the program if it is crashing.
+    // More in the README file.
     public void selfPopulate1() {
         Book b = new Book("Harry Potter", 2010, "", "J.K.R.", "dn");
         Book b2 = new Book("Harry Potter2", 2010, "", "J.K.R.", "dn");
