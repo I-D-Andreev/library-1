@@ -14,9 +14,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * @author Chris McAuley, Sian Pike.
- *
  * Controller class for the Login Window.  Handles user interaction with the UI.
+ * @author Chris McAuley, Sian Pike.
  */
 public class LoginController extends Controller {
 

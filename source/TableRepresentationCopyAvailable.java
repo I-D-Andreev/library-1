@@ -1,7 +1,7 @@
 /**
  * Class that models the representation of an available copy in a table.
  *
- * @author Ivaan Andreev.
+ * @author Ivan Andreev.
  */
 public class TableRepresentationCopyAvailable {
 

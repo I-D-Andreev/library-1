@@ -1,8 +1,8 @@
 import java.io.*;
 
 /**
- * @author Kleanthis Liontis, Ivan Andreev.
  * Class to model a resource.
+ *  * @author Kleanthis Liontis, Ivan Andreev, Arran Taylor
  */
 public abstract class Resource implements Serializable {
     private static int nextID = 0;
