@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * Controller class for the Create/Edit screen for the Librarian.
  * Handles what happens when the user interacts with the UI.
  *
- * @author Chris McAuley.
+ * @author Chris McAuley, Ivan Andreev
  */
 
 public class CreateEditController extends Controller {

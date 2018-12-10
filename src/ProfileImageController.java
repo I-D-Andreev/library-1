@@ -9,7 +9,7 @@ import javafx.scene.image.ImageView;
 /**
  * Controller class for the Profile Image UI.  Handles interactions from the user.
  *
- * @author Sian Pike
+ * @author Sian Pike, Ivan Andreev
  */
 public class ProfileImageController extends Controller {
 

@@ -3,6 +3,8 @@ import java.io.*;
 
 /**
  * Class to model a copy of a resource.
+ *
+ * @author Ivan Andreev
  */
 public class Copy implements Serializable {
 

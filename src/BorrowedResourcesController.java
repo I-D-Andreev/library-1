@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat;
  * Controller class for the borrowed resources window.
  * Handles the interaction between the user and UI.
  *
- * @author Sian Pike
+ * @author Sian Pike, Ivan Andreev
  */
 public class BorrowedResourcesController extends Controller {
 

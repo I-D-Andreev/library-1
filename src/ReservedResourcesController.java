@@ -11,7 +11,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
  * Controller class for the reserved resources window.
  * Handles the interaction between the user and UI.
  *
- * @author Sian Pike
+ * @author Sian Pike, Ivan Andreev
  */
 public class ReservedResourcesController extends Controller {
 

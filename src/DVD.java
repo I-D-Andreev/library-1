@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 
 /**
- * @author Kleanthis Liontis.
- * A class to model a dvd.
+ *  * A class to model a dvd.
+ *
+ * @author Kleanthis Liontis
  */
 public class DVD extends Resource {
 

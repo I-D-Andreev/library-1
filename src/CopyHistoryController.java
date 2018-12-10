@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
  * Controller for the copy history window.
  * Handles the interaction between the user and UI.
  *
- * @author Sian Pike
+ * @author Sian Pike, Ivan Andreev
  */
 public class CopyHistoryController extends Controller {
 
@@ -47,7 +47,7 @@ public class CopyHistoryController extends Controller {
     private TableColumn<TableRepresentationItemTransaction, String> dateColumn;
 
     /**
-     *  The field showing the copy ID.
+     * The field showing the copy ID.
      */
     @FXML
     private TextField copyIDTextField;
@@ -77,6 +77,7 @@ public class CopyHistoryController extends Controller {
 
     /**
      * When the button is clicked we search for a copy based on its unique copy ID.
+     *
      * @param event The button is pressed.
      */
     @FXML
@@ -112,6 +113,7 @@ public class CopyHistoryController extends Controller {
 
     /**
      * Fills the table with data.
+     *
      * @param copy The copy whose history we will show on the table.
      */
     private void fillTable(Copy copy) {

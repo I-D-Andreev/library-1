@@ -7,10 +7,9 @@ import java.util.Date;
 import java.util.Optional;
 
 /**
- * @author Chris McAuley, Sian Pike
- *
  * Controller class for the Manage Resources Window.
  * Handles interaction with the UI from the user.
+ * @author Chris McAuley, Sian Pike, Ivan Andreev
  */
 
 public class ManageResourcesController extends Controller {
@@ -352,14 +351,3 @@ public class ManageResourcesController extends Controller {
         }
     }
 }
-/*
-
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
-                    ButtonType.OK);
-            alert.show();
-
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Book resource created successfully.",
-                    ButtonType.OK);
-            alert.show();
-
- */

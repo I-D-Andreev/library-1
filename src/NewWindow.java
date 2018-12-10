@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * Class to create a new window.
  *
- * @author Sian Pike
+ * @author Sian Pike, Ivan Andreev
  */
 
 public class NewWindow {

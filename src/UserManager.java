@@ -209,9 +209,6 @@ public class UserManager implements Serializable {
         }
     }
 
-    // todo remove this.
-    // test data
-    // to be removed just before end
 
     /**
      * Fills the user manager with data.

@@ -1,7 +1,7 @@
 /**
  * Class to model the representation of the resources in a table.
  *
- * @author Ivaan Andreev.
+ * @author Ivan Andreev.
  */
 public class TableRepresentationResourceInformation {
     private String resourceID;

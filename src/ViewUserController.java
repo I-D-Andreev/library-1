@@ -9,7 +9,7 @@ import java.io.File;
 /**
  * Controller class for the View User Window.  Handles user actions when the UI is interacted with.
  *
- * @author Sian Pike
+ * @author Sian Pike, Ivan Andreev
  */
 
 public class ViewUserController extends Controller {

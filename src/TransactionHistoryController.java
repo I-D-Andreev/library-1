@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat;
  * Controller class for the transaction history window.
  * Handles the interaction between the user and the UI.
  *
- * @author Sian Pike
+ * @author Sian Pike, Ivan Andreev
  */
 public class TransactionHistoryController extends Controller {
 

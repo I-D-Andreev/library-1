@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * Controller class for the Browse Resources Page for Librarian/User.
  * Handles what happens when the user interacts with the UI.
  *
- * @author Chris McAuley.
+ * @author Chris McAuley, Ivan Andreev
  */
 
 public class BrowseResourcesController extends Controller {

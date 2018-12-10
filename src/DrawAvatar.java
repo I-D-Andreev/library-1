@@ -2,9 +2,7 @@ import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-
 import javax.imageio.ImageIO;
-
 import javafx.application.Application;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.geometry.Insets;
@@ -25,7 +23,7 @@ import javafx.util.Pair;
  * A drawing class that allows the user to make their own avatar.
  * Uses straight line and free drawing.
  *
- * @author Christina Meggs, Steven Lewkowicz,
+ * @author Christina Meggs, Steven Lewkowicz
  */
 
 public class DrawAvatar extends Application {

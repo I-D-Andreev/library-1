@@ -15,7 +15,7 @@ import java.util.Date;
  * Controller class for the Overdue Copies window.
  * Handles user interaction with the UI.
  *
- * @author Sian Pike
+ * @author Sian Pike, Ivan Andreev
  */
 public class OverdueCopiesController extends Controller {
 

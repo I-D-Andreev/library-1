@@ -15,7 +15,7 @@ import java.util.Date;
  * Controller class for the overdue resources window.
  * Handles the interaction between the user and UI.
  *
- * @author Sian Pike
+ * @author Sian Pike, Ivan Andreev
  */
 public class OverdueResourcesController extends Controller {
 

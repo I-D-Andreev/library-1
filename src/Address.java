@@ -1,4 +1,5 @@
 import java.io.*;
+
 /**
  * Class to model the address of a person.
  *
@@ -152,6 +153,7 @@ public class Address implements Serializable {
 
     /**
      * Convert the address to a string.
+     *
      * @return answer The address converted to a string.
      */
     @Override

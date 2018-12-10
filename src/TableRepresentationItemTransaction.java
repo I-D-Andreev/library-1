@@ -1,5 +1,5 @@
 /**
- * Class to model the table of an item transaction.
+ * Class to model the table representation of an item transaction.
  *
  * @author Ivan Andreev.
  */

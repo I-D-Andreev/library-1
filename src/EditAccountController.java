@@ -9,6 +9,7 @@ import java.util.Optional;
 
 /**
  * Controller class that models the edit tabs for the controller.
+ * @author Ivan Andreev
  */
 public class EditAccountController extends Controller {
 
@@ -130,9 +131,10 @@ public class EditAccountController extends Controller {
 
     /**
      * Sets the text of the label that contains the image path.
+     *
      * @param filePath The path to the image.
      */
-    public void setImagePathLabelText(String filePath){
+    public void setImagePathLabelText(String filePath) {
         this.imagePathTextField.setText(filePath);
     }
 

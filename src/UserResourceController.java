@@ -16,7 +16,7 @@ import java.io.File;
  * Controller for the User Resource Window.
  * Handles user interaction with the UI.
  *
- * @author Sian Pike
+ * @author Sian Pike, Ivan Andreev
  */
 public class UserResourceController extends Controller {
 

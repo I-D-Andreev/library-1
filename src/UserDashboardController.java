@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
  * Controller class for the User Dashboard.
  * Handles what happens when the user interacts with the UI.
  *
- * @author Sian Pike
+ * @author Sian Pike, Ivan Andreev
  */
 
 public class UserDashboardController extends Controller {

@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
  * Controller class for the Librarian Dashboard.
  * Handles what happens when the user interacts with the UI.
  *
- * @author Sian Pike
+ * @author Sian Pike, Ivan Andreev
  */
 
 public class LibrarianDashboardController extends Controller {

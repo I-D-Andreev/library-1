@@ -2,8 +2,9 @@ import java.util.ArrayList;
 import java.io.*;
 
 /**
- * @author Kleanthis Liontis, Ivan Andreev.
  * Class to model a copy manager.
+ *
+ * @author Kleanthis Liontis, Ivan Andreev
  */
 public class CopyManager implements Serializable {
 

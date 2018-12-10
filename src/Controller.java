@@ -1,7 +1,10 @@
 /**
- * @author Chris McAuley.
- * Superclass of all controllers, class to model a controller.
+ * A class to model a Controller.
+ *
+ * @author Ivan Andreev
  */
+// The controller is a superclass of all controller classes
+// and keeps the data about the library.
 public class Controller {
     private Library library;
 

@@ -16,7 +16,7 @@ import java.io.File;
  * Controller class for the librarian resource window.
  * Handles interaction between the user and UI.
  *
- * @author Sian Pike
+ * @author Sian Pike, Ivan Andreev
  */
 public class LibrarianResourceController extends Controller {
 
