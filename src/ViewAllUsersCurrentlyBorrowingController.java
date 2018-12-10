@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat;
  * Controller class for the view all users window.
  * Handles the interaction between the user and UI.
  *
- * @author Sian Pike
+ * @author Sian Pike, Ivan Andreev, Christopher McAuley
  */
 public class ViewAllUsersCurrentlyBorrowingController extends Controller {
 
