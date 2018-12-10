@@ -173,7 +173,7 @@ public class SaveStaticVariables implements Serializable {
     private File fileToReadWrite() {
         File file = null;
         try {
-            file = new File("src/resources/values.ser");
+            file = new File("source/resources/values.ser");
             file.createNewFile();
         } catch (Exception e) {
             System.out.println("Problem accessing file.");

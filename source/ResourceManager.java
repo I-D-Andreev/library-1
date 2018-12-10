@@ -106,7 +106,7 @@ public class ResourceManager implements Serializable {
     private File fileToReadWrite() {
         File file = null;
         try {
-            file = new File("src/resources/resources.ser");
+            file = new File("source/resources/resources.ser");
             file.createNewFile();
         } catch (Exception e) {
             System.out.println("Problem accessing file.");

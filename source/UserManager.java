@@ -98,7 +98,7 @@ public class UserManager implements Serializable {
     private File fileToReadWrite() {
         File file = null;
         try {
-            file = new File("src/resources/users.ser");
+            file = new File("source/resources/users.ser");
             file.createNewFile();
         } catch (Exception e) {
             System.out.println("Problem accessing file.");

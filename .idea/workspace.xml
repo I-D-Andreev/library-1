@@ -4,11 +4,88 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e3b68db-e3f9-4a5f-a067-ee60d4dfb31b" name="Default Changelist" comment="Remove fxml injected comments.">
+    <list default="true" id="6e3b68db-e3f9-4a5f-a067-ee60d4dfb31b" name="Default Changelist" comment="Renamin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResourceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SaveStaticVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SaveStaticVariables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaweLib.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TaweLib.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BorrowedResourcesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/BorrowedResourcesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BrowseResourcesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/BrowseResourcesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Copy.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/Copy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CopyHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/CopyHistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CopyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/CopyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CreateEditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/CreateEditController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DVD.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/DVD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DrawAvatar.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/DrawAvatar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/EditAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HistoryEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/HistoryEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HistoryEntryFine.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/HistoryEntryFine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HistoryEntryItemTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/HistoryEntryItemTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HistoryEntryMoneyTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/HistoryEntryMoneyTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Laptop.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/Laptop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/Librarian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LibrarianDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/LibrarianDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LibrarianResourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/LibrarianResourceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/Library.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ManageResourcesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/ManageResourcesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NewWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/NewWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NormalUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/NormalUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OverdueCopiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/OverdueCopiesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OverdueResourcesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/OverdueResourcesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProfileImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/ProfileImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RequestedResourcesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/RequestedResourcesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReservedResourcesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/ReservedResourcesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/Resource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResourceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/ResourceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SaveStaticVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/SaveStaticVariables.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableRepresentationCopyAvailable.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/TableRepresentationCopyAvailable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableRepresentationCopyInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/TableRepresentationCopyInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableRepresentationItemTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/TableRepresentationItemTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableRepresentationMoneyTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/TableRepresentationMoneyTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableRepresentationResourceInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/TableRepresentationResourceInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TransactionHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/TransactionHistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/UserDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserResourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/UserResourceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ViewAllUsersCurrentlyBorrowingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/ViewAllUsersCurrentlyBorrowingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ViewUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/ViewUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/BorrowedResources.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/BorrowedResources.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/BrowseResources.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/BrowseResources.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/CopyHistory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/CopyHistory.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/CreateEdit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/CreateEdit.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/EditAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/EditAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/LibrarianDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/LibrarianDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/LibrarianResource.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/LibrarianResource.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/ManageResources.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/ManageResources.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/OverdueCopies.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/OverdueCopies.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/OverdueResources.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/OverdueResources.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/ProfileImage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/ProfileImage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/RequestedResources.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/RequestedResources.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/ReservedResources.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/ReservedResources.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/TransactionHistory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/TransactionHistory.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/UserDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/UserDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/UserResource.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/UserResource.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/ViewAllUsersCurrentlyBorrowing.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/ViewAllUsersCurrentlyBorrowing.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/ViewUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/ViewUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/avatar1.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/avatar1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/avatar2.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/avatar2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/avatar3.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/avatar3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/avatar4.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/avatar4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/avatar5.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/avatar5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/avatar6.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/avatar6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/avatar7.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/avatar7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/avatar8.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/avatar8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/avatar9.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/avatar9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/noImage.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/noImage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/resources.ser" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/resources.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/users.ser" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/users.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/values.ser" beforeDir="false" afterPath="$PROJECT_DIR$/source/resources/values.ser" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path=".idea/encodings.xml" />
@@ -22,24 +99,24 @@
     <session id="-1710960564">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="76" />
+          <entry key="java" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="76" />
+          <entry key="JAVA" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="648" />
-          <entry key="txt" value="98" />
+          <entry key="java" value="662" />
+          <entry key="txt" value="141" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="648" />
-          <entry key="PLAIN_TEXT" value="98" />
+          <entry key="JAVA" value="662" />
+          <entry key="PLAIN_TEXT" value="141" />
         </counts>
       </usages-collector>
     </session>
@@ -47,10 +124,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
+        <entry file="file://$PROJECT_DIR$/source/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+            <state relative-caret-position="226">
+              <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,30 +136,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UserManager.java">
+        <entry file="file://$PROJECT_DIR$/source/UserManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="213" column="40" selection-start-line="213" selection-start-column="40" selection-end-line="213" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/SaveStaticVariables.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="186" column="52" selection-start-line="186" selection-start-column="52" selection-end-line="186" selection-end-column="52" />
+            <state>
+              <caret line="1" column="27" lean-forward="true" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ResourceManager.java">
+        <entry file="file://$PROJECT_DIR$/source/ResourceManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7480">
-              <caret line="460" column="56" selection-start-line="460" selection-start-column="56" selection-end-line="460" selection-end-column="56" />
+            <state relative-caret-position="390">
+              <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/SaveStaticVariables.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+              <folding>
+                <element signature="e#1025#1026#0" expanded="true" />
+                <element signature="e#1060#1061#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,8 +181,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>overdue</find>
-      <find>shouldbefined</find>
       <find>getoverdue</find>
       <find>milliseconds</find>
       <find>get</find>
@@ -130,6 +209,8 @@
       <find>imagepathL</find>
       <find>choose</find>
       <find>editbookfin</find>
+      <find>src</find>
+      <find>selfPopulate</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -143,10 +224,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/HistoryEntryFine.java" />
-        <option value="$PROJECT_DIR$/src/History.java" />
-        <option value="$PROJECT_DIR$/src/Laptop.java" />
-        <option value="$PROJECT_DIR$/src/HistoryEntry.java" />
         <option value="$PROJECT_DIR$/src/User.java" />
         <option value="$PROJECT_DIR$/src/Resource.java" />
         <option value="$PROJECT_DIR$/src/resources/UserDashboard.fxml" />
@@ -194,6 +271,10 @@
         <option value="$PROJECT_DIR$/src/ResourceManager.java" />
         <option value="$PROJECT_DIR$/src/UserManager.java" />
         <option value="$PROJECT_DIR$/src/SaveStaticVariables.java" />
+        <option value="$PROJECT_DIR$/source/Main.java" />
+        <option value="$PROJECT_DIR$/source/UserManager.java" />
+        <option value="$PROJECT_DIR$/source/ResourceManager.java" />
+        <option value="$PROJECT_DIR$/source/SaveStaticVariables.java" />
       </list>
     </option>
   </component>
@@ -219,7 +300,7 @@
             <path>
               <item name="tawelib" type="b2602c69:ProjectViewProjectNode" />
               <item name="tawelib" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -230,7 +311,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544402709751" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544403412738" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Gluon/SceneBuilder.lnk" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
@@ -288,13 +369,6 @@
       <workItem from="1542452792911" duration="4471000" />
       <workItem from="1544087590965" duration="6407000" />
       <workItem from="1544192909022" duration="4422000" />
-    </task>
-    <task id="LOCAL-00098" summary="Create/edit copy kind of working.">
-      <created>1544147624353</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1544147624353</updated>
     </task>
     <task id="LOCAL-00099" summary="Refactor copy a bit.">
       <created>1544147842289</created>
@@ -632,7 +706,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544402353270</updated>
     </task>
-    <option name="localTasksCounter" value="147" />
+    <task id="LOCAL-00147" summary="comment selfPopulate1() methods.">
+      <created>1544402725037</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1544402725037</updated>
+    </task>
+    <option name="localTasksCounter" value="148" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -651,7 +732,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.23959732" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.23959732" />
       <window_info id="Structure" order="1" sideWeight="0.5064516" side_tool="true" weight="0.24093817" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -660,7 +741,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986577" visible="true" weight="0.33049646" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4986577" visible="true" weight="0.33049646" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -745,7 +826,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix a potential bug with creating copy." />
     <MESSAGE value="Borrowed Copies now work" />
     <MESSAGE value="requested resources works" />
     <MESSAGE value="reserved resources works" />
@@ -770,18 +850,19 @@
     <MESSAGE value="Chris contribution added" />
     <MESSAGE value="Add myself as author to nearly all classes." />
     <MESSAGE value="Remove fxml injected comments." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove fxml injected comments." />
+    <MESSAGE value="comment selfPopulate1() methods." />
+    <option name="LAST_COMMIT_MESSAGE" value="comment selfPopulate1() methods." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/ViewAllUsersCurrentlyBorrowing.fxml">
+    <entry file="file://$PROJECT_DIR$/source/resources/ViewAllUsersCurrentlyBorrowing.fxml">
       <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/OverdueResources.fxml">
+    <entry file="file://$PROJECT_DIR$/source/resources/OverdueResources.fxml">
       <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/ViewUser.fxml">
+    <entry file="file://$PROJECT_DIR$/source/resources/ViewUser.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
@@ -789,14 +870,14 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DVD.java">
+    <entry file="file://$PROJECT_DIR$/source/DVD.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DrawAvatar.java">
+    <entry file="file://$PROJECT_DIR$/source/DrawAvatar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
@@ -812,133 +893,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CopyManager.java">
+    <entry file="file://$PROJECT_DIR$/source/CopyManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Copy.java">
+    <entry file="file://$PROJECT_DIR$/source/Copy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Book.java">
+    <entry file="file://$PROJECT_DIR$/source/Book.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Address.java">
+    <entry file="file://$PROJECT_DIR$/source/Address.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/History.java">
+    <entry file="file://$PROJECT_DIR$/source/History.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HistoryEntry.java">
+    <entry file="file://$PROJECT_DIR$/source/HistoryEntry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HistoryEntryFine.java">
+    <entry file="file://$PROJECT_DIR$/source/HistoryEntryFine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-303">
           <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HistoryEntryItemTransaction.java">
+    <entry file="file://$PROJECT_DIR$/source/HistoryEntryItemTransaction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HistoryEntryMoneyTransaction.java">
+    <entry file="file://$PROJECT_DIR$/source/HistoryEntryMoneyTransaction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Laptop.java">
+    <entry file="file://$PROJECT_DIR$/source/Laptop.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Librarian.java">
+    <entry file="file://$PROJECT_DIR$/source/Librarian.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-541">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Library.java">
+    <entry file="file://$PROJECT_DIR$/source/Library.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NewWindow.java">
+    <entry file="file://$PROJECT_DIR$/source/NewWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Resource.java">
+    <entry file="file://$PROJECT_DIR$/source/Resource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TableRepresentationCopyAvailable.java">
+    <entry file="file://$PROJECT_DIR$/source/TableRepresentationCopyAvailable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TableRepresentationItemTransaction.java">
+    <entry file="file://$PROJECT_DIR$/source/TableRepresentationItemTransaction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TableRepresentationCopyInformation.java">
+    <entry file="file://$PROJECT_DIR$/source/TableRepresentationCopyInformation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TableRepresentationMoneyTransaction.java">
+    <entry file="file://$PROJECT_DIR$/source/TableRepresentationMoneyTransaction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1204">
           <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/User.java">
+    <entry file="file://$PROJECT_DIR$/source/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
@@ -952,133 +1033,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ViewUserController.java">
+    <entry file="file://$PROJECT_DIR$/source/ViewUserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1646">
           <caret line="127" column="10" selection-start-line="127" selection-start-column="10" selection-end-line="127" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ViewAllUsersCurrentlyBorrowingController.java">
+    <entry file="file://$PROJECT_DIR$/source/ViewAllUsersCurrentlyBorrowingController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1241">
           <caret line="18" column="74" lean-forward="true" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserResourceController.java">
+    <entry file="file://$PROJECT_DIR$/source/UserResourceController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-646">
           <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserDashboardController.java">
+    <entry file="file://$PROJECT_DIR$/source/UserDashboardController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TransactionHistoryController.java">
+    <entry file="file://$PROJECT_DIR$/source/TransactionHistoryController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-816">
           <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TableRepresentationResourceInformation.java">
+    <entry file="file://$PROJECT_DIR$/source/TableRepresentationResourceInformation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ReservedResourcesController.java">
+    <entry file="file://$PROJECT_DIR$/source/ReservedResourcesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-612">
           <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RequestedResourcesController.java">
+    <entry file="file://$PROJECT_DIR$/source/RequestedResourcesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-697">
           <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ProfileImageController.java">
+    <entry file="file://$PROJECT_DIR$/source/ProfileImageController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="77" column="10" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OverdueResourcesController.java">
+    <entry file="file://$PROJECT_DIR$/source/OverdueResourcesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-765">
           <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OverdueCopiesController.java">
+    <entry file="file://$PROJECT_DIR$/source/OverdueCopiesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-714">
           <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NormalUser.java">
+    <entry file="file://$PROJECT_DIR$/source/NormalUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
           <caret line="115" column="3" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BorrowedResourcesController.java">
+    <entry file="file://$PROJECT_DIR$/source/BorrowedResourcesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="81" column="7" lean-forward="true" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BrowseResourcesController.java">
+    <entry file="file://$PROJECT_DIR$/source/BrowseResourcesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-714">
           <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller.java">
+    <entry file="file://$PROJECT_DIR$/source/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CopyHistoryController.java">
+    <entry file="file://$PROJECT_DIR$/source/CopyHistoryController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1377">
           <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CreateEditController.java">
+    <entry file="file://$PROJECT_DIR$/source/CreateEditController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8364">
           <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EditAccountController.java">
+    <entry file="file://$PROJECT_DIR$/source/EditAccountController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1496">
           <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LibrarianDashboardController.java">
+    <entry file="file://$PROJECT_DIR$/source/LibrarianDashboardController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-833">
           <caret line="65" column="9" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
@@ -1088,58 +1169,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LibrarianResourceController.java">
+    <entry file="file://$PROJECT_DIR$/source/LibrarianResourceController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="78" column="9" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/source/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-51">
           <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ManageResourcesController.java">
+    <entry file="file://$PROJECT_DIR$/source/ManageResourcesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="115" column="9" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/source/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+        <state relative-caret-position="226">
+          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserManager.java">
+    <entry file="file://$PROJECT_DIR$/source/UserManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="213" column="40" selection-start-line="213" selection-start-column="40" selection-end-line="213" selection-end-column="40" />
+        <state>
+          <caret line="1" column="27" lean-forward="true" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ResourceManager.java">
+    <entry file="file://$PROJECT_DIR$/source/ResourceManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7480">
-          <caret line="460" column="56" selection-start-line="460" selection-start-column="56" selection-end-line="460" selection-end-column="56" />
+        <state relative-caret-position="390">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SaveStaticVariables.java">
+    <entry file="file://$PROJECT_DIR$/source/SaveStaticVariables.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="186" column="52" selection-start-line="186" selection-start-column="52" selection-end-line="186" selection-end-column="52" />
+        <state relative-caret-position="162">
+          <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+          <folding>
+            <element signature="e#1025#1026#0" expanded="true" />
+            <element signature="e#1060#1061#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
