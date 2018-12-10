@@ -23,31 +23,31 @@ public class LibrarianResourceController extends Controller {
     /**
      * Shows the image of the resource.
      */
-    @FXML // fx:id="resourceImage"
+    @FXML
     private ImageView resourceImage;
 
     /**
      * Label that shows who borrowed the resource.
      */
-    @FXML // fx:id="borrowedByLabel"
+    @FXML
     private Label borrowedByLabel;
 
     /**
      * Label that shows the due date of the resource.
      */
-    @FXML // fx:id="dueDateLabel"
+    @FXML
     private Label dueDateLabel;
 
     /**
      * The table showing the available copies.
      */
-    @FXML // fx:id="copyHistoryTable"
+    @FXML
     private TableView<TableRepresentationCopyAvailable> displayTable;
 
     /**
      * The column showing the copy Id.
      */
-    @FXML // fx:id="copyHistoryColumn"
+    @FXML
     private TableColumn<TableRepresentationCopyAvailable, String> copyIDColumn;
     /**
      * The column showing the available copies.
@@ -76,7 +76,7 @@ public class LibrarianResourceController extends Controller {
     /**
      * Button to return user to dashboard.
      */
-    @FXML // fx:id="okButton"
+    @FXML
     private Button okButton;
 
     /**

@@ -17,7 +17,7 @@ public class ManageResourcesController extends Controller {
     /**
      * Tab showing information related to borrowing.
      */
-    @FXML // fx:id="borrowTab"
+    @FXML
     private Tab borrowTab;
 
     /**
@@ -29,19 +29,19 @@ public class ManageResourcesController extends Controller {
     /**
      * The field showing the borrowed resource's ID.
      */
-    @FXML // fx:id="borrowResourceIDTextField"
+    @FXML
     private TextField borrowResourceIDTextField;
 
     /**
      * The button for borrowing.
      */
-    @FXML // fx:id="borrowButton"
+    @FXML
     private Button borrowButton;
 
     /**
      * The tab showing information related to returns.
      */
-    @FXML // fx:id="returnTab"
+    @FXML
     private Tab returnTab;
 
     /**
@@ -53,43 +53,43 @@ public class ManageResourcesController extends Controller {
     /**
      * Button to return a resource.
      */
-    @FXML // fx:id="returnButton"
+    @FXML
     private Button returnButton;
 
     /**
      * The tab showing information related to fines.
      */
-    @FXML // fx:id="fineTab"
+    @FXML
     private Tab fineTab;
 
     /**
      * The field showing the username of the user fined.
      */
-    @FXML // fx:id="fineUserUsernameTextField"
+    @FXML
     private TextField fineUserUsernameTextField;
 
     /**
      * Button for searches.
      */
-    @FXML // fx:id="searchButton"
+    @FXML
     private Button searchButton;
 
     /**
      * Field showing how much was paid by the user.
      */
-    @FXML // fx:id="payTextField"
+    @FXML
     private TextField payTextField;
 
     /**
      * Button for paying fines.
      */
-    @FXML // fx:id="payButton"
+    @FXML
     private Button payButton;
 
     /**
      * Button to return back to dashboard.
      */
-    @FXML // fx:id="backButton"
+    @FXML
     private Button backButton;
 
     /**
@@ -113,7 +113,7 @@ public class ManageResourcesController extends Controller {
     /**
      * Label showing the outstanding amount to be paid by the user.
      */
-    @FXML // fx:id="outstandingAmountLabel"
+    @FXML
     private Label outstandingAmountLabel;
 
     /**

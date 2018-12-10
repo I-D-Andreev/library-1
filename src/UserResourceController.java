@@ -23,25 +23,25 @@ public class UserResourceController extends Controller {
     /**
      * The resource image.
      */
-    @FXML // fx:id="resourceImage"
+    @FXML
     private ImageView resourceImage;
 
     /**
      * Label showing the copy ID.
      */
-    @FXML // fx:id="copyIdLabel"
+    @FXML
     private Label copyIdLabel;
 
     /**
      * Label showing if the resource is available.
      */
-    @FXML // fx:id="isAvailableLabel"
+    @FXML
     private Label isAvailableLabel;
 
     /**
      * Button to return to the dashboard.
      */
-    @FXML // fx:id="okButton"
+    @FXML
     private Button okButton;
 
     /**

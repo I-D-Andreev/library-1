@@ -31,49 +31,49 @@ public class UserDashboardController extends Controller {
     /**
      * Button to browse the resources.
      */
-    @FXML // fx:id="browseResourcesButton"
+    @FXML
     private Button browseResourcesButton;
 
     /**
      * Button to log out.
      */
-    @FXML // fx:id="logOutButton"
+    @FXML
     private Button logOutButton;
 
     /**
      * Button to show borrowed resources.
      */
-    @FXML // fx:id="borrowedResourcesButton"
+    @FXML
     private Button borrowedResourcesButton;
 
     /**
      * Button to show requested resources.
      */
-    @FXML // fx:id="requestedResourcesButton"
+    @FXML
     private Button requestedResourcesButton;
 
     /**
      * Button to show the reserved resources.
      */
-    @FXML // fx:id="reservedResourcesButton"
+    @FXML
     private Button reservedResourcesButton;
 
     /**
      * Button to show the overdue resources.
      */
-    @FXML // fx:id="overdueResourcesButton"
+    @FXML
     private Button overdueResourcesButton;
 
     /**
      * Button to show the transaction history.
      */
-    @FXML // fx:id="transHistoryButton"
+    @FXML
     private Button transHistoryButton;
 
     /**
      * The user image.
      */
-    @FXML // fx:id="userImage"
+    @FXML
     private ImageView userImage;
 
     /**
@@ -85,25 +85,25 @@ public class UserDashboardController extends Controller {
     /**
      * Label showing user's first name.
      */
-    @FXML // fx:id="firstNameLabel"
+    @FXML
     private Label firstNameLabel;
 
     /**
      * Label showing user's last name.
      */
-    @FXML // fx:id="lastNameLabel"
+    @FXML
     private Label lastNameLabel;
 
     /**
      * Label showing user's phone number.
      */
-    @FXML // fx:id="phoneNumberLabel"
+    @FXML
     private Label phoneNumberLabel;
 
     /**
      * Label showing the popular resources.
      */
-    @FXML // fx:id="popularResourceLabel"
+    @FXML
     private Label popularResourceLabel;
 
     /**

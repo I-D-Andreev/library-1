@@ -21,61 +21,61 @@ public class ProfileImageController extends Controller {
     /**
      * The button for the first image.
      */
-    @FXML // fx:id="imageOneButton"
+    @FXML
     private Button imageOneButton;
 
     /**
      * The button for the second image.
      */
-    @FXML // fx:id="imageTwoButton"
+    @FXML
     private Button imageTwoButton;
 
     /**
      * The button for the third image.
      */
-    @FXML // fx:id="imageThreeButton"
+    @FXML
     private Button imageThreeButton;
 
     /**
      * The button for the fourth image.
      */
-    @FXML // fx:id="imageFourButton"
+    @FXML
     private Button imageFourButton;
 
     /**
      * The button for the fifth image.
      */
-    @FXML // fx:id="imageFiveButton"
+    @FXML
     private Button imageFiveButton;
 
     /**
      * The button for the sixth image.
      */
-    @FXML // fx:id="imageSixButton"
+    @FXML
     private Button imageSixButton;
 
     /**
      * The button for the seventh image.
      */
-    @FXML // fx:id="imageSevenButton"
+    @FXML
     private Button imageSevenButton;
 
     /**
      * The button for the eighth image.
      */
-    @FXML // fx:id="imageEightButton"
+    @FXML
     private Button imageEightButton;
 
     /**
      * The button for the ninth image.
      */
-    @FXML // fx:id="imageNineButton"
+    @FXML
     private Button imageNineButton;
 
     /**
      * Button to cancel current action.
      */
-    @FXML // fx:id="cancelButton"
+    @FXML
     private Button cancelButton;
 
     /**

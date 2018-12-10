@@ -23,13 +23,13 @@ public class LoginController extends Controller {
     /**
      * The field showing the username.
      */
-    @FXML // fx:id="usernameTextField"
+    @FXML
     private TextField usernameTextField;
 
     /**
      * The button for logging in.
      */
-    @FXML // fx:id="loginButton"
+    @FXML
     private Button loginButton;
 
 

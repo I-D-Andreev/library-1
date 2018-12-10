@@ -17,61 +17,61 @@ public class ViewUserController extends Controller {
     /**
      * The tab to search users.
      */
-    @FXML // fx:id="searchUserTab"
+    @FXML
     private Tab searchUserTab;
 
     /**
      * Field to type the user to search in.
      */
-    @FXML // fx:id="searchUserTextField"
+    @FXML
     private TextField searchUserTextField;
 
     /**
      * Button to press when we want to search for a user.
      */
-    @FXML // fx:id="searchButton"
+    @FXML
     private Button searchButton;
 
     /**
      * The tab where we can create a user.
      */
-    @FXML // fx:id="createUserTab"
+    @FXML
     private Tab createUserTab;
 
     /**
      * The field showing username.
      */
-    @FXML // fx:id="usernameTextField"
+    @FXML
     private TextField usernameTextField;
 
     /**
      * The field showing first name.
      */
-    @FXML // fx:id="firstNameTextField"
+    @FXML
     private TextField firstNameTextField;
 
     /**
      * The field showing surname.
      */
-    @FXML // fx:id="surnameTextField"
+    @FXML
     private TextField surnameTextField;
 
     /**
      * The field showing the phone number.
      */
-    @FXML // fx:id="phoneNumberTextField"
+    @FXML
     private TextField phoneNumberTextField;
 
     /**
      * The field showing the first address line.
      */
-    @FXML // fx:id="addressTextField"
+    @FXML
     private TextField addressTextField1;
 
     /**
      * The field showing the second address line.
      */
-    @FXML // fx:id="addressTextField"
+    @FXML
     private TextField addressTextField2;
 
     /**
@@ -89,13 +89,13 @@ public class ViewUserController extends Controller {
     /**
      * Shows the date the librarian was employed.
      */
-    @FXML // fx:id="employmentDatePicker"
+    @FXML
     private DatePicker employmentDatePicker;
 
     /**
      * Field showing the stuff ID number.
      */
-    @FXML // fx:id="staffNumberTextField"
+    @FXML
     private TextField staffNumberTextField;
 
     /**
@@ -113,19 +113,19 @@ public class ViewUserController extends Controller {
     /**
      * Label showing the profile image.
      */
-    @FXML // fx:id="profileImageFileLabel"
+    @FXML
     private Label profileImageFileLabel;
 
     /**
      * Button to add a new user.
      */
-    @FXML // fx:id="addUserButton"
+    @FXML
     private Button addUserButton;
 
     /**
      * Button to go back to the dashboard.
      */
-    @FXML // fx:id="backButton"
+    @FXML
     private Button backButton;
 
     /**
