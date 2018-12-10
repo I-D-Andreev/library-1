@@ -166,6 +166,7 @@ public class LibrarianDashboardController extends Controller {
 
     /**
      * Opens the browse resources window.
+     * @param event Button clicked event.
      */
     @FXML
     public void browseButtonClicked(ActionEvent event) {
@@ -185,6 +186,7 @@ public class LibrarianDashboardController extends Controller {
 
     /**
      * Opens the create/edit resources window.
+     * @param event Button clicked event.
      */
     @FXML
     public void createEditButtonClicked(ActionEvent event) {
@@ -195,6 +197,7 @@ public class LibrarianDashboardController extends Controller {
 
     /**
      * Takes the user back to the login window.
+     * @param event Button clicked event.
      */
     @FXML
     public void logOutButtonClicked(ActionEvent event) {
@@ -205,6 +208,7 @@ public class LibrarianDashboardController extends Controller {
 
     /**
      * Opens the manage resources window.
+     * @param event Button clicked event.
      */
     @FXML
     public void manageResourcesButtonClicked(ActionEvent event) {
@@ -215,6 +219,7 @@ public class LibrarianDashboardController extends Controller {
 
     /**
      * Opens the view user window.
+     * @param event Button clicked event.
      */
     @FXML
     public void viewUserButtonClicked(ActionEvent event) {
@@ -257,15 +262,4 @@ public class LibrarianDashboardController extends Controller {
 
     }
 
-    /**
-     * All the users are shown.
-     *
-     * @param event The button is clicked.
-     */
-    @FXML
-    void viewAllUsersButtonClicked(ActionEvent event) {
-
-        new NewWindow("resources/ViewAllUsers.fxml", event, "View All Users", getLibrary());
-
-    }
 }

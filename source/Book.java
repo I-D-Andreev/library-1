@@ -1,7 +1,7 @@
 /**
  * Class to model a book.
  *
- * @Author Kleanthis Liontis, Ivan Andreev
+ * @author Kleanthis Liontis, Ivan Andreev
  */
 public class Book extends Resource {
 
