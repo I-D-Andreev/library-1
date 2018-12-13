@@ -1,7 +1,7 @@
 import java.io.*;
 
 /**
- * @author Kleanthis Liontis, Ivan Andreev.
+ * @author Kleanthis Liontis, Ivan Andreev, Arran Taylor.
  * Class to model a resource.
  */
 public abstract class Resource implements Serializable {
